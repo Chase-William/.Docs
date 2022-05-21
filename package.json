@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc --build",
     "test": "yarn build && node ./dist/index.js",
-    "vendor": "cd ./vendor/Charp.Core && nuget restore"
+    "vendor": "cd ./vendor/Charp.Core && nuget restore & dotnet build"
   },
   "dependencies": {
     "@types/node": "^17.0.31",
