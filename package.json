@@ -1,0 +1,17 @@
+{
+  "name": "charp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "test": "yarn build && node ./dist/index.js"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.31",
+    "fs-extra": "^10.1.0"
+  }
+}
