@@ -1,0 +1,3 @@
+[submodule "vendor/Charp.Core"]
+	path = vendor/Charp.Core
+	url = https://github.com/Chase-William/Charp.Core.git
