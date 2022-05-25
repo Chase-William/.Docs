@@ -1,7 +1,5 @@
-import { readdirSync } from "fs";
 import Model from "./Model";
 import ModelNestable from "./ModelNestable";
-import Namespace from "./Namespace";
 import CommonComment from "./written/CommonComment";
 
 export default class ModelTree extends ModelNestable<CommonComment> {
