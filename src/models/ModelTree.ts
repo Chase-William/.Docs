@@ -1,12 +1,16 @@
-import { readdirSync } from "fs";
+import INestable, { readChildrenInternal } from "./INestable";
 import Model from "./Model";
-import ModelNestable from "./ModelNestable";
 import Namespace from "./Namespace";
-import CommonComment from "./written/CommonComment";
 
-export default class ModelTree extends ModelNestable<CommonComment> {
+export default class ModelTree extends Model implements INestable {
+  children: Model[] = new Array<Model>()
+
   constructor(name: string, parent: Model) {
     super(name, parent)
+  }
+  
+  readChildren(namespaces: string[], model: Model & INestable): void {
+    readChildrenInternal(namespaces, model)
   }
 
   // readChildren(namespaces: string[]): void {

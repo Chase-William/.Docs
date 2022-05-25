@@ -1,9 +1,14 @@
+import INestable, { readChildrenInternal} from "./INestable";
 import Model from "./Model";
-import ModelNestable from "./ModelNestable";
-import CommonComment from "./written/CommonComment";
 
-export default class Namespace extends ModelNestable<CommonComment> {
+export default class Namespace extends Model implements INestable {
+  children: Model[] = new Array<Model>()
+
   constructor(name: string, parent: Model) {
     super(name, parent)
+  }
+  
+  readChildren(namespaces: string[], model: Model & INestable): void {
+    readChildrenInternal(namespaces, model)
   }
 }

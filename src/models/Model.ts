@@ -4,6 +4,12 @@ import { JsonObject, JsonProperty } from "typescript-json-serializer";
 export default class Model {
   parent: Model = null
 
+  /**
+   * Used in the json to identify the object's type.
+   */
+  @JsonProperty({name: 'Type'})
+  type: string
+
   @JsonProperty({name: 'Name'})
   name: string
 

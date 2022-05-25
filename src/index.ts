@@ -23,8 +23,8 @@ spawn.then((proc) => {
 
   const root = new ModelTree('Charp', null)
   console.log('hello')
-  root.readChildren(new Array<string>())
-
+  root.readChildren(new Array<string>(), root)
+  
   // const defaultSerialzer = new JsonSerializer()
   // const result = defaultSerialzer.deserializeObject<ClassModel>(test, ClassModel)
   // console.log(result.comments)
