@@ -1,16 +1,16 @@
-import INestable, { readChildrenInternal } from "./INestable";
-import Model from "./Model";
-import Namespace from "./Namespace";
+import INestable, { readChildrenInternal } from './INestable';
+import Model from './Model';
+import Namespace from './Namespace';
 
 export default class ModelTree extends Model implements INestable {
-  childNodes: Model[] = new Array<Model>()
+  childNodes: Model[] = new Array<Model>();
 
   constructor(name: string, parent: Model) {
-    super(name, parent)
+    super(name, parent);
   }
-  
+
   readChildren(namespaces: string[], model: Model & INestable): void {
-    readChildrenInternal(namespaces, model)
+    readChildrenInternal(namespaces, model);
   }
 
   // readChildren(namespaces: string[]): void {
@@ -25,7 +25,7 @@ export default class ModelTree extends Model implements INestable {
   //       model.readChildren()
   //     } else { // Handle file
   //       console.log('File: ' + path)
-  //     }   
+  //     }
   //   }
   //   namespaces.pop(this.name)
   // }

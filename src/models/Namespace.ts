@@ -1,14 +1,14 @@
-import INestable, { readChildrenInternal} from "./INestable";
-import Model from "./Model";
+import INestable, { readChildrenInternal } from './INestable';
+import Model from './Model';
 
 export default class Namespace extends Model implements INestable {
-  childNodes: Model[] = new Array<Model>()
+  childNodes: Model[] = new Array<Model>();
 
   constructor(name: string, parent: Model) {
-    super(name, parent)
+    super(name, parent);
   }
-  
+
   readChildren(namespaces: string[], model: Model & INestable): void {
-    readChildrenInternal(namespaces, model)
+    readChildrenInternal(namespaces, model);
   }
 }
