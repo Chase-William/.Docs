@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc --build",
     "test": "yarn build && node ./dist/index.js",
-    "vendor": "cd ./vendor/Charp.Core && nuget restore & dotnet build"
+    "vendor": "git submodule update --init --recursive && cd ./vendor/Charp.Core && nuget restore & dotnet build"
   },
   "dependencies": {
     "fs-extra": "^10.1.0",
