@@ -1,3 +1,4 @@
+import INestable from './models/INestable'
 import ModelTree from './models/ModelTree'
 // import ClassModel from './models/types/ClassModel'
 
@@ -25,6 +26,8 @@ spawn.then((proc) => {
   console.log('hello')
   root.readChildren(new Array<string>(), root)
   
+  //console.log((root.children[0] as INestable).children[0])
+
   // const defaultSerialzer = new JsonSerializer()
   // const result = defaultSerialzer.deserializeObject<ClassModel>(test, ClassModel)
   // console.log(result.comments)

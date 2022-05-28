@@ -3,9 +3,10 @@ import { JsonSerializer } from "typescript-json-serializer";
 import Model from "./Model";
 import Namespace from "./Namespace";
 import ClassModel from "./types/ClassModel";
+import EnumModel from "./types/EnumModel";
 
 export default interface INestable {
-  children: Model[]
+  childNodes: (Model | INestable)[]
 
   readChildren(namespaces: Array<string>, model: Model & INestable): void
 }
@@ -38,19 +39,19 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & I
 
       switch (type) {
         case 'class':
-          model.children.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
+          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
           break;
         case 'enum':
-          model.children.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
+          model.childNodes.push(defaultSerialzer.deserializeObject<EnumModel>(fileStr, EnumModel))
           break;          
         case 'interface':
-          model.children.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
+          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
           break;
         case 'struct':
-          model.children.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
+          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
           break;
         case 'delegate':
-          model.children.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
+          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel))
           break;
         default:
           throw new Error('When parsing json tree a type was encounter that is not either a class, interface, enum, struct, or delegate.')          
@@ -60,7 +61,7 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & I
     } else { // Handle directory
       console.log(path)
       const child = new Namespace(path, model)
-      model.children.push(child)
+      model.childNodes.push(child)
       child.readChildren(namespaces, child)
     }
   }

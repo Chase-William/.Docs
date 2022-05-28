@@ -2,7 +2,7 @@ import INestable, { readChildrenInternal} from "./INestable";
 import Model from "./Model";
 
 export default class Namespace extends Model implements INestable {
-  children: Model[] = new Array<Model>()
+  childNodes: Model[] = new Array<Model>()
 
   constructor(name: string, parent: Model) {
     super(name, parent)

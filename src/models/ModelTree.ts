@@ -3,7 +3,7 @@ import Model from "./Model";
 import Namespace from "./Namespace";
 
 export default class ModelTree extends Model implements INestable {
-  children: Model[] = new Array<Model>()
+  childNodes: Model[] = new Array<Model>()
 
   constructor(name: string, parent: Model) {
     super(name, parent)
