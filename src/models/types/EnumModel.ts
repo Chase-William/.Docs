@@ -1,12 +1,13 @@
-import { JsonProperty } from 'typescript-json-serializer';
+import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
 import FieldModel from '../members/FieldModel';
 import CommonComment from '../written/CommonComment';
 import TypeModel from './TypeModel';
 
+@jsonObject()
 export default class EnumModel extends TypeModel<CommonComment> {
-  @JsonProperty({ name: 'Fields' })
+  @jsonArrayMember(FieldModel, { name: 'Fields' })
   fields: FieldModel[];
 
-  @JsonProperty({ name: 'UnderlyingType' })
-  underlyingType: boolean;
+  @jsonMember(String, { name: 'UnderlyingType' })
+  underlyingType: string;
 }

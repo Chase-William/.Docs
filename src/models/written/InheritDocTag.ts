@@ -1,7 +1,7 @@
-import { JsonObject, JsonProperty } from 'typescript-json-serializer';
+import { jsonMember, jsonObject } from 'typedjson';
 
-@JsonObject()
+@jsonObject()
 export default class InheritDocTag {
-  @JsonProperty({ name: 'Cref' })
+  @jsonMember(String, { name: 'Cref' })
   cRef: string;
 }

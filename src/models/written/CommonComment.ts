@@ -1,14 +1,14 @@
-import { JsonObject, JsonProperty } from 'typescript-json-serializer';
+import { jsonMember, jsonObject } from 'typedjson';
 import InheritDocTag from './InheritDocTag';
 
-@JsonObject()
+@jsonObject()
 export default class CommonComment {
-  @JsonProperty({ name: 'Summary' })
+  @jsonMember(String, { name: 'Summary' })
   summary: string;
-  @JsonProperty({ name: 'Remarks' })
+  @jsonMember(String, { name: 'Remarks' })
   remarks: string;
-  @JsonProperty({ name: 'Example' })
+  @jsonMember(String, { name: 'Example' })
   example: string;
-  @JsonProperty({ name: 'Inheritdoc' })
+  @jsonMember(InheritDocTag, { name: 'Inheritdoc' })
   inheritdoc: InheritDocTag;
 }

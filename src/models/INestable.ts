@@ -1,17 +1,18 @@
 import { readdirSync, readFileSync } from 'fs';
-import { JsonSerializer } from 'typescript-json-serializer';
+import { TypedJSON } from 'typedjson';
 import Model from './Model';
 import Namespace from './Namespace';
 import ClassModel from './types/ClassModel';
 import EnumModel from './types/EnumModel';
+import InterfaceModel from './types/InterfaceModel';
+import CommonComment from './written/CommonComment';
 
 export default interface INestable {
-  childNodes: (Model | INestable)[];
+  childNodes: Map<string, Model | INestable>
+  //childNodes: (Model | INestable)[];
 
   readChildren(namespaces: Array<string>, model: Model & INestable): void;
 }
-
-const defaultSerialzer = new JsonSerializer();
 
 /**
  * This function purely exist because of the lack of traits in JS/TS.
@@ -24,34 +25,53 @@ const defaultSerialzer = new JsonSerializer();
  */
 export function readChildrenInternal(namespaces: Array<string>, model: Model & INestable): void {
   namespaces.push(model.name); // Working within this namespace
-  console.log(namespaces);
+  // console.log(namespaces);
   const namespaceDir = namespaces.join('\\');
   const dirs = readdirSync(namespaceDir);
   for (const path of dirs) {
     // Handle File
     if (path.endsWith('.json')) {
-      console.log('File: ' + path);
+      // console.log('File: ' + path);
 
       const contents = readFileSync(namespaceDir + '\\' + path);
       const fileStr = contents.toString('ascii');
 
-      const type = defaultSerialzer.deserializeObject<Model>(fileStr, Model).type;
+      // Get a simplified deserialzied version of the object to defer type before deserializing to 
+      // more derived type
+      
+      const serializer = new TypedJSON(Model)
+      const classSerializer = new TypedJSON(ClassModel)
+      const enumSerializer = new TypedJSON(EnumModel)
+      const interfaceSerialize = new TypedJSON(InterfaceModel)
+      const tester = serializer.parse(fileStr)
 
-      switch (type) {
+      switch (tester.type) {
         case 'class':
-          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
+          {
+            const temp = classSerializer.parse(fileStr)
+            temp.parent = model;
+            model.childNodes.set(tester.name, temp);
+          }          
           break;
         case 'enum':
-          model.childNodes.push(defaultSerialzer.deserializeObject<EnumModel>(fileStr, EnumModel));
+          {
+            const temp = enumSerializer.parse(fileStr)
+            temp.parent = model;
+            model.childNodes.set(tester.name, temp);
+          } 
           break;
         case 'interface':
-          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
+          {
+            const temp = interfaceSerialize.parse(fileStr)
+            temp.parent = model;
+            model.childNodes.set(tester.name, temp);
+          } 
           break;
         case 'struct':
-          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
+          //model.childNodes.set(tester.name, defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
           break;
         case 'delegate':
-          model.childNodes.push(defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
+          //model.childNodes.set(tester.name ,defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
           break;
         default:
           throw new Error(
@@ -62,9 +82,9 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & I
       // console.log(result.comments)
     } else {
       // Handle directory
-      console.log(path);
+      // console.log(path);
       const child = new Namespace(path, model);
-      model.childNodes.push(child);
+      model.childNodes.set(child.name, child);
       child.readChildren(namespaces, child);
     }
   }

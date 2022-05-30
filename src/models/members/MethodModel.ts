@@ -1,11 +1,11 @@
-import { JsonObject, JsonProperty } from 'typescript-json-serializer';
+import { jsonMapMember, jsonMember, jsonObject } from 'typedjson';
 import MethodComment from '../written/MethodComment';
 import MemberModel from './MemberModel';
 
-@JsonObject()
+@jsonObject()
 export default class MethodModel extends MemberModel<MethodComment> {
-  @JsonProperty({ name: 'ReturnType' })
+  @jsonMember(String, { name: 'ReturnType' })
   returnType: string;
-  @JsonProperty({ name: 'Parameters' })
-  parameters: [string, string][];
+  @jsonMapMember(String, String, { name: 'Parameters' })
+  parameters: Map<string, string>;
 }

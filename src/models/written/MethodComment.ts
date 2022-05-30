@@ -1,14 +1,14 @@
-import { JsonObject, JsonProperty } from 'typescript-json-serializer';
+import { jsonMapMember, jsonMember, jsonObject } from 'typedjson';
 import CommonComment from './CommonComment';
 
-@JsonObject()
+@jsonObject()
 export default class MethodComment extends CommonComment {
-  @JsonProperty({ name: 'Parameters' })
-  parameters: [string, string][];
-  @JsonProperty({ name: 'Returns' })
+  @jsonMapMember(String, String, { name: 'Parameters' })
+  parameters: Map<string, string>;
+  @jsonMember(String, { name: 'Returns' })
   returns: string;
-  @JsonProperty({ name: 'Responses' })
-  responses: [string, string][];
-  @JsonProperty({ name: 'TypeParmeter' })
-  typeParameter: [string, string][];
+  @jsonMapMember(String, String, { name: 'Responses' })
+  responses: Map<string, string>;
+  @jsonMapMember(String, String, { name: 'TypeParmeter' })
+  typeParameter: Map<string, string>;
 }

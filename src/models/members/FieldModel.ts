@@ -1,15 +1,15 @@
-import { JsonObject, JsonProperty } from 'typescript-json-serializer';
+import { jsonMember, jsonObject } from 'typedjson';
 import CommonComment from '../written/CommonComment';
 import MemberModel from './MemberModel';
 
-@JsonObject()
+@jsonObject()
 export default class FieldModel extends MemberModel<CommonComment> {
-  @JsonProperty({ name: 'IsPublic' })
+  @jsonMember(Boolean, { name: 'IsPublic' })
   isPublic: boolean;
-  @JsonProperty({ name: 'IsReadonly' })
+  @jsonMember(Boolean, { name: 'IsReadonly' })
   isReadonly: boolean;
-  @JsonProperty({ name: 'IsConstant' })
+  @jsonMember(Boolean, { name: 'IsConstant' })
   isConstant: boolean;
-  @JsonProperty({ name: 'IsStatic' })
+  @jsonMember(Boolean, { name: 'IsStatic' })
   isStatic: boolean;
 }

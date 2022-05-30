@@ -1,11 +1,11 @@
-import { JsonObject, JsonProperty } from 'typescript-json-serializer';
+import { jsonMember, jsonObject } from 'typedjson';
 import Model from '../Model';
 import CommonComment from '../written/CommonComment';
 
-@JsonObject()
+@jsonObject()
 export default class MemberModel<T extends CommonComment> extends Model {
-  @JsonProperty({ name: 'Type' })
+  @jsonMember(String, { name: 'Type' })
   type: string;
-  @JsonProperty({ name: 'Comments' })
+  @jsonMember(CommonComment, { name: 'Comments' })
   comments: T;
 }
