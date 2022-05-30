@@ -3,8 +3,10 @@ import { TypedJSON } from 'typedjson';
 import Model from './Model';
 import Namespace from './Namespace';
 import ClassModel from './types/ClassModel';
+import DelegateModel from './types/DelegateModel';
 import EnumModel from './types/EnumModel';
 import InterfaceModel from './types/InterfaceModel';
+import StructModel from './types/StructModel';
 import CommonComment from './written/CommonComment';
 
 export default interface INestable {
@@ -42,7 +44,9 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & I
       const serializer = new TypedJSON(Model)
       const classSerializer = new TypedJSON(ClassModel)
       const enumSerializer = new TypedJSON(EnumModel)
-      const interfaceSerialize = new TypedJSON(InterfaceModel)
+      const interfaceSerializer = new TypedJSON(InterfaceModel)
+      const structSeralizer = new TypedJSON(StructModel)
+      const delegateSerializer = new TypedJSON(DelegateModel)
       const tester = serializer.parse(fileStr)
 
       switch (tester.type) {
@@ -62,16 +66,24 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & I
           break;
         case 'interface':
           {
-            const temp = interfaceSerialize.parse(fileStr)
+            const temp = interfaceSerializer.parse(fileStr)
             temp.parent = model;
             model.childNodes.set(tester.name, temp);
           } 
           break;
         case 'struct':
-          //model.childNodes.set(tester.name, defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
+          {
+            const temp = structSeralizer.parse(fileStr)
+            temp.parent = model;
+            model.childNodes.set(tester.name, temp);
+          } 
           break;
         case 'delegate':
-          //model.childNodes.set(tester.name ,defaultSerialzer.deserializeObject<ClassModel>(fileStr, ClassModel));
+          {
+            const temp = delegateSerializer.parse(fileStr)
+            temp.parent = model;
+            model.childNodes.set(tester.name, temp);
+          }
           break;
         default:
           throw new Error(

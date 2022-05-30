@@ -24,6 +24,14 @@ test('<Interfaces> namespace handled correctly', () => {
   expect(getInterfaceNamespace().name).toBeDefined()
 })
 
+test('<Delegates> namespace handled correctly', () => {
+  expect(getDelegateNamespace().name).toBeDefined()
+})
+
+test('<Structs> namespace handled correctly', () => {
+  expect(getStructNamespace().name).toBeDefined()
+})
+
 /*
 
   functions BELOW:
@@ -58,4 +66,16 @@ export function getInterfaceNamespace(): Namespace {
   return ((root.childNodes.get('Test') as INestable)
     .childNodes.get('Data') as INestable)
     .childNodes.get('Interfaces') as Namespace
+}
+
+export function getDelegateNamespace(): Namespace {
+  return ((root.childNodes.get('Test') as INestable)
+    .childNodes.get('Data') as INestable)
+    .childNodes.get('Delegates') as Namespace
+}
+
+export function getStructNamespace(): Namespace {
+  return ((root.childNodes.get('Test') as INestable)
+    .childNodes.get('Data') as INestable)
+    .childNodes.get('Structs') as Namespace
 }

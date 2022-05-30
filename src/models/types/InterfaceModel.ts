@@ -1,7 +1,7 @@
 import { jsonObject } from 'typedjson';
-import StructureModel from './StructureModel';
+import StandardMembersModel from './StandardMembersModel';
 
 @jsonObject()
-export default class InterfaceModel extends StructureModel {
+export default class InterfaceModel extends StandardMembersModel {
   
 }

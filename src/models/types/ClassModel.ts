@@ -1,8 +1,8 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import StructureModel from './StructureModel';
+import StandardMembersModel from './StandardMembersModel';
 
 @jsonObject()
-export default class ClassModel extends StructureModel {
+export default class ClassModel extends StandardMembersModel {
   @jsonMember(Boolean, { name: 'IsPublic' })
   isPublic: boolean;
 }

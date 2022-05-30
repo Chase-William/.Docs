@@ -14,7 +14,7 @@ import TypeModel from "./TypeModel";
  * - Events
  */
 @jsonObject()
-export default class StructureModel extends TypeModel<CommonComment> {
+export default class StandardMembersModel extends TypeModel<CommonComment> {
   @jsonArrayMember(PropertyModel, { name: 'Properties' })
   properties: PropertyModel[];
   @jsonArrayMember(FieldModel, { name: 'Fields' })

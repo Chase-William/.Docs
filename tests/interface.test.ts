@@ -1,5 +1,4 @@
 import InterfaceModel from "../src/models/types/InterfaceModel"
-import CommonComment from "../src/models/written/CommonComment"
 import { getInterfaceNamespace } from "./namespace.test"
 
 
