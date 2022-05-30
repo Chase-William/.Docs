@@ -35,3 +35,17 @@ test('<Boat> has <Docked, UnDocked> events', () => {
   expect(eventNames).toContain('Docked')
   expect(eventNames).toContain('UnDocked')
 })
+
+let builder: ClassModel
+
+test('<Canoe> has <Builder> class as a child', () => {
+  builder = (getClassNamespace().childNodes.get('Canoe') as ClassModel).childNodes.get('Builder') as ClassModel
+
+  expect(builder).toBeDefined()
+  expect(builder).not.toBeNull()
+  expect(builder.name).toBe('Builder')
+})
+
+test('<Canoe+Builder> nested class has the correct parent', () => {
+  expect(builder.parent).toBe(getClassNamespace().childNodes.get('Canoe'))
+})

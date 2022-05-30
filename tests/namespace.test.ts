@@ -1,7 +1,5 @@
 import INestable from '../src/models/INestable'
-import Model from '../src/models/Model'
 import Namespace from '../src/models/Namespace'
-import InterfaceModel from '../src/models/types/InterfaceModel'
 import { root } from './init.test'
 
 test('<Test> namespace handled correctly', () => {
