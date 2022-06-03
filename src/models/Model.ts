@@ -18,3 +18,10 @@ export default class Model {
     this.parent = parent;
   }
 }
+
+export const CLASS_TYPE_CODE = 'class'
+export const INTERFACE_TYPE_CODE = 'interface'
+export const DELEGATE_TYPE_CODE = 'delegate'
+export const STRUCT_TYPE_CODE = 'struct'
+export const ENUM_TYPE_CODE = 'enum'
+export const NAMESPACE_TYPE_CODE = 'namespace'

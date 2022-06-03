@@ -1,4 +1,4 @@
-import INestable from '../src/models/INestable'
+import Nestable from '../src/models/Nestable'
 import Namespace from '../src/models/Namespace'
 import { root } from './init.test'
 
@@ -44,36 +44,36 @@ export function getTestNamespace(): Namespace {
 }
 
 export function getDataNamespace(): Namespace {
-  return (root.childNodes.get('Test') as INestable)
+  return (root.childNodes.get('Test') as Nestable)
     .childNodes.get('Data') as Namespace
 }
 
 export function getClassNamespace(): Namespace {
-  return ((root.childNodes.get('Test') as INestable)
-    .childNodes.get('Data') as INestable)
+  return ((root.childNodes.get('Test') as Nestable)
+    .childNodes.get('Data') as Nestable)
     .childNodes.get('Classes') as Namespace
 }
 
 export function getEnumerationNamespace(): Namespace {
-  return ((root.childNodes.get('Test') as INestable)
-    .childNodes.get('Data') as INestable)
+  return ((root.childNodes.get('Test') as Nestable)
+    .childNodes.get('Data') as Nestable)
     .childNodes.get('Enumerations') as Namespace
 }
 
 export function getInterfaceNamespace(): Namespace {
-  return ((root.childNodes.get('Test') as INestable)
-    .childNodes.get('Data') as INestable)
+  return ((root.childNodes.get('Test') as Nestable)
+    .childNodes.get('Data') as Nestable)
     .childNodes.get('Interfaces') as Namespace
 }
 
 export function getDelegateNamespace(): Namespace {
-  return ((root.childNodes.get('Test') as INestable)
-    .childNodes.get('Data') as INestable)
+  return ((root.childNodes.get('Test') as Nestable)
+    .childNodes.get('Data') as Nestable)
     .childNodes.get('Delegates') as Namespace
 }
 
 export function getStructNamespace(): Namespace {
-  return ((root.childNodes.get('Test') as INestable)
-    .childNodes.get('Data') as INestable)
+  return ((root.childNodes.get('Test') as Nestable)
+    .childNodes.get('Data') as Nestable)
     .childNodes.get('Structs') as Namespace
 }

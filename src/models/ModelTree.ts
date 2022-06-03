@@ -1,15 +1,22 @@
-import INestable, { readChildrenInternal } from './INestable';
+import Nestable, { readChildrenInternal } from './Nestable';
+import Renderer from '../markdown/Renderer';
+import Renderable from './Renderable';
 import Model from './Model';
-import Namespace from './Namespace';
 
-export default class ModelTree extends Model implements INestable {
-  childNodes = new Map<string, Model | INestable>()
+export default class ModelTree extends Model implements Nestable, Renderable {
+  childNodes = new Map<string, (Model | Nestable) & Renderable>()
 
   constructor(name: string, parent: Model) {
     super(name, parent);
   }
 
-  readChildren(namespaces: string[], model: Model & INestable): void {
+  readChildren(namespaces: string[], model: Model & Nestable): void {
     readChildrenInternal(namespaces, model);
+  }
+
+  render(renderer: Renderer): void {
+    this.childNodes.forEach((model) => {
+      (model as Renderable).render(renderer)
+    })
   }
 }

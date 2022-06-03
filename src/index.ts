@@ -1,4 +1,5 @@
-import INestable from './models/INestable';
+import MarkdownRenderer from './markdown/markdownRenderer';
+import Nestable from './models/Nestable';
 import ModelTree from './models/ModelTree';
 // import ClassModel from './models/types/ClassModel'
 
@@ -20,4 +21,7 @@ spawn
   .finally(() => {
     const root = new ModelTree('Charp', null);
     root.readChildren(new Array<string>(), root);
+
+    const renderer = new MarkdownRenderer()
+    root.render(renderer)
   });

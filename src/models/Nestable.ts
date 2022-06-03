@@ -1,18 +1,20 @@
 import { readdirSync, readFileSync } from 'fs';
 import { TypedJSON } from 'typedjson';
+import Renderer from '../markdown/Renderer';
 import Model from './Model';
 import Namespace from './Namespace';
+import Renderable from './Renderable';
 import ClassModel from './types/ClassModel';
 import DelegateModel from './types/DelegateModel';
 import EnumModel from './types/EnumModel';
 import InterfaceModel from './types/InterfaceModel';
 import StructModel from './types/StructModel';
 
-export default interface INestable {
-  childNodes: Map<string, Model | INestable>
+export default interface Nestable {
+  childNodes: Map<string, (Model | Nestable) & Renderable>
   //childNodes: (Model | INestable)[];
 
-  readChildren(namespaces: Array<string>, model: Model & INestable): void;
+  readChildren(namespaces: Array<string>, model: Model & Nestable): void;
 }
 
 /**
@@ -24,7 +26,7 @@ export default interface INestable {
  * @param namespaces
  * @param model
  */
-export function readChildrenInternal(namespaces: Array<string>, model: Model & INestable): void {
+export function readChildrenInternal(namespaces: Array<string>, model: Model & Nestable): void {
   namespaces.push(model.name); // Working within this namespace
   // console.log(namespaces);
   const namespaceDir = namespaces.join('\\');
@@ -125,7 +127,7 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & I
  * @param parent The lowest parent obtainable at the time of this function call.
  * @param newModel The model to be added to the ModelTree.
  */
-function handleParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & INestable, newModel: T): void {
+function handleParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & Nestable, newModel: T): void {
   if (fileName.includes('+')) {    
     handleNestedTypeParentChildSetup(fileName, parent, newModel)
   } else {
@@ -140,7 +142,7 @@ function handleParentChildSetup<T extends ClassModel | InterfaceModel | StructMo
  * @param parent the starting parent to work from to find other parents down the chain leading to the model.
  * @param newModel The model to be added to the ModelTree.
  */
-function handleNestedTypeParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & INestable, newModel: T): void {
+function handleNestedTypeParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & Nestable, newModel: T): void {
   const containingTypes = fileName.split('+')
   // We want to stop before trying to access the last type
   const targetLength = containingTypes.length - 1
@@ -151,7 +153,7 @@ function handleNestedTypeParentChildSetup<T extends ClassModel | InterfaceModel 
     Example: ClassA+ClassB+ClassC                
   */
   for (let i = 0; i < targetLength; i++) {
-    parent = parent.childNodes.get(containingTypes[i]) as Model & INestable                
+    parent = parent.childNodes.get(containingTypes[i]) as unknown as Model & Nestable                
   }
   // Set the parent to the parent type or otherwise in this case; the containing type
   newModel.parent = parent
