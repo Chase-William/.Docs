@@ -1,0 +1,1 @@
+> yarn e "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.xml"

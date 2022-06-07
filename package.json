@@ -8,11 +8,12 @@
     "url": "https://github.com/Chase-William/Charp/tree/main"
   },
   "scripts": {
-    "e": "tsc --build && node ./dist/index.js",
+    "e": "tsc --build && node ./dist/app.js",
     "test": "tsc --build && jest",
     "vendor": "git submodule update --init --recursive && cd ./vendor/Charp.Core && nuget restore & dotnet build",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint eslintrc.json"
+    "lint": "eslint eslintrc.json",
+    "package": "pkg ./dist/app.js --targets latest-windows-x64"
   },
   "dependencies": {
     "fs-extra": "^10.1.0",

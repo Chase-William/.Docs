@@ -22,43 +22,47 @@ export default class MarkdownRenderer implements Renderer {
   renderClass(model: ClassModel): void {
     console.log(`Class - Rendering: ${model.fullName}`)
 
-    let content: string
+    let content = ''
 
     // Header
     content = renderTypeHeader(model)
     content += renderStandardMemberModel(model) 
     writeMarkdownToFile(model, content)
   }
+
   renderDelegate(model: DelegateModel): void {
     console.log(`Delegate - Rendering: ${model.fullName}`)
 
-    let content: string
+    let content = ''
     content = renderTypeHeader(model)
     content += renderDelegate(model)
 
     writeMarkdownToFile(model, content)
   }
+
   renderEnum(model: EnumModel): void {
     console.log(`Enum - Rendering: ${model.fullName}`)
-    let content: string
+    let content = ''
 
     // Header
     content = renderTypeHeader(model)
     content += renderEnum(model) 
     writeMarkdownToFile(model, content)
   }
+
   renderInterface(model: InterfaceModel): void {
     console.log(`Interface - Rendering: ${model.fullName}`)
-    let content: string
+    let content = ''
 
     // Header
     content = renderTypeHeader(model)
     content += renderStandardMemberModel(model) 
     writeMarkdownToFile(model, content)
   }
+
   renderStruct(model: StructModel): void {
     console.log(`Struct - Rendering: ${model.fullName}`)
-    let content: string
+    let content = ''
 
     // Header
     content = renderTypeHeader(model)
@@ -68,7 +72,8 @@ export default class MarkdownRenderer implements Renderer {
 }
 
 function renderStandardMemberModel(model: StandardMembersModel): string {
-  let content: string
+  let content = ''
+
   // Members
   /// Properties
   if (model.properties.length > 0) {
