@@ -10,7 +10,7 @@
   "scripts": {
     "e": "tsc --build && node ./dist/app.js",
     "test": "tsc --build && jest",
-    "vendor": "git submodule update --init --recursive && cd ./vendor/Charp.Core && nuget restore & dotnet build",
+    "vendor": "git submodule update --remote --recursive && cd ./vendor/Charp.Core && nuget restore & dotnet build",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint eslintrc.json",
     "package": "pkg ./dist/app.js --targets latest-windows-x64"

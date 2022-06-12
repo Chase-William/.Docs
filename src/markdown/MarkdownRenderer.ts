@@ -7,11 +7,17 @@ import ClassModel from "../models/types/ClassModel";
 import DelegateModel from "../models/types/DelegateModel";
 import EnumModel from "../models/types/EnumModel";
 import InterfaceModel from "../models/types/InterfaceModel";
-import StandardMembersModel from "../models/types/StandardMembersModel";
 import StructModel from "../models/types/StructModel";
 import TypeModel from "../models/types/TypeModel";
 import CommonComment from "../models/written/CommonComment";
+import { getOptionalSummary } from "./CommentsRenderer";
 import Renderer from "./Renderer";
+import classRenderer from "./types/ClassRenderer";
+import delegateRenderer from "./types/DelegateRenderer";
+import enumRenderer from "./types/EnumRenderer";
+import interfaceRenderer from "./types/InterfaceRenderer";
+import standardMembersRenderer from "./types/StandardMemberRenderer";
+import structRenderer from "./types/StructRenderer";
 
 /**
  * Implementation for rendering metadata/documentation to markdown. 
@@ -21,78 +27,47 @@ export default class MarkdownRenderer implements Renderer {
 
   renderClass(model: ClassModel): void {
     console.log(`Class - Rendering: ${model.fullName}`)
-
     let content = ''
-
     // Header
     content = renderTypeHeader(model)
-    content += renderStandardMemberModel(model) 
+    content += classRenderer(model)
     writeMarkdownToFile(model, content)
   }
 
   renderDelegate(model: DelegateModel): void {
     console.log(`Delegate - Rendering: ${model.fullName}`)
-
     let content = ''
     content = renderTypeHeader(model)
-    content += renderDelegate(model)
-
+    content += delegateRenderer(model)
     writeMarkdownToFile(model, content)
   }
 
   renderEnum(model: EnumModel): void {
     console.log(`Enum - Rendering: ${model.fullName}`)
     let content = ''
-
     // Header
     content = renderTypeHeader(model)
-    content += renderEnum(model) 
+    content += enumRenderer(model) 
     writeMarkdownToFile(model, content)
   }
 
   renderInterface(model: InterfaceModel): void {
     console.log(`Interface - Rendering: ${model.fullName}`)
     let content = ''
-
     // Header
     content = renderTypeHeader(model)
-    content += renderStandardMemberModel(model) 
+    content += interfaceRenderer(model) 
     writeMarkdownToFile(model, content)
   }
 
   renderStruct(model: StructModel): void {
     console.log(`Struct - Rendering: ${model.fullName}`)
     let content = ''
-
     // Header
     content = renderTypeHeader(model)
-    content += renderStandardMemberModel(model) 
+    content += structRenderer(model) 
     writeMarkdownToFile(model, content)
   }
-}
-
-function renderStandardMemberModel(model: StandardMembersModel): string {
-  let content = ''
-
-  // Members
-  /// Properties
-  if (model.properties.length > 0) {
-    content += renderProperty(model.properties)
-  }    
-  /// Methods
-  if (model.methods.length > 0) {
-    content += renderMethods(model.methods)
-  }    
-  /// Events
-  if (model.events.length > 0) {
-    content += renderEvents(model.events)
-  }    
-  /// Fields
-  if (model.fields.length > 0) {
-    content += renderFields(model.fields)
-  } 
-
-  return content
 }
 
 function renderTypeHeader(model: TypeModel<CommonComment>): string {
@@ -101,98 +76,6 @@ function renderTypeHeader(model: TypeModel<CommonComment>): string {
     ${getOptionalSummary(model.comments)}`
   )
 }
-
-function renderEnum(model: EnumModel): string {
-  let content = `\n\n### Values \`${model.underlyingType}\`\n`
-
-  for (const value of model.fields) {
-    content += `\n- ${value.name}${hasSummaryAndComment(model.comments) ? ', ' + getOptionalSummary(model.comments) : ''}`
-  }
-
-  return content
-}
-
-function hasSummaryAndComment(comments: CommonComment): boolean {
-  return typeof comments?.summary != undefined && comments?.summary != null
-}
-
-function renderDelegate(model: DelegateModel): string {
-  return `\n*@returns* \`${model.returnType}\``
-}
-
-function renderFields(fields: FieldModel[]): string {
-  let content = (
-    `\n\n## Fields\n| Name | Type | Summary |\n| ---- | ---- | ------- |\n`
-  )
-  
-  for (const field of fields) {
-    content += (
-      `|${field.name}|\`${field.type}\`|${getOptionalSummary(field.comments)}|\n`
-    )
-  }  
-
-  return content
-}
-
-function getOptionalSummary(comments: CommonComment) {
-  // if (typeof comments == 'undefined' || comments === null) {
-  //   return ''
-  // }
-  if (comments?.summary) {
-    return comments.summary
-  }
-  return 'Summary not provided.'
-}
-
-function renderEvents(events: EventModel[]): string {
-  let content = (
-    `\n\n## Events\n| Name | Type | Summary |\n| ---- | ---- | ------- |\n`
-  )
-  
-  for (const event of events) {
-    content += (
-      `|${event.name}|\`${event.type}\`|${getOptionalSummary(event.comments)}|\n`
-    )
-  }  
-
-  return content
-}
-
-function renderMethods(methods: MethodModel[]): string {
-  let content = (
-    `\n\n## Methods`
-  )
-  
-  for (const method of methods) {
-
-    content += `\n\n### ${method.name}\n${getOptionalSummary(method.comments)}`
-
-    method.parameters.forEach(param => {
-      content += `\n*@param* \`${param}\`\n`
-    })
-  }  
-
-  return content
-}
-
-function renderProperty(properties: PropertyModel[]): string {
-  let content = (
-    `\n\n## Properties\n| Name | Type | Summary |\n| ---- | ---- | ------- |\n`
-  )
-  
-  for (const prop of properties) {
-    content += (
-      `|${prop.name}|\`${prop.type}\`|${getOptionalSummary(prop.comments)}|\n`
-    )
-  }  
-
-  return content
-}
-
-
-// function getDirectory(namespace: string): string {
-//   return namespace.replace(/\./g, '/')
-// }
 
 /**
  * Writes markdown provided to file. This functional determines the folder/file structure.

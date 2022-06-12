@@ -6,8 +6,14 @@ import StandardMembersModel from './StandardMembersModel';
 
 @jsonObject()
 export default class ClassModel extends StandardMembersModel implements Renderable {
-  @jsonMember(Boolean, { name: 'IsPublic' })
-  isPublic: boolean;
+  @jsonMember(Boolean, { name: 'IsSealed'})
+  isSealed: boolean
+
+  @jsonMember(Boolean, { name: 'IsAbstract' })
+  isAbstract: boolean
+
+  @jsonMember(Boolean, { name: 'IsStatic' })
+  isStatic: boolean
 
   render(renderer: Renderer): void {
     renderer.renderClass(this)
