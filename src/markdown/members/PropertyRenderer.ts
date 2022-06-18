@@ -1,7 +1,7 @@
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
 
-export default function renderProperty(properties: PropertyModel[]): string {
+export default function propertyRenderer(properties: PropertyModel[]): string {
   let content = (
     `\n\n## Properties\n| Name | Type | Summary |\n| ---- | ---- | ------- |\n`
   )

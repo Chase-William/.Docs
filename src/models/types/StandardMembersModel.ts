@@ -31,8 +31,8 @@ export default class StandardMembersModel extends TypeModel<CommonComment> imple
   @jsonArrayMember(EventModel, { name: 'Events' })
   events: EventModel[];
 
-  readChildren(namespaces: string[], model: Model & Nestable): void {
-    readChildrenInternal(namespaces, model)
+  readChildren(extraPathing: string, namespaces: string[], model: Model & Nestable): void {
+    readChildrenInternal(extraPathing, namespaces, model)
   }
 
   renderChildren(renderer: Renderer) {

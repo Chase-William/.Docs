@@ -18,6 +18,7 @@ import enumRenderer from "./types/EnumRenderer";
 import interfaceRenderer from "./types/InterfaceRenderer";
 import standardMembersRenderer from "./types/StandardMemberRenderer";
 import structRenderer from "./types/StructRenderer";
+import divider from "./Util";
 
 /**
  * Implementation for rendering metadata/documentation to markdown. 
@@ -31,6 +32,7 @@ export default class MarkdownRenderer implements Renderer {
     // Header
     content = renderTypeHeader(model)
     content += classRenderer(model)
+    console.log(model.comments.summary)
     writeMarkdownToFile(model, content)
   }
 
@@ -72,8 +74,10 @@ export default class MarkdownRenderer implements Renderer {
 
 function renderTypeHeader(model: TypeModel<CommonComment>): string {
   return (
-    `# \`${model.name}\`
-    ${getOptionalSummary(model.comments)}`
+    `# \`${model.name}\`` +
+    divider() +
+    getOptionalSummary(model.comments) +
+    divider()
   )
 }
 

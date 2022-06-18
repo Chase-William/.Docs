@@ -35,6 +35,7 @@ spawn
       proc.execFileSync('C:\\Dev\\Charp\\vendor\\Charp.Core\\src\\Charp\\bin\\Debug\\net5.0\\Charp.exe', [
         'C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net5.0\\Charp.Test.Data.dll',
         'C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net5.0\\Charp.Test.Data.xml',
+        './json'
       ]);
     },
     (failed) => {
@@ -43,7 +44,7 @@ spawn
   )
   .finally(() => {
     const root = new ModelTree('Charp', null);
-    root.readChildren(new Array<string>(), root);
+    root.readChildren('json', new Array<string>(), root);
 
     const renderer = new MarkdownRenderer()
     root.render(renderer)

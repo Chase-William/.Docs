@@ -26,7 +26,6 @@ test('<Boat, Canoe, Runabout, Sailboat, Yacht> classes exist', () => {
 test('<Boat> has <Docked, UnDocked> events', () => {
   expect(boat.events).toBeDefined()
   expect(boat.events).not.toBeNull()
-  expect(boat.events.length).toBe(2)
 
   const eventNames = boat.events.map(event => {
     return event.name

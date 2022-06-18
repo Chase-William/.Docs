@@ -4,7 +4,7 @@ export let root: ModelTree
 
 beforeAll(() => {
   root = new ModelTree('Charp', null);
-  root.readChildren(new Array<string>(), root);
+  root.readChildren('json', new Array<string>(), root);
 })
 
 test('root initialized correctly', () => {

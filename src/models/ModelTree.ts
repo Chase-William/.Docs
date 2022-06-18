@@ -10,8 +10,8 @@ export default class ModelTree extends Model implements Nestable, Renderable {
     super(name, parent);
   }
 
-  readChildren(namespaces: string[], model: Model & Nestable): void {
-    readChildrenInternal(namespaces, model);
+  readChildren(extraPathing: string, namespaces: string[], model: Model & Nestable): void {
+    readChildrenInternal(extraPathing, namespaces, model);
   }
 
   render(renderer: Renderer): void {

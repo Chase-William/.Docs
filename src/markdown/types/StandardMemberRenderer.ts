@@ -3,6 +3,7 @@ import renderEvents from "../members/EventRenderer"
 import renderFields from "../members/FieldRenderer"
 import renderMethods from "../members/MethodRenderer"
 import renderProperty from "../members/PropertyRenderer"
+import divider from "../Util"
 
 export default function standardMembersRenderer(model: StandardMembersModel): string {
   let content = ''
@@ -14,15 +15,15 @@ export default function standardMembersRenderer(model: StandardMembersModel): st
   }    
   /// Methods
   if (model.methods.length > 0) {
-    content += renderMethods(model.methods)
+    content += divider() + renderMethods(model.methods)
   }    
   /// Events
   if (model.events.length > 0) {
-    content += renderEvents(model.events)
+    content += divider() + renderEvents(model.events)
   }    
   /// Fields
   if (model.fields.length > 0) {
-    content += renderFields(model.fields)
+    content += divider() + renderFields(model.fields)
   } 
 
   return content

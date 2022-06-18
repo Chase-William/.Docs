@@ -2,7 +2,7 @@ import { jsonMember, jsonObject } from "typedjson";
 
 @jsonObject()
 export default class Model {
-  parent: Model
+  parent: Model | null
 
   /**
    * Used in the json to identify the object's type.
@@ -13,7 +13,7 @@ export default class Model {
   @jsonMember(String, { name: 'Name' })
   name: string
 
-  constructor(name: string, parent: Model) {
+  constructor(name: string, parent: Model | null) {
     this.name = name;
     this.parent = parent;
   }

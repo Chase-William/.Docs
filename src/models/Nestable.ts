@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'fs';
+import path = require('path');
 import { TypedJSON } from 'typedjson';
-import Renderer from '../markdown/Renderer';
 import Model from './Model';
 import Namespace from './Namespace';
 import Renderable from './Renderable';
@@ -14,7 +14,7 @@ export default interface Nestable {
   childNodes: Map<string, (Model | Nestable) & Renderable>
   //childNodes: (Model | INestable)[];
 
-  readChildren(namespaces: Array<string>, model: Model & Nestable): void;
+  readChildren(extraPathing: string, namespaces: Array<string>, model: Model & Nestable): void;
 }
 
 /**
@@ -26,11 +26,12 @@ export default interface Nestable {
  * @param namespaces
  * @param model
  */
-export function readChildrenInternal(namespaces: Array<string>, model: Model & Nestable): void {
+export function readChildrenInternal(extraPathing: string, namespaces: Array<string>, model: Model & Nestable): void {
   namespaces.push(model.name); // Working within this namespace
   // console.log(namespaces);
-  const namespaceDir = namespaces.join('\\');
-  let fileOrFolderNames = readdirSync(namespaceDir);
+  // const namespaceOnlyDir = namespaces.join('\\');
+  const namespaceWithPath = path.join(extraPathing, namespaces.join('\\'));
+  let fileOrFolderNames = readdirSync(namespaceWithPath);
   // The more "nested" a type is, put it farther into the back of the collection
   /*
     Example:
@@ -54,7 +55,7 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & N
     // Handle File
     if (name.endsWith('.json')) {
       
-      const contents = readFileSync(namespaceDir + '\\' + name);
+      const contents = readFileSync(namespaceWithPath + '\\' + name);
       const fileStr = contents.toString('ascii');
 
       // Get a simplified deserialzied version of the object to defer type before deserializing to 
@@ -115,7 +116,7 @@ export function readChildrenInternal(namespaces: Array<string>, model: Model & N
       // console.log(name);
       const child = new Namespace(name, model);
       model.childNodes.set(child.name, child);
-      child.readChildren(namespaces, child);
+      child.readChildren(extraPathing, namespaces, child);
     }
   }
   namespaces.pop(); // Now leaving this namespace

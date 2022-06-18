@@ -17,7 +17,7 @@ export default class Namespace extends Model implements Nestable, Renderable {
     })
   }
 
-  readChildren(namespaces: string[], model: Model & Nestable): void {
-    readChildrenInternal(namespaces, model);
+  readChildren(extraPathing: string, namespaces: string[], model: Model & Nestable): void {
+    readChildrenInternal(extraPathing, namespaces, model);
   }
 }
