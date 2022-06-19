@@ -1,0 +1,4 @@
+# `InternalClass`
+
+Summary not provided.
+

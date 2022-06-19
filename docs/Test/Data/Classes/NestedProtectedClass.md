@@ -1,0 +1,4 @@
+# `NestedProtectedClass`
+
+Summary not provided.
+

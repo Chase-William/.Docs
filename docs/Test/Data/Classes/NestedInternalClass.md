@@ -1,0 +1,4 @@
+# `NestedInternalClass`
+
+Summary not provided.
+

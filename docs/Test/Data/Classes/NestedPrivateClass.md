@@ -1,0 +1,4 @@
+# `NestedPrivateClass`
+
+Summary not provided.
+
