@@ -1,4 +1,4 @@
-import DelegateModel from "../src/models/types/DelegateModel"
+import DelegateModel from "../../src/models/types/DelegateModel"
 import { getDelegateNamespace } from "./namespace.test"
 
 let doSomeMathWillYou: DelegateModel

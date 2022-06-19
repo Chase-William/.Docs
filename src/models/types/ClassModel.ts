@@ -8,10 +8,8 @@ import StandardMembersModel from './StandardMembersModel';
 export default class ClassModel extends StandardMembersModel implements Renderable {
   @jsonMember(Boolean, { name: 'IsSealed'})
   isSealed: boolean
-
   @jsonMember(Boolean, { name: 'IsAbstract' })
   isAbstract: boolean
-
   @jsonMember(Boolean, { name: 'IsStatic' })
   isStatic: boolean
 

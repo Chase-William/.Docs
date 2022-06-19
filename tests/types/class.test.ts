@@ -1,4 +1,4 @@
-import ClassModel from '../src/models/types/ClassModel'
+import ClassModel from '../../src/models/types/ClassModel'
 import { getClassNamespace } from './namespace.test'
 
 let boat: ClassModel

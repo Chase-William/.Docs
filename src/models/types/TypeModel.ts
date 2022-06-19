@@ -13,19 +13,16 @@ import ClassModel from './ClassModel';
 export default class TypeModel<T extends CommonComment> extends Model {
   @jsonMember(String, { name: 'Namespace' })
   namespace: string;
-  
   @jsonMember(String, { name: 'FullName' })
   fullName: string;
-
   @jsonMember(Boolean, { name: 'IsPublic' })
   isPublic: boolean;
-
   @jsonMember(Boolean, { name: 'IsInternal' })
   isInternal: boolean;
-
+  @jsonMember(Boolean, { name: 'IsProtected'})
+  isProtected: boolean;
   @jsonMember(String, { name: 'Parent' })
   baseType: string;
-
   @jsonMember(CommonComment, { name: 'Comments' }) // CommentComment in serialization may be a limitation
   comments: T;
 

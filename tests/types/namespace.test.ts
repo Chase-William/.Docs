@@ -1,6 +1,6 @@
-import Nestable from '../src/models/Nestable'
-import Namespace from '../src/models/Namespace'
-import { root } from './init.test'
+import Nestable from '../../src/models/Nestable'
+import Namespace from '../../src/models/Namespace'
+import { root } from '../init.test'
 
 test('<Test> namespace handled correctly', () => {
   expect(getTestNamespace().name).toBeDefined()

@@ -8,4 +8,8 @@ export default class MethodModel extends MemberModel<MethodComment> {
   returnType: string;
   @jsonMapMember(String, String, { name: 'Parameters' })
   parameters: Map<string, string>;
+  @jsonMember(Boolean, { name: 'IsAbstract' })
+  isAbstract: boolean;
+  @jsonMember(Boolean, { name: 'IsVirtual' })
+  isVirtual: boolean;
 }

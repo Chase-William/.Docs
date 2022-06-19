@@ -1,0 +1,1 @@
+import { getClassNamespace } from "../types/namespace.test";

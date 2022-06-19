@@ -1,4 +1,4 @@
-import EnumModel from '../src/models/types/EnumModel'
+import EnumModel from '../../src/models/types/EnumModel'
 import { getEnumerationNamespace } from './namespace.test'
 
 let engineSize: EnumModel

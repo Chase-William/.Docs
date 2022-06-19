@@ -1,4 +1,4 @@
-import StructModel from "../src/models/types/StructModel"
+import StructModel from "../../src/models/types/StructModel"
 import { getStructNamespace } from "./namespace.test"
 
 let point: StructModel
