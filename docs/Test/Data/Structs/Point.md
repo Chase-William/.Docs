@@ -4,9 +4,13 @@ Represents a x, y coordinate.
 
 
 
-## Fields
+Fields
 
-| Name | Type | Summary |
-| ---- | ---- | ------- |
-|x|`System.Int32`|Summary not provided.|
-|y|`System.Int32`|Summary not provided.|
+### x `static`
+
+Summary not provided.
+
+### y `static`
+
+Summary not provided.
+

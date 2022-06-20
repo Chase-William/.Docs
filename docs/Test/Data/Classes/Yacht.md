@@ -247,12 +247,13 @@ Summary not provided.
 |InternalProtectedEvent|`System.EventHandler`|Summary not provided.|
 
 
-## Fields
+Fields
 
-| Name | Type | Summary |
-| ---- | ---- | ------- |
-|ProtectedField|`System.Int32`|Summary not provided.|
-|InternalField|`System.Int32`|Summary not provided.|
-|InternalProtectedField|`System.Int32`|Summary not provided.|
-|MyField|`System.Double`|Summary not provided.|
-|MyReadonlyField|`System.String`|Summary not provided.|
+### MyField `static`
+
+Summary not provided.
+
+### MyReadonlyField `static` `readonly`
+
+Summary not provided.
+

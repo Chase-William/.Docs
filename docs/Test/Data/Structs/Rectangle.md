@@ -36,9 +36,13 @@ Summary not provided.
 
 
 
-## Fields
+Fields
 
-| Name | Type | Summary |
-| ---- | ---- | ------- |
-|bottom|`System.Int32`|Summary not provided.|
-|right|`System.Int32`|Summary not provided.|
+### bottom `static`
+
+Summary not provided.
+
+### right `static`
+
+Summary not provided.
+

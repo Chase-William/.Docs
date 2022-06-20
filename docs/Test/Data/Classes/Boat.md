@@ -284,15 +284,21 @@ Summary not provided.
 |StaticInternalProtectedEvent|`System.EventHandler`|Summary not provided.|
 
 
-## Fields
+Fields
 
-| Name | Type | Summary |
-| ---- | ---- | ------- |
-|ProtectedField|`System.Int32`|Summary not provided.|
-|InternalField|`System.Int32`|Summary not provided.|
-|InternalProtectedField|`System.Int32`|Summary not provided.|
-|StaticInternalProtectedField|`System.Int32`|Summary not provided.|
-|MyField|`System.Double`|Summary not provided.|
-|MyStaticField|`System.Int32`|Summary not provided.|
-|MyConstantField|`System.String`|Summary not provided.|
-|MyReadonlyField|`System.String`|Summary not provided.|
+### MyConstantField `const`
+
+Summary not provided.
+
+### MyField `static`
+
+Summary not provided.
+
+### MyReadonlyField `static` `readonly`
+
+Summary not provided.
+
+### MyStaticField
+
+Summary not provided.
+

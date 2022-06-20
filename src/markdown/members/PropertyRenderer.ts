@@ -1,6 +1,6 @@
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider from "../Util"
+import divider, { check } from "../Util"
 
 export default function propertyRenderer(properties: PropertyModel[]): string {
   // Ascending Alphabetical
@@ -185,7 +185,3 @@ function renderPropertyTitle(prop: PropertyModel): string {
 
 //   return content
 // }
-
-function check(properties: PropertyModel[]): boolean {
-  return !properties || !properties.length
-}
