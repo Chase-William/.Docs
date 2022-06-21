@@ -6,6 +6,4 @@ Do some math delegate here.
 
 *@param* `Charp.Test.Data.Structs.Rectangle` y
 
-
-
 *@returns* `System.Void`

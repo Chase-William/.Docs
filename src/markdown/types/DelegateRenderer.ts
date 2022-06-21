@@ -4,7 +4,6 @@ import divider from "../Util";
 export default function delegateRenderer(model: DelegateModel): string {
   return (
     renderParameters(model.parameters) +
-    divider() +
     renderReturnType(model.returnType)
   )
 }
