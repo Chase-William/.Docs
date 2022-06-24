@@ -17,7 +17,8 @@ The most intuitive & reliable documentation generator library for C# projects.
 
 #### Bug Checklist
 
-- [ ] Nested types are missing encapsulating type in filename
+- [x] Nested types are missing encapsulating type in filename
+- [ ] Allow custom documentation base pathing
 
 ### Unit Testing
 

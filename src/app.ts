@@ -1,6 +1,8 @@
 import MarkdownRenderer from './markdown/markdownRenderer';
 import Nestable from './models/Nestable';
 import ModelTree from './models/ModelTree';
+import path = require('path');
+import { rmSync } from 'fs';
 // import ClassModel from './models/types/ClassModel'
 
 const spawn = import('child_process');
@@ -45,6 +47,9 @@ spawn
   .finally(() => {
     const root = new ModelTree('Charp', null);
     root.readChildren('json', new Array<string>(), root);
+
+    // Clean 
+    rmSync('./docs', { recursive: true, force: true })
 
     const renderer = new MarkdownRenderer()
     root.render(renderer)

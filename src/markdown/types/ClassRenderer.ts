@@ -3,5 +3,5 @@ import renderStandardMemberModel from "./StandardMemberRenderer";
 
 
 export default function classRenderer(model: ClassModel): string {
-  return renderStandardMemberModel(model)
+  return renderStandardMemberModel(model)  
 }

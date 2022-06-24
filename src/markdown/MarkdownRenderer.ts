@@ -1,8 +1,4 @@
-import { writeFile, existsSync, mkdirSync } from "fs";
-import EventModel from "../models/members/EventModel";
-import FieldModel from "../models/members/FieldModel";
-import MethodModel from "../models/members/MethodModel";
-import PropertyModel from "../models/members/PropertyModel";
+import { writeFile, existsSync, mkdirSync, rmdirSync, rmSync } from "fs";
 import ClassModel from "../models/types/ClassModel";
 import DelegateModel from "../models/types/DelegateModel";
 import EnumModel from "../models/types/EnumModel";
@@ -16,7 +12,6 @@ import classRenderer from "./types/ClassRenderer";
 import delegateRenderer from "./types/DelegateRenderer";
 import enumRenderer from "./types/EnumRenderer";
 import interfaceRenderer from "./types/InterfaceRenderer";
-import standardMembersRenderer from "./types/StandardMemberRenderer";
 import structRenderer from "./types/StructRenderer";
 import divider from "./Util";
 
@@ -27,17 +22,14 @@ export default class MarkdownRenderer implements Renderer {
   useDefaultFileStructure = true
 
   renderClass(model: ClassModel): void {
-    console.log(`Class - Rendering: ${model.fullName}`)
     let content = ''
     // Header
     content = renderTypeHeader(model)
     content += classRenderer(model)
-    console.log(model.comments.summary)
     writeMarkdownToFile(model, content)
   }
 
   renderDelegate(model: DelegateModel): void {
-    console.log(`Delegate - Rendering: ${model.fullName}`)
     let content = ''
     content = renderTypeHeader(model)
     content += delegateRenderer(model)
@@ -45,7 +37,6 @@ export default class MarkdownRenderer implements Renderer {
   }
 
   renderEnum(model: EnumModel): void {
-    console.log(`Enum - Rendering: ${model.fullName}`)
     let content = ''
     // Header
     content = renderTypeHeader(model)
@@ -54,7 +45,6 @@ export default class MarkdownRenderer implements Renderer {
   }
 
   renderInterface(model: InterfaceModel): void {
-    console.log(`Interface - Rendering: ${model.fullName}`)
     let content = ''
     // Header
     content = renderTypeHeader(model)
@@ -63,7 +53,6 @@ export default class MarkdownRenderer implements Renderer {
   }
 
   renderStruct(model: StructModel): void {
-    console.log(`Struct - Rendering: ${model.fullName}`)
     let content = ''
     // Header
     content = renderTypeHeader(model)
@@ -88,14 +77,16 @@ function renderTypeHeader(model: TypeModel<CommonComment>): string {
  */
 function writeMarkdownToFile(model: TypeModel<CommonComment>, content: string): void {
   const path = 'docs/' + getDirectory(model.fullName)
-
+  
+  // Build
   if (!existsSync(path)) {
     mkdirSync(path, { recursive: true })
   }
 
-  writeFile(path + `/${model.name}.md`, content, (err) => {
+  // Write to file using the FullName prop because we may need parent class names if this type is nested.
+  writeFile(path + `/${model.fullName.substring(model.fullName.lastIndexOf('.') + 1)}.md`, content, (err) => {
     if (err) {
-      console.log(err)
+      console.log(err) // TODO: Change to logger later
       throw err
     }      
   })

@@ -16,7 +16,7 @@ export default class ClassModel extends StandardMembersModel implements Renderab
   render(renderer: Renderer): void {
     renderer.renderClass(this)
 
-    this.childNodes.forEach((model, key) => {
+    this.childNodes.forEach((model) => {
       (model as Renderable).render(renderer)
     })
   }  
