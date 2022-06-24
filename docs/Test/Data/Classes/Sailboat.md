@@ -9,7 +9,6 @@ Usually these boats will feature atleast one engine for emergency senarios.
 
 Summary not provided.
 
-
 - *set* `public`
 
 ### AbstractNoSetProperty `virtual` `readonly`
@@ -17,7 +16,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `public`
-
 
 ### AbstractProperty `static` `virtual`
 
@@ -86,7 +84,6 @@ Distance from stern to bow of a boat.
 
 Summary not provided.
 
-
 - *set* `public`
 
 ### NoSetterProperty `readonly`
@@ -95,11 +92,9 @@ Summary not provided.
 
 - *get* `public`
 
-
 ### PrivateGetterProperty `setonly`
 
 Summary not provided.
-
 
 - *set* `public`
 
@@ -108,7 +103,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `public`
-
 
 ### SailHeight `static` `readonly`
 
@@ -128,7 +122,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `public`
 
 ### VirtualNoSetProperty `virtual` `readonly`
@@ -136,7 +129,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `public`
-
 
 ### VirtualProperty `static` `virtual`
 
@@ -165,7 +157,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `protected`
 
 ### GetProtectedNoSetProperty `readonly` `setonly`
@@ -174,13 +165,11 @@ Summary not provided.
 
 - *get* `protected`
 
-
 ## `internal` Properties
 
 ### InternalNoGetProperty `readonly` `setonly`
 
 Summary not provided.
-
 
 - *set* `internal`
 
@@ -190,7 +179,6 @@ Summary not provided.
 
 - *get* `internal`
 
-
 ### InternalProperty `static` `readonly` `setonly`
 
 Summary not provided.
@@ -198,14 +186,11 @@ Summary not provided.
 - *get* `internal`
 - *set* `internal`
 
-
-
 ## `internal protected` Properties
 
 ### InternalProtectedNoGetProperty `readonly` `setonly`
 
 Summary not provided.
-
 
 - *set* `internal` `protected`
 
@@ -215,7 +200,6 @@ Summary not provided.
 
 - *get* `internal` `protected`
 
-
 ### InternalProtectedProperty `static` `readonly` `setonly`
 
 Summary not provided.
@@ -223,48 +207,98 @@ Summary not provided.
 - *get* `internal` `protected`
 - *set* `internal` `protected`
 
-## Methods
+## `public` Methods
+
+### TryDeploySailToPercentage
+
+Summary not provided.
 
 ### TryDock
+
 Summary not provided.
 
 ### TryUndock
+
 Summary not provided.
 
-### TryDeploySailToPercentage
-Summary not provided.
+## `protected` Methods
 
 ### ProtectedMethod
+
 Summary not provided.
+
+## `internal` Methods
 
 ### InternalMethod
+
 Summary not provided.
+
+## `internal protected` Methods
 
 ### InternalProtectedMethod
-Summary not provided.
-
-
-
-## Events
-
-| Name | Type | Summary |
-| ---- | ---- | ------- |
-|Docked|`System.EventHandler`|Summary not provided.|
-|PublicEvent|`System.EventHandler`|A simple public event.|
-|UnDocked|`System.EventHandler`|Notifies subscribers the <see cref="T:Charp.Test.Data.Classes.Boat" /> has undocked.|
-|VirtualEvent|`System.EventHandler`|Summary not provided.|
-|ProtectedEvent|`System.EventHandler`|Summary not provided.|
-|InternalEvent|`System.EventHandler`|Summary not provided.|
-|InternalProtectedEvent|`System.EventHandler`|Summary not provided.|
-
-
-Fields
-
-### MyField `static`
 
 Summary not provided.
 
-### MyReadonlyField `static` `readonly`
+## `public` Events
+
+### Docked `virtual`
 
 Summary not provided.
 
+### PublicEvent
+
+A simple public event.
+
+### UnDocked `virtual`
+
+Notifies subscribers the <see cref="T:Charp.Test.Data.Classes.Boat" /> has undocked.
+
+### VirtualEvent `virtual`
+
+Summary not provided.
+
+## `protected` Events
+
+### ProtectedEvent
+
+Summary not provided.
+
+## `internal` Events
+
+### InternalEvent
+
+Summary not provided.
+
+## `internal protected` Events
+
+### InternalProtectedEvent
+
+Summary not provided.
+
+## `public` Fields
+
+### MyField
+
+Summary not provided.
+
+### MyReadonlyField `readonly`
+
+Summary not provided.
+
+## `protected` Fields
+
+### ProtectedField
+
+Summary not provided.
+
+## `internal` Fields
+
+### InternalField
+
+Summary not provided.
+
+## `internal protected` Fields
+
+### InternalProtectedField
+
+Summary not provided.

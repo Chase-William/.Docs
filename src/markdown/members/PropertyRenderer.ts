@@ -1,6 +1,6 @@
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { check } from "../Util"
+import divider, { check, optionalDivider } from "../Util"
 
 export default function propertyRenderer(properties: PropertyModel[]): string {
   // Ascending Alphabetical
@@ -27,16 +27,15 @@ export default function propertyRenderer(properties: PropertyModel[]): string {
 
   return (
     renderPublicProperties(publicProps) +
-    divider() +
+    optionalDivider(protectedProps) +
     renderProtectedProperties(protectedProps) +    
-    divider() +
+    optionalDivider(internalProps) +
     renderInternalProperties(internalProps) +
-    divider() + 
+    optionalDivider(privateProps) +
     renderPrivateProperties(privateProps) +
-    divider() +
+    optionalDivider(internalAndProtectedProps) +
     renderInternalAndProtectedProperties(internalAndProtectedProps)
   )
-  // return renderAsTables(properties)
 }
 
 function renderInternalAndProtectedProperties(properties: PropertyModel[]): string {
@@ -49,7 +48,7 @@ function renderInternalAndProtectedProperties(properties: PropertyModel[]): stri
       divider() +
       renderPropertyTitle(prop) +
       divider() +
-      `${getOptionalSummary(prop.comments)}` + 
+      getOptionalSummary(prop.comments) + 
       divider() +
       renderGetterAndSetter(prop)
     )
@@ -68,7 +67,7 @@ function renderProtectedProperties(properties: PropertyModel[]): string {
       divider() +
       renderPropertyTitle(prop) +
       divider() +
-      `${getOptionalSummary(prop.comments)}` +
+      getOptionalSummary(prop.comments) +
       divider() +
       renderGetterAndSetter(prop)
     )
@@ -87,7 +86,7 @@ function renderInternalProperties(properties: PropertyModel[]): string {
       divider() +
       renderPropertyTitle(prop) +
       divider() +
-      `${getOptionalSummary(prop.comments)}` + 
+      getOptionalSummary(prop.comments) + 
       divider() +
       renderGetterAndSetter(prop)
     )
@@ -106,7 +105,7 @@ function renderPrivateProperties(properties: PropertyModel[]): string {
       divider() +
       `### ${prop.name} ${(prop.hasGetter ? '' : "`readonly`")}` +
       divider() +
-      `${getOptionalSummary(prop.comments)}` +
+      getOptionalSummary(prop.comments) +
       divider() +
       renderGetterAndSetter(prop)
     )
@@ -125,7 +124,7 @@ function renderPublicProperties(properties: PropertyModel[]): string {
       divider() +
       renderPropertyTitle(prop) +
       divider() +
-      `${getOptionalSummary(prop.comments)}` +
+      getOptionalSummary(prop.comments) +
       divider() +
       renderGetterAndSetter(prop)
     )
@@ -143,12 +142,12 @@ function renderGetterAndSetter(prop: PropertyModel): string {
         prop.isGetPrivate ? ' `private`' : ''}${
         prop.isGetInternal ? ' `internal`' : ''}${
         prop.isGetProtected ? ' `protected`' : ''}`
-    ) 
+    )
   }
 
-  content += '\n'
-
   if (prop.hasSetter) {
+    if (prop.hasGetter)
+      content += '\n'
     content += (
       `- *set*${
         prop.isSetPublic ? ' `public`' : ''}${

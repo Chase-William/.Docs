@@ -4,16 +4,20 @@ The most intuitive & reliable documentation generator library for C# projects.
 
 > Charp only caters to C# and has no plans to expand to other languages. Reason being, targeting additional languages can cause already supported languages user experience to degrade due to efforts being devoted elsewhere. I, Chase William personally am not satified with the documentation generator solutions for C#, therefore I made my own 😀. Enjoy!
 
-### Markdown Renderer Checklist
+### Basic Markdown Renderer Checklist
 
 - [x] Class
 - [x] Interface
-- [ ] Struct
+- [x] Struct
 - [X] Delegate
 - [x] Property
 - [x] Field
-- [ ] Method
-- [ ] Event
+- [x] Method
+- [x] Event
+
+#### Bug Checklist
+
+- [ ] Nested types are missing encapsulating type in filename
 
 ### Unit Testing
 

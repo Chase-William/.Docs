@@ -1,6 +1,6 @@
 import FieldModel from "../../models/members/FieldModel"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { check } from "../Util"
+import divider, { check, optionalDivider } from "../Util"
 
 export default function fieldRenderer(fields: FieldModel[]): string {
   fields.sort((a, b) => a.name.localeCompare(b.name))
@@ -24,30 +24,23 @@ export default function fieldRenderer(fields: FieldModel[]): string {
     }
   }
 
-  return (
-    renderFields(publicFields) +
-    divider()
+  return (    
+    renderFields(publicFields, '## `public`') +
+    optionalDivider(privateFields) +
+    renderFields(privateFields, '## `private`') +
+    optionalDivider(protectedFields) +
+    renderFields(protectedFields, '## `protected`') +
+    optionalDivider(internalFields) +
+    renderFields(internalFields, '## `internal`') +
+    optionalDivider(internalAndProtectedFields) +
+    renderFields(internalAndProtectedFields, '## `internal protected`')
   )
 }
 
-function renderFields(fields: FieldModel[]): string {
+function renderFields(fields: FieldModel[], title: string): string {
   if (check(fields)) return ''
 
-  let content = '## '
-
-  const first = fields[0]
-  if (first.isPublic) {
-    content += '`public` '
-  } else if (first.isPrivate) {
-    content += '`private` '
-  } else if (first.isInternal && first.isProtected) {
-    content += '`internal protected` '
-  } else if (first.isInternal) {
-    content += '`internal` '
-  } else { // protected
-    content += '`protected` '
-  }
-  content = 'Fields'
+  let content = title + ' Fields'
 
   for (const field of fields) {
     content += (
@@ -62,7 +55,7 @@ function renderFields(fields: FieldModel[]): string {
 
 function renderFieldHeader(field: FieldModel): string {
   return `### ${field.name}${
-    field.isStatic ? '' : ' `static`'}${
+    field.isStatic ? ' `static`' : ''}${
     field.isConstant ? ' `const`' : ''}${
     field.isReadonly ? ' `readonly`' : ''}`
 }

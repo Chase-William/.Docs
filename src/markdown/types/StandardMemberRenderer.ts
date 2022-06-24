@@ -3,7 +3,7 @@ import eventRenderer from "../members/EventRenderer"
 import fieldRenderer from "../members/FieldRenderer"
 import methodRenderer from "../members/MethodRenderer"
 import propertyRenderer from "../members/PropertyRenderer"
-import divider from "../Util"
+import divider, { optionalDivider } from "../Util"
 
 export default function standardMembersRenderer(model: StandardMembersModel): string {
   let content = ''
@@ -11,19 +11,28 @@ export default function standardMembersRenderer(model: StandardMembersModel): st
   // Members
   /// Properties
   if (model.properties.length > 0) {
-    content += propertyRenderer(model.properties)
+    content += (
+      propertyRenderer(model.properties) +
+      optionalDivider(model.methods)
+    )
   }    
   /// Methods
   if (model.methods.length > 0) {
-    content += divider() + methodRenderer(model.methods)
+    content += (
+      methodRenderer(model.methods) +
+      optionalDivider(model.events)
+    )
   }    
   /// Events
   if (model.events.length > 0) {
-    content += divider() + eventRenderer(model.events)
+    content += (
+      eventRenderer(model.events) +
+      optionalDivider(model.fields)
+    )
   }    
   /// Fields
   if (model.fields.length > 0) {
-    content += divider() + fieldRenderer(model.fields)
+    content += fieldRenderer(model.fields)
   } 
 
   return content

@@ -8,7 +8,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `public`
 
 ### AbstractNoSetProperty `abstract` `readonly`
@@ -16,7 +15,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `public`
-
 
 ### AbstractProperty `static` `abstract`
 
@@ -71,7 +69,6 @@ Distance from stern to bow of a boat.
 
 Summary not provided.
 
-
 - *set* `public`
 
 ### NoSetterProperty `readonly`
@@ -79,7 +76,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `public`
-
 
 ### PrivateGetterProperty `static` `setonly`
 
@@ -106,7 +102,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `public`
 
 ### VirtualNoSetProperty `virtual` `readonly`
@@ -114,7 +109,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `public`
-
 
 ### VirtualProperty `static` `virtual`
 
@@ -143,7 +137,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `protected`
 
 ### GetProtectedNoSetProperty `readonly` `setonly`
@@ -152,13 +145,11 @@ Summary not provided.
 
 - *get* `protected`
 
-
 ## `internal` Properties
 
 ### InternalNoGetProperty `readonly` `setonly`
 
 Summary not provided.
-
 
 - *set* `internal`
 
@@ -167,7 +158,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `internal`
-
 
 ### InternalProperty `static` `readonly` `setonly`
 
@@ -182,7 +172,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `private`
 
 ### PrivateNoSetProperty 
@@ -190,7 +179,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `private`
-
 
 ### PrivateProperty 
 
@@ -205,7 +193,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `internal` `protected`
 
 ### InternalProtectedNoSetProperty `readonly` `setonly`
@@ -213,7 +200,6 @@ Summary not provided.
 Summary not provided.
 
 - *get* `internal` `protected`
-
 
 ### InternalProtectedProperty `static` `readonly` `setonly`
 
@@ -226,7 +212,6 @@ Summary not provided.
 
 Summary not provided.
 
-
 - *set* `internal` `protected`
 
 ### StaticInternalProtectedNoSetProperty `readonly` `setonly`
@@ -235,7 +220,6 @@ Summary not provided.
 
 - *get* `internal` `protected`
 
-
 ### StaticInternalProtectedProperty `readonly` `setonly`
 
 Summary not provided.
@@ -243,62 +227,128 @@ Summary not provided.
 - *get* `internal` `protected`
 - *set* `internal` `protected`
 
-## Methods
+## `public` Methods
 
-### ProtectedMethod
-Summary not provided.
+### ExampleStaticMethod
 
-### InternalMethod
-Summary not provided.
-
-### InternalProtectedMethod
-Summary not provided.
-
-### StaticInternalProtectedMethod
 Summary not provided.
 
 ### TryDock
+
 Attempts to dock the ship.
 
 ### TryUndock
+
 Attempts to undock the ship.
 
-### ExampleStaticMethod
-Summary not provided.
+## `protected` Methods
 
-
-
-## Events
-
-| Name | Type | Summary |
-| ---- | ---- | ------- |
-|PublicEvent|`System.EventHandler`|A simple public event.|
-|PrivateEvent|`System.EventHandler`|A simple private event.|
-|Docked|`System.EventHandler`|Notifies subscribers the <see cref="T:Charp.Test.Data.Structs.Point" /> has docked.|
-|UnDocked|`System.EventHandler`|Notifies subscribers the <see cref="T:Charp.Test.Data.Classes.Boat" /> has undocked.|
-|VirtualEvent|`System.EventHandler`|Summary not provided.|
-|StaticEvent|`System.EventHandler`|Summary not provided.|
-|ProtectedEvent|`System.EventHandler`|Summary not provided.|
-|InternalEvent|`System.EventHandler`|Summary not provided.|
-|InternalProtectedEvent|`System.EventHandler`|Summary not provided.|
-|StaticInternalProtectedEvent|`System.EventHandler`|Summary not provided.|
-
-
-Fields
-
-### MyConstantField `const`
+### ProtectedMethod
 
 Summary not provided.
 
-### MyField `static`
+## `internal` Methods
+
+### InternalMethod
 
 Summary not provided.
 
-### MyReadonlyField `static` `readonly`
+## `internal protected` Methods
+
+### InternalProtectedMethod
 
 Summary not provided.
 
-### MyStaticField
+### StaticInternalProtectedMethod
 
 Summary not provided.
 
+## `public` Events
+
+### Docked `abstract`
+
+Notifies subscribers the <see cref="T:Charp.Test.Data.Structs.Point" /> has docked.
+
+### PublicEvent
+
+A simple public event.
+
+### StaticEvent `static`
+
+Summary not provided.
+
+### UnDocked `virtual`
+
+Notifies subscribers the <see cref="T:Charp.Test.Data.Classes.Boat" /> has undocked.
+
+### VirtualEvent `virtual`
+
+Summary not provided.
+
+## `protected` Events
+
+### ProtectedEvent
+
+Summary not provided.
+
+## `internal` Events
+
+### InternalEvent
+
+Summary not provided.
+
+## `protected` Events
+
+### PrivateEvent
+
+A simple private event.
+
+## `internal protected` Events
+
+### InternalProtectedEvent
+
+Summary not provided.
+
+### StaticInternalProtectedEvent `static`
+
+Summary not provided.
+
+## `public` Fields
+
+### MyConstantField `static` `const`
+
+Summary not provided.
+
+### MyField
+
+Summary not provided.
+
+### MyReadonlyField `readonly`
+
+Summary not provided.
+
+### MyStaticField `static`
+
+Summary not provided.
+
+## `protected` Fields
+
+### ProtectedField
+
+Summary not provided.
+
+## `internal` Fields
+
+### InternalField
+
+Summary not provided.
+
+## `internal protected` Fields
+
+### InternalProtectedField
+
+Summary not provided.
+
+### StaticInternalProtectedField `static`
+
+Summary not provided.

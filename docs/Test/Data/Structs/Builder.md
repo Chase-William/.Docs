@@ -2,10 +2,8 @@
 
 Summary not provided.
 
-
-
-## Methods
+## `public` Methods
 
 ### Default
-Summary not provided.
 
+Summary not provided.

@@ -18,31 +18,20 @@ Summary not provided.
 - *get* `public`
 - *set* `public`
 
-
-
-
-
-
-
-
-
-## Methods
-
-### GetWidth
-Summary not provided.
+## `public` Methods
 
 ### GetHeight
-Summary not provided.
-
-
-
-Fields
-
-### bottom `static`
 
 Summary not provided.
 
-### right `static`
+### GetWidth
+
+Summary not provided.## `public` Fields
+
+### bottom
 
 Summary not provided.
 
+### right
+
+Summary not provided.

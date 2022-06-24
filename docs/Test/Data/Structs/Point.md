@@ -2,15 +2,12 @@
 
 Represents a x, y coordinate.
 
+## `public` Fields
 
-
-Fields
-
-### x `static`
+### x
 
 Summary not provided.
 
-### y `static`
+### y
 
 Summary not provided.
-
