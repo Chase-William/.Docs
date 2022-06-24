@@ -6,14 +6,18 @@ The most intuitive & reliable documentation generator library for C# projects.
 
 ### Basic Markdown Renderer Checklist
 
-- [x] Class
-- [x] Interface
-- [x] Struct
-- [X] Delegate
-- [x] Property
-- [x] Field
-- [x] Method
-- [x] Event
+- [ ] + prop type info
+- [ ] + method return type info
+- [ ] + method return comments
+- [ ] + method param type info
+- [ ] + method param comments
+- [ ] + field type info
+- [ ] + event type info
+- [ ] + "struct" to struct md files
+- [ ] + "class" to class md files
+- [ ] + "interface" to interface md files
+- [ ] + "delegate" to delegate md files
+- [ ] + "enum" to enum md files
 
 #### Bug Checklist
 
