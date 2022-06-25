@@ -233,13 +233,22 @@ Summary not provided.
 
 Summary not provided.
 
+- *@param* a `System.Int32`
+- *@param* b `Charp.Test.Data.Classes.Sailboat`
+
+- *@returns* System.Void
+
 ### TryDock
 
 Attempts to dock the ship.
 
+- *@returns* System.Boolean
+
 ### TryUndock
 
 Attempts to undock the ship.
+
+- *@returns* System.Boolean
 
 ## `protected` Methods
 
@@ -247,11 +256,15 @@ Attempts to undock the ship.
 
 Summary not provided.
 
+- *@returns* System.Void
+
 ## `internal` Methods
 
 ### InternalMethod
 
 Summary not provided.
+
+- *@returns* System.Void
 
 ## `internal protected` Methods
 
@@ -259,9 +272,13 @@ Summary not provided.
 
 Summary not provided.
 
+- *@returns* System.Void
+
 ### StaticInternalProtectedMethod
 
 Summary not provided.
+
+- *@returns* System.Void
 
 ## `public` Events
 

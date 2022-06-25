@@ -24,9 +24,13 @@ Summary not provided.
 
 Summary not provided.
 
+- *@returns* System.Int32
+
 ### GetWidth
 
-Summary not provided.## `public` Fields
+Summary not provided.
+
+- *@returns* System.Int32## `public` Fields
 
 ### bottom
 

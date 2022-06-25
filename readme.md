@@ -7,9 +7,9 @@ The most intuitive & reliable documentation generator library for C# projects.
 ### Basic Markdown Renderer Checklist
 
 - [x] + prop type info
-- [ ] + method return type info
+- [x] + method return type info
 - [ ] + method return comments
-- [ ] + method param type info
+- [x] + method param type info
 - [ ] + method param comments
 - [ ] + field type info
 - [ ] + event type info

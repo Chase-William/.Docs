@@ -1,13 +1,21 @@
-import { jsonMapMember, jsonMember, jsonObject } from 'typedjson';
+import { jsonArrayMember, jsonMapMember, jsonMember, jsonObject } from 'typedjson';
 import MethodComment from '../written/MethodComment';
 import MemberModel from './MemberModel';
+
+@jsonObject
+export class Parameter {
+  @jsonMember(String, { name: 'Name' })
+  name: string;
+  @jsonMember(String, { name: 'Type' })
+  type: string;
+}
 
 @jsonObject()
 export default class MethodModel extends MemberModel<MethodComment> {
   @jsonMember(String, { name: 'ReturnType' })
   returnType: string;
-  @jsonMapMember(String, String, { name: 'Parameters' })
-  parameters: Map<string, string>;
+  @jsonArrayMember(Parameter, { name: 'Parameters' })
+  parameters: Parameter[];
   @jsonMember(Boolean, { name: 'IsAbstract' })
   isAbstract: boolean;
   @jsonMember(Boolean, { name: 'IsVirtual' })

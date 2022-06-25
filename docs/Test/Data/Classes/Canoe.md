@@ -191,9 +191,13 @@ Summary not provided.
 
 Summary not provided.
 
+- *@returns* System.Boolean
+
 ### TryUndock
 
 Summary not provided.
+
+- *@returns* System.Boolean
 
 ## `protected` Methods
 
@@ -201,17 +205,23 @@ Summary not provided.
 
 Summary not provided.
 
+- *@returns* System.Void
+
 ## `internal` Methods
 
 ### InternalMethod
 
 Summary not provided.
 
+- *@returns* System.Void
+
 ## `internal protected` Methods
 
 ### InternalProtectedMethod
 
 Summary not provided.
+
+- *@returns* System.Void
 
 ## `public` Events
 

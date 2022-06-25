@@ -7,3 +7,5 @@ Summary not provided.
 ### Default
 
 Summary not provided.
+
+- *@returns* Charp.Test.Data.Structs.Rectangle

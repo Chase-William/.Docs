@@ -7,3 +7,5 @@ Summary not provided.
 ### Build
 
 Summary not provided.
+
+- *@returns* Charp.Test.Data.Classes.Canoe

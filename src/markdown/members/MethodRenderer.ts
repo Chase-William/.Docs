@@ -47,11 +47,20 @@ function renderMethods(methods: MethodModel[], title: string): string {
       divider() +
       `### ${method.name}` +
       divider() +
-      getOptionalSummary(method.comments)
+      getOptionalSummary(method.comments) +
+      (!(method.parameters) || method.parameters.length == 0 ? '' : '\n')
     )
     method.parameters.forEach(param => {
-      content += `\n*@param* \`${param}\`\n`
-    })    
+      content += (
+        '\n- *@param* ' +
+        `${param.name} \`${param.type}\``
+      )
+    })
+    content += (
+      (method.parameters ? divider() : '') +
+      '- *@returns* ' +
+      method.returnType
+    )  
   }  
   return content
 }
