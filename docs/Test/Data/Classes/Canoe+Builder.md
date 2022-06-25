@@ -1,4 +1,4 @@
-# `Builder`
+# Builder `class`
 
 Summary not provided.
 

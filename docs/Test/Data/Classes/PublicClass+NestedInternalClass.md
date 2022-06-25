@@ -1,4 +1,4 @@
-# `NestedInternalClass`
+# NestedInternalClass `class`
 
 Summary not provided.
 

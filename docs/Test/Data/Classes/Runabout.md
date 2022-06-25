@@ -1,4 +1,4 @@
-# `Runabout`
+# Runabout `class`
 
 The most common type of boat used in medium to large size bodies of water.
 

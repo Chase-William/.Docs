@@ -1,4 +1,4 @@
-# `Boat`
+# Boat `class`
 
 Summary not provided.
 

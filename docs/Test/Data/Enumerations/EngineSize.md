@@ -1,4 +1,4 @@
-# `EngineSize`
+# EngineSize `enum`
 
 Size of a given engine.
 

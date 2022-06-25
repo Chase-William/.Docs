@@ -1,4 +1,4 @@
-# `Canoe`
+# Canoe `class`
 
 A lightweight and narrow vessel used typically in smaller bodies of water.
 

@@ -1,4 +1,4 @@
-# `IPowerable`
+# IPowerable `interface`
 
 Represents an entity that features engine power.
 

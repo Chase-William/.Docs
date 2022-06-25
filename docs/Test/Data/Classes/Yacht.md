@@ -1,4 +1,4 @@
-# `Yacht`
+# Yacht `class`
 
 A large boat typically used by the weathly or for special occasions in large bodies of water.
 

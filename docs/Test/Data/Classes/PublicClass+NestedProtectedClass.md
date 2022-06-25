@@ -1,4 +1,4 @@
-# `NestedProtectedClass`
+# NestedProtectedClass `class`
 
 Summary not provided.
 

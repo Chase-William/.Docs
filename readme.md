@@ -12,7 +12,7 @@ The most intuitive & reliable documentation generator library for C# projects.
 - [x] + method param type info
 - [ ] + method param comments
 - [x] + field type info
-- [ ] + event type info
+- [x] + event type info
 - [ ] + "struct" to struct md files
 - [ ] + "class" to class md files
 - [ ] + "interface" to interface md files

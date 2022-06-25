@@ -1,4 +1,4 @@
-# `NestedPublicClass`
+# NestedPublicClass `class`
 
 Summary not provided.
 

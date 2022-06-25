@@ -1,4 +1,4 @@
-# `Sailboat`
+# Sailboat `class`
 
 A boat traditionaly powered via sail used in large bodies of water. 
 Usually these boats will feature atleast one engine for emergency senarios.

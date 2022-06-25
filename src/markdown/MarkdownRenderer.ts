@@ -63,7 +63,7 @@ export default class MarkdownRenderer implements Renderer {
 
 function renderTypeHeader(model: TypeModel<CommonComment>): string {
   return (
-    `# \`${model.name}\`` +
+    `# ${model.name} \`${model.type}\`` +
     divider() +
     getOptionalSummary(model.comments) +
     divider()

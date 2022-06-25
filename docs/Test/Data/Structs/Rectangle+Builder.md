@@ -1,4 +1,4 @@
-# `Builder`
+# Builder `struct`
 
 Summary not provided.
 

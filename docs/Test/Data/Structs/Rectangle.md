@@ -1,4 +1,4 @@
-# `Rectangle`
+# Rectangle `struct`
 
 Summary not provided.
 
