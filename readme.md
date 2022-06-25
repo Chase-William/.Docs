@@ -4,6 +4,10 @@ The most intuitive & reliable documentation generator library for C# projects.
 
 > Charp only caters to C# and has no plans to expand to other languages. Reason being, targeting additional languages can cause already supported languages user experience to degrade due to efforts being devoted elsewhere. I, Chase William personally am not satified with the documentation generator solutions for C#, therefore I made my own 😀. Enjoy!
 
+./charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.xml"
+
+start charp.exe "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.xml" 
+
 ### Basic Markdown Renderer Checklist
 
 - [x] + prop type info

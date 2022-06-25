@@ -2,7 +2,7 @@ import MarkdownRenderer from './markdown/markdownRenderer';
 import Nestable from './models/Nestable';
 import ModelTree from './models/ModelTree';
 import path = require('path');
-import { rmSync } from 'fs';
+import { readFileSync, rmSync } from 'fs';
 // import ClassModel from './models/types/ClassModel'
 
 const spawn = import('child_process');
@@ -30,14 +30,27 @@ console.log(process.argv)
 //     root.render(renderer)
 //   });
 
+const JSON_DIR = './json'
+let charpCoreExe = './Charp.exe'
+let dll = process.argv[2]
+let xml = process.argv[3]
+
+// Check for flag that indicates we're developing
+if (process.argv[2] === '--development-env') {
+  const paths = JSON.parse(readFileSync('C:/Dev/Charp/runner.json', { encoding: 'utf-8' }))
+  charpCoreExe = paths.charpCore
+  dll = paths.dll
+  xml = paths.xml
+}
+
 spawn
   .then(
     (proc) => {
       // proc.execSync('start \"C:\\Dev\\Sharpocs\\src\\Docsharp\\bin\\Debug\\net5.0\"')
-      proc.execFileSync('C:\\Dev\\Charp\\vendor\\Charp.Core\\src\\Charp\\bin\\Debug\\net5.0\\Charp.exe', [
-        'C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net5.0\\Charp.Test.Data.dll',
-        'C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net5.0\\Charp.Test.Data.xml',
-        './json'
+      proc.execFileSync(charpCoreExe, [
+        dll,
+        xml,
+        JSON_DIR
       ]);
     },
     (failed) => {
@@ -48,9 +61,13 @@ spawn
     const root = new ModelTree('Charp', null);
     root.readChildren('json', new Array<string>(), root);
 
-    let outputPath = process.argv[2]
-    if (!outputPath) {
-      outputPath = './docs'
+    let outputPath = './docs'
+    const indexOfOutput = process.argv.indexOf('-o')
+    if (indexOfOutput != -1) {
+      const p =  process.argv[indexOfOutput + 1]
+      if (p) {
+        outputPath = p
+      }       
     }
     
     // Clean 
@@ -59,4 +76,6 @@ spawn
     const renderer = new MarkdownRenderer()
     renderer.path = outputPath
     root.render(renderer)
+
+    rmSync(JSON_DIR, { recursive: true, force: true })
   });
