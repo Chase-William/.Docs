@@ -35,3 +35,12 @@ Needs to be remodeled as the system I devised for `Charp.Core` testing works bet
 - Classes lack interface implementation info.
 - Structs lack interface implementation info.
 - Need better use of hyper-links for connecting custom type info.
+
+### Markdown Standards
+
+Accessibility modifier group ordering should be as follows:
+- public
+- protected
+- internal
+- internal protected
+- private

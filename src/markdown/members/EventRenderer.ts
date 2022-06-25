@@ -30,11 +30,11 @@ export default function eventRenderer(events: EventModel[]): string {
     optionalDivider(protectedEvents) +
     renderEvents(protectedEvents, '## `protected`') +    
     optionalDivider(internalEvents) +
-    renderEvents(internalEvents, '## `internal`') +
-    optionalDivider(privateEvents) +
-    renderEvents(privateEvents, '## `protected`') +
+    renderEvents(internalEvents, '## `internal`') +   
     optionalDivider(internalAndProtectedEvents) +
-    renderEvents(internalAndProtectedEvents, '## `internal protected`')
+    renderEvents(internalAndProtectedEvents, '## `internal protected`') +
+    optionalDivider(privateEvents) +
+    renderEvents(privateEvents, '## `private`')
   ) 
 }
 
@@ -48,7 +48,7 @@ function renderEvents(events: EventModel[], title: string): string {
       divider() +
       renderEventHeader(event) +
       divider() +
-      `${getOptionalSummary(event.comments)}`
+      getOptionalSummary(event.comments)
     )
   }
   return content

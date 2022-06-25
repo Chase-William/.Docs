@@ -26,14 +26,14 @@ export default function fieldRenderer(fields: FieldModel[]): string {
 
   return (    
     renderFields(publicFields, '## `public`') +
-    optionalDivider(privateFields) +
-    renderFields(privateFields, '## `private`') +
-    optionalDivider(protectedFields) +
+    optionalDivider(protectedFields) +    
     renderFields(protectedFields, '## `protected`') +
     optionalDivider(internalFields) +
     renderFields(internalFields, '## `internal`') +
     optionalDivider(internalAndProtectedFields) +
-    renderFields(internalAndProtectedFields, '## `internal protected`')
+    renderFields(internalAndProtectedFields, '## `internal protected`') +
+    optionalDivider(privateFields) +
+    renderFields(privateFields, '## `private`')
   )
 }
 
@@ -47,7 +47,7 @@ function renderFields(fields: FieldModel[], title: string): string {
       divider() +
       renderFieldHeader(field) +
       divider() +
-      `${getOptionalSummary(field.comments)}`
+      getOptionalSummary(field.comments)
     )
   }
   return content

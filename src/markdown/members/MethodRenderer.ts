@@ -30,11 +30,11 @@ export default function methodRenderer(methods: MethodModel[]): string {
     optionalDivider(protectedMethods) +
     renderMethods(protectedMethods, '## `protected`') +    
     optionalDivider(internalMethods) +
-    renderMethods(internalMethods, '## `internal`') +
-    optionalDivider(privateMethods) +
-    renderMethods(privateMethods, '## `protected`') +
+    renderMethods(internalMethods, '## `internal`') +    
     optionalDivider(internalAndProtectedMethods) +
-    renderMethods(internalAndProtectedMethods, '## `internal protected`')
+    renderMethods(internalAndProtectedMethods, '## `internal protected`') +
+    optionalDivider(privateMethods) +
+    renderMethods(privateMethods, '## `private`')
   ) 
 }
 

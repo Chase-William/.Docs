@@ -26,16 +26,34 @@ export default function propertyRenderer(properties: PropertyModel[]): string {
   }
 
   return (
-    renderPublicProperties(publicProps) +
+    renderProperties(publicProps, '### `public`') +
     optionalDivider(protectedProps) +
-    renderProtectedProperties(protectedProps) +    
+    renderProperties(protectedProps, '### `protected`') +    
     optionalDivider(internalProps) +
-    renderInternalProperties(internalProps) +
-    optionalDivider(privateProps) +
-    renderPrivateProperties(privateProps) +
+    renderProperties(internalProps, '### `internal`') +   
     optionalDivider(internalAndProtectedProps) +
-    renderInternalAndProtectedProperties(internalAndProtectedProps)
+    renderProperties(internalAndProtectedProps, '### `internal protected`') +
+    optionalDivider(privateProps) +
+    renderProperties(privateProps, '### `private`')
   )
+}
+
+function renderProperties(properties: PropertyModel[], title: string): string {
+  if (check(properties)) return ''
+
+  let content = title + ' Properties'
+
+  for (const property of properties) {
+    content += (
+      divider() +
+      renderPropertyTitle(property) +
+      divider() +
+      getOptionalSummary(property.comments) +
+      divider() +
+      renderGetterAndSetter(property)
+    )
+  }
+  return content
 }
 
 function renderInternalAndProtectedProperties(properties: PropertyModel[]): string {
