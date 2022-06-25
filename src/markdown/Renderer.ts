@@ -9,6 +9,7 @@ import TypeModel from "../models/types/TypeModel"
 
 export default interface Renderer {
   useDefaultFileStructure: boolean
+  path: string
   // render<T extends ClassModel |DelegateModel | EnumModel | InterfaceModel | StructModel>(model: T): string
 
   // renderEvent(model: EventModel): string

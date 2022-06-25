@@ -1,4 +1,5 @@
 import { writeFile, existsSync, mkdirSync, rmdirSync, rmSync } from "fs";
+import path = require("path");
 import ClassModel from "../models/types/ClassModel";
 import DelegateModel from "../models/types/DelegateModel";
 import EnumModel from "../models/types/EnumModel";
@@ -20,20 +21,21 @@ import divider from "./Util";
  */
 export default class MarkdownRenderer implements Renderer {
   useDefaultFileStructure = true
+  path: string
 
   renderClass(model: ClassModel): void {
     let content = ''
     // Header
     content = renderTypeHeader(model)
     content += classRenderer(model)
-    writeMarkdownToFile(model, content)
+    writeMarkdownToFile(this.path, model, content)
   }
 
   renderDelegate(model: DelegateModel): void {
     let content = ''
     content = renderTypeHeader(model)
     content += delegateRenderer(model)
-    writeMarkdownToFile(model, content)
+    writeMarkdownToFile(this.path, model, content)
   }
 
   renderEnum(model: EnumModel): void {
@@ -41,7 +43,7 @@ export default class MarkdownRenderer implements Renderer {
     // Header
     content = renderTypeHeader(model)
     content += enumRenderer(model) 
-    writeMarkdownToFile(model, content)
+    writeMarkdownToFile(this.path, model, content)
   }
 
   renderInterface(model: InterfaceModel): void {
@@ -49,7 +51,7 @@ export default class MarkdownRenderer implements Renderer {
     // Header
     content = renderTypeHeader(model)
     content += interfaceRenderer(model) 
-    writeMarkdownToFile(model, content)
+    writeMarkdownToFile(this.path, model, content)
   }
 
   renderStruct(model: StructModel): void {
@@ -57,7 +59,7 @@ export default class MarkdownRenderer implements Renderer {
     // Header
     content = renderTypeHeader(model)
     content += structRenderer(model) 
-    writeMarkdownToFile(model, content)
+    writeMarkdownToFile(this.path, model, content)
   }
 }
 
@@ -75,16 +77,16 @@ function renderTypeHeader(model: TypeModel<CommonComment>): string {
  * @param model Contains the information required for path/file location.
  * @param content Markdown content to be written.
  */
-function writeMarkdownToFile(model: TypeModel<CommonComment>, content: string): void {
-  const path = 'docs/' + getDirectory(model.fullName)
+function writeMarkdownToFile(basePath: string, model: TypeModel<CommonComment>, content: string): void {
+  basePath = path.join(basePath, getDirectory(model.fullName))
   
   // Build
-  if (!existsSync(path)) {
-    mkdirSync(path, { recursive: true })
+  if (!existsSync(basePath)) {
+    mkdirSync(basePath, { recursive: true })
   }
 
   // Write to file using the FullName prop because we may need parent class names if this type is nested.
-  writeFile(path + `/${model.fullName.substring(model.fullName.lastIndexOf('.') + 1)}.md`, content, (err) => {
+  writeFile(basePath + `/${model.fullName.substring(model.fullName.lastIndexOf('.') + 1)}.md`, content, (err) => {
     if (err) {
       console.log(err) // TODO: Change to logger later
       throw err

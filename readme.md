@@ -13,17 +13,17 @@ The most intuitive & reliable documentation generator library for C# projects.
 - [ ] + method param comments
 - [x] + field type info
 - [x] + event type info
-- [ ] + "struct" to struct md files
-- [ ] + "class" to class md files
-- [ ] + "interface" to interface md files
-- [ ] + "delegate" to delegate md files
-- [ ] + "enum" to enum md files
+- [x] + "struct" to struct md files
+- [x] + "class" to class md files
+- [x] + "interface" to interface md files
+- [x] + "delegate" to delegate md files
+- [x] + "enum" to enum md files
 - [x] + standardize ordering of accessibility modifier groupings
 
 #### Bug Checklist
 
 - [x] Nested types are missing encapsulating type in filename
-- [ ] Allow custom documentation base pathing
+- [x] Allow custom documentation base pathing
 
 ### Unit Testing
 

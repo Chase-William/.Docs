@@ -48,9 +48,15 @@ spawn
     const root = new ModelTree('Charp', null);
     root.readChildren('json', new Array<string>(), root);
 
+    let outputPath = process.argv[2]
+    if (!outputPath) {
+      outputPath = './docs'
+    }
+    
     // Clean 
-    rmSync('./docs', { recursive: true, force: true })
+    rmSync(outputPath, { recursive: true, force: true })
 
     const renderer = new MarkdownRenderer()
+    renderer.path = outputPath
     root.render(renderer)
   });
