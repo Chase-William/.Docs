@@ -332,40 +332,40 @@ A simple private event.
 
 ## `public` Fields
 
-### MyConstantField `static` `const`
+### MyConstantField`<System.String>` `static` `const`
 
 Summary not provided.
 
-### MyField
+### MyField`<System.Double>`
 
 Summary not provided.
 
-### MyReadonlyField `readonly`
+### MyReadonlyField`<System.String>` `readonly`
 
 Summary not provided.
 
-### MyStaticField `static`
+### MyStaticField`<System.Int32>` `static`
 
 Summary not provided.
 
 ## `protected` Fields
 
-### ProtectedField
+### ProtectedField`<System.Int32>`
 
 Summary not provided.
 
 ## `internal` Fields
 
-### InternalField
+### InternalField`<System.Int32>`
 
 Summary not provided.
 
 ## `internal protected` Fields
 
-### InternalProtectedField
+### InternalProtectedField`<System.Int32>`
 
 Summary not provided.
 
-### StaticInternalProtectedField `static`
+### StaticInternalProtectedField`<System.Int32>` `static`
 
 Summary not provided.

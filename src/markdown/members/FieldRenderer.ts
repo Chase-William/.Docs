@@ -54,7 +54,8 @@ function renderFields(fields: FieldModel[], title: string): string {
 }
 
 function renderFieldHeader(field: FieldModel): string {
-  return `### ${field.name}${
+  return `### ${field.name}\`<${
+    field.type}>\`${
     field.isStatic ? ' `static`' : ''}${
     field.isConstant ? ' `const`' : ''}${
     field.isReadonly ? ' `readonly`' : ''}`

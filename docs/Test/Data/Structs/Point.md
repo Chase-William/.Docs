@@ -4,10 +4,10 @@ Represents a x, y coordinate.
 
 ## `public` Fields
 
-### x
+### x`<System.Int32>`
 
 Summary not provided.
 
-### y
+### y`<System.Int32>`
 
 Summary not provided.

@@ -275,28 +275,28 @@ Summary not provided.
 
 ## `public` Fields
 
-### MyField
+### MyField`<System.Double>`
 
 Summary not provided.
 
-### MyReadonlyField `readonly`
+### MyReadonlyField`<System.String>` `readonly`
 
 Summary not provided.
 
 ## `protected` Fields
 
-### ProtectedField
+### ProtectedField`<System.Int32>`
 
 Summary not provided.
 
 ## `internal` Fields
 
-### InternalField
+### InternalField`<System.Int32>`
 
 Summary not provided.
 
 ## `internal protected` Fields
 
-### InternalProtectedField
+### InternalProtectedField`<System.Int32>`
 
 Summary not provided.

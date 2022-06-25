@@ -32,10 +32,10 @@ Summary not provided.
 
 - *@returns* System.Int32## `public` Fields
 
-### bottom
+### bottom`<System.Int32>`
 
 Summary not provided.
 
-### right
+### right`<System.Int32>`
 
 Summary not provided.
