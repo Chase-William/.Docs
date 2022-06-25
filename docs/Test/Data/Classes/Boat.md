@@ -282,51 +282,51 @@ Summary not provided.
 
 ## `public` Events
 
-### Docked `abstract`
+### Docked`<System.EventHandler>` `abstract`
 
 Notifies subscribers the <see cref="T:Charp.Test.Data.Structs.Point" /> has docked.
 
-### PublicEvent
+### PublicEvent`<System.EventHandler>`
 
 A simple public event.
 
-### StaticEvent `static`
+### StaticEvent`<System.EventHandler>` `static`
 
 Summary not provided.
 
-### UnDocked `virtual`
+### UnDocked`<System.EventHandler>` `virtual`
 
 Notifies subscribers the <see cref="T:Charp.Test.Data.Classes.Boat" /> has undocked.
 
-### VirtualEvent `virtual`
+### VirtualEvent`<System.EventHandler>` `virtual`
 
 Summary not provided.
 
 ## `protected` Events
 
-### ProtectedEvent
+### ProtectedEvent`<System.EventHandler>`
 
 Summary not provided.
 
 ## `internal` Events
 
-### InternalEvent
+### InternalEvent`<System.EventHandler>`
 
 Summary not provided.
 
 ## `internal protected` Events
 
-### InternalProtectedEvent
+### InternalProtectedEvent`<System.EventHandler>`
 
 Summary not provided.
 
-### StaticInternalProtectedEvent `static`
+### StaticInternalProtectedEvent`<System.EventHandler>` `static`
 
 Summary not provided.
 
 ## `private` Events
 
-### PrivateEvent
+### PrivateEvent`<System.EventHandler>`
 
 A simple private event.
 

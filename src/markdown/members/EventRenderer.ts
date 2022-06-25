@@ -55,7 +55,8 @@ function renderEvents(events: EventModel[], title: string): string {
 }
 
 function renderEventHeader(event: EventModel): string {
-  return `### ${event.name}${
+  return `### ${event.name}\`<${
+    event.type}>\`${
     event.isStatic ? ' `static`' : ''}${
     event.isVirtual ? ' `virtual`' : ''}${
     event.isAbstract ? ' `abstract`' : ''}`
