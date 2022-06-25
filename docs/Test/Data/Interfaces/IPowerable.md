@@ -2,16 +2,16 @@
 
 Represents an entity that features engine power.
 
-## `public` Properties
+### `public` Properties
 
-### Engine `static` `abstract`
+### Engine`<Charp.Test.Data.Enumerations.EngineSize>` `static` `abstract`
 
 Size of a boat's engine(s).
 
 - *get* `public`
 - *set* `public`
 
-### EngineCount `static` `abstract`
+### EngineCount`<System.Int32>` `static` `abstract`
 
 Quantity of engines.
 

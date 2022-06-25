@@ -2,16 +2,16 @@
 
 Summary not provided.
 
-## `public` Properties
+### `public` Properties
 
-### Left `static`
+### Left`<System.Int32>` `static`
 
 Summary not provided.
 
 - *get* `public`
 - *set* `public`
 
-### Top `static`
+### Top`<System.Int32>` `static`
 
 Summary not provided.
 

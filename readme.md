@@ -6,7 +6,7 @@ The most intuitive & reliable documentation generator library for C# projects.
 
 ### Basic Markdown Renderer Checklist
 
-- [ ] + prop type info
+- [x] + prop type info
 - [ ] + method return type info
 - [ ] + method return comments
 - [ ] + method param type info
@@ -18,6 +18,7 @@ The most intuitive & reliable documentation generator library for C# projects.
 - [ ] + "interface" to interface md files
 - [ ] + "delegate" to delegate md files
 - [ ] + "enum" to enum md files
+- [x] + standardize ordering of accessibility modifier groupings
 
 #### Bug Checklist
 
@@ -44,3 +45,17 @@ Accessibility modifier group ordering should be as follows:
 - internal
 - internal protected
 - private
+
+
+##### Config Ideas
+
+```json
+{
+  /*
+    Denotes how the documentation will classify accessibility.
+    External, your library is viewed as a dependency
+    Internal, your library is viewed as if they were writing it
+  */
+  "perspective": "external" // or "internal"
+}
+```

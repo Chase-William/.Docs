@@ -2,197 +2,197 @@
 
 The most common type of boat used in medium to large size bodies of water.
 
-## `public` Properties
+### `public` Properties
 
-### AbstractNoGetProperty `virtual` `setonly`
+### AbstractNoGetProperty`<System.Int32>` `virtual` `setonly`
 
 Summary not provided.
 
 - *set* `public`
 
-### AbstractNoSetProperty `virtual` `readonly`
+### AbstractNoSetProperty`<System.Int32>` `virtual` `readonly`
 
 Summary not provided.
 
 - *get* `public`
 
-### AbstractProperty `static` `virtual`
-
-Summary not provided.
-
-- *get* `public`
-- *set* `public`
-
-### Engine `static` `virtual`
+### AbstractProperty`<System.Int32>` `static` `virtual`
 
 Summary not provided.
 
 - *get* `public`
 - *set* `public`
 
-### EngineCount `static` `virtual`
+### Engine`<Charp.Test.Data.Enumerations.EngineSize>` `static` `virtual`
 
 Summary not provided.
 
 - *get* `public`
 - *set* `public`
 
-### GetProtectedProperty `static` `setonly`
+### EngineCount`<System.Int32>` `static` `virtual`
+
+Summary not provided.
+
+- *get* `public`
+- *set* `public`
+
+### GetProtectedProperty`<System.Int32>` `static` `setonly`
 
 Summary not provided.
 
 - *get* `protected`
 - *set* `public`
 
-### InternalGetProperty `static` `setonly`
+### InternalGetProperty`<System.Int32>` `static` `setonly`
 
 Summary not provided.
 
 - *get* `internal`
 - *set* `public`
 
-### InternalProtectedGetProperty `static` `setonly`
+### InternalProtectedGetProperty`<System.Int32>` `static` `setonly`
 
 Summary not provided.
 
 - *get* `internal` `protected`
 - *set* `public`
 
-### InternalProtectedSetProperty `static` `readonly`
+### InternalProtectedSetProperty`<System.Int32>` `static` `readonly`
 
 Summary not provided.
 
 - *get* `public`
 - *set* `internal` `protected`
 
-### InternalSetProperty `static` `readonly`
+### InternalSetProperty`<System.Int32>` `static` `readonly`
 
 Summary not provided.
 
 - *get* `public`
 - *set* `internal`
 
-### Length `static`
+### Length`<System.Double>` `static`
 
 Distance from stern to bow of a boat.
 
 - *get* `public`
 - *set* `public`
 
-### NoGetterProperty `setonly`
+### NoGetterProperty`<System.Int32>` `setonly`
 
 Summary not provided.
 
 - *set* `public`
 
-### NoSetterProperty `readonly`
+### NoSetterProperty`<System.Int32>` `readonly`
 
 Summary not provided.
 
 - *get* `public`
 
-### PrivateGetterProperty `setonly`
+### PrivateGetterProperty`<System.Int32>` `setonly`
 
 Summary not provided.
 
 - *set* `public`
 
-### PrivateSetterProperty `readonly`
+### PrivateSetterProperty`<System.Int32>` `readonly`
 
 Summary not provided.
 
 - *get* `public`
 
-### SetProtectedProperty `static` `readonly`
+### SetProtectedProperty`<System.Int32>` `static` `readonly`
 
 Summary not provided.
 
 - *get* `public`
 - *set* `protected`
 
-### VirtualNoGetProperty `virtual` `setonly`
+### VirtualNoGetProperty`<System.Int32>` `virtual` `setonly`
 
 Summary not provided.
 
 - *set* `public`
 
-### VirtualNoSetProperty `virtual` `readonly`
+### VirtualNoSetProperty`<System.Int32>` `virtual` `readonly`
 
 Summary not provided.
 
 - *get* `public`
 
-### VirtualProperty `static` `virtual`
+### VirtualProperty`<System.Int32>` `static` `virtual`
 
 Summary not provided.
 
 - *get* `public`
 - *set* `public`
 
-### Weight `static`
+### Weight`<System.Double>` `static`
 
 Mass of the boat in tons.
 
 - *get* `public`
 - *set* `public`
 
-## `protected` Properties
+### `protected` Properties
 
-### FullProtectedProperty `static` `readonly` `setonly`
+### FullProtectedProperty`<System.Int32>` `static` `readonly` `setonly`
 
 Summary not provided.
 
 - *get* `protected`
 - *set* `protected`
 
-### GetProtectedNoGetProperty `readonly` `setonly`
+### GetProtectedNoGetProperty`<System.Int32>` `readonly` `setonly`
 
 Summary not provided.
 
 - *set* `protected`
 
-### GetProtectedNoSetProperty `readonly` `setonly`
+### GetProtectedNoSetProperty`<System.Int32>` `readonly` `setonly`
 
 Summary not provided.
 
 - *get* `protected`
 
-## `internal` Properties
+### `internal` Properties
 
-### InternalNoGetProperty `readonly` `setonly`
+### InternalNoGetProperty`<System.Int32>` `readonly` `setonly`
 
 Summary not provided.
 
 - *set* `internal`
 
-### InternalNoSetProperty `readonly` `setonly`
+### InternalNoSetProperty`<System.Int32>` `readonly` `setonly`
 
 Summary not provided.
 
 - *get* `internal`
 
-### InternalProperty `static` `readonly` `setonly`
+### InternalProperty`<System.Int32>` `static` `readonly` `setonly`
 
 Summary not provided.
 
 - *get* `internal`
 - *set* `internal`
 
-## `internal protected` Properties
+### `internal protected` Properties
 
-### InternalProtectedNoGetProperty `readonly` `setonly`
+### InternalProtectedNoGetProperty`<System.Int32>` `readonly` `setonly`
 
 Summary not provided.
 
 - *set* `internal` `protected`
 
-### InternalProtectedNoSetProperty `readonly` `setonly`
+### InternalProtectedNoSetProperty`<System.Int32>` `readonly` `setonly`
 
 Summary not provided.
 
 - *get* `internal` `protected`
 
-### InternalProtectedProperty `static` `readonly` `setonly`
+### InternalProtectedProperty`<System.Int32>` `static` `readonly` `setonly`
 
 Summary not provided.
 
