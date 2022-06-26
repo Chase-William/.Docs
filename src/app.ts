@@ -68,7 +68,7 @@ spawn
     }
     
     // Clean 
-    rmSync(outputPath, { recursive: true, force: true })
+    // rmSync(outputPath, { recursive: true, force: true })
 
     const renderer = new MarkdownRenderer()
     renderer.path = outputPath

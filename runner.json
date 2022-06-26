@@ -1,5 +1,5 @@
 {
-  "charpCore": "C:\\Dev\\Charp\\vendor\\Charp.Core\\src\\Charp.Runner\\bin\\Debug\\net5.0\\Charp.Runner.exe",
-  "dll": "C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net5.0\\Charp.Test.Data.dll",
-  "xml": "C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net5.0\\Charp.Test.Data.xml"
+  "charpCore": "C:\\Dev\\Charp\\vendor\\Charp.Core\\src\\Charp.Runner\\bin\\Debug\\net6.0\\Charp.Runner.exe",
+  "dll": "C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net6.0\\Charp.Test.Data.dll",
+  "xml": "C:\\Dev\\Charp\\vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net6.0\\Charp.Test.Data.xml"
 }
