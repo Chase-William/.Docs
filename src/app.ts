@@ -1,13 +1,10 @@
 import MarkdownRenderer from './markdown/markdownRenderer';
-import Nestable from './models/Nestable';
 import ModelTree from './models/ModelTree';
-import path = require('path');
 import { readFileSync, rmSync } from 'fs';
-// import ClassModel from './models/types/ClassModel'
 
 const spawn = import('child_process');
 
-console.log(process.argv)
+// console.log(process.argv)
 
 // spawn
 //   .then(
@@ -31,7 +28,7 @@ console.log(process.argv)
 //   });
 
 const JSON_DIR = './json'
-let charpCoreExe = './Charp.exe'
+let charpCoreExe = 'Charp.Runner.exe'
 let dll = process.argv[2]
 let xml = process.argv[3]
 

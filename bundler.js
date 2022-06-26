@@ -5,9 +5,10 @@ const fs = require('fs')
 const path = require('path')
 
 const DEPLOYABLE_DIR = 'deployable'
-const CHARP_CORE_DIR = 'vendor/Charp.Core/src/Charp.Runner/bin/Debug/net5.0'
+const CHARP_CORE_DIR = 'vendor/Charp.Core/src/Charp.Runner/bin/Release/net5.0'
 const CHARP_CORE_LIBS = [
   'Charp.Core.dll',
+  'Charp.Runner.dll',
   'Charp.Runner.exe',
   'DocXml.dll',
   'System.Collections.Immutable.dll',
@@ -15,7 +16,9 @@ const CHARP_CORE_LIBS = [
   'System.Reflection.MetadataLoadContext.dll',
   'System.Runtime.CompilerServices.Unsafe.dll',
   'System.Text.Encodings.Web.dll',
-  'System.Text.Json.dll'
+  'System.Text.Json.dll',
+  'Charp.Runner.runtimeconfig.json',
+  'Charp.Runner.deps.json',
 ]
 
 console.log('Starting Post-Bundler')

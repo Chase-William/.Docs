@@ -2,11 +2,12 @@
 
 The most intuitive & reliable documentation generator library for C# projects.
 
-> Charp only caters to C# and has no plans to expand to other languages. Reason being, targeting additional languages can cause already supported languages user experience to degrade due to efforts being devoted elsewhere. I, Chase William personally am not satified with the documentation generator solutions for C#, therefore I made my own 😀. Enjoy!
+> Charp caters to C# and has no plans to expand to other languages. I, Chase William personally am not satified with the documentation generator solutions for C#, therefore I am making my own 😀 Enjoy!
 
-./charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.xml"
-
-start charp.exe "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net5.0\Charp.Test.Data.xml" 
+```bash
+# Run as installed
+charp "<path>.dll" "<path>.xml" -o <output-dir>
+```
 
 ### Basic Markdown Renderer Checklist
 
@@ -33,25 +34,41 @@ start charp.exe "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\n
 
 Needs to be remodeled as the system I devised for `Charp.Core` testing works better.
 
-### To be Implemented after Initial Release
+### Needed
 
-- Interfaces lack interface implementation info.
-- Classes lack inheritance info.
-- Classes lack interface implementation info.
-- Structs lack interface implementation info.
-- Need better use of hyper-links for connecting custom type info.
+- Implemented interface info needed
+- Inherited classes info needed
+- Use hyper-links for connecting types
+- Table of contents needed
+- Indicater for inherited members
 
 ### Markdown Standards
 
-Accessibility modifier group ordering should be as follows:
+#### Accessibility modifier group ordering should be as follows:
 - public
 - protected
 - internal
 - internal protected
 - private
 
+#### Other info & modifiers are to be ordered as such:
+- \<type\>
+- const
+- readonly
+- static
+- virtual
+- abstract
 
-##### Config Ideas
+### Dependencies
+
+- .NET 5.0 -> `Charp.Core`
+- Node 17.0+ *Recommended*
+
+### Deployment Targets
+
+- [Choca](https://docs.chocolatey.org)
+
+### Config Ideas
 
 ```json
 {
