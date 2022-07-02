@@ -26,8 +26,19 @@ export default class MarkdownRenderer implements Renderer {
 
   renderClass(model: ClassModel): void {
     let content = ''
+    // if (model.isPublic && !this.config.type.class.showIfPublic)
+    //   return
+    // else if (model.isProtected && !this.config.type.class.showIfProtected)
+    //   return
+    // else if (model.isInternal && !this.config.type.class.showIfInternal)
+    //   return
+    // else if (model.isInternal && model.isProtected && !this.config.type.class.showIfInternalProtected)
+    //   return
+    // else if (model.ispr && !this.config.type.class.showIfPublic)
+    //   return
+    // else if (model.isPublic && !this.config.type.class.showIfPublic)
+    //   return
     // Header
-    content = renderTypeHeader(model)
     content += classRenderer(model)
     writeMarkdownToFile(this.path, model, content)
   }
@@ -64,7 +75,7 @@ export default class MarkdownRenderer implements Renderer {
   }
 }
 
-function renderTypeHeader(model: TypeModel<CommonComment>): string {
+export function renderTypeHeader(model: TypeModel<CommonComment>): string {
   return (
     `# ${model.name} \`${model.type}\`` +
     divider() +

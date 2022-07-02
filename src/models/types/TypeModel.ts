@@ -5,21 +5,17 @@ import Renderable from '../Renderable';
 import CommonComment from '../written/CommonComment';
 import Nestable from '../Nestable'
 import ClassModel from './ClassModel';
+import AccessibilityModel from '../AccessibilityModel';
 
 /**
  * Represents any kind of <type> that can be defined.
  */
  @jsonObject()
-export default class TypeModel<T extends CommonComment> extends Model {
+export default class TypeModel<T extends CommonComment> extends AccessibilityModel {
   @jsonMember(String, { name: 'Namespace' })
   namespace: string;
   @jsonMember(String, { name: 'FullName' })
   fullName: string;
-  @jsonMember(Boolean, { name: 'IsPublic' })
-  isPublic: boolean;
-  @jsonMember(Boolean, { name: 'IsInternal' })
-  isInternal: boolean;
-  @jsonMember(Boolean, { name: 'IsProtected'})
   isProtected: boolean;
   @jsonMember(String, { name: 'Parent' })
   baseType: string;
