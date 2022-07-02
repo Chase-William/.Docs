@@ -1,5 +1,6 @@
 import { writeFile, existsSync, mkdirSync, rmdirSync, rmSync } from "fs";
 import path = require("path");
+import Configuration from "../models/config/Configuration";
 import ClassModel from "../models/types/ClassModel";
 import DelegateModel from "../models/types/DelegateModel";
 import EnumModel from "../models/types/EnumModel";
@@ -20,7 +21,7 @@ import divider from "./Util";
  * Implementation for rendering metadata/documentation to markdown. 
  */
 export default class MarkdownRenderer implements Renderer {
-  useDefaultFileStructure = true
+  config: Configuration;
   path: string
 
   renderClass(model: ClassModel): void {

@@ -1,0 +1,41 @@
+{
+  "perspective": "external",
+  "type": {
+    "class": {
+      "showIfPublic": false,
+      "showIfInternalProtected": true,
+      "denoteIfStatic": false
+    },
+    "interface": {
+      "showIfPublic": false,
+      "showIfInternalProtected": true
+    },
+    "enum": {
+      "showIfPublic": false,
+      "showIfInternalProtected": true
+    },
+    "delegate": {
+      "showIfPublic": false,
+      "showIfInternalProtected": true
+    }
+  },
+  "member": {
+    "property": {
+      "showIfPublic": false,
+      "showIfInternalProtected": true,
+      "denoteIfStatic": false,
+      "denoteIfSetonly": false
+    },
+    "field": {
+      "showIfPublic": false,
+      "showIfInternalProtected": true,
+      "denoteIfStatic": false,
+      "denoteIfConst": false
+    },
+    "event": {
+      "showIfPublic": false,
+      "showIfInternalProtected": true,
+      "denoteIfStatic": false
+    }
+  }
+}

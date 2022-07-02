@@ -1,14 +1,16 @@
 #### Todo List
 
-- Setup better containerized jest test for models & config
+- [x] Setup configuration for projects
+- [ ] Integrate configuration into markdown rendering pipeline
 
-- Setup configuration for projects
+
 - Can we use .csproj path instead of *.xml & *.dll
   - If we can, setup system to allow use of either approach
-- Test deployment on a system where a user doesn't have .NET 5 already installed
+- Test deployment on a system where a user doesn't have .NET 6.0 already installed
 - Test other language versions and framework versions to generate docs from
 - Update `Charp` documentation
 - Allow a param to be passed to cmd line like *--external* when running no config file
+- Fix jest test for models other than config
 
 ### Basic Markdown Renderer Checklist
 

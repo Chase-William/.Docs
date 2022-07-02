@@ -7,4 +7,12 @@ export default class PropertyConfigModel extends MemberConfigModel {
   denoteIfReadonly: boolean
   @jsonMember(Boolean)
   denoteIfSetonly: boolean
+
+  apply(config: PropertyConfigModel): void {
+    super.apply(config)
+    if (super.check(this.denoteIfReadonly, config.denoteIfReadonly))
+      this.denoteIfReadonly = config.denoteIfReadonly
+    if (super.check(this.denoteIfSetonly, config.denoteIfSetonly))
+      this.denoteIfSetonly = config.denoteIfSetonly
+  }
 }

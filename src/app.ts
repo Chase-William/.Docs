@@ -1,7 +1,7 @@
 import MarkdownRenderer from './markdown/markdownRenderer';
 import ModelTree from './models/ModelTree';
 import { existsSync, readFileSync, rmSync } from 'fs';
-import Configuration from './models/config/Configuration';
+import Configuration, { loadConfiguration } from './models/config/Configuration';
 import { TypedJSON } from 'typedjson';
 import { exit } from 'process';
 
@@ -43,11 +43,8 @@ if (process.argv[2] === '--development-env') {
   charpCoreExe = paths.charpCore
   dll = paths.dll
   xml = paths.xml
-  config = new TypedJSON(Configuration).parse(readFileSync('./configurations/internal-perspective.json', { encoding: 'utf-8' }))
+  config = loadConfiguration('./configurations/internal-perspective.json')
 }
-
-
-exit
 
 spawn
   .then(
@@ -81,6 +78,7 @@ spawn
 
     const renderer = new MarkdownRenderer()
     renderer.path = outputPath
+    renderer.config = config
     root.render(renderer)
 
     rmSync(JSON_DIR, { recursive: true, force: true })

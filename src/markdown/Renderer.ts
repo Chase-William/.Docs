@@ -1,15 +1,13 @@
-import Model from "../models/Model"
-import Nestable from "../models/Nestable"
+import Configuration from "../models/config/Configuration"
 import ClassModel from "../models/types/ClassModel"
 import DelegateModel from "../models/types/DelegateModel"
 import EnumModel from "../models/types/EnumModel"
 import InterfaceModel from "../models/types/InterfaceModel"
 import StructModel from "../models/types/StructModel"
-import TypeModel from "../models/types/TypeModel"
 
 export default interface Renderer {
-  useDefaultFileStructure: boolean
   path: string
+  config: Configuration
   // render<T extends ClassModel |DelegateModel | EnumModel | InterfaceModel | StructModel>(model: T): string
 
   // renderEvent(model: EventModel): string

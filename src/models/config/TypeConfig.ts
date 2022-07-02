@@ -17,4 +17,18 @@ export default class TypeConfig {
   enum: EnumConfigModel
   @jsonMember(DelegateConfigModel)
   delegate: DelegateConfigModel
+
+  apply(config: TypeConfig): void {
+    // Incoming config from user may have undefined props
+    if (config.class)
+      this.class.apply(config.class)
+    if (config.interface)
+      this.interface.apply(config.interface)
+    if (config.struct)
+      this.struct.apply(config.struct)
+    if (config.enum)
+      this.enum.apply(config.enum)
+    if (config.delegate)
+      this.delegate.apply(config.delegate)
+  }
 }

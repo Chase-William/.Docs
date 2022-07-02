@@ -14,4 +14,15 @@ export default class MemberConfig {
   method: MethodConfigModel
   @jsonMember(EventConfigModel)
   event: EventConfigModel
+
+  apply(config: MemberConfig): void {
+    if (config.property)
+      this.property.apply(config.property)
+    if (config.field)
+      this.field.apply(config.field)
+    if (config.method)
+      this.method.apply(config.method)
+    if (config.event)
+      this.event.apply(config.event)
+  }
 }

@@ -3,9 +3,9 @@
     "class": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true,
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false,
       "denoteIfStatic": true,
       "denoteIfVirtual": true,
       "denoteIfAbstract": true
@@ -13,39 +13,39 @@
     "interface": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false
     },
     "struct": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false
     },
     "enum": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false
     },
     "delegate": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false
     }
   },
   "member": {
     "property": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true,
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false,
       "denoteIfStatic": true,
       "denoteIfVirtual": true,
       "denoteIfAbstract": true,
@@ -55,18 +55,18 @@
     "field": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true,
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false,
       "denoteIfConst": true,
       "denoteIfReadonly": true
     },
     "method": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true,
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false,
       "denoteIfStatic": true,
       "denoteIfVirtual": true,
       "denoteIfAbstract": true
@@ -74,9 +74,9 @@
     "event": {
       "showIfPublic": true,
       "showIfProtected": true,
-      "showIfInternal": true,
-      "showIfInternalProtected": true,
-      "showIfPrivate": true,
+      "showIfInternal": false,
+      "showIfInternalProtected": false,
+      "showIfPrivate": false,
       "denoteIfStatic": true,
       "denoteIfVirtual": true,
       "denoteIfAbstract": true
