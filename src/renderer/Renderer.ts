@@ -1,5 +1,14 @@
+import ConfigModel from "../models/config/ConfigModel"
 import Configuration from "../models/config/Configuration"
+import EventConfigModel from "../models/config/members/EventConfigModel"
+import FieldConfigModel from "../models/config/members/FieldConfigModel"
+import MethodConfigModel from "../models/config/members/MethodConfigModel"
 import PropertyConfigModel from "../models/config/members/PropertyConfigModel"
+import ClassConfigModel from "../models/config/types/ClassConfigModel"
+import DelegateConfigModel from "../models/config/types/DelegateConfigModel"
+import EnumConfigModel from "../models/config/types/EnumConfigModel"
+import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel"
+import StructConfigModel from "../models/config/types/StructConfigModel"
 import EventModel from "../models/members/EventModel"
 import FieldModel from "../models/members/FieldModel"
 import MethodModel from "../models/members/MethodModel"
@@ -11,8 +20,6 @@ import InterfaceModel from "../models/types/InterfaceModel"
 import StructModel from "../models/types/StructModel"
 
 export default interface Renderer {
-  path: string
-  config: Configuration
   // render<T extends ClassModel |DelegateModel | EnumModel | InterfaceModel | StructModel>(model: T): string
 
   // renderEvent(model: EventModel): string
@@ -20,31 +27,33 @@ export default interface Renderer {
   // renderMethod(model: MethodModel): string
   // renderProperty(model: PropertyModel): string
 
-  beginRenderingClass(model: ClassModel, filePath: string): void
-  beginRenderingDelegate(model: DelegateModel, filePath: string): void
-  beginRenderingEnum(model: EnumModel, filePath: string): void
-  beginRenderingInterface(model: InterfaceModel, filePath: string): void
-  beginRenderingStruct(model: StructModel, filePath: string): void
+  beginRenderingClass(model: ClassModel, config: ClassConfigModel): void
+  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel): void
+  beginRenderingEnum(model: EnumModel, config: EnumConfigModel): void
+  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel): void
+  beginRenderingStruct(model: StructModel, config: StructConfigModel): void
 
-  beginRenderingProperties(): void
-  renderProperty(property: PropertyModel): void
-  endRenderingProperties(): void
+  //beginRenderingProperties(): void
+  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel): void
+  //endRenderingProperties(): void
 
-  beginRenderingMethods(): void
-  renderMethod(method: MethodModel): void
-  endRenderingMethods(): void
+  //beginRenderingMethods(): void
+  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel): void
+  //endRenderingMethods(): void
 
-  beginRenderingEvents(): void
-  renderEvent(event: EventModel): void
-  endRenderingEvents(): void
+  //beginRenderingEvents(): void
+  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel): void
+  //endRenderingEvents(): void
 
-  beginRenderingFields(): void
-  renderField(field: FieldModel): void
-  endRenderingFields(): void
+  //beginRenderingFields(): void
+  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel): void
+  //endRenderingFields(): void
 
-  endRenderingClass(model: ClassModel, filePath: string): void
-  endRenderingDelegate(model: DelegateModel, filePath: string): void
-  endRenderingEnum(model: EnumModel, filePath: string): void
-  endRenderingInterface(model: InterfaceModel, filePath: string): void
-  endRenderingStruct(model: StructModel, filePath: string): void
+  renderValues(model: EnumModel, values: FieldModel[]): void
+
+  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel): void
+  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel): void
+  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel): void
+  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel): void
+  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel): void
 }

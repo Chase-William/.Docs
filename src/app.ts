@@ -75,16 +75,13 @@ spawn
     }
     
     // Clean 
-    // rmSync(outputPath, { recursive: true, force: true })
+    rmSync(outputPath, { recursive: true, force: true })
 
     const renderManager = new RenderManager()
     renderManager.config = config
     renderManager.path = outputPath
     renderManager.renderer = new MarkdownRenderer()
 
-    // const renderer = new MarkdownRenderer()
-    // renderer.path = outputPath
-    // renderer.config = config
     root.render(renderManager)
 
     rmSync(JSON_DIR, { recursive: true, force: true })

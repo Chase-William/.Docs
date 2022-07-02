@@ -1,7 +1,7 @@
 import DelegateModel, { Parameter } from "../../models/types/DelegateModel";
 import divider from "../Util";
 
-export default function delegateRenderer(model: DelegateModel): string {
+export default function renderDelegate(model: DelegateModel): string {
   return (
     renderParameters(model.parameters) +
     renderReturnType(model.returnType)
