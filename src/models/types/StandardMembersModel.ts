@@ -8,7 +8,7 @@ import Model from "../Model";
 import CommonComment from "../written/CommonComment";
 import TypeModel from "./TypeModel";
 import Renderable from "../Renderable";
-import Renderer from "../../markdown/Renderer";
+import RenderManager from "../../renderer/RenderManager";
 
 /**
  * Represents any <type> that can contain the following:
@@ -35,9 +35,9 @@ export default class StandardMembersModel extends TypeModel<CommonComment> imple
     readChildrenInternal(extraPathing, namespaces, model)
   }
 
-  renderChildren(renderer: Renderer) {
+  renderChildren(renderManager: RenderManager) {
     this.childNodes.forEach((model) => {
-      (model as Renderable).render(renderer)
+      (model as Renderable).render(renderManager)
     })
   }
 }

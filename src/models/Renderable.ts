@@ -1,7 +1,5 @@
-import Renderer from "../markdown/Renderer";
-import Model from "./Model";
-import Nestable from "./Nestable";
+import RenderManager from "../renderer/RenderManager";
 
 export default interface Renderable {
-  render(renderer: Renderer): void
+  render(renderManager: RenderManager): void
 }

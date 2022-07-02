@@ -1,12 +1,12 @@
 import { jsonObject } from 'typedjson';
-import Renderer from '../../markdown/Renderer';
+import RenderManager from '../../renderer/RenderManager';
 import Renderable from '../Renderable';
 import StandardMembersModel from './StandardMembersModel';
 
 @jsonObject()
 export default class InterfaceModel extends StandardMembersModel implements Renderable {
-  render(renderer: Renderer): void {
-    renderer.renderInterface(this)  
-    this.renderChildren(renderer) 
+  render(renderManager: RenderManager): void {
+    renderManager.renderInterface(this)  
+    this.renderChildren(renderManager) 
   }    
 }

@@ -4,6 +4,7 @@ import { existsSync, readFileSync, rmSync } from 'fs';
 import Configuration, { loadConfiguration } from './models/config/Configuration';
 import { TypedJSON } from 'typedjson';
 import { exit } from 'process';
+import RenderManager from './renderer/RenderManager';
 
 const spawn = import('child_process');
 
@@ -43,7 +44,7 @@ if (process.argv[2] === '--development-env') {
   charpCoreExe = paths.charpCore
   dll = paths.dll
   xml = paths.xml
-  config = loadConfiguration('./configurations/internal-perspective.json')
+  config = loadConfiguration('./configurations/external-perspective.json')
 }
 
 spawn
@@ -76,10 +77,15 @@ spawn
     // Clean 
     // rmSync(outputPath, { recursive: true, force: true })
 
-    const renderer = new MarkdownRenderer()
-    renderer.path = outputPath
-    renderer.config = config
-    root.render(renderer)
+    const renderManager = new RenderManager()
+    renderManager.config = config
+    renderManager.path = outputPath
+    renderManager.renderer = new MarkdownRenderer()
+
+    // const renderer = new MarkdownRenderer()
+    // renderer.path = outputPath
+    // renderer.config = config
+    root.render(renderManager)
 
     rmSync(JSON_DIR, { recursive: true, force: true })
   });

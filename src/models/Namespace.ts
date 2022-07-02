@@ -1,7 +1,7 @@
 import Nestable, { readChildrenInternal } from './Nestable';
 import Model from './Model';
 import Renderable from './Renderable';
-import Renderer from '../markdown/Renderer';
+import RenderManager from '../renderer/RenderManager';
 
 export default class Namespace extends Model implements Nestable, Renderable {
   childNodes = new Map<string, (Model | Nestable) & Renderable>()
@@ -11,9 +11,9 @@ export default class Namespace extends Model implements Nestable, Renderable {
     this.type = 'namespace'
   }
 
-  render(renderer: Renderer): void {
+  render(renderManager: RenderManager): void {
     this.childNodes.forEach((model) => {
-      (model as Renderable).render(renderer)
+      (model as Renderable).render(renderManager)
     })
   }
 

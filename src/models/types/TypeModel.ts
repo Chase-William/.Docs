@@ -1,11 +1,7 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import Renderer from '../../markdown/Renderer';
-import Model, { CLASS_TYPE_CODE, DELEGATE_TYPE_CODE, ENUM_TYPE_CODE, INTERFACE_TYPE_CODE, STRUCT_TYPE_CODE } from '../Model';
-import Renderable from '../Renderable';
 import CommonComment from '../written/CommonComment';
-import Nestable from '../Nestable'
-import ClassModel from './ClassModel';
 import AccessibilityModel from '../AccessibilityModel';
+import Model from '../Model';
 
 /**
  * Represents any kind of <type> that can be defined.

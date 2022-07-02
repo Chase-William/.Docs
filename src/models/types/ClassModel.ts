@@ -1,6 +1,5 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import Renderer from '../../markdown/Renderer';
-import Model from '../Model';
+import RenderManager from '../../renderer/RenderManager';
 import Renderable from '../Renderable';
 import StandardMembersModel from './StandardMembersModel';
 
@@ -13,11 +12,11 @@ export default class ClassModel extends StandardMembersModel implements Renderab
   @jsonMember(Boolean, { name: 'IsStatic' })
   isStatic: boolean
 
-  render(renderer: Renderer): void {
-    renderer.renderClass(this)
+  render(renderManager: RenderManager): void {
+    renderManager.renderClass(this)
 
     this.childNodes.forEach((model) => {
-      (model as Renderable).render(renderer)
+      (model as Renderable).render(renderManager)
     })
   }  
 }

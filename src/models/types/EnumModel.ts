@@ -1,5 +1,5 @@
 import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
-import Renderer from '../../markdown/Renderer';
+import RenderManager from '../../renderer/RenderManager';
 import FieldModel from '../members/FieldModel';
 import Renderable from '../Renderable';
 import CommonComment from '../written/CommonComment';
@@ -13,7 +13,7 @@ export default class EnumModel extends TypeModel<CommonComment> implements Rende
   @jsonMember(String, { name: 'UnderlyingType' })
   underlyingType: string;
 
-  render(renderer: Renderer): void {
-    renderer.renderEnum(this)
+  render(renderManager: RenderManager): void {
+    renderManager.renderEnum(this)
   }
 }

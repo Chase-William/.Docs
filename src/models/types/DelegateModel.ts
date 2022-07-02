@@ -1,5 +1,5 @@
 import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
-import Renderer from '../../markdown/Renderer';
+import RenderManager from '../../renderer/RenderManager';
 import Renderable from '../Renderable';
 import CommonComment from '../written/CommonComment';
 import TypeModel from './TypeModel';
@@ -21,7 +21,7 @@ export default class DelegateModel extends TypeModel<CommonComment> implements R
   @jsonArrayMember(Parameter, { name: 'Parameters' })
   parameters: Parameter[]
 
-  render(renderer: Renderer): void {
-    renderer.renderDelegate(this)
+  render(renderManager: RenderManager): void {
+    renderManager.renderDelegate(this)
   }
 }

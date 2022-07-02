@@ -1,5 +1,5 @@
-import { jsonMember, jsonObject } from 'typedjson';
-import Renderer from '../../markdown/Renderer';
+import { jsonObject } from 'typedjson';
+import RenderManager from '../../renderer/RenderManager';
 import Renderable from '../Renderable';
 import StandardMembersModel from './StandardMembersModel';
 
@@ -7,8 +7,8 @@ import StandardMembersModel from './StandardMembersModel';
 export default class StructModel extends StandardMembersModel implements Renderable {
   
   
-  render(renderer: Renderer): void {
-    renderer.renderStruct(this)
-    this.renderChildren(renderer) 
+  render(renderManager: RenderManager): void {
+    renderManager.renderStruct(this)
+    this.renderChildren(renderManager) 
   }
 }
