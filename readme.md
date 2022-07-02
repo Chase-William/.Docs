@@ -15,7 +15,7 @@ charp "<path>.dll" "<path>.xml" -o <output-dir>
 
 ### Use Dependencies
 
-- .NET 5.0, install the .NET 5.0 workload for your system to leverage this package
+- .NET 6.0, install the .NET 6.0 workload for your system to leverage this package
   
 ### Deployment Targets
 
@@ -34,30 +34,33 @@ charp "<path>.dll" "<path>.xml" -o <output-dir>
   // Overrides from default based on "perspective"
   "type": { // type overrides
     "class": { // class specific overrides
-
+      ...
     },
     "interface": { // interface specific overrides
-
+      ...
     },
     "struct": { // struct specific overrides
-
+      ...
+    },
+    "enum", {
+      ...
     },
     "delegate": { // delegate specific overrides
-
+      ...
     }
   },
   "member": { // member overrides
     "property": { // property specific overrides
-
+      ...
     },
     "field": { // field specific overrides
-
+      ...
     },
     "method": { // method specific overrides
-
+      ...
     },    
     "event": { // event specific overrides
-
+      ...
     }
   }
 }
@@ -68,60 +71,73 @@ charp "<path>.dll" "<path>.xml" -o <output-dir>
 - <a href="#perspective">*perspective*</a>, `string` either "<a href="#internal">*internal*</a>" or "<a href="#external">*external*</a>"
 - <a href="#type">*type*</a>
   - <a href="#class">*class*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
+    - <a href="#denoteIfStatic">*denoteIfStatic*</a>, `boolean`
+    - <a href="#denoteIfVirtual">*denoteIfVirtual*</a>, `boolean`
+    - <a href="#denoteIfAbstract">*denoteIfAbstract*</a>, `boolean`
   - <a href="#interface">*interface*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
   - <a href="#struct">*struct*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
   - <a href="#enum">*enum*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
   - <a href="#delegate">*delegate*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
 - <a href="#member">*member*</a>
   - <a href="#property">*property*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
+    - <a href="#denoteIfStatic">*denoteIfStatic*</a>, `boolean`
+    - <a href="#denoteIfVirtual">*denoteIfVirtual*</a>, `boolean`
+    - <a href="#denoteIfAbstract">*denoteIfAbstract*</a>, `boolean`
   - <a href="#field">*field*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
+    - <a href="#denoteIfStatic">*denoteIfStatic*</a>, `boolean`
   - <a href="#method">*method*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
+    - <a href="#denoteIfStatic">*denoteIfStatic*</a>, `boolean`
+    - <a href="#denoteIfVirtual">*denoteIfVirtual*</a>, `boolean`
+    - <a href="#denoteIfAbstract">*denoteIfAbstract*</a>, `boolean`
   - <a href="#event">*event*</a>
-    - <a href="#showPublic">*showPublic*</a>, `boolean`
-    - <a href="#showProtected">*showProtected*</a>, `boolean`
-    - <a href="#showInternal">*showInternal*</a>, `boolean`
-    - <a href="#showInternalProtected">*showInternalProtected*</a>, `boolean`
-    - <a href="#showPrivate">*showPrivate*</a>, `boolean`
+    - <a href="#showIfPublic">*showIfPublic*</a>, `boolean`
+    - <a href="#showIfProtected">*showIfProtected*</a>, `boolean`
+    - <a href="#showIfInternal">*showIfInternal*</a>, `boolean`
+    - <a href="#showIfInternalProtected">*showIfInternalProtected*</a>, `boolean`
+    - <a href="#showIfPrivate">*showIfPrivate*</a>, `boolean`
+    - <a href="#denoteIfStatic">*denoteIfStatic*</a>, `boolean`
+    - <a href="#denoteIfVirtual">*denoteIfVirtual*</a>, `boolean`
+    - <a href="#denoteIfAbstract">*denoteIfAbstract*</a>, `boolean`
 
 ### Config Definitions
 
@@ -150,14 +166,14 @@ The only required configuration is *perspective* as everything else is an option
 
 ##### Accessibility modifiers
 
-- <span id="showPublic"></span>*showPublic*, show instances that are public
-- <span id="showProtected"></span>*showProtected*, show instances that are protected
-- <span id="showInternal"></span>*showInternal*, show instances that are internal
-- <span id="showInternalProtected"></span>*showInternalProtected*, show instances that are internal protected
-- <span id="showPrivate"></span>*showPrivate*, show instances that are private
+- <span id="showIfPublic"></span>*showIfPublic*, show instances that are public
+- <span id="showIfProtected"></span>*showIfProtected*, show instances that are protected
+- <span id="showIfInternal"></span>*showIfInternal*, show instances that are internal
+- <span id="showIfInternalProtected"></span>*showIfInternalProtected*, show instances that are internal protected
+- <span id="showIfPrivate"></span>*showIfPrivate*, show instances that are private
 
 ##### Others
 
-- <span id="denoteStatic"></span>*denoteStatic*, display the `static` tag when static
-- <span id="denoteVirtual"></span>*denoteVirtual*, display the `virtual` tag when virtual
-- <span id="denoteAbstract"></span>*denoteAbstract*, display the `abstract` tag when abstract
+- <span id="denoteIfStatic"></span>*denoteIfStatic*, display the `static` tag when static
+- <span id="denoteIfVirtual"></span>*denoteIfVirtual*, display the `virtual` tag when virtual
+- <span id="denoteIfAbstract"></span>*denoteIfAbstract*, display the `abstract` tag when abstract

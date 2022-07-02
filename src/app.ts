@@ -1,6 +1,9 @@
 import MarkdownRenderer from './markdown/markdownRenderer';
 import ModelTree from './models/ModelTree';
-import { readFileSync, rmSync } from 'fs';
+import { existsSync, readFileSync, rmSync } from 'fs';
+import Configuration from './models/config/Configuration';
+import { TypedJSON } from 'typedjson';
+import { exit } from 'process';
 
 const spawn = import('child_process');
 
@@ -32,13 +35,19 @@ let charpCoreExe = 'Charp.Runner.exe'
 let dll = process.argv[2]
 let xml = process.argv[3]
 
-// Check for flag that indicates we're developing
+let config: Configuration
+
+// Check for flag that indicates we're in developer mode
 if (process.argv[2] === '--development-env') {
   const paths = JSON.parse(readFileSync('C:/Dev/Charp/runner.json', { encoding: 'utf-8' }))
   charpCoreExe = paths.charpCore
   dll = paths.dll
   xml = paths.xml
+  config = new TypedJSON(Configuration).parse(readFileSync('./configurations/internal-perspective.json', { encoding: 'utf-8' }))
 }
+
+
+exit
 
 spawn
   .then(

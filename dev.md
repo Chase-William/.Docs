@@ -1,11 +1,14 @@
 #### Todo List
 
+- Setup better containerized jest test for models & config
+
 - Setup configuration for projects
 - Can we use .csproj path instead of *.xml & *.dll
   - If we can, setup system to allow use of either approach
 - Test deployment on a system where a user doesn't have .NET 5 already installed
 - Test other language versions and framework versions to generate docs from
 - Update `Charp` documentation
+- Allow a param to be passed to cmd line like *--external* when running no config file
 
 ### Basic Markdown Renderer Checklist
 
@@ -60,5 +63,5 @@ Needs to be remodeled as the system I devised for `Charp.Core` testing works bet
 
 ### Development Dependencies
 
-- .NET 5.0 -> `Charp.Core`
+- .NET 6.0 -> `Charp.Core`
 - Node 17.0+ *Recommended*

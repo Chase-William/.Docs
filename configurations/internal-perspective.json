@@ -1,0 +1,85 @@
+{
+  "type": {
+    "class": {
+      "showIfPublic": true,
+      "showIfProtected": true,
+      "showIfInternal": true,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true,
+      "denoteIfStatic": true,
+      "denoteIfVirtual": true,
+      "denoteIfAbstract": true
+    },
+    "interface": {
+      "showIfPublic": true,
+      "showIfProtected": true,
+      "showIfInternal": true,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true
+    },
+    "struct": {
+      "showIfPublic": true,
+      "showIfProtected": true,
+      "showIfInternal": true,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true
+    },
+    "enum": {
+      "showIfPublic": true,
+      "showIfProtected": true,
+      "showIfInternal": true,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true
+    },
+    "delegate": {
+      "showIfPublic": true,
+      "showIfProtected": true,
+      "showIfInternal": true,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true
+    }
+  },
+  "member": {
+    "property": {
+      "showIfPublic": false,
+      "showIfProtected": true,
+      "showIfInternal": true,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true,
+      "denoteIfStatic": true,
+      "denoteIfVirtual": true,
+      "denoteIfAbstract": true,
+      "denoteIfReadonly": true,
+      "denoteIfSetonly": true
+    },
+    "field": {
+      "showIfPublic": true,
+      "showIfProtected": false,
+      "showIfInternal": true,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true,
+      "denoteIfConst": true,
+      "denoteIfReadonly": true
+    },
+    "method": {
+      "showIfPublic": true,
+      "showIfProtected": true,
+      "showIfInternal": false,
+      "showIfInternalProtected": true,
+      "showIfPrivate": true,
+      "denoteIfStatic": true,
+      "denoteIfVirtual": true,
+      "denoteIfAbstract": true
+    },    
+    "event": {
+      "showIfPublic": true,
+      "showIfProtected": true,
+      "showIfInternal": true,
+      "showIfInternalProtected": false,
+      "showIfPrivate": true,
+      "denoteIfStatic": true,
+      "denoteIfVirtual": true,
+      "denoteIfAbstract": true
+    }
+  }
+}
