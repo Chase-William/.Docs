@@ -79,23 +79,23 @@ node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data" -core "
 ### Use specified `.csproj` with default output
 
 ```sh
-node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj"
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj" -core "C:\Dev\Charp\vendor\Charp.Core\src\Charp.Runner\bin\Debug\net6.0\Charp.Runner.exe"
 ```
 
 ### Use specified `.csproj` & custom output
 
 ```sh
-node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj" -o "example"
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj" -o "example" -core "C:\Dev\Charp\vendor\Charp.Core\src\Charp.Runner\bin\Debug\net6.0\Charp.Runner.exe"
 ```
 
 ### Use `.dll` & `.xml` with default output
 ```sh
-node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml"
+node ./dist/app.js -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -core "C:\Dev\Charp\vendor\Charp.Core\src\Charp.Runner\bin\Debug\net6.0\Charp.Runner.exe"
 ```
-### Use `.dll` & `.xml` with custom output location
+### Use `.dll` & `.xml` with custom output location & use perspective switch for internal
 
 ```sh
-node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example/docs"
+node ./dist/app.js -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example/docs" -core "C:\Dev\Charp\vendor\Charp.Core\src\Charp.Runner\bin\Debug\net6.0\Charp.Runner.exe" --internal
 ```
 
 ## Test Launch Options post-bundle
@@ -113,15 +113,15 @@ charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.cspro
 ### Use specified `.csproj` & custom output
 
 ```sh
-charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj"
+charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj" -o example
 ```
 
 ### Use `.dll` & `.xml` with default output
 ```sh
-charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml"
+charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml"
 ```
-### Use `.dll` & `.xml` with custom output location
+### Use `.dll` & `.xml` with custom output location & use perspective switch for internal
 
 ```sh
-charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example/docs"
+charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example" --internal
 ```
