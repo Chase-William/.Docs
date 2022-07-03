@@ -2,11 +2,44 @@
 
 The most intuitive & reliable documentation generator library for C# projects.
 
-> Charp caters to C# and has no plans to expand to other languages. I, Chase William personally am not satified with the documentation generator solutions for C#, therefore I am making my own 😀 Enjoy!
+> Charp caters to C# and has no plans to expand to other languages. The C#/.NET community doesn't have a intuitive & reliable documentation generator, therefore I've dedicated many weekends of my summer building this solution 😊 enjoy!
+
+### Basic Usage
 
 ```bash
-# Run as installed
-charp "<path>.dll" "<path>.xml" -o <output-dir>
+# Must be ran from a dir with a .csproj
+# Puts docs inside current dir within a default "docs" folder
+charp
+```
+
+### Specific `.csproj` Usage
+```bash
+# Provide a path to a specific .csproj
+# Provide a location for docs to be put
+charp "<path>.csproj" -o "<output-path>"
+```
+
+### Specific `.csproj` Usage #2
+```bash
+# Provide a path to where a .csproj is (uses the first one found if multiple exist)
+# Provide a location for docs to be put
+charp "<path>" -o "<output-path>"
+```
+
+### Provide a Configuration File
+```bash
+# Provide a path to where a .csproj is (uses the first one found if multiple exist)
+# Provide a location for docs to be put
+charp "<path>" -o "<output-path>" -c "<config-file>.json"
+```
+
+> In above mentioned approaches, if your `.csproj` doesn't have `xml` comment generation enabled; it will add the flag to your `.csproj` file. Shortly followed by attempting to build your project.
+
+### Use Existing `.dll` & `.xml`
+
+```bash
+# Its recommended to use the `.csproj` instead
+charp -dll "<path>.dll" -xml "<path>.xml" -o "<output-path>"
 ```
 
 [Charp on Chocolatey](https://community.chocolatey.org/packages/charp/)

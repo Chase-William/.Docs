@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from "fs";
+import path = require("path");
 import { jsonMember, jsonObject, TypedJSON } from "typedjson";
 import MemberConfig from "./MemberConfig";
 import TypeConfig from "./TypeConfig";
@@ -30,11 +31,7 @@ export default class Configuration {
 
 export function loadConfiguration(filePath: string | null): Configuration {
   if (!filePath) {
-    // just use the default config
-    return null
-  } else if (filePath === 'internal' || filePath === 'external') {
-    // use default config value for corresponding value given
-    return null
+    return load(path.join(process.cwd(), 'configurations/external-perspective.json'))
   }
 
   if (!existsSync(filePath)) {

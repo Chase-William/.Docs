@@ -67,3 +67,34 @@ Needs to be remodeled as the system I devised for `Charp.Core` testing works bet
 
 - .NET 6.0 -> `Charp.Core`
 - Node 17.0+ *Recommended*
+
+## Test Different Launch Options
+
+### Use local `.csproj` with default output
+
+```sh
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data"
+```
+
+### Use specified `.csproj` with default output
+
+```sh
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj"
+```
+
+### Use specified `.csproj` & custom output
+
+```sh
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj"
+```
+
+### Use `.dll` & `.xml` with default output
+```sh
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml"
+```
+### Use `.dll` & `.xml` with custom output location
+
+```sh
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example/docs"
+```
+
