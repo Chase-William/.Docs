@@ -10,6 +10,8 @@ const JSON_DIR = './json'
 // Omit default node path and exe path from routing
 const router = new Router(process.argv.slice(2))
 
+console.log(router)
+
 execFileSync(router.charpCoreExePath, [
   router.dllPath,
   router.xmlPath,

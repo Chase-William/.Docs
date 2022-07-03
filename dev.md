@@ -125,3 +125,24 @@ charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0
 ```sh
 charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example" --internal
 ```
+
+
+```sh
+C:\Users\Chase Roth\Desktop>charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example" --internal
+
+Unhandled exception. System.IO.FileNotFoundException: Could not find file 'C:\Users\Chase Roth\Desktop\-dll'.
+File name: 'C:\Users\Chase Roth\Desktop\-dll'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.OpenRead(String path)
+   at System.Reflection.MetadataLoadContext.LoadFromAssemblyPath(String assemblyPath)
+   at Charp.Core.Loaders.MetadataLoader.GetAssembly(MetadataLoadContext mlc, String dllPath) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Core\Loaders\MetadataLoader.cs:line 98
+   at Charp.Core.Loaders.MetadataLoader.From(String dllPath, String xmlPath) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Core\Loaders\MetadataLoader.cs:line 40
+   at Charp.Core.Charper.From(String dllPath, String xmlPath, String outputPath) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Core\Charper.cs:line 41
+   at Charp.Runner.Program.Main(String[] args) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Runner\Program.cs:line 19
+node:fs:1413
+  handleErrorFromBinding(ctx);
+```
