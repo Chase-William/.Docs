@@ -13,6 +13,10 @@ export default class Router {
 
   constructor(args: string[]) {
     let csproj: string
+    // Get the dir of charp.exe as we need to use it later for configuration loading
+    // Doesn't work in dev
+    const charpLocation = args[0].slice(0, args[0].lastIndexOf('\\'))
+    
     /**
      * Determine the approach the user has taken.
      * 
@@ -22,16 +26,16 @@ export default class Router {
      * - a path to or to where a .csproj can be found
      */
 
-    for (let i = 0; i < args.length; i++) {
+    for (let i = 2; i < args.length; i++) {
       switch (args[i]) {
         // Case for my development environment
         case '--development-env':
           {
-            const paths = JSON.parse(readFileSync('C:/Dev/Charp/runner.json', { encoding: 'utf-8' }))
-            this.charpCoreExePath = paths.charpCore
-            this.dllPath = paths.dll
-            this.xmlPath = paths.xml
-            this.config = loadConfiguration('./configurations/external-perspective.json')
+            const devBasePath = process.cwd()
+            this.charpCoreExePath = path.join(devBasePath, 'vendor\\Charp.Core\\src\\Charp.Runner\\bin\\Debug\\net6.0\\Charp.Runner.exe')
+            this.dllPath = path.join(devBasePath, 'vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net6.0\\Charp.Test.Data.dll')
+            this.xmlPath = path.join(devBasePath, 'vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net6.0\\Charp.Test.Data.xml')
+            this.config = loadConfiguration(devBasePath, './configurations/external-perspective.json')
           }
         return
         case '-o': // Output path
@@ -48,13 +52,13 @@ export default class Router {
             throw new Error('The given .xml path of ' + this.xmlPath + ' does not exist.')
           break;
         case '-c': // Config path
-          this.config = loadConfiguration(process.argv[++i])
+          this.config = loadConfiguration(charpLocation, process.argv[++i])
           break;
         case '--external': // Shorthand switch use default external config
-          this.config = loadConfiguration('external')
+          this.config = loadConfiguration(charpLocation, 'external')
           break;
         case '--internal': // Shorthard switch use default internal config
-          this.config = loadConfiguration('internal')
+          this.config = loadConfiguration(charpLocation, 'internal')
           break;
         case '-core': // Charp.Core path for development purposes (testing)
           this.charpCoreExePath = args[++i]
@@ -69,7 +73,7 @@ export default class Router {
 
     // Check to see if a config was already loaded (user provided one or in dev env)
     if (!this.config) // If not, load a default one
-      this.config = loadConfiguration(null)
+      this.config = loadConfiguration(charpLocation, null)
 
     // If csproj approach was not used and the .dll and .xml paths are set,
     // if so we can continue and run the app.
@@ -78,7 +82,8 @@ export default class Router {
     if (!csproj && this.dllPath && this.xmlPath)
       return
     
-    // csproj approach was used, need to aquire .dll & .xml paths
+    // csproj approach was used via not providing it or the .dll and .xml path meaning;
+    // the .csproj file should be in the currently working directory
     // May also possibily need to mod the .csproj and build the project too
     if (!csproj) {
       csproj = this.getCSProjectPath(process.cwd())

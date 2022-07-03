@@ -27,27 +27,27 @@ export default class Configuration {
   }
 }
 
-export function loadConfiguration(filePath: string | null): Configuration {
-  if (!filePath) {
-    return getDefaultConfig(PERSPECTIVE_EXTERNAL)
+export function loadConfiguration(basePath: string, configFilePath: string | null): Configuration {
+  if (!configFilePath) {
+    return getDefaultConfig(basePath, PERSPECTIVE_EXTERNAL)
   }
 
-  if (filePath == PERSPECTIVE_EXTERNAL)
-    return getDefaultConfig(PERSPECTIVE_EXTERNAL)
-  else if (filePath == PERSPECTIVE_INTERNAL)
-    return getDefaultConfig(PERSPECTIVE_INTERNAL)
+  if (configFilePath == PERSPECTIVE_EXTERNAL)
+    return getDefaultConfig(basePath, PERSPECTIVE_EXTERNAL)
+  else if (configFilePath == PERSPECTIVE_INTERNAL)
+    return getDefaultConfig(basePath, PERSPECTIVE_INTERNAL)
 
-  if (!existsSync(filePath)) {
-    throw new Error('The configuration file at ' + filePath + ' does not exist.')
+  if (!existsSync(configFilePath)) {
+    throw new Error('The configuration file at ' + configFilePath + ' does not exist.')
   }
 
-  const userConfig = load(filePath)
+  const userConfig = load(configFilePath)
   let defaultConfig: Configuration
 
   if (userConfig.perspective === PERSPECTIVE_EXTERNAL) {
-    defaultConfig = getDefaultConfig(PERSPECTIVE_EXTERNAL)
+    defaultConfig = getDefaultConfig(basePath, PERSPECTIVE_EXTERNAL)
   } else if (userConfig.perspective === PERSPECTIVE_INTERNAL) {
-    defaultConfig = getDefaultConfig(PERSPECTIVE_INTERNAL)
+    defaultConfig = getDefaultConfig(basePath, PERSPECTIVE_INTERNAL)
   } else {
     throw new Error('Provided invalid value for "perspective": ' + userConfig.perspective)
   }
@@ -57,8 +57,8 @@ export function loadConfiguration(filePath: string | null): Configuration {
   return defaultConfig
 }
 
-function getDefaultConfig(name: string): Configuration {
-  return load(path.join(process.cwd(), `configurations/${name}-perspective.json`))
+function getDefaultConfig(basePath: string, name: string): Configuration {
+  return load(path.join(basePath, `configurations/${name}-perspective.json`))
 }
 
 function load(filePath: string): Configuration {

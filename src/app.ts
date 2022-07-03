@@ -8,9 +8,7 @@ import { execFileSync } from "child_process";
 const JSON_DIR = './json'
 
 // Omit default node path and exe path from routing
-const router = new Router(process.argv.slice(2))
-
-console.log(router)
+const router = new Router(process.argv)
 
 execFileSync(router.charpCoreExePath, [
   router.dllPath,
@@ -21,21 +19,12 @@ execFileSync(router.charpCoreExePath, [
 const root = new ModelTree('Charp', null);
 root.readChildren('json', new Array<string>(), root);
 
-let outputPath = './docs'
-const indexOfOutput = process.argv.indexOf('-o')
-if (indexOfOutput != -1) {
-  const p =  process.argv[indexOfOutput + 1]
-  if (p) {
-    outputPath = p
-  }       
-}
-
 // Clean 
-rmSync(outputPath, { recursive: true, force: true })
+rmSync(router.outputPath, { recursive: true, force: true })
 
 const renderManager = new RenderManager()
 renderManager.config = router.config
-renderManager.path = outputPath
+renderManager.path = router.outputPath
 renderManager.renderer = new MarkdownRenderer()
 
 root.render(renderManager)

@@ -128,21 +128,72 @@ charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0
 
 
 ```sh
-C:\Users\Chase Roth\Desktop>charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example" --internal
+C:\Users\Chase Roth\Desktop>charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data"
+node:internal/fs/utils:345
+    throw err;
+    ^
 
-Unhandled exception. System.IO.FileNotFoundException: Could not find file 'C:\Users\Chase Roth\Desktop\-dll'.
-File name: 'C:\Users\Chase Roth\Desktop\-dll'
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
-   at System.IO.File.OpenRead(String path)
-   at System.Reflection.MetadataLoadContext.LoadFromAssemblyPath(String assemblyPath)
-   at Charp.Core.Loaders.MetadataLoader.GetAssembly(MetadataLoadContext mlc, String dllPath) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Core\Loaders\MetadataLoader.cs:line 98
-   at Charp.Core.Loaders.MetadataLoader.From(String dllPath, String xmlPath) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Core\Loaders\MetadataLoader.cs:line 40
-   at Charp.Core.Charper.From(String dllPath, String xmlPath, String outputPath) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Core\Charper.cs:line 41
-   at Charp.Runner.Program.Main(String[] args) in C:\Dev\Charp\vendor\Charp.Core\src\Charp.Runner\Program.cs:line 19
-node:fs:1413
-  handleErrorFromBinding(ctx);
+Error: ENOENT: no such file or directory, open 'C:\Users\Chase Roth\Desktop\configurations\external-perspective.json'
+←[90m    at Object.openSync (node:fs:590:3)←[39m
+    at Object.openSync (pkg/prelude/bootstrap.js:796:32)
+←[90m    at Object.readFileSync (node:fs:458:35)←[39m
+    at readFileSync (pkg/prelude/bootstrap.js:1082:36)
+    at load (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at getDefaultConfig (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at loadConfiguration (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at new Router (C:\snapshot\Charp\dist\Router.js)
+    at Object.<anonymous> (C:\snapshot\Charp\dist\app.js)
+    at Module._compile (pkg/prelude/bootstrap.js:1930:22) {
+  errno: ←[33m-4058←[39m,
+  syscall: ←[32m'open'←[39m,
+  code: ←[32m'ENOENT'←[39m,
+  path: ←[32m'C:\\Users\\Chase Roth\\Desktop\\configurations\\external-perspective.json'←[39m
+}
+```
+
+```
+C:\Users\Chase Roth\Desktop>charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj" -c "C:\Dev\Charp\tests\config\data\override-external-config.json"
+undefined:1
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net6.0</TargetFramework><GenerateDocumentationFile>True</GenerateDocumentationFile></PropertyGroup></Project>
+^
+
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Object.parseToJSObject (C:\snapshot\Charp\node_modules\←[4mtypedjson←[24m\lib\cjs\helpers.js:59:17)
+    at TypedJSON.parse (C:\snapshot\Charp\node_modules\←[4mtypedjson←[24m\lib\cjs\parser.js:135:30)
+    at load (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at loadConfiguration (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at new Router (C:\snapshot\Charp\dist\Router.js)
+    at Object.<anonymous> (C:\snapshot\Charp\dist\app.js)
+    at Module._compile (pkg/prelude/bootstrap.js:1930:22)
+←[90m    at Module._extensions..js (node:internal/modules/cjs/loader:1159:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+
+Node.js v18.1.0
+```
+
+```
+C:\Users\Chase Roth\Desktop>charp -dll "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" -xml "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example" --internal
+node:internal/fs/utils:345
+    throw err;
+    ^
+
+Error: ENOENT: no such file or directory, open 'C:\Users\Chase Roth\Desktop\configurations\internal-perspective.json'
+←[90m    at Object.openSync (node:fs:590:3)←[39m
+    at Object.openSync (pkg/prelude/bootstrap.js:796:32)
+←[90m    at Object.readFileSync (node:fs:458:35)←[39m
+    at readFileSync (pkg/prelude/bootstrap.js:1082:36)
+    at load (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at getDefaultConfig (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at loadConfiguration (C:\snapshot\Charp\dist\models\config\Configuration.js)
+    at new Router (C:\snapshot\Charp\dist\Router.js)
+    at Object.<anonymous> (C:\snapshot\Charp\dist\app.js)
+    at Module._compile (pkg/prelude/bootstrap.js:1930:22) {
+  errno: ←[33m-4058←[39m,
+  syscall: ←[32m'open'←[39m,
+  code: ←[32m'ENOENT'←[39m,
+  path: ←[32m'C:\\Users\\Chase Roth\\Desktop\\configurations\\internal-perspective.json'←[39m
+}
+
+Node.js v18.1.0
 ```
