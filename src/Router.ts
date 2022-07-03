@@ -48,12 +48,21 @@ export default class Router {
             throw new Error('The given .xml path of ' + this.xmlPath + ' does not exist.')
           break;
         case '-c': // Config path
-          this.config = loadConfiguration(process.argv[i])
+          this.config = loadConfiguration(process.argv[++i])
           break;
-        default:
+        case '--external': // Shorthand switch use default external config
+          this.config = loadConfiguration('external')
+          break;
+        case '--internal': // Shorthard switch use default internal config
+          this.config = loadConfiguration('internal')
+          break;
+        case '-core': // Charp.Core path for development purposes (testing)
+          this.charpCoreExePath = args[++i]
+          break;
+        default: // A argument that matches no qualifiers is assumed to be the .csproj path
           csproj = args[i]
           if (!existsSync(csproj))
-            throw new Error('The given .csproj path of ' + csproj+ ' does not exist.')
+            throw new Error('The given .csproj path of ' + csproj + ' does not exist.')
           break;
       }
     }
@@ -62,21 +71,22 @@ export default class Router {
     if (!this.config) // If not, load a default one
       this.config = loadConfiguration(null)
 
-    // If csproj approach was not used, we can return and run the app
-    // Otherwise we will need to use the .csproj to find the .dll and .xml
-    if (!csproj)
+    // If csproj approach was not used and the .dll and .xml paths are set,
+    // if so we can continue and run the app.
+    // Otherwise we will need to use the .csproj to find the .dll and .xml or 
+    // examine the process folder
+    if (!csproj && this.dllPath && this.xmlPath)
       return
     
     // csproj approach was used, need to aquire .dll & .xml paths
     // May also possibily need to mod the .csproj and build the project too
+    if (!csproj) {
+      csproj = this.getCSProjectPath(process.cwd())
+    }
 
     // Check to see if a .csproj is not specified in the given path
     if (!csproj.endsWith('.csproj')) {
-      const paths = readdirSync(csproj)
-      const csprojFile = paths.find((value: string) => value.endsWith('.csproj'))
-      if (!csprojFile)
-        throw new Error('The given .csproj path of ' + csproj + ' doesn\'t contain a .csproj file.')
-      csproj = path.join(csproj , csprojFile)
+      csproj = this.getCSProjectPath(csproj)
     }
 
     // At this point we have a valid csproj target
@@ -127,6 +137,13 @@ export default class Router {
       }
     }
     return null
+  }
+
+  getCSProjectPath(basePath: string): string {
+    const csprojFile = readdirSync(basePath).find((value: string) => value.endsWith('.csproj'))
+    if (!csprojFile)
+      throw new Error('The path of ' + basePath + ' doesn\'t contain a .csproj file.')
+    return path.join(basePath , csprojFile)
   }
 
   /**

@@ -9,8 +9,6 @@ import TypeConfig from "./TypeConfig";
  */
 export const PERSPECTIVE_EXTERNAL = 'external'
 export const PERSPECTIVE_INTERNAL = 'internal'
-export const PERSPECTIVE_EXTERNAL_FILEPATH = './configurations/external-perspective.json'
-export const PERSPECTIVE_INTERNAL_FILEPATH = './configurations/internal-perspective.json'
 
 @jsonObject
 export default class Configuration {
@@ -31,8 +29,13 @@ export default class Configuration {
 
 export function loadConfiguration(filePath: string | null): Configuration {
   if (!filePath) {
-    return load(path.join(process.cwd(), 'configurations/external-perspective.json'))
+    return getDefaultConfig(PERSPECTIVE_EXTERNAL)
   }
+
+  if (filePath == PERSPECTIVE_EXTERNAL)
+    return getDefaultConfig(PERSPECTIVE_EXTERNAL)
+  else if (filePath == PERSPECTIVE_INTERNAL)
+    return getDefaultConfig(PERSPECTIVE_INTERNAL)
 
   if (!existsSync(filePath)) {
     throw new Error('The configuration file at ' + filePath + ' does not exist.')
@@ -42,9 +45,9 @@ export function loadConfiguration(filePath: string | null): Configuration {
   let defaultConfig: Configuration
 
   if (userConfig.perspective === PERSPECTIVE_EXTERNAL) {
-    defaultConfig = load(PERSPECTIVE_EXTERNAL_FILEPATH)
+    defaultConfig = getDefaultConfig(PERSPECTIVE_EXTERNAL)
   } else if (userConfig.perspective === PERSPECTIVE_INTERNAL) {
-    defaultConfig = load(PERSPECTIVE_INTERNAL_FILEPATH)
+    defaultConfig = getDefaultConfig(PERSPECTIVE_INTERNAL)
   } else {
     throw new Error('Provided invalid value for "perspective": ' + userConfig.perspective)
   }
@@ -52,6 +55,10 @@ export function loadConfiguration(filePath: string | null): Configuration {
   defaultConfig.apply(userConfig)
 
   return defaultConfig
+}
+
+function getDefaultConfig(name: string): Configuration {
+  return load(path.join(process.cwd(), `configurations/${name}-perspective.json`))
 }
 
 function load(filePath: string): Configuration {

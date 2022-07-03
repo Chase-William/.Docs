@@ -4,8 +4,8 @@
 - [ ] Integrate configuration into markdown rendering pipeline
 
 
-- Can we use .csproj path instead of *.xml & *.dll
-  - If we can, setup system to allow use of either approach
+- [x] Can we use .csproj path instead of *.xml & *.dll
+  - [x] If we can, setup system to allow use of either approach
 - Test deployment on a system where a user doesn't have .NET 6.0 already installed
 - Test other language versions and framework versions to generate docs from
 - Update `Charp` documentation
@@ -68,12 +68,12 @@ Needs to be remodeled as the system I devised for `Charp.Core` testing works bet
 - .NET 6.0 -> `Charp.Core`
 - Node 17.0+ *Recommended*
 
-## Test Different Launch Options
+## Test Launch Options pre-bundle
 
 ### Use local `.csproj` with default output
 
 ```sh
-node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data"
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data" -core "C:\Dev\Charp\vendor\Charp.Core\src\Charp.Runner\bin\Debug\net6.0\Charp.Runner.exe"
 ```
 
 ### Use specified `.csproj` with default output
@@ -85,7 +85,7 @@ node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Te
 ### Use specified `.csproj` & custom output
 
 ```sh
-node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj"
+node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj" -o "example"
 ```
 
 ### Use `.dll` & `.xml` with default output
@@ -98,3 +98,30 @@ node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debu
 node ./dist/app.js "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example/docs"
 ```
 
+## Test Launch Options post-bundle
+
+```sh
+charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data"
+```
+
+### Use specified `.csproj` with default output
+
+```sh
+charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj"
+```
+
+### Use specified `.csproj` & custom output
+
+```sh
+charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\Charp.Test.Data.csproj"
+```
+
+### Use `.dll` & `.xml` with default output
+```sh
+charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml"
+```
+### Use `.dll` & `.xml` with custom output location
+
+```sh
+charp "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.dll" "C:\Dev\Charp\vendor\Charp.Core\test\Charp.Test.Data\bin\Debug\net6.0\Charp.Test.Data.xml" -o "example/docs"
+```
