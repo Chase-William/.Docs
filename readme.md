@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./resources/media/charp-icon-1200x.jpg" style="width: 350px;margin-left: auto;margin-right: auto;">
+</p>
+
 # Charp
 
 The most intuitive & reliable documentation generator library for C# projects.
