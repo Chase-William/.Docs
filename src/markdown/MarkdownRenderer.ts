@@ -23,7 +23,7 @@ import Renderer from "../renderer/Renderer";
 import { renderEvent } from "./members/EventRenderer";
 import { renderField } from "./members/FieldRenderer";
 import { renderMethod } from "./members/MethodRenderer";
-import { renderProperty } from "./members/PropertyRenderingUtils";
+import PropertyRenderer from "./members/PropertyRenderer";
 import renderDelegate from "./types/DelegateRenderer";
 import { renderValue } from "./types/EnumRenderer";
 import divider, { renderTypeHeader } from "./Util";
@@ -66,7 +66,7 @@ export default class MarkdownRenderer implements Renderer {
   renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel): void {    
     this.content +=  `## \`${accessibility}\` Properties` + divider()
     for (const prop of properties) {
-      this.content += renderProperty(prop, config)
+      this.content += new PropertyRenderer(prop, config).content
     }
   }
   renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel): void {

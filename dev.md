@@ -7,7 +7,8 @@
   - [x] If we can, setup system to allow use of either approach
 - [ ] Add more config options for properties
 - [ ] Test deployment on a system where a user doesn't have .NET 6.0 already installed
-  
+- [ ] Add config for method param and return type rendering control
+
 - Test other language versions and framework versions to generate docs from
 - Update `Charp` documentation
 - Fix jest test for models other than config

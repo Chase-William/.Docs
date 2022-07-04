@@ -51,14 +51,14 @@ export default class Router {
           if (!existsSync(this.xmlPath))
             throw new Error('The given .xml path of ' + this.xmlPath + ' does not exist.')
           break;
-        case '-c': // Config path
-          this.config = loadConfiguration(charpLocation, process.argv[++i])
+        case '-c': // Config path      
+          this.config = loadConfiguration(process.cwd(), process.argv[++i])
           break;
         case '--external': // Shorthand switch use default external config
-          this.config = loadConfiguration(charpLocation, 'external')
+          this.routeDefaultConfig(charpLocation, 'external')  
           break;
         case '--internal': // Shorthard switch use default internal config
-          this.config = loadConfiguration(charpLocation, 'internal')
+          this.routeDefaultConfig(charpLocation, 'internal')        
           break;
         case '-core': // Charp.Core path for development purposes (testing)
           this.charpCoreExePath = args[++i]
@@ -119,6 +119,19 @@ export default class Router {
     this.xmlPath = this.findFileRecursively([csprojPathOnly], xmlFileName)
     if (!this.xmlPath)
       throw new Error(`Unable to locate ${xmlFileName} under ${csprojPathOnly} directory.`)
+  }
+
+  /**
+   * Routes to the correct location for retrieving a default configuration based off invocation location.
+   * @param basePath 
+   * @param fileName 
+   */
+  routeDefaultConfig(basePath: string, fileName: string): void {
+    if (basePath.includes('charp.exe')) {
+      this.config = loadConfiguration(basePath, fileName)
+    } else {
+      this.config = loadConfiguration(process.cwd(), fileName)
+    }
   }
 
   /**
