@@ -9,7 +9,7 @@ import Configuration, { loadConfiguration } from '../../src/models/config/Config
 let config: Configuration
 
 beforeAll(() => {
-  config = loadConfiguration('./tests/config/data/override-internal-config.json')
+  config = loadConfiguration(process.cwd(), './tests/config/data/override-internal-config.json')
 })
 
 test('User configuration file was loaded.', () => {
@@ -75,7 +75,6 @@ test('Delegate configuration overrides correctly', () => {
  */
 
  test('Property configuration overrides correctly', () => {
-  console.log(config.member)
   expect(config.member.property.showIfPublic).toBe(false)
   expect(config.member.property.showIfProtected).toBe(true)
   expect(config.member.property.showIfInternal).toBe(true)
@@ -84,6 +83,18 @@ test('Delegate configuration overrides correctly', () => {
   expect(config.member.property.denoteIfStatic).toBe(false)
   expect(config.member.property.denoteIfSetonly).toBe(false)
   expect(config.member.property.denoteIfReadonly).toBe(true)
+  expect(config.member.property.denoteIfHasGetter).toBe(true)
+  expect(config.member.property.denoteIfHasSetter).toBe(false)
+  expect(config.member.property.denoteIfGetPublic).toBe(false)
+  expect(config.member.property.denoteIfGetProtected).toBe(false)
+  expect(config.member.property.denoteIfGetInternal).toBe(true)
+  expect(config.member.property.denoteIfGetInternalProtected).toBe(true)
+  expect(config.member.property.denoteIfGetPrivate).toBe(true)
+  expect(config.member.property.denoteIfSetPublic).toBe(true)
+  expect(config.member.property.denoteIfSetProtected).toBe(true)
+  expect(config.member.property.denoteIfSetInternal).toBe(false)
+  expect(config.member.property.denoteIfSetInternalProtected).toBe(false)
+  expect(config.member.property.denoteIfSetPrivate).toBe(false)
 })
 
 test('Field configuration overrides correctly', () => {

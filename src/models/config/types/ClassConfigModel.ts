@@ -1,8 +1,9 @@
 import { jsonMember, jsonObject } from "typedjson";
-import ConfigModel from "../ConfigModel";
+import ConfigModel, { check } from "../ConfigModel";
+import PolymorphicConfigable, { applyPolymorphic } from "../interfaces/PolymorphicConfigable";
 
 @jsonObject({ name: 'class' })
-export default class ClassConfigModel extends ConfigModel {
+export default class ClassConfigModel extends ConfigModel implements PolymorphicConfigable {
   @jsonMember(Boolean)
   denoteIfStatic: boolean
   @jsonMember(Boolean)
@@ -12,11 +13,8 @@ export default class ClassConfigModel extends ConfigModel {
 
   apply(config: ClassConfigModel): void {
     super.apply(config)
-    if (super.check(this.denoteIfStatic, config.denoteIfStatic))
+    if (check(this.denoteIfStatic, config.denoteIfStatic))
       this.denoteIfStatic = config.denoteIfStatic
-    if (super.check(this.denoteIfVirtual, config.denoteIfVirtual))
-      this.denoteIfVirtual = config.denoteIfVirtual
-    if (super.check(this.denoteIfAbstract, config.denoteIfAbstract))
-      this.denoteIfAbstract = config.denoteIfAbstract
+    applyPolymorphic(this, config) 
   }
 }

@@ -24,7 +24,12 @@
       "showIfPublic": false,
       "showIfInternalProtected": true,
       "denoteIfStatic": false,
-      "denoteIfSetonly": false
+      "denoteIfSetonly": false,
+
+      "denoteIfHasGetter": true,
+      "denoteIfGetInternalProtected": true,
+      "denoteIfGetPrivate": true,
+      "denoteIfSetPublic": true
     },
     "field": {
       "showIfPublic": false,

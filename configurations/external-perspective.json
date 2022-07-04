@@ -50,7 +50,19 @@
       "denoteIfVirtual": true,
       "denoteIfAbstract": true,
       "denoteIfReadonly": true,
-      "denoteIfSetonly": true
+      "denoteIfSetonly": true,
+      "denoteIfHasGetter": false,
+      "denoteIfHasSetter": false,
+      "denoteIfGetPublic": false,
+      "denoteIfGetProtected": false,
+      "denoteIfGetInternal": false,
+      "denoteIfGetInternalProtected": false,
+      "denoteIfGetPrivate": false,
+      "denoteIfSetPublic": false,
+      "denoteIfSetProtected": false,
+      "denoteIfSetInternal": false,
+      "denoteIfSetInternalProtected": false,
+      "denoteIfSetPrivate": false
     },
     "field": {
       "showIfPublic": true,

@@ -9,7 +9,7 @@ import Configuration, { loadConfiguration } from '../../src/models/config/Config
 let config: Configuration
 
 beforeAll(() => {
-  config = loadConfiguration('./tests/config/data/override-external-config.json')
+  config = loadConfiguration(process.cwd(), './tests/config/data/override-external-config.json')
 })
 
 test('User configuration file was loaded.', () => {
@@ -75,7 +75,6 @@ test('Delegate configuration overrides correctly', () => {
  */
 
  test('Property configuration overrides correctly', () => {
-  console.log(config.member)
   expect(config.member.property.showIfPublic).toBe(false)
   expect(config.member.property.showIfProtected).toBe(true)
   expect(config.member.property.showIfInternal).toBe(false)
