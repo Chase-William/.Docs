@@ -1,14 +1,14 @@
 import { readdirSync, readFileSync } from 'fs';
 import path = require('path');
 import { TypedJSON } from 'typedjson';
-import Model from './Model';
-import Namespace from './Namespace';
+import Model from '../Model';
+import Namespace from '../Namespace';
 import Renderable from './Renderable';
-import ClassModel from './types/ClassModel';
-import DelegateModel from './types/DelegateModel';
-import EnumModel from './types/EnumModel';
-import InterfaceModel from './types/InterfaceModel';
-import StructModel from './types/StructModel';
+import ClassModel from '../types/ClassModel';
+import DelegateModel from '../types/DelegateModel';
+import EnumModel from '../types/EnumModel';
+import InterfaceModel from '../types/InterfaceModel';
+import StructModel from '../types/StructModel';
 
 export default interface Nestable {
   childNodes: Map<string, (Model | Nestable) & Renderable>

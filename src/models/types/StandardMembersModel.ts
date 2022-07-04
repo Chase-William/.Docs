@@ -1,5 +1,5 @@
 import { jsonArrayMember, jsonObject } from "typedjson";
-import Nestable, { readChildrenInternal } from '../Nestable';
+import Nestable, { readChildrenInternal } from '../interfaces/Nestable';
 import EventModel from "../members/EventModel";
 import FieldModel from "../members/FieldModel";
 import MethodModel from "../members/MethodModel";
@@ -7,7 +7,7 @@ import PropertyModel from "../members/PropertyModel";
 import Model from "../Model";
 import CommonComment from "../written/CommonComment";
 import TypeModel from "./TypeModel";
-import Renderable from "../Renderable";
+import Renderable from "../interfaces/Renderable";
 import RenderManager from "../../renderer/RenderManager";
 
 /**

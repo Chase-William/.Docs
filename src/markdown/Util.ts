@@ -1,6 +1,7 @@
-import AccessibilityModel from "../models/AccessibilityModel"
-import ConfigModel from "../models/config/ConfigModel"
-import Model from "../models/Model"
+import PolymorphicConfigable from "../models/config/interfaces/PolymorphicConfigable"
+import SingletonConfigurable from "../models/config/interfaces/SingletonConfigurable"
+import PolymorphicModelable from "../models/interfaces/PolymophicModelable"
+import Singletonable from "../models/interfaces/Singletonable"
 import TypeModel from "../models/types/TypeModel"
 import CommonComment from "../models/written/CommonComment"
 import { getOptionalSummary } from "./CommentsRenderer"
@@ -34,4 +35,32 @@ export function renderTypeHeader(model: TypeModel<CommonComment>): string {
     getOptionalSummary(model.comments) +
     divider()
   )
+}
+
+/**
+ * Renders the `static` tag if the config permits.
+ * @param model 
+ * @param config 
+ * @returns 
+ */
+export function renderIsStaticTag(model: Singletonable, config: SingletonConfigurable): string {
+  let content = ''
+  if (config.denoteIfStatic)
+    content += model.isStatic ? ' `static`' : ''
+  return content
+}
+
+/**
+ * Renders the "virtual" & "abstract" tags if the config permits.
+ * @param model to be rendered.
+ * @param config configuration.
+ * @returns rendered result; can be an empty string.
+ */
+export function renderVirtualAndStaticTags(model: PolymorphicModelable, config: PolymorphicConfigable): string {
+  let content = ''
+  if (config.denoteIfVirtual)
+    content += model.isVirtual ? ' `virtual`' : ''
+  if (config.denoteIfAbstract)
+    content += model.isAbstract ? ' `abstract`' : ''
+  return content
 }

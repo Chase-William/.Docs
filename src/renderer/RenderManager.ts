@@ -2,6 +2,12 @@ import path = require("path");
 import AccessibilityModel from "../models/AccessibilityModel";
 import ConfigModel from "../models/config/ConfigModel";
 import Configuration from "../models/config/Configuration";
+import MemberConfig from "../models/config/MemberConfig";
+import MemberConfigModel from "../models/config/members/MemberConfigModel";
+import EventModel from "../models/members/EventModel";
+import FieldModel from "../models/members/FieldModel";
+import MemberModel from "../models/members/MemberModel";
+import MethodModel from "../models/members/MethodModel";
 import PropertyModel from "../models/members/PropertyModel";
 import ClassModel from "../models/types/ClassModel";
 import DelegateModel from "../models/types/DelegateModel";
@@ -16,6 +22,13 @@ import Renderer from "./Renderer";
 /**
  * The RenderManager doesn't perform any rendering, instead it 
  * works closely with a configuration to restrict what gets rendered.
+ * 
+ * For example, instead of calling a render function for a property with a config and 
+ * having the receiver determine if that property should be rendered; lets just do that here.
+ * This reduces the workload/complexity and maintenance needed by different rendering implementations.
+ * 
+ * This is the last place for changes that will impact all renderers. (This is the callsite where renderer
+ * implementations have their functions called)
  */
 export default class RenderManager {
   config: Configuration;
@@ -68,50 +81,126 @@ export default class RenderManager {
   }
 
   renderMembers(model: StandardMembersModel): void {
+    // Properties
     if (model.properties && model.properties.length > 0) {
       if (this.hasRenderableModels(model.properties, this.config.member.property)) {    
         this.renderProperties(model.properties)
       }      
     }
+    // Methods
+    if (model.methods && model.methods.length > 0) {
+      if (this.hasRenderableModels(model.methods, this.config.member.method)) {    
+        this.renderMethods(model.methods)
+      }      
+    }
+    // Events
+    if (model.events && model.events.length > 0) {
+      if (this.hasRenderableModels(model.events, this.config.member.event)) {    
+        this.renderEvents(model.events)
+      }      
+    }
+    // Fields
+    if (model.fields && model.fields.length > 0) {
+      if (this.hasRenderableModels(model.fields, this.config.member.field)) {    
+        this.renderFields(model.fields)
+      }      
+    }
   }
 
   renderProperties(properties: PropertyModel[]): void {
-    properties.sort((a, b) => a.name.localeCompare(b.name))
-    const publicProps = new Array<PropertyModel>()
-    const privateProps = new Array<PropertyModel>()
-    const protectedProps = new Array<PropertyModel>()
-    const internalProps = new Array<PropertyModel>()
-    const internalAndProtectedProps = new Array<PropertyModel>()
+    this.renderOrganizedMembers(
+      properties, 
+      this.config.member.property, 
+      (accessibility: string, models: PropertyModel[]) => this.renderer.renderProperties(accessibility, models, this.config.member.property))
+  }
 
-    for (const prop of properties) {
-      if (prop.isInternal && prop.isProtected) {
-        internalAndProtectedProps.push(prop)
-      } else if (prop.isInternal) {
-        internalProps.push(prop)
-      } else if (prop.isProtected) {
-        protectedProps.push(prop)
-      } else if (prop.isPublic) {
-        publicProps.push(prop)
+  renderMethods(methods: MethodModel[]): void {
+    this.renderOrganizedMembers(
+      methods,
+      this.config.member.method, 
+      (accessibility: string, models: MethodModel[]) => this.renderer.renderMethods(accessibility, models, this.config.member.method))
+  }
+
+  renderEvents(event: EventModel[]): void {
+    this.renderOrganizedMembers(
+      event, 
+      this.config.member.event, 
+      (accessibility: string, models: EventModel[]) => this.renderer.renderEvents(accessibility, models, this.config.member.event))
+  }
+  
+  renderFields(fields: FieldModel[]): void {
+    this.renderOrganizedMembers(
+      fields, 
+      this.config.member.field, 
+      (accessibility: string, models: FieldModel[]) => this.renderer.renderFields(accessibility, models, this.config.member.field))
+  }  
+  renderOrganizedMembers<T extends MemberModel<CommonComment>>(models: T[], config: MemberConfigModel, renderFunc: (accessibility: string, models: T[]) => void): void {
+    models.sort((a, b) => a.name.localeCompare(b.name))
+    const publicModels = new Array<T>()
+    const privateModels = new Array<T>()
+    const protectedModels = new Array<T>()
+    const internalModels = new Array<T>()
+    const internalAndProtectedModels = new Array<T>()
+
+    for (const model of models) {
+      if (model.isInternal && model.isProtected) {
+        internalAndProtectedModels.push(model)
+      } else if (model.isInternal) {
+        internalModels.push(model)
+      } else if (model.isProtected) {
+        protectedModels.push(model)
+      } else if (model.isPublic) {
+        publicModels.push(model)
       } else { // private
-        privateProps.push(prop)
+        privateModels.push(model)
       }
     }
 
-    if (this.config.member.property.showIfPublic)
-      this.renderer.renderProperties('public', publicProps, this.config.member.property)
-    if (this.config.member.property.showIfProtected)
-      this.renderer.renderProperties('protected', protectedProps, this.config.member.property)
-    if (this.config.member.property.showIfInternal)
-      this.renderer.renderProperties('internal', internalProps, this.config.member.property)
-    if (this.config.member.property.showIfInternalProtected)
-      this.renderer.renderProperties('internal protected', internalAndProtectedProps, this.config.member.property)
-    if (this.config.member.property.showIfPrivate)
-      this.renderer.renderProperties('private', privateProps, this.config.member.property)
+    if (config.showIfPublic)
+      renderFunc('public', publicModels)
+    if (config.showIfProtected)
+      renderFunc('protected', protectedModels)
+    if (config.showIfInternal)
+      renderFunc('internal', internalModels)
+    if (config.showIfInternalProtected)
+      renderFunc('internal protected', internalAndProtectedModels)
+    if (config.showIfPrivate)
+      renderFunc('private', privateModels)
   }
-  
-  // renderValues(model: EnumModel): void {
-  //   if (model.fields && model.fields.length > 0)
-  //     this.renderer.renderValues(model.fields)
+
+
+  // renderOrganizedMembers<T extends MemberModel<CommonComment>>(models: T[], config: MemberConfigModel, renderFunc: (accessibility: string, models: MemberModel<CommonComment>[], config: MemberConfigModel) => void): void {
+  //   models.sort((a, b) => a.name.localeCompare(b.name))
+  //   const publicModels = new Array<T>()
+  //   const privateModels = new Array<T>()
+  //   const protectedModels = new Array<T>()
+  //   const internalModels = new Array<T>()
+  //   const internalAndProtectedModels = new Array<T>()
+
+  //   for (const model of models) {
+  //     if (model.isInternal && model.isProtected) {
+  //       internalAndProtectedModels.push(model)
+  //     } else if (model.isInternal) {
+  //       internalModels.push(model)
+  //     } else if (model.isProtected) {
+  //       protectedModels.push(model)
+  //     } else if (model.isPublic) {
+  //       publicModels.push(model)
+  //     } else { // private
+  //       privateModels.push(model)
+  //     }
+  //   }
+
+  //   if (config.showIfPublic)
+  //     renderFunc('public', publicModels, config)
+  //   if (config.showIfProtected)
+  //     renderFunc('protected', protectedModels, config)
+  //   if (config.showIfInternal)
+  //     renderFunc('internal', internalModels, config)
+  //   if (config.showIfInternalProtected)
+  //     renderFunc('internal protected', internalAndProtectedModels, config)
+  //   if (config.showIfPrivate)
+  //     renderFunc('private', privateModels, config)
   // }
 
   /**

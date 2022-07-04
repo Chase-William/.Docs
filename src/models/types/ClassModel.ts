@@ -1,6 +1,6 @@
 import { jsonMember, jsonObject } from 'typedjson';
 import RenderManager from '../../renderer/RenderManager';
-import Renderable from '../Renderable';
+import Renderable from '../interfaces/Renderable';
 import StandardMembersModel from './StandardMembersModel';
 
 @jsonObject()

@@ -1,6 +1,6 @@
-import Nestable, { readChildrenInternal } from './Nestable';
+import Nestable, { readChildrenInternal } from './interfaces/Nestable';
 import Model from './Model';
-import Renderable from './Renderable';
+import Renderable from './interfaces/Renderable';
 import RenderManager from '../renderer/RenderManager';
 
 export default class Namespace extends Model implements Nestable, Renderable {

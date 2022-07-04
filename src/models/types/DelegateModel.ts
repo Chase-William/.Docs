@@ -1,6 +1,6 @@
 import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
 import RenderManager from '../../renderer/RenderManager';
-import Renderable from '../Renderable';
+import Renderable from '../interfaces/Renderable';
 import CommonComment from '../written/CommonComment';
 import TypeModel from './TypeModel';
 

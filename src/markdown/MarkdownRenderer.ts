@@ -63,28 +63,28 @@ export default class MarkdownRenderer implements Renderer {
       renderTypeHeader(model)
     )
   }
-  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel): void {
+  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel): void {    
     this.content +=  `## \`${accessibility}\` Properties` + divider()
     for (const prop of properties) {
-      this.content += renderProperty(prop)
+      this.content += renderProperty(prop, config)
     }
   }
   renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel): void {
-    this.content += `## \`${accessibility}\` Methods`
+    this.content += divider() + `## \`${accessibility}\` Methods`
     for (const method of methods) {
-      this.content += renderMethod(method)
+      this.content += renderMethod(method, config)
     }
   }
   renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel): void {
-    this.content += `## \`${accessibility}\` Events`
+    this.content += divider() + `## \`${accessibility}\` Events`
     for (const event of events) {
-      this.content += renderEvent(event)
+      this.content += renderEvent(event, config)
     }
   }
   renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel): void {
-    this.content += `## \`${accessibility}\` Fields`
+    this.content += divider() + `## \`${accessibility}\` Fields`
     for (const field of fields) {
-      this.content += renderField(field)
+      this.content += renderField(field, config)
     }
   }
   renderValues(model: EnumModel, values: FieldModel[]): void {

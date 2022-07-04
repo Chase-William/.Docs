@@ -1,46 +1,11 @@
+import PropertyConfigModel from "../../models/config/members/PropertyConfigModel"
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { check, optionalDivider } from "../Util"
+import divider, { renderIsStaticTag, renderVirtualAndStaticTags } from "../Util"
 
-// export default function propertyRenderer(properties: PropertyModel[]): string {
-//   // Ascending Alphabetical
-//   properties.sort((a, b) => a.name.localeCompare(b.name))
-//   const publicProps = new Array<PropertyModel>()
-//   const privateProps = new Array<PropertyModel>()
-//   const protectedProps = new Array<PropertyModel>()
-//   const internalProps = new Array<PropertyModel>()
-//   const internalAndProtectedProps = new Array<PropertyModel>()
-
-//   for (const prop of properties) {
-//     if (prop.isInternal && prop.isProtected) {
-//       internalAndProtectedProps.push(prop)
-//     } else if (prop.isInternal) {
-//       internalProps.push(prop)
-//     } else if (prop.isProtected) {
-//       protectedProps.push(prop)
-//     } else if (prop.isPublic) {
-//       publicProps.push(prop)
-//     } else { // private
-//       privateProps.push(prop)
-//     }
-//   }
-
-//   return (
-//     renderProperties(publicProps, '### `public`') +
-//     optionalDivider(protectedProps) +
-//     renderProperties(protectedProps, '### `protected`') +    
-//     optionalDivider(internalProps) +
-//     renderProperties(internalProps, '### `internal`') +   
-//     optionalDivider(internalAndProtectedProps) +
-//     renderProperties(internalAndProtectedProps, '### `internal protected`') +
-//     optionalDivider(privateProps) +
-//     renderProperties(privateProps, '### `private`')
-//   )
-// }
-
-export function renderProperty(property: PropertyModel): string {
+export function renderProperty(property: PropertyModel, config: PropertyConfigModel): string {
   return (    
-    renderPropertyTitle(property) +      
+    renderPropertyHeader(property, config) +      
     divider() +
     getOptionalSummary(property.comments) +
     divider() +
@@ -49,7 +14,7 @@ export function renderProperty(property: PropertyModel): string {
   )
 }
 
-export function renderGetterAndSetter(prop: PropertyModel): string {
+function renderGetterAndSetter(prop: PropertyModel): string {
   let content = ''
 
   if (prop.hasGetter) {
@@ -76,13 +41,12 @@ export function renderGetterAndSetter(prop: PropertyModel): string {
   return content
 }
 
-export function renderPropertyTitle(prop: PropertyModel): string {
-  return `### ${prop.name}\`<${
-    prop.type}>\`${
-    prop.isStatic ? '' : ' `static`'}${
-    prop.isVirtual ? ' `virtual`' : ''}${
-    prop.isAbstract ? ' `abstract`' : ''}${
-    prop.hasSetter && prop.isSetPublic ? '' : ' `readonly`'}${
-    prop.hasGetter && prop.isGetPublic ? '' : ' `setonly`'
-    }`
+function renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel): string {
+  return (
+    `### ${prop.name}\`<${prop.type}>\`` +
+    renderIsStaticTag(prop, config) +
+    renderVirtualAndStaticTags(prop, config) +
+    ((prop.hasSetter && prop.isSetPublic) ? '' : ' `readonly`') +
+    ((prop.hasGetter && prop.isGetPublic) ? '' : ' `setonly`')
+  )
 }

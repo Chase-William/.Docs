@@ -1,5 +1,5 @@
-import Nestable, { readChildrenInternal } from './Nestable';
-import Renderable from './Renderable';
+import Nestable, { readChildrenInternal } from './interfaces/Nestable';
+import Renderable from './interfaces/Renderable';
 import Model from './Model';
 import RenderManager from '../renderer/RenderManager';
 
