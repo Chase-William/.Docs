@@ -10,13 +10,17 @@ const JSON_DIR = './json'
 // Omit default node path and exe path from routing
 const router = new Router(process.argv)
 
-execFileSync(router.charpCoreExePath, [
+console.log(process.cwd())
+console.log(router)
+
+execFileSync(router.docsharkCoreExePath, [
+  router.csProjPath,
   router.dllPath,
   router.xmlPath,
   JSON_DIR
 ]);
 
-const root = new ModelTree('Charp', null);
+const root = new ModelTree('Docshark', null);
 root.readChildren('json', new Array<string>(), root);
 
 // Clean 

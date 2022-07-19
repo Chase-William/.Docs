@@ -6,16 +6,16 @@ import { execSync } from "child_process";
 
 export default class Router {
   outputPath = './docs'
-  charpCoreExePath = 'Charp.Runner.exe'
+  docsharkCoreExePath = 'Docshark.Runner.exe'
+  csProjPath: string
   dllPath: string
   xmlPath: string
   config: Configuration
 
   constructor(args: string[]) {
-    let csproj: string
-    // Get the dir of charp.exe as we need to use it later for configuration loading
+    // Get the dir of docshark.exe as we need to use it later for configuration loading
     // Doesn't work in dev
-    const charpLocation = args[0].slice(0, args[0].lastIndexOf('\\'))
+    const docsharkLocation = args[0].slice(0, args[0].lastIndexOf('\\'))
     
     /**
      * Determine the approach the user has taken.
@@ -32,9 +32,10 @@ export default class Router {
         case '--development-env':
           {
             const devBasePath = process.cwd()
-            this.charpCoreExePath = path.join(devBasePath, 'vendor\\Charp.Core\\src\\Charp.Runner\\bin\\Debug\\net6.0\\Charp.Runner.exe')
-            this.dllPath = path.join(devBasePath, 'vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net6.0\\Charp.Test.Data.dll')
-            this.xmlPath = path.join(devBasePath, 'vendor\\Charp.Core\\test\\Charp.Test.Data\\bin\\Debug\\net6.0\\Charp.Test.Data.xml')
+            this.docsharkCoreExePath = path.join(devBasePath, 'vendor\\Docshark.Core\\src\\Docshark.Runner\\bin\\Debug\\net6.0\\Docshark.Runner.exe')
+            this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\Docshark.Test.Data.csproj')
+            this.dllPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\bin\\Debug\\net6.0\\Docshark.Test.Data.dll')
+            this.xmlPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\bin\\Debug\\net6.0\\Docshark.Test.Data.xml')
             this.config = loadConfiguration(devBasePath, './configurations/external-perspective.json')
           }
         return
@@ -55,60 +56,60 @@ export default class Router {
           this.config = loadConfiguration(process.cwd(), process.argv[++i])
           break;
         case '--external': // Shorthand switch use default external config
-          this.routeDefaultConfig(charpLocation, 'external')  
+          this.routeDefaultConfig(docsharkLocation, 'external')  
           break;
         case '--internal': // Shorthard switch use default internal config
-          this.routeDefaultConfig(charpLocation, 'internal')        
+          this.routeDefaultConfig(docsharkLocation, 'internal')        
           break;
-        case '-core': // Charp.Core path for development purposes (testing)
-          this.charpCoreExePath = args[++i]
+        case '-core': // Docshark.Core path for development purposes (testing)
+          this.docsharkCoreExePath = args[++i]
           break;
         default: // A argument that matches no qualifiers is assumed to be the .csproj path
-          csproj = args[i]
-          if (!existsSync(csproj))
-            throw new Error('The given .csproj path of ' + csproj + ' does not exist.')
+          this.csProjPath = args[i]
+          if (!existsSync(this.csProjPath))
+            throw new Error('The given .csproj path of ' + this.csProjPath + ' does not exist.')
           break;
       }
     }
 
     // Check to see if a config was already loaded (user provided one or in dev env)
     if (!this.config) // If not, load a default one
-      this.config = loadConfiguration(charpLocation, null)
+      this.config = loadConfiguration(docsharkLocation, null)
 
     // If csproj approach was not used and the .dll and .xml paths are set,
     // if so we can continue and run the app.
     // Otherwise we will need to use the .csproj to find the .dll and .xml or 
     // examine the process folder
-    if (!csproj && this.dllPath && this.xmlPath)
+    if (!this.csProjPath && this.dllPath && this.xmlPath)
       return
     
     // csproj approach was used via not providing it or the .dll and .xml path meaning;
     // the .csproj file should be in the currently working directory
     // May also possibily need to mod the .csproj and build the project too
-    if (!csproj) {
-      csproj = this.getCSProjectPath(process.cwd())
+    if (!this.csProjPath) {
+      this.csProjPath = this.getCSProjectPath(process.cwd())
     }
 
     // Check to see if a .csproj is not specified in the given path
-    if (!csproj.endsWith('.csproj')) {
-      csproj = this.getCSProjectPath(csproj)
+    if (!this.csProjPath.endsWith('.csproj')) {
+      this.csProjPath = this.getCSProjectPath(this.csProjPath)
     }
 
     // At this point we have a valid csproj target
 
     // Check if the project is configured for .xml comment output
     // Execute the block to build the project as .xml comment gen wasn't enabled
-    if (checkAndConfigProjectIfNeeded(csproj)) {
+    if (checkAndConfigProjectIfNeeded(this.csProjPath)) {
       // Configued .csproj, now build to produce .xml
-      if (!this.tryBuildDotnetProject(csproj))
-        throw new Error(`Failed to build C# project at ${csproj}. The project needs to be built because it's 
-          configuration was just changed to produce .xml docs for Charp. Try building the project yourself and 
-          once complete run Charp again.`)
+      if (!this.tryBuildDotnetProject(this.csProjPath))
+        throw new Error(`Failed to build C# project at ${this.csProjPath}. The project needs to be built because it's 
+          configuration was just changed to produce .xml docs for Docshark. Try building the project yourself and 
+          once complete run Docshark again.`)
     }
     
     // Get the path to where the csproj is as that is where we begin our search
-    const csprojPathOnly = csproj.slice(0, csproj.lastIndexOf('\\'))
-    const fileName = csproj.slice(csproj.lastIndexOf('\\') + 1, csproj.lastIndexOf('.'))
+    const csprojPathOnly = this.csProjPath.slice(0, this.csProjPath.lastIndexOf('\\'))
+    const fileName = this.csProjPath.slice(this.csProjPath.lastIndexOf('\\') + 1, this.csProjPath.lastIndexOf('.'))
     const dllFileName =  fileName + '.dll'
     const xmlFileName =  fileName + '.xml'
 
@@ -127,7 +128,7 @@ export default class Router {
    * @param fileName 
    */
   routeDefaultConfig(basePath: string, fileName: string): void {
-    if (basePath.includes('charp.exe')) {
+    if (basePath.includes('docshark.exe')) {
       this.config = loadConfiguration(basePath, fileName)
     } else {
       this.config = loadConfiguration(process.cwd(), fileName)
