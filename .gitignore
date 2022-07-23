@@ -3,7 +3,7 @@ charp
 docs/
 json
 deployable
-vendor
+msbuild.binlog
 
 # Logs
 logs

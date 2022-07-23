@@ -11,12 +11,9 @@ const JSON_DIR = './json'
 const router = new Router(process.argv)
 
 console.log(process.cwd())
-console.log(router)
 
 execFileSync(router.docsharkCoreExePath, [
   router.csProjPath,
-  router.dllPath,
-  router.xmlPath,
   JSON_DIR
 ]);
 

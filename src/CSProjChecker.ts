@@ -8,22 +8,22 @@ import { readFileSync, writeFileSync } from "fs";
  * @param csprojPath path to the .csproj to read
  * @returns true if building is needed, false otherwise
  */
-export default function checkAndConfigProjectIfNeeded(csprojPath: string): boolean {
-  // Indicates if we will need to build the .csproj
-  let mustBuild = false
-  const parser = new XMLParser({ ignoreAttributes: false });
-  const csproj = parser.parse(readFileSync(csprojPath, { encoding: 'utf-8' }));
+// export default function checkAndConfigProjectIfNeeded(csprojPath: string): boolean {
+//   // Indicates if we will need to build the .csproj
+//   let mustBuild = false
+//   const parser = new XMLParser({ ignoreAttributes: false });
+//   const csproj = parser.parse(readFileSync(csprojPath, { encoding: 'utf-8' }));
 
-  // Check to see if this project has been configured to generate xml comments
-  if (typeof csproj.Project.PropertyGroup.GenerateDocumentationFile === 'undefined') {
-    csproj.Project.PropertyGroup.GenerateDocumentationFile = 'True'
-    mustBuild = true
-  }
+//   // Check to see if this project has been configured to generate xml comments
+//   if (typeof csproj.Project.PropertyGroup.GenerateDocumentationFile === 'undefined') {
+//     csproj.Project.PropertyGroup.GenerateDocumentationFile = 'True'
+//     mustBuild = true
+//   }
 
-  const builder = new XMLBuilder({ ignoreAttributes: false });
-  const xmlContent = builder.build(csproj);
+//   const builder = new XMLBuilder({ ignoreAttributes: false });
+//   const xmlContent = builder.build(csproj);
 
-  writeFileSync(csprojPath, xmlContent)
+//   writeFileSync(csprojPath, xmlContent)
   
-  return mustBuild
-}
+//   return mustBuild
+// }
