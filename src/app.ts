@@ -4,6 +4,10 @@ import { rmSync } from 'fs';
 import RenderManager from './renderer/RenderManager';
 import Router from './Router';
 import { execFileSync } from "child_process";
+import { exit } from 'process';
+import { TypedJSON } from 'typedjson';
+import BuildError from './BuildError';
+import ErrorRoot from './ErrorRoot';
 
 const JSON_DIR = './json'
 
@@ -12,10 +16,22 @@ const router = new Router(process.argv)
 
 console.log(process.cwd())
 
-execFileSync(router.docsharkCoreExePath, [
+const result = execFileSync(router.docsharkCoreExePath, [
   router.csProjPath,
   JSON_DIR
 ]);
+
+if (result.byteLength == 0)
+{
+  console.log("asdasd")
+  exit(0)
+}
+
+const errors = new TypedJSON(ErrorRoot).parse(result.toString())
+
+console.log(errors)
+exit(0);
+
 
 const root = new ModelTree('Docshark', null);
 root.readChildren('json', new Array<string>(), root);
