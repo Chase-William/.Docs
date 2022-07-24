@@ -1,3 +1,4 @@
 [submodule "vendor/Docshark.Core"]
 	path = vendor/Docshark.Core
 	url = https://github.com/Chase-William/Docshark.Core
+  ignore = all
