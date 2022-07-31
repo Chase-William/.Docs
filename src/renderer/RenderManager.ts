@@ -134,6 +134,7 @@ export default class RenderManager {
       this.config.member.field, 
       (accessibility: string, models: FieldModel[]) => this.renderer.renderFields(accessibility, models, this.config.member.field))
   }  
+
   renderOrganizedMembers<T extends MemberModel<CommonComment>>(models: T[], config: MemberConfigModel, renderFunc: (accessibility: string, models: T[]) => void): void {
     models.sort((a, b) => a.name.localeCompare(b.name))
     const publicModels = new Array<T>()
@@ -156,15 +157,20 @@ export default class RenderManager {
       }
     }
 
-    if (config.showIfPublic)
+    /**
+     * Do not render if config says not to.
+     * Do not render if config says to, but there is nothing to render.
+     */
+
+    if (config.showIfPublic && publicModels.length > 0)
       renderFunc('public', publicModels)
-    if (config.showIfProtected)
+    if (config.showIfProtected && protectedModels.length > 0)
       renderFunc('protected', protectedModels)
-    if (config.showIfInternal)
+    if (config.showIfInternal && internalModels.length > 0)
       renderFunc('internal', internalModels)
-    if (config.showIfInternalProtected)
+    if (config.showIfInternalProtected && internalAndProtectedModels.length > 0)
       renderFunc('internal protected', internalAndProtectedModels)
-    if (config.showIfPrivate)
+    if (config.showIfPrivate && privateModels.length > 0)
       renderFunc('private', privateModels)
   }
 

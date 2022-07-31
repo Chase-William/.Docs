@@ -8,7 +8,8 @@
     "url": "https://github.com/Chase-William/Charp/tree/main"
   },
   "scripts": {
-    "e": "tsc --build && node ./dist/app.js --development-env",
+    "ecore": "tsc --build && node ./dist/app.js --development-env --core",
+    "etest": "tsc --build && node ./dist/app.js --development-env --test",
     "test": "tsc --build && jest",
     "build": "tsc --build",
     "vendor": "git submodule init && git submodule update --remote --recursive && cd ./vendor/Docshark.Core && nuget restore & dotnet build",
@@ -20,6 +21,7 @@
     "post-bundle": "node bundler.js"
   },
   "dependencies": {
+    "copy-dir": "^1.3.0",
     "fast-xml-parser": "^4.0.8",
     "fs-extra": "^10.1.0",
     "typedjson": "^1.8.0"

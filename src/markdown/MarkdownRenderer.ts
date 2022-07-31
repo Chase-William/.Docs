@@ -96,6 +96,7 @@ export default class MarkdownRenderer implements Renderer {
       this.content += renderValue(value)
     }    
   }  
+  
   endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel): void {
     this.writeToFile(model, filePath)
   }

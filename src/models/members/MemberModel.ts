@@ -8,5 +8,5 @@ export default class MemberModel<T extends CommonComment> extends AccessibilityM
   @jsonMember(CommonComment, { name: 'Comments' })
   comments: T;
   @jsonMember(Boolean, { name: 'IsStatic' })
-  isStatic: boolean;
+  isStatic: boolean;  
 }

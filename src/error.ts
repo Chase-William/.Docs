@@ -15,6 +15,8 @@ export function handleError(errorBuffer: Buffer) {
       console.log(message)
       break;
     default:
+      console.log("DEFAULT BREAK HIT IN ERROR HANDLING -- SOMETHING IS SERIOUSLY WRONG HERE...")
+      console.log(message)
       break;
   }
 

@@ -32,7 +32,12 @@ export default class Router {
           {
             const devBasePath = process.cwd()
             this.docsharkCoreExePath = path.join(devBasePath, 'vendor\\Docshark.Core\\src\\Docshark.Runner\\bin\\Debug\\net6.0\\Docshark.Runner.exe')
-            this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\Docshark.Test.Data.csproj')
+            if (args[++i] == '--core') {
+              this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\src\\Docshark.Core\\Docshark.Core.csproj')
+            } else {
+              this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\Docshark.Test.Data.csproj')
+            }            
+            // this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\Docshark.Test.Data.csproj')
             // this.dllPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\bin\\Debug\\net6.0\\Docshark.Test.Data.dll')
             // this.xmlPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\bin\\Debug\\net6.0\\Docshark.Test.Data.xml')
             this.config = loadConfiguration(devBasePath, './configurations/external-perspective.json')

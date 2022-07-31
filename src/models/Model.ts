@@ -11,7 +11,7 @@ export default class Model {
   type: string
 
   @jsonMember(String, { name: 'Name' })
-  name: string
+  name: string  
 
   constructor(name: string, parent: Model | null) {
     this.name = name;

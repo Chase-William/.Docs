@@ -51,6 +51,14 @@ export function readChildrenInternal(extraPathing: string, namespaces: Array<str
     }
     return -1
   })
+
+  const serializer = new TypedJSON(Model)
+  const classSerializer = new TypedJSON(ClassModel)
+  const enumSerializer = new TypedJSON(EnumModel)
+  const interfaceSerializer = new TypedJSON(InterfaceModel)
+  const structSeralizer = new TypedJSON(StructModel)
+  const delegateSerializer = new TypedJSON(DelegateModel)
+
   for (const name of fileOrFolderNames) {
     // Handle File
     if (name.endsWith('.json')) {
@@ -60,13 +68,7 @@ export function readChildrenInternal(extraPathing: string, namespaces: Array<str
 
       // Get a simplified deserialzied version of the object to defer type before deserializing to 
       // more derived type
-      
-      const serializer = new TypedJSON(Model)
-      const classSerializer = new TypedJSON(ClassModel)
-      const enumSerializer = new TypedJSON(EnumModel)
-      const interfaceSerializer = new TypedJSON(InterfaceModel)
-      const structSeralizer = new TypedJSON(StructModel)
-      const delegateSerializer = new TypedJSON(DelegateModel)
+
       const tester = serializer.parse(fileStr)
 
       switch (tester.type) {

@@ -2,6 +2,8 @@ import { jsonMember, jsonObject } from 'typedjson';
 import CommonComment from '../written/CommonComment';
 import AccessibilityModel from '../AccessibilityModel';
 import Model from '../Model';
+import { TYPE_MAP } from '../../app';
+import TypeDefinition from '../meta/TypeDefinition';
 
 /**
  * Represents any kind of <type> that can be defined.
@@ -20,5 +22,19 @@ export default class TypeModel<T extends CommonComment> extends AccessibilityMod
 
   constructor(name: string, parent: Model) {
     super(name, parent);
+  }  
+
+  getOrderedBaseTypes(): TypeDefinition[] {
+    const types = new Array<TypeDefinition>()
+    this.getNextBaseType(this.baseType, types)
+    return types
+  }
+
+  getNextBaseType(id: string, types: TypeDefinition[]) {
+    if (TYPE_MAP.has(id)) {
+      const type = TYPE_MAP.get(id)
+      types.push(type)
+      this.getNextBaseType(type.parent, types)
+    }  
   }
 }

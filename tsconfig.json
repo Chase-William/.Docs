@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS",
     "declaration": true,
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "sourceMap": true,
+    // "sourceMap": true,
     "outDir": "dist",
 
     /* Required for typescript-json-serializer */
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true
   },
   "include": [ "src/**/*.ts" ]
 }

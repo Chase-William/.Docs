@@ -1,20 +1,18 @@
 import MarkdownRenderer from './markdown/markdownRenderer';
 import ModelTree from './models/ModelTree';
-import { rmSync } from 'fs';
+import { readFileSync, rmSync } from 'fs';
 import RenderManager from './renderer/RenderManager';
 import Router from './Router';
 import { execFileSync } from "child_process";
 import { exit } from 'process';
-import { TypedJSON } from 'typedjson';
-import ErrorRoot from './ErrorRoot';
 import { handleError } from './error';
+import { TypedJSON } from 'typedjson';
+import TypeDefinition from './models/meta/TypeDefinition';
 
 const JSON_DIR = './json'
 
 // Omit default node path and exe path from routing
 const router = new Router(process.argv)
-
-console.log(process.cwd())
 
 const result = execFileSync(router.docsharkCoreExePath, [
   router.csProjPath,
@@ -24,13 +22,16 @@ const result = execFileSync(router.docsharkCoreExePath, [
 if (result.byteLength != 0)
 {
   handleError(result)
-  exit(0)
+  exit(1)
 }
 
-const root = new ModelTree('Docshark', null);
-root.readChildren('json', new Array<string>(), root);
+const types = new TypedJSON(TypeDefinition).parseAsArray(readFileSync('json/core-data/meta/types.json', { encoding: 'utf-8' }))
+export const TYPE_MAP = new Map<string, TypeDefinition>(types.map(entry => [entry.id, entry]))
 
-// Clean 
+const root = new ModelTree('Docshark', null);
+root.readChildren('json/core-data/src', new Array<string>(), root);
+
+// Clean old documentation 
 rmSync(router.outputPath, { recursive: true, force: true })
 
 const renderManager = new RenderManager()
@@ -41,4 +42,4 @@ renderManager.renderer = new MarkdownRenderer()
 root.render(renderManager)
 
 // Clean json
-rmSync(JSON_DIR, { recursive: true, force: true })
+// rmSync(JSON_DIR, { recursive: true, force: true })

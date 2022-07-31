@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // Run this file after the "yarn bundle-node" script
 
+const copydir = require('copy-dir')
+const copydirSync = require('copy-dir/libs/copydirSync')
 const fs = require('fs')
 const path = require('path')
 
@@ -18,16 +20,7 @@ if (!fs.existsSync(DOCSHARK_CORE_PUBLISH_DIR)) {
   throw Error('No vendor Charp.Core directory found. Ensure you are running "yarn vendor" before using this file.')
 }
 
-{
-  //#region Copy dotnet published assemblies
-  const files = fs.readdirSync(DOCSHARK_CORE_PUBLISH_DIR)
-
-  for (const file of files){
-    // Copy files
-    fs.copyFileSync(path.join(DOCSHARK_CORE_PUBLISH_DIR, file), path.join(DEPLOYABLE_DIR, file))
-  }
-  //#endregion
-}
+copydirSync(DOCSHARK_CORE_PUBLISH_DIR, DEPLOYABLE_DIR);
 
 const appFileDir = path.join(DEPLOYABLE_DIR, 'app.exe')
 if (fs.existsSync(appFileDir))

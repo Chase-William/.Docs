@@ -5,6 +5,7 @@ import Singletonable from "../models/interfaces/Singletonable"
 import TypeModel from "../models/types/TypeModel"
 import CommonComment from "../models/written/CommonComment"
 import { getOptionalSummary } from "./CommentsRenderer"
+import { renderTypeInheritanceBlock } from "./InheritanceRenderer"
 
 export default function divider(): string {
   return '\n\n'
@@ -31,7 +32,8 @@ export function optionalDivider(col: unknown): string {
 export function renderTypeHeader(model: TypeModel<CommonComment>): string {
   return (
     `# ${model.name} \`${model.type}\`` +
-    divider() +
+    divider() + 
+    renderTypeInheritanceBlock(model) +
     getOptionalSummary(model.comments) +
     divider()
   )
