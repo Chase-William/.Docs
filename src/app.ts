@@ -14,22 +14,22 @@ const JSON_DIR = './json'
 // Omit default node path and exe path from routing
 const router = new Router(process.argv)
 
-const result = execFileSync(router.docsharkCoreExePath, [
-  router.csProjPath,
-  JSON_DIR
-]);
+// const result = execFileSync(router.docsharkCoreExePath, [
+//   router.csProjPath,
+//   JSON_DIR
+// ]);
 
-if (result.byteLength != 0)
-{
-  handleError(result)
-  exit(1)
-}
+// if (result.byteLength != 0)
+// {
+//   handleError(result)
+//   exit(1)
+// }
 
-const types = new TypedJSON(TypeDefinition).parseAsArray(readFileSync('json/core-data/meta/types.json', { encoding: 'utf-8' }))
+const types = new TypedJSON(TypeDefinition).parseAsArray(readFileSync('json/core-info/meta/types.json', { encoding: 'utf-8' }))
 export const TYPE_MAP = new Map<string, TypeDefinition>(types.map(entry => [entry.id, entry]))
 
-const root = new ModelTree('Docshark', null);
-root.readChildren('json/core-data/src', new Array<string>(), root);
+const root = new ModelTree('Docshark.Core', null);
+root.readChildren('json/core-info/project', new Array<string>(), root);
 
 // Clean old documentation 
 rmSync(router.outputPath, { recursive: true, force: true })

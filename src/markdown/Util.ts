@@ -39,6 +39,7 @@ export function renderTypeHeader(model: TypeModel<CommonComment>): string {
   )
 }
 
+
 /**
  * Renders the `static` tag if the config permits.
  * @param model 

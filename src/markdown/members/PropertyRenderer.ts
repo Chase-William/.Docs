@@ -2,6 +2,7 @@ import PropertyConfigModel from "../../models/config/members/PropertyConfigModel
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderIsStaticTag, renderVirtualAndStaticTags } from "../Util"
+import { renderTypeName } from "./MemberTypeRenderer"
 
 export default class PropertyRenderer {
   content = ''
@@ -91,7 +92,7 @@ export default class PropertyRenderer {
   
   renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel): string {
     return (
-      `### ${prop.name}\`<${prop.type}>\`` +
+      `### ${prop.name} ${renderTypeName(prop.type)}` +
       renderIsStaticTag(prop, config) +
       renderVirtualAndStaticTags(prop, config) +
       this.renderReadonlyTag(prop, config) +

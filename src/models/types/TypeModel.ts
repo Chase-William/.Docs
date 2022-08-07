@@ -5,6 +5,13 @@ import Model from '../Model';
 import { TYPE_MAP } from '../../app';
 import TypeDefinition from '../meta/TypeDefinition';
 
+export enum Accessibility {
+  Public,
+  Private,
+  Protected,
+  Internal
+}
+
 /**
  * Represents any kind of <type> that can be defined.
  */

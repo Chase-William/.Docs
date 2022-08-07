@@ -1,4 +1,6 @@
 import { jsonMember, jsonObject } from "typedjson";
+import Nestable from "./interfaces/Nestable";
+import Renderable from "./interfaces/Renderable";
 
 @jsonObject()
 export default class Model {
@@ -15,7 +17,7 @@ export default class Model {
 
   constructor(name: string, parent: Model | null) {
     this.name = name;
-    this.parent = parent;
+    this.parent = parent;    
   }
 }
 

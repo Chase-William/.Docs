@@ -10,8 +10,10 @@ export default class TypeDefinition {
   typeArguments: string[]
   @jsonMember(String, { name: "Namespace" })
   namespace: string
-  @jsonMember(String, { name: "Module" })
-  module: string
+  @jsonMember(String, { name: "AssemblyPath" })
+  assemblyPath: string
+  @jsonMember(String, { name: "AssemblyName" })
+  assemblyName: string
   @jsonMember(String, { name: "TypeName" })
-  typeName: string  
+  typeName: string
 }
