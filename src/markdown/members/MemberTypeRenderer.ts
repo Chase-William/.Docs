@@ -1,7 +1,7 @@
-import { TYPE_MAP } from "../../app";
+import { IGlobalMetaMap } from "../../models/global/MapperManager"
 
-export function renderTypeName(typeStr: string) {
-  const result = TYPE_MAP.get(typeStr)
+export function renderTypeName(typeStr: string, map: IGlobalMetaMap) {
+  const result = map.typeMap.get(typeStr)
   if (typeof result === 'undefined')
   {
     console.log(typeStr)
@@ -10,8 +10,8 @@ export function renderTypeName(typeStr: string) {
   
 
   return (
-    '<code title="' + result.assemblyPath + '">' +
-    '\\<' + result.typeName + '\\>' +
+    '<code title="' + result.namespace + '">' +
+    '\\<' + result.typeDescription + '\\>' +
     '</code>'
   )
 }

@@ -8,6 +8,7 @@ import DelegateConfigModel from "../models/config/types/DelegateConfigModel";
 import EnumConfigModel from "../models/config/types/EnumConfigModel";
 import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel";
 import StructConfigModel from "../models/config/types/StructConfigModel";
+import { IGlobalMetaMap } from "../models/global/MapperManager";
 import EventModel from "../models/members/EventModel";
 import FieldModel from "../models/members/FieldModel";
 import MethodModel from "../models/members/MethodModel";
@@ -31,57 +32,57 @@ import divider, { renderTypeHeader } from "./Util";
 export default class MarkdownRenderer implements Renderer {  
   content = '';
    
-  beginRenderingClass(model: ClassModel, config: ClassConfigModel): void {
+  beginRenderingClass(model: ClassModel, config: ClassConfigModel, map: IGlobalMetaMap): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model)
+      renderTypeHeader(model, map)
     )
   }
-  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel): void {
+  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel, map: IGlobalMetaMap): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model) +
+      renderTypeHeader(model, map) +
       '\n' +
       renderDelegate(model)
     )
   }
-  beginRenderingEnum(model: EnumModel, config: EnumConfigModel): void {
+  beginRenderingEnum(model: EnumModel, config: EnumConfigModel, map: IGlobalMetaMap): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model)
+      renderTypeHeader(model, map)
     )
   }
-  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel): void {
+  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel, map: IGlobalMetaMap): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model)
+      renderTypeHeader(model, map)
     )
   }
-  beginRenderingStruct(model: StructModel, config: StructConfigModel): void {
+  beginRenderingStruct(model: StructModel, config: StructConfigModel, map: IGlobalMetaMap): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model)
+      renderTypeHeader(model, map)
     )
   }
-  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel): void {    
+  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel, map: IGlobalMetaMap): void {    
     this.content +=  `## \`${accessibility}\` Properties` + divider()
     for (const prop of properties) {
-      this.content += new PropertyRenderer(prop, config).content
+      this.content += new PropertyRenderer(prop, config, map).content
     }
   }
-  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel): void {
+  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel, map: IGlobalMetaMap): void {
     this.content += divider() + `## \`${accessibility}\` Methods`
     for (const method of methods) {
       this.content += renderMethod(method, config)
     }
   }
-  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel): void {
+  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel, map: IGlobalMetaMap): void {
     this.content += divider() + `## \`${accessibility}\` Events`
     for (const event of events) {
       this.content += renderEvent(event, config)
     }
   }
-  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel): void {
+  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel, map: IGlobalMetaMap): void {
     this.content += divider() + `## \`${accessibility}\` Fields`
     for (const field of fields) {
       this.content += renderField(field, config)
@@ -97,19 +98,19 @@ export default class MarkdownRenderer implements Renderer {
     }    
   }  
   
-  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel): void {
+  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel, map: IGlobalMetaMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel): void {
+  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel, map: IGlobalMetaMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel): void {
+  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel, map: IGlobalMetaMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel): void {
+  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel, map: IGlobalMetaMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel): void {
+  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel, map: IGlobalMetaMap): void {
     this.writeToFile(model, filePath)
   }
 

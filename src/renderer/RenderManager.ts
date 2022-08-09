@@ -4,6 +4,7 @@ import ConfigModel from "../models/config/ConfigModel";
 import Configuration from "../models/config/Configuration";
 import MemberConfig from "../models/config/MemberConfig";
 import MemberConfigModel from "../models/config/members/MemberConfigModel";
+import MapperManager, { IGlobalMetaMap } from "../models/global/MapperManager";
 import EventModel from "../models/members/EventModel";
 import FieldModel from "../models/members/FieldModel";
 import MemberModel from "../models/members/MemberModel";
@@ -34,50 +35,51 @@ export default class RenderManager {
   config: Configuration;
   path: string
   renderer: Renderer
+  map: IGlobalMetaMap
 
   renderClass(model: ClassModel): void {    
     // Check config to determine what shall be rendered
     if (!this.shouldRender(model, this.config.type.class))
       return
     const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingClass(model, this.config.type.class)
+    this.renderer.beginRenderingClass(model, this.config.type.class, this.map)
     this.renderMembers(model)
-    this.renderer.endRenderingClass(model, filePath, this.config.type.class)
+    this.renderer.endRenderingClass(model, filePath, this.config.type.class, this.map)
   }
 
   renderDelegate(model: DelegateModel): void {
     if (!this.shouldRender(model, this.config.type.delegate))
       return
     const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingDelegate(model, this.config.type.delegate)
-    this.renderer.endRenderingDelegate(model, filePath, this.config.type.delegate)
+    this.renderer.beginRenderingDelegate(model, this.config.type.delegate, this.map)
+    this.renderer.endRenderingDelegate(model, filePath, this.config.type.delegate, this.map)
   }
 
   renderEnum(model: EnumModel): void {
     if (!this.shouldRender(model, this.config.type.enum))
       return
     const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingEnum(model, this.config.type.enum)
+    this.renderer.beginRenderingEnum(model, this.config.type.enum, this.map)
     this.renderer.renderValues(model, model.fields)
-    this.renderer.endRenderingEnum(model, filePath, this.config.type.enum)
+    this.renderer.endRenderingEnum(model, filePath, this.config.type.enum, this.map)
   }
 
   renderInterface(model: InterfaceModel): void {
     if (!this.shouldRender(model, this.config.type.interface))
       return
     const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingInterface(model, this.config.type.interface)
+    this.renderer.beginRenderingInterface(model, this.config.type.interface, this.map)
     this.renderMembers(model)
-    this.renderer.endRenderingInterface(model, filePath, this.config.type.interface)
+    this.renderer.endRenderingInterface(model, filePath, this.config.type.interface, this.map)
   }
 
   renderStruct(model: StructModel): void {
     if (!this.shouldRender(model, this.config.type.struct))
       return
     const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingStruct(model, this.config.type.struct)
+    this.renderer.beginRenderingStruct(model, this.config.type.struct, this.map)
     this.renderMembers(model)
-    this.renderer.endRenderingStruct(model, filePath, this.config.type.struct)
+    this.renderer.endRenderingStruct(model, filePath, this.config.type.struct, this.map)
   }
 
   renderMembers(model: StandardMembersModel): void {
@@ -111,28 +113,28 @@ export default class RenderManager {
     this.renderOrganizedMembers(
       properties, 
       this.config.member.property, 
-      (accessibility: string, models: PropertyModel[]) => this.renderer.renderProperties(accessibility, models, this.config.member.property))
+      (accessibility: string, models: PropertyModel[]) => this.renderer.renderProperties(accessibility, models, this.config.member.property, this.map))
   }
 
   renderMethods(methods: MethodModel[]): void {
     this.renderOrganizedMembers(
       methods,
       this.config.member.method, 
-      (accessibility: string, models: MethodModel[]) => this.renderer.renderMethods(accessibility, models, this.config.member.method))
+      (accessibility: string, models: MethodModel[]) => this.renderer.renderMethods(accessibility, models, this.config.member.method, this.map))
   }
 
   renderEvents(event: EventModel[]): void {
     this.renderOrganizedMembers(
       event, 
       this.config.member.event, 
-      (accessibility: string, models: EventModel[]) => this.renderer.renderEvents(accessibility, models, this.config.member.event))
+      (accessibility: string, models: EventModel[]) => this.renderer.renderEvents(accessibility, models, this.config.member.event, this.map))
   }
   
   renderFields(fields: FieldModel[]): void {
     this.renderOrganizedMembers(
       fields, 
       this.config.member.field, 
-      (accessibility: string, models: FieldModel[]) => this.renderer.renderFields(accessibility, models, this.config.member.field))
+      (accessibility: string, models: FieldModel[]) => this.renderer.renderFields(accessibility, models, this.config.member.field, this.map))
   }  
 
   renderOrganizedMembers<T extends MemberModel<CommonComment>>(models: T[], config: MemberConfigModel, renderFunc: (accessibility: string, models: T[]) => void): void {

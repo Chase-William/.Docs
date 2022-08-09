@@ -9,6 +9,7 @@ import DelegateConfigModel from "../models/config/types/DelegateConfigModel"
 import EnumConfigModel from "../models/config/types/EnumConfigModel"
 import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel"
 import StructConfigModel from "../models/config/types/StructConfigModel"
+import { IGlobalMetaMap } from "../models/global/MapperManager"
 import EventModel from "../models/members/EventModel"
 import FieldModel from "../models/members/FieldModel"
 import MethodModel from "../models/members/MethodModel"
@@ -27,33 +28,33 @@ export default interface Renderer {
   // renderMethod(model: MethodModel): string
   // renderProperty(model: PropertyModel): string
 
-  beginRenderingClass(model: ClassModel, config: ClassConfigModel): void
-  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel): void
-  beginRenderingEnum(model: EnumModel, config: EnumConfigModel): void
-  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel): void
-  beginRenderingStruct(model: StructModel, config: StructConfigModel): void
+  beginRenderingClass(model: ClassModel, config: ClassConfigModel, map: IGlobalMetaMap): void
+  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel, map: IGlobalMetaMap): void
+  beginRenderingEnum(model: EnumModel, config: EnumConfigModel, map: IGlobalMetaMap): void
+  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel, map: IGlobalMetaMap): void
+  beginRenderingStruct(model: StructModel, config: StructConfigModel, map: IGlobalMetaMap): void
 
   //beginRenderingProperties(): void
-  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel): void
+  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel, map: IGlobalMetaMap): void
   //endRenderingProperties(): void
 
   //beginRenderingMethods(): void
-  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel): void
+  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel, map: IGlobalMetaMap): void
   //endRenderingMethods(): void
 
   //beginRenderingEvents(): void
-  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel): void
+  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel, map: IGlobalMetaMap): void
   //endRenderingEvents(): void
 
   //beginRenderingFields(): void
-  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel): void
+  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel, map: IGlobalMetaMap): void
   //endRenderingFields(): void
 
   renderValues(model: EnumModel, values: FieldModel[]): void
 
-  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel): void
-  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel): void
-  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel): void
-  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel): void
-  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel): void
+  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel, map: IGlobalMetaMap): void
+  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel, map: IGlobalMetaMap): void
+  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel, map: IGlobalMetaMap): void
+  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel, map: IGlobalMetaMap): void
+  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel, map: IGlobalMetaMap): void
 }

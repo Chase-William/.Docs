@@ -1,11 +1,11 @@
-import { TYPE_MAP } from "../app";
-import TypeDefinition from "../models/meta/TypeDefinition";
+import { IGlobalMetaMap } from "../models/global/MapperManager";
+import TypeDefinition from "../models/global/TypeDefinition";
 import TypeModel from "../models/types/TypeModel"
 import CommonComment from "../models/written/CommonComment"
 import divider from "./Util";
 
-export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>): string {
-  const baseTypes = model.getOrderedBaseTypes()
+export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>, map: IGlobalMetaMap): string {  
+  const baseTypes = model.getOrderedBaseTypes(map)
 
   // Do not render only one parent.. its going to be System.Object
   if (baseTypes.length <= 1)
@@ -14,8 +14,8 @@ export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>): str
   let content = '```\nட '
   for (let i = 0; i < baseTypes.length; i++) {
     content += (
-      indent(i) +
-      typeName(baseTypes[i]) +
+      renderIndent(i) +
+      renderTypeName(baseTypes[i], map) +
       '\n'
     )
   }
@@ -23,7 +23,7 @@ export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>): str
   return content + divider()
 }
 
-function indent(index: number): string {
+function renderIndent(index: number): string {
   if (index == 0)
     return ''
   const spaces = new Array(index).fill(' ')
@@ -35,24 +35,24 @@ function indent(index: number): string {
 
 // ˪ட―↘ ↳
 
-function typeName(type: TypeDefinition): string {
+function renderTypeName(type: TypeDefinition, map: IGlobalMetaMap): string {
   if (type.typeArguments.length > 0) {
     //let temp = ''
     // Set top line of content to type and opening type angular bracket
-    let content = type.typeName.substring(0, type.typeName.indexOf('`')) + '<'
+    let content = type.typeDescription.substring(0, type.typeDescription.indexOf('`')) + '<'
     // Used to contain all the type defs
     const argDefs = new Array<TypeDefinition>(type.typeArguments.length)
     // Get all arguments' full type def
     for (let i = 0; i < type.typeArguments.length; i++) {
       // Get type from dictionary of types
-      const tDef = TYPE_MAP.get(type.typeArguments[i])
+      const tDef = map.typeMap.get(type.typeArguments[i])
       argDefs[i] = tDef
       // Check if recursive processing of type argumented types is needed
       if (argDefs[i].typeArguments.length > 0)
-        content += typeName(tDef)
+        content += renderTypeName(tDef, map)
       else { 
         // has no arguments, just add type name
-        content += argDefs[i].typeName
+        content += argDefs[i].typeDescription
       }
 
       // Only add a comma to the end if it is not the last argument
@@ -61,5 +61,5 @@ function typeName(type: TypeDefinition): string {
     }
     return content + '>'
   }
-  return type.typeName
+  return type.typeDescription
 }

@@ -1,4 +1,5 @@
 import PropertyConfigModel from "../../models/config/members/PropertyConfigModel"
+import { IGlobalMetaMap } from "../../models/global/MapperManager"
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderIsStaticTag, renderVirtualAndStaticTags } from "../Util"
@@ -9,13 +10,13 @@ export default class PropertyRenderer {
   didRenderGetter: boolean = null
   didRenderSetter: boolean = null  
 
-  constructor(property: PropertyModel, config: PropertyConfigModel) {
-    this.content = this.renderProperty(property, config)
+  constructor(property: PropertyModel, config: PropertyConfigModel, map: IGlobalMetaMap) {
+    this.content = this.renderProperty(property, config, map)
   }
 
-  renderProperty(property: PropertyModel, config: PropertyConfigModel): string {
+  renderProperty(property: PropertyModel, config: PropertyConfigModel, map: IGlobalMetaMap): string {
     return (    
-      this.renderPropertyHeader(property, config) +      
+      this.renderPropertyHeader(property, config, map) +      
       divider() +
       getOptionalSummary(property.comments) +
       divider() +
@@ -90,9 +91,9 @@ export default class PropertyRenderer {
     return ''
   }
   
-  renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel): string {
+  renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel, map: IGlobalMetaMap): string {
     return (
-      `### ${prop.name} ${renderTypeName(prop.type)}` +
+      `### ${prop.name} ${renderTypeName(prop.type, map)}` +
       renderIsStaticTag(prop, config) +
       renderVirtualAndStaticTags(prop, config) +
       this.renderReadonlyTag(prop, config) +

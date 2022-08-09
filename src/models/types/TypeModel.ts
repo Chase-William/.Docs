@@ -2,8 +2,8 @@ import { jsonMember, jsonObject } from 'typedjson';
 import CommonComment from '../written/CommonComment';
 import AccessibilityModel from '../AccessibilityModel';
 import Model from '../Model';
-import { TYPE_MAP } from '../../app';
-import TypeDefinition from '../meta/TypeDefinition';
+import TypeDefinition from '../global/TypeDefinition';
+import { IGlobalMetaMap } from '../global/MapperManager';
 
 export enum Accessibility {
   Public,
@@ -21,7 +21,6 @@ export default class TypeModel<T extends CommonComment> extends AccessibilityMod
   namespace: string;
   @jsonMember(String, { name: 'FullName' })
   fullName: string;
-  isProtected: boolean;
   @jsonMember(String, { name: 'Parent' })
   baseType: string;
   @jsonMember(CommonComment, { name: 'Comments' }) // CommentComment in serialization may be a limitation
@@ -31,17 +30,17 @@ export default class TypeModel<T extends CommonComment> extends AccessibilityMod
     super(name, parent);
   }  
 
-  getOrderedBaseTypes(): TypeDefinition[] {
+  getOrderedBaseTypes(map: IGlobalMetaMap): TypeDefinition[] {
     const types = new Array<TypeDefinition>()
-    this.getNextBaseType(this.baseType, types)
+    this.getNextBaseType(this.baseType, types, map)
     return types
   }
 
-  getNextBaseType(id: string, types: TypeDefinition[]) {
-    if (TYPE_MAP.has(id)) {
-      const type = TYPE_MAP.get(id)
+  getNextBaseType(id: string, types: TypeDefinition[], map: IGlobalMetaMap) {
+    if (map.typeMap.has(id)) {
+      const type = map.typeMap.get(id)
       types.push(type)
-      this.getNextBaseType(type.parent, types)
+      this.getNextBaseType(type.parent, types, map)
     }  
   }
 }
