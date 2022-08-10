@@ -1,10 +1,10 @@
-import Nestable, { readChildrenInternal } from './interfaces/Nestable';
+import IHaveNestableTypes, { parseChildrenImplementation } from './interfaces/IHaveNestableTypes';
 import Model from './Model';
-import Renderable from './interfaces/Renderable';
+import IAmRenderable from './interfaces/IAmRenderable';
 import RenderManager from '../renderer/RenderManager';
 
-export default class Namespace extends Model implements Nestable, Renderable {
-  childNodes = new Map<string, (Model | Nestable) & Renderable>()
+export default class Namespace extends Model implements IHaveNestableTypes, IAmRenderable {
+  children = new Map<string, (Model | IHaveNestableTypes) & IAmRenderable>()
 
   constructor(name: string, parent: Model) {
     super(name, parent);
@@ -12,12 +12,12 @@ export default class Namespace extends Model implements Nestable, Renderable {
   }
 
   render(renderManager: RenderManager): void {
-    this.childNodes.forEach((model) => {
-      (model as Renderable).render(renderManager)
+    this.children.forEach((model) => {
+      (model as IAmRenderable).render(renderManager)
     })
   }
 
-  readChildren(extraPathing: string, namespaces: string[], model: Model & Nestable): void {
-    readChildrenInternal(extraPathing, namespaces, model);
+  parseChildren(extraPathing: string, namespaces: string[], model: Model & IHaveNestableTypes): void {
+    parseChildrenImplementation(extraPathing, namespaces, model);
   }
 }

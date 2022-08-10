@@ -1,4 +1,5 @@
-import DelegateModel, { Parameter } from "../../models/types/DelegateModel";
+import { Parameter } from "../../models/Parameter";
+import DelegateModel from "../../models/types/DelegateModel";
 import divider from "../Util";
 
 export default function renderDelegate(model: DelegateModel): string {

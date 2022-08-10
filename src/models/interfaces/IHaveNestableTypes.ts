@@ -3,34 +3,43 @@ import path = require('path');
 import { TypedJSON } from 'typedjson';
 import Model from '../Model';
 import Namespace from '../Namespace';
-import Renderable from './Renderable';
+import IAmRenderable from './IAmRenderable';
 import ClassModel from '../types/ClassModel';
 import DelegateModel from '../types/DelegateModel';
 import EnumModel from '../types/EnumModel';
 import InterfaceModel from '../types/InterfaceModel';
 import StructModel from '../types/StructModel';
 
-export default interface Nestable {
-  childNodes: Map<string, (Model | Nestable) & Renderable>
-  //childNodes: (Model | INestable)[];
+export default interface IHaveNestableTypes {
+  children: Map<string, (Model | IHaveNestableTypes) & IAmRenderable>
 
-  readChildren(extraPathing: string, namespaces: Array<string>, model: Model & Nestable): void;
+  /**
+   * This file 
+   * @param basePath The base path to build upon.
+   * @param namespaces A namespace trace leading up to this instance.
+   * @param model Pass the current model to have it's children parsed.
+   */
+  parseChildren(basePath: string, namespaces: Array<string>, model: Model & IHaveNestableTypes): void;
 }
 
 /**
+ * This static function provides a means for all IHaveNestableTypes to parse their children.
+ * 
+ * Language Problem:
  * This function purely exist because of the lack of traits in JS/TS.
  * This method's implementation is identical across multiple types, but not all.
  * Therefore, an interface is a must and this *hacky* solution resolves
  * the issue of either duplicate code or use traits. Lastly, I tried using
- * a concrete class, but it resulted in circle dependency.
- * @param namespaces
- * @param model
+ * a concrete class, but it resulted in circular dependency.
+ * @param basePath The base path to build upon.
+ * @param namespaces A namespace trace leading up to this instance.
+ * @param model Pass the current model to have it's children parsed.
  */
-export function readChildrenInternal(extraPathing: string, namespaces: Array<string>, model: Model & Nestable): void {
+export function parseChildrenImplementation(basePath: string, namespaces: Array<string>, model: Model & IHaveNestableTypes): void {
   namespaces.push(model.name); // Working within this namespace
   // console.log(namespaces);
   // const namespaceOnlyDir = namespaces.join('\\');
-  const namespaceWithPath = path.join(extraPathing, namespaces.join('\\'));
+  const namespaceWithPath = path.join(basePath, namespaces.join('\\'));
   let fileOrFolderNames = readdirSync(namespaceWithPath);
   // The more "nested" a type is, put it farther into the back of the collection
   /*
@@ -117,8 +126,8 @@ export function readChildrenInternal(extraPathing: string, namespaces: Array<str
       // Handle directory
       // console.log(name);
       const child = new Namespace(name, model);
-      model.childNodes.set(child.name, child);
-      child.readChildren(extraPathing, namespaces, child);
+      model.children.set(child.name, child);
+      child.parseChildren(basePath, namespaces, child);
     }
   }
   namespaces.pop(); // Now leaving this namespace
@@ -130,12 +139,12 @@ export function readChildrenInternal(extraPathing: string, namespaces: Array<str
  * @param parent The lowest parent obtainable at the time of this function call.
  * @param newModel The model to be added to the ModelTree.
  */
-function handleParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & Nestable, newModel: T): void {
+function handleParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & IHaveNestableTypes, newModel: T): void {
   if (fileName.includes('+')) {    
     handleNestedTypeParentChildSetup(fileName, parent, newModel)
   } else {
     newModel.parent = parent;
-    parent.childNodes.set(newModel.name, newModel);
+    parent.children.set(newModel.name, newModel);
   }    
 }
 
@@ -145,7 +154,7 @@ function handleParentChildSetup<T extends ClassModel | InterfaceModel | StructMo
  * @param parent the starting parent to work from to find other parents down the chain leading to the model.
  * @param newModel The model to be added to the ModelTree.
  */
-function handleNestedTypeParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & Nestable, newModel: T): void {
+function handleNestedTypeParentChildSetup<T extends ClassModel | InterfaceModel | StructModel | EnumModel | DelegateModel>(fileName: string, parent: Model & IHaveNestableTypes, newModel: T): void {
   const containingTypes = fileName.split('+')
   // We want to stop before trying to access the last type
   const targetLength = containingTypes.length - 1
@@ -156,10 +165,10 @@ function handleNestedTypeParentChildSetup<T extends ClassModel | InterfaceModel 
     Example: ClassA+ClassB+ClassC                
   */
   for (let i = 0; i < targetLength; i++) {
-    parent = parent.childNodes.get(containingTypes[i]) as unknown as Model & Nestable                
+    parent = parent.children.get(containingTypes[i]) as unknown as Model & IHaveNestableTypes                
   }
   // Set the parent to the parent type or otherwise in this case; the containing type
   newModel.parent = parent
   // Add this type to the containing type's collection of types
-  parent.childNodes.set(newModel.name, newModel)
+  parent.children.set(newModel.name, newModel)
 }

@@ -1,22 +1,22 @@
-import Nestable, { readChildrenInternal } from './interfaces/Nestable';
-import Renderable from './interfaces/Renderable';
+import IHaveNestableTypes, { parseChildrenImplementation } from './interfaces/IHaveNestableTypes';
+import IAmRenderable from './interfaces/IAmRenderable';
 import Model from './Model';
 import RenderManager from '../renderer/RenderManager';
 
-export default class ModelTree extends Model implements Nestable, Renderable {
-  childNodes = new Map<string, (Model | Nestable) & Renderable>()
+export default class ModelTree extends Model implements IHaveNestableTypes, IAmRenderable {
+  children = new Map<string, (Model | IHaveNestableTypes) & IAmRenderable>()
 
   constructor(name: string, parent: Model) {
     super(name, parent);
   }
 
-  readChildren(extraPathing: string, namespaces: string[], model: Model & Nestable): void {
-    readChildrenInternal(extraPathing, namespaces, model);
+  parseChildren(extraPathing: string, namespaces: string[], model: Model & IHaveNestableTypes): void {
+    parseChildrenImplementation(extraPathing, namespaces, model);
   }
 
   render(renderManager: RenderManager): void {
-    this.childNodes.forEach((model) => {
-      (model as Renderable).render(renderManager)
+    this.children.forEach((model) => {
+      (model as IAmRenderable).render(renderManager)
     })
   }
 }

@@ -1,5 +1,5 @@
 import { jsonArrayMember, jsonObject } from "typedjson";
-import Nestable, { readChildrenInternal } from '../interfaces/Nestable';
+import IHaveNestableTypes, { parseChildrenImplementation } from '../interfaces/IHaveNestableTypes';
 import EventModel from "../members/EventModel";
 import FieldModel from "../members/FieldModel";
 import MethodModel from "../members/MethodModel";
@@ -7,8 +7,12 @@ import PropertyModel from "../members/PropertyModel";
 import Model from "../Model";
 import CommonComment from "../written/CommonComment";
 import TypeModel from "./TypeModel";
-import Renderable from "../interfaces/Renderable";
+import IAmRenderable from "../interfaces/IAmRenderable";
 import RenderManager from "../../renderer/RenderManager";
+import IHaveProperties from "../interfaces/IHaveProperties";
+import IHaveEvents from "../interfaces/IHaveEvents";
+import IHaveFields from "../interfaces/IHaveFields";
+import IHaveMethods from "../interfaces/IHaveMethods";
 
 /**
  * Represents any <type> that can contain the following:
@@ -19,8 +23,15 @@ import RenderManager from "../../renderer/RenderManager";
  * - Children Types
  */
 @jsonObject()
-export default class StandardMembersModel extends TypeModel<CommonComment> implements Nestable {
-  childNodes = new Map<string, (Model | Nestable) & Renderable>()
+export default class LessGenericTypeModel 
+  extends TypeModel<CommonComment> 
+  implements IHaveNestableTypes, 
+             IHaveProperties, 
+             IHaveEvents, 
+             IHaveFields, 
+             IHaveMethods 
+{
+  children = new Map<string, (Model | IHaveNestableTypes) & IAmRenderable>()
   
   @jsonArrayMember(PropertyModel, { name: 'Properties' })
   properties: PropertyModel[];
@@ -31,13 +42,13 @@ export default class StandardMembersModel extends TypeModel<CommonComment> imple
   @jsonArrayMember(EventModel, { name: 'Events' })
   events: EventModel[];
 
-  readChildren(extraPathing: string, namespaces: string[], model: Model & Nestable): void {
-    readChildrenInternal(extraPathing, namespaces, model)
+  parseChildren(extraPathing: string, namespaces: string[], model: Model & IHaveNestableTypes): void {
+    parseChildrenImplementation(extraPathing, namespaces, model)
   }
 
   renderChildren(renderManager: RenderManager) {
-    this.childNodes.forEach((model) => {
-      (model as Renderable).render(renderManager)
+    this.children.forEach((model) => {
+      (model as IAmRenderable).render(renderManager)
     })
   }
 }

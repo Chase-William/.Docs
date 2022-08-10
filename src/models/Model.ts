@@ -1,6 +1,6 @@
 import { jsonMember, jsonObject } from "typedjson";
-import Nestable from "./interfaces/Nestable";
-import Renderable from "./interfaces/Renderable";
+import IHaveNestableTypes from "./interfaces/IHaveNestableTypes";
+import IAmRenderable from "./interfaces/IAmRenderable";
 
 @jsonObject()
 export default class Model {

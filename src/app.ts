@@ -35,7 +35,7 @@ globalMapManager.load('json/core-info')
 // export const TYPE_MAP = new Map<string, TypeDefinition>(types.map(entry => [entry.id, entry]))
 
 const root = new ModelTree(projectName, null);
-root.readChildren('json/core-info/project', new Array<string>(), root);
+root.parseChildren('json/core-info/project', new Array<string>(), root);
 
 // Clean old documentation 
 rmSync(router.outputPath, { recursive: true, force: true })

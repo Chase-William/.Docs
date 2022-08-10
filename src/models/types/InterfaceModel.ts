@@ -1,10 +1,10 @@
 import { jsonObject } from 'typedjson';
 import RenderManager from '../../renderer/RenderManager';
-import Renderable from '../interfaces/Renderable';
-import StandardMembersModel from './StandardMembersModel';
+import IAmRenderable from '../interfaces/IAmRenderable';
+import LessGenericTypeModel from './LessGenericTypeModel';
 
 @jsonObject()
-export default class InterfaceModel extends StandardMembersModel implements Renderable {
+export default class InterfaceModel extends LessGenericTypeModel implements IAmRenderable {
   render(renderManager: RenderManager): void {
     renderManager.renderInterface(this)  
     this.renderChildren(renderManager) 

@@ -1,20 +1,13 @@
 import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
 import RenderManager from '../../renderer/RenderManager';
-import Renderable from '../interfaces/Renderable';
+import IAmRenderable from '../interfaces/IAmRenderable';
+import IHaveSignature from '../interfaces/IHaveSignature';
+import { Parameter } from '../Parameter';
 import CommonComment from '../written/CommonComment';
 import TypeModel from './TypeModel';
 
 @jsonObject()
-export class Parameter {
-  @jsonMember(String, { name: 'Name' })
-  name: string;
-
-  @jsonMember(String, { name: 'Type' })
-  type: string;
-}
-
-@jsonObject()
-export default class DelegateModel extends TypeModel<CommonComment> implements Renderable {  
+export default class DelegateModel extends TypeModel<CommonComment> implements IAmRenderable, IHaveSignature {  
   @jsonMember(String, { name: 'ReturnType' })
   returnType: string;
 

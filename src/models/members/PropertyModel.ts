@@ -1,10 +1,10 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import PolymorphicModelable from '../interfaces/PolymophicModelable';
+import IAmPolymorphicable from '../interfaces/IAmPolymorphicable';
 import CommonComment from '../written/CommonComment';
 import MemberModel from './MemberModel';
 
 @jsonObject()
-export default class PropertyModel extends MemberModel<CommonComment> implements PolymorphicModelable {
+export default class PropertyModel extends MemberModel<CommonComment> implements IAmPolymorphicable {
   @jsonMember(Boolean, { name: 'HasGetter' })
   hasGetter: boolean;
   @jsonMember(Boolean, { name: 'HasSetter' })

@@ -14,7 +14,7 @@ import ClassModel from "../models/types/ClassModel";
 import DelegateModel from "../models/types/DelegateModel";
 import EnumModel from "../models/types/EnumModel";
 import InterfaceModel from "../models/types/InterfaceModel";
-import StandardMembersModel from "../models/types/StandardMembersModel";
+import LessGenericTypeModel from "../models/types/LessGenericTypeModel";
 import StructModel from "../models/types/StructModel";
 import TypeModel from "../models/types/TypeModel";
 import CommonComment from "../models/written/CommonComment";
@@ -82,7 +82,7 @@ export default class RenderManager {
     this.renderer.endRenderingStruct(model, filePath, this.config.type.struct, this.map)
   }
 
-  renderMembers(model: StandardMembersModel): void {
+  renderMembers(model: LessGenericTypeModel): void {
     // Properties
     if (model.properties && model.properties.length > 0) {
       if (this.hasRenderableModels(model.properties, this.config.member.property)) {    

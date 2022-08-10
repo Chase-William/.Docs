@@ -1,8 +1,8 @@
 import PolymorphicConfigable from "../models/config/interfaces/PolymorphicConfigable"
 import SingletonConfigurable from "../models/config/interfaces/SingletonConfigurable"
 import { IGlobalMetaMap } from "../models/global/MapperManager"
-import PolymorphicModelable from "../models/interfaces/PolymophicModelable"
-import Singletonable from "../models/interfaces/Singletonable"
+import IAmPolymorphicable from "../models/interfaces/IAmPolymorphicable"
+import IAmSingletonable from "../models/interfaces/IAmSingletonable"
 import TypeModel from "../models/types/TypeModel"
 import CommonComment from "../models/written/CommonComment"
 import { getOptionalSummary } from "./CommentsRenderer"
@@ -47,7 +47,7 @@ export function renderTypeHeader(model: TypeModel<CommonComment>, map: IGlobalMe
  * @param config 
  * @returns 
  */
-export function renderIsStaticTag(model: Singletonable, config: SingletonConfigurable): string {
+export function renderIsStaticTag(model: IAmSingletonable, config: SingletonConfigurable): string {
   let content = ''
   if (config.denoteIfStatic)
     content += model.isStatic ? ' `static`' : ''
@@ -60,7 +60,7 @@ export function renderIsStaticTag(model: Singletonable, config: SingletonConfigu
  * @param config configuration.
  * @returns rendered result; can be an empty string.
  */
-export function renderVirtualAndStaticTags(model: PolymorphicModelable, config: PolymorphicConfigable): string {
+export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: PolymorphicConfigable): string {
   let content = ''
   if (config.denoteIfVirtual)
     content += model.isVirtual ? ' `virtual`' : ''

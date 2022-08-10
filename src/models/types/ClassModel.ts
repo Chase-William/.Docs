@@ -1,10 +1,10 @@
 import { jsonMember, jsonObject } from 'typedjson';
 import RenderManager from '../../renderer/RenderManager';
-import Renderable from '../interfaces/Renderable';
-import StandardMembersModel from './StandardMembersModel';
+import IAmRenderable from '../interfaces/IAmRenderable';
+import LessGenericTypeModel from './LessGenericTypeModel';
 
 @jsonObject()
-export default class ClassModel extends StandardMembersModel implements Renderable {
+export default class ClassModel extends LessGenericTypeModel implements IAmRenderable {
   @jsonMember(Boolean, { name: 'IsSealed'})
   isSealed: boolean
   @jsonMember(Boolean, { name: 'IsAbstract' })
@@ -15,8 +15,8 @@ export default class ClassModel extends StandardMembersModel implements Renderab
   render(renderManager: RenderManager): void {
     renderManager.renderClass(this)
 
-    this.childNodes.forEach((model) => {
-      (model as Renderable).render(renderManager)
+    this.children.forEach((model) => {
+      (model as IAmRenderable).render(renderManager)
     })
   }  
 }
