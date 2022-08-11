@@ -3,7 +3,7 @@ import CommonComment from '../written/CommonComment';
 import AccessibilityModel from '../AccessibilityModel';
 import Model from '../Model';
 import TypeDefinition from '../global/TypeDefinition';
-import { IGlobalMetaMap } from '../global/MapperManager';
+import ICodebaseMap from '../global/ICodebaseMap';
 
 export enum Accessibility {
   Public,
@@ -30,13 +30,13 @@ export default class TypeModel<T extends CommonComment> extends AccessibilityMod
     super(name, parent);
   }  
 
-  getOrderedBaseTypes(map: IGlobalMetaMap): TypeDefinition[] {
+  getOrderedBaseTypes(map: ICodebaseMap): TypeDefinition[] {
     const types = new Array<TypeDefinition>()
     this.getNextBaseType(this.baseType, types, map)
     return types
   }
 
-  getNextBaseType(id: string, types: TypeDefinition[], map: IGlobalMetaMap) {
+  getNextBaseType(id: string, types: TypeDefinition[], map: ICodebaseMap) {
     if (map.typeMap.has(id)) {
       const type = map.typeMap.get(id)
       types.push(type)

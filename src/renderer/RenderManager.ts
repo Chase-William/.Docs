@@ -4,7 +4,7 @@ import ConfigModel from "../models/config/ConfigModel";
 import Configuration from "../models/config/Configuration";
 import MemberConfig from "../models/config/MemberConfig";
 import MemberConfigModel from "../models/config/members/MemberConfigModel";
-import MapperManager, { IGlobalMetaMap } from "../models/global/MapperManager";
+import ICodebaseMap from "../models/global/ICodebaseMap";
 import EventModel from "../models/members/EventModel";
 import FieldModel from "../models/members/FieldModel";
 import MemberModel from "../models/members/MemberModel";
@@ -35,7 +35,7 @@ export default class RenderManager {
   config: Configuration;
   path: string
   renderer: Renderer
-  map: IGlobalMetaMap
+  map: ICodebaseMap
 
   renderClass(model: ClassModel): void {    
     // Check config to determine what shall be rendered

@@ -1,8 +1,9 @@
 import { jsonArrayMember, jsonMember, jsonObject } from "typedjson";
-import Definition from "./Definition";
 
 @jsonObject()
-export default class TypeDefinition extends Definition {  
+export default class TypeDefinition {
+  static getPrimaryKey: (def: TypeDefinition) => void
+
   @jsonMember(String, { name: "Parent" })
   parent: string
   @jsonArrayMember(String, { name: "TypeArguments" })

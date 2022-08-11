@@ -9,7 +9,7 @@ import DelegateConfigModel from "../models/config/types/DelegateConfigModel"
 import EnumConfigModel from "../models/config/types/EnumConfigModel"
 import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel"
 import StructConfigModel from "../models/config/types/StructConfigModel"
-import { IGlobalMetaMap } from "../models/global/MapperManager"
+import ICodebaseMap from "../models/global/ICodebaseMap";
 import EventModel from "../models/members/EventModel"
 import FieldModel from "../models/members/FieldModel"
 import MethodModel from "../models/members/MethodModel"
@@ -28,33 +28,33 @@ export default interface Renderer {
   // renderMethod(model: MethodModel): string
   // renderProperty(model: PropertyModel): string
 
-  beginRenderingClass(model: ClassModel, config: ClassConfigModel, map: IGlobalMetaMap): void
-  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel, map: IGlobalMetaMap): void
-  beginRenderingEnum(model: EnumModel, config: EnumConfigModel, map: IGlobalMetaMap): void
-  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel, map: IGlobalMetaMap): void
-  beginRenderingStruct(model: StructModel, config: StructConfigModel, map: IGlobalMetaMap): void
+  beginRenderingClass(model: ClassModel, config: ClassConfigModel, map: ICodebaseMap): void
+  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel, map: ICodebaseMap): void
+  beginRenderingEnum(model: EnumModel, config: EnumConfigModel, map: ICodebaseMap): void
+  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel, map: ICodebaseMap): void
+  beginRenderingStruct(model: StructModel, config: StructConfigModel, map: ICodebaseMap): void
 
   //beginRenderingProperties(): void
-  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel, map: IGlobalMetaMap): void
+  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel, map: ICodebaseMap): void
   //endRenderingProperties(): void
 
   //beginRenderingMethods(): void
-  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel, map: IGlobalMetaMap): void
+  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel, map: ICodebaseMap): void
   //endRenderingMethods(): void
 
   //beginRenderingEvents(): void
-  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel, map: IGlobalMetaMap): void
+  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel, map: ICodebaseMap): void
   //endRenderingEvents(): void
 
   //beginRenderingFields(): void
-  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel, map: IGlobalMetaMap): void
+  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel, map: ICodebaseMap): void
   //endRenderingFields(): void
 
   renderValues(model: EnumModel, values: FieldModel[]): void
 
-  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel, map: IGlobalMetaMap): void
-  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel, map: IGlobalMetaMap): void
-  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel, map: IGlobalMetaMap): void
-  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel, map: IGlobalMetaMap): void
-  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel, map: IGlobalMetaMap): void
+  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel, map: ICodebaseMap): void
+  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel, map: ICodebaseMap): void
+  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel, map: ICodebaseMap): void
+  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel, map: ICodebaseMap): void
+  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel, map: ICodebaseMap): void
 }

@@ -1,6 +1,6 @@
 import PolymorphicConfigable from "../models/config/interfaces/PolymorphicConfigable"
 import SingletonConfigurable from "../models/config/interfaces/SingletonConfigurable"
-import { IGlobalMetaMap } from "../models/global/MapperManager"
+import ICodebaseMap from "../models/global/ICodebaseMap";
 import IAmPolymorphicable from "../models/interfaces/IAmPolymorphicable"
 import IAmSingletonable from "../models/interfaces/IAmSingletonable"
 import TypeModel from "../models/types/TypeModel"
@@ -30,7 +30,7 @@ export function optionalDivider(col: unknown): string {
   return divider()
 }
 
-export function renderTypeHeader(model: TypeModel<CommonComment>, map: IGlobalMetaMap): string {
+export function renderTypeHeader(model: TypeModel<CommonComment>, map: ICodebaseMap): string {
   return (
     `# ${model.name} \`${model.type}\`` +
     divider() + 

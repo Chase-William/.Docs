@@ -1,10 +1,10 @@
-import { IGlobalMetaMap } from "../models/global/MapperManager";
+import ICodebaseMap from "../models/global/ICodebaseMap";
 import TypeDefinition from "../models/global/TypeDefinition";
 import TypeModel from "../models/types/TypeModel"
 import CommonComment from "../models/written/CommonComment"
 import divider from "./Util";
 
-export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>, map: IGlobalMetaMap): string {  
+export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>, map: ICodebaseMap): string {  
   const baseTypes = model.getOrderedBaseTypes(map)
 
   // Do not render only one parent.. its going to be System.Object
@@ -35,7 +35,7 @@ function renderIndent(index: number): string {
 
 // ˪ட―↘ ↳
 
-function renderTypeName(type: TypeDefinition, map: IGlobalMetaMap): string {
+function renderTypeName(type: TypeDefinition, map: ICodebaseMap): string {
   if (type.typeArguments.length > 0) {
     //let temp = ''
     // Set top line of content to type and opening type angular bracket

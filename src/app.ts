@@ -8,27 +8,27 @@ import { exit } from 'process';
 import { handleError } from './error';
 import { TypedJSON } from 'typedjson';
 import TypeDefinition from './models/global/TypeDefinition';
-import MapperManager from './models/global/MapperManager';
+import CodebaseMapperManager from './models/global/CodebaseMapperManager';
 
 const JSON_DIR = './json'
 
 // Omit default node path and exe path from routing
 const router = new Router(process.argv)
 
-const result = execFileSync(router.docsharkCoreExePath, [
-  router.csProjPath,
-  JSON_DIR
-]);
+// const result = execFileSync(router.docsharkCoreExePath, [
+//   router.csProjPath,
+//   JSON_DIR
+// ]);
 
-if (result.byteLength != 0)
-{
-  handleError(result)
-  exit(1)
-}
+// if (result.byteLength != 0)
+// {
+//   handleError(result)
+//   exit(1)
+// }
 
 const projectName = router.csProjPath.substring(router.csProjPath.lastIndexOf('\\'), router.csProjPath.lastIndexOf('.'))
 
-const globalMapManager = new MapperManager()
+const globalMapManager = new CodebaseMapperManager()
 globalMapManager.load('json/core-info') 
 
 // const types = new TypedJSON(TypeDefinition).parseAsArray(readFileSync('json/core-info/meta/types.json', { encoding: 'utf-8' }))

@@ -2,6 +2,8 @@ import { jsonArrayMember, jsonMember, jsonObject } from "typedjson";
 
 @jsonObject()
 export default class ProjectDefinition {
+  static getPrimaryKey: (def: ProjectDefinition) => void
+
   @jsonMember(String, { name: 'ProjectName' })
   projectName: string
   @jsonMember(String, { name: 'ProjectDirectory' })

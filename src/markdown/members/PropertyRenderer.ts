@@ -1,5 +1,5 @@
 import PropertyConfigModel from "../../models/config/members/PropertyConfigModel"
-import { IGlobalMetaMap } from "../../models/global/MapperManager"
+import ICodebaseMap from "../../models/global/ICodebaseMap"
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderIsStaticTag, renderVirtualAndStaticTags } from "../Util"
@@ -10,11 +10,11 @@ export default class PropertyRenderer {
   didRenderGetter: boolean = null
   didRenderSetter: boolean = null  
 
-  constructor(property: PropertyModel, config: PropertyConfigModel, map: IGlobalMetaMap) {
+  constructor(property: PropertyModel, config: PropertyConfigModel, map: ICodebaseMap) {
     this.content = this.renderProperty(property, config, map)
   }
 
-  renderProperty(property: PropertyModel, config: PropertyConfigModel, map: IGlobalMetaMap): string {
+  renderProperty(property: PropertyModel, config: PropertyConfigModel, map: ICodebaseMap): string {
     return (    
       this.renderPropertyHeader(property, config, map) +      
       divider() +
@@ -91,7 +91,7 @@ export default class PropertyRenderer {
     return ''
   }
   
-  renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel, map: IGlobalMetaMap): string {
+  renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel, map: ICodebaseMap): string {
     return (
       `### ${prop.name} ${renderTypeName(prop.type, map)}` +
       renderIsStaticTag(prop, config) +
