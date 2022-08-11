@@ -4,6 +4,7 @@ import ConfigModel from "../models/config/ConfigModel";
 import Configuration from "../models/config/Configuration";
 import MemberConfig from "../models/config/MemberConfig";
 import MemberConfigModel from "../models/config/members/MemberConfigModel";
+import CodebaseManager from "../models/global/CodebaseManager";
 import ICodebaseMap from "../models/global/ICodebaseMap";
 import EventModel from "../models/members/EventModel";
 import FieldModel from "../models/members/FieldModel";
@@ -36,6 +37,11 @@ export default class RenderManager {
   path: string
   renderer: Renderer
   map: ICodebaseMap
+
+  render(codebaseManager: CodebaseManager): void {
+    this.map = codebaseManager;
+    codebaseManager.rootProject.render(this)
+  }
 
   renderClass(model: ClassModel): void {    
     // Check config to determine what shall be rendered

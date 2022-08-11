@@ -26,5 +26,5 @@ export default class TypeDefinition {
   /**
    * Set during the loading of the belonging project.
    */
-  model: TypeModel<CommonComment>
+  model: TypeModel<CommonComment> = null
 }

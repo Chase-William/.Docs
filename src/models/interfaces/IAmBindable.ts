@@ -17,6 +17,10 @@ export default interface IAmBindable {
  */
 export function bindToCodebaseMapImplementation(model: TypeModel<CommonComment>, map: ICodebaseMap): void {
   const result = map.typeMap.get(model.fullName)
-  result.model = model
-  model.globalTypeDef = result
+  // Some types will not have models as they are compiler generated in a sense like Action<T1, T2> will not have
+  // a corresponding model
+  if (result) {
+    result.model = model
+    model.globalTypeDef = result
+  }  
 }

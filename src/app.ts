@@ -1,5 +1,4 @@
 import MarkdownRenderer from './markdown/markdownRenderer';
-import ModelTree from './models/ModelTree';
 import { readFileSync, rmSync } from 'fs';
 import RenderManager from './renderer/RenderManager';
 import Router from './Router';
@@ -8,7 +7,8 @@ import { exit } from 'process';
 import { handleError } from './error';
 import { TypedJSON } from 'typedjson';
 import TypeDefinition from './models/global/TypeDefinition';
-import CodebaseMapperManager from './models/global/CodebaseMapperManager';
+import CodebaseManager from './models/global/CodebaseManager';
+import Namespace from './models/Namespace';
 
 const JSON_DIR = './json'
 
@@ -26,18 +26,17 @@ const router = new Router(process.argv)
 //   exit(1)
 // }
 
-const projectName = router.csProjPath.substring(router.csProjPath.lastIndexOf('\\'), router.csProjPath.lastIndexOf('.'))
+const projectName = router.csProjPath.substring(router.csProjPath.lastIndexOf('\\') + 1, router.csProjPath.lastIndexOf('.'))
 
-const globalMapManager = new CodebaseMapperManager()
-globalMapManager.load('json/core-info') 
+const codebaseManager = new CodebaseManager()
+codebaseManager.load('json/core-info', projectName) 
 
 // const types = new TypedJSON(TypeDefinition).parseAsArray(readFileSync('json/core-info/meta/types.json', { encoding: 'utf-8' }))
 // export const TYPE_MAP = new Map<string, TypeDefinition>(types.map(entry => [entry.id, entry]))
 
-const root = new ModelTree(projectName, null);
-root.parseChildren('json/core-info/project', new Array<string>(), root);
-
-root.bindToCodebaseMap(globalMapManager)
+// const root = new Namespace(projectName, null);
+// root.parseChildren('json/core-info/project', new Array<string>(), root);
+// root.bindToCodebaseMap(globalMapManager)
 
 // Clean old documentation 
 rmSync(router.outputPath, { recursive: true, force: true })
@@ -45,10 +44,12 @@ rmSync(router.outputPath, { recursive: true, force: true })
 const renderManager = new RenderManager()
 renderManager.config = router.config
 renderManager.path = router.outputPath
-renderManager.map = globalMapManager
+renderManager.map = codebaseManager
 renderManager.renderer = new MarkdownRenderer()
 
-root.render(renderManager)
+renderManager.render(codebaseManager)
+
+// root.render(renderManager)
 
 // Clean json
 // rmSync(JSON_DIR, { recursive: true, force: true })

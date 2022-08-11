@@ -29,7 +29,7 @@ export default class Namespace
     })
   }
 
-  parseChildren(extraPathing: string, namespaces: string[], model: Model & IHaveNestableTypes): void {
-    parseChildrenImplementation(extraPathing, namespaces, model);
+  parseChildren(basePath: string, namespaces: string[], model: Model & IHaveNestableTypes): void {
+    parseChildrenImplementation(basePath, namespaces, model);
   }
 }

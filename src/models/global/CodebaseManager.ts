@@ -1,12 +1,14 @@
 import { readFileSync } from "fs"
 import path = require("path")
 import { TypedJSON } from "typedjson"
+import RenderManager from "../../renderer/RenderManager"
 import AssemblyDefinition from "./AssemblyDefinition"
 import DefinitionPrimaryKey from "./DefinitionPrimaryKey"
 import ICodebaseMap from "./ICodebaseMap"
 import ProjectDefinition from "./ProjectDefinition"
 import TypeDefinition from "./TypeDefinition"
 
+const PROJECTS_FOLDER_NAME = 'project'
 const GLOBAL_META_FOLDER = 'global'
 const GLOBAL_META_TYPES_FILE = 'types.json'
 const GLOBAL_META_ASSEMBLIES_FILE = 'assemblies.json'
@@ -30,19 +32,22 @@ function loadPrimaryKeys(globalPath: string): DefinitionPrimaryKey[] {
   return new TypedJSON(DefinitionPrimaryKey).parseAsArray(readFileSync(path.join(globalPath, GLOBAL_META_PRIMARY_KEY_FILE), { encoding: 'utf-8' }))
 }
 
-export default class CodebaseMapperManager implements ICodebaseMap {
+export default class CodebaseManager implements ICodebaseMap {
   typeMap: Map<string, TypeDefinition>
   asmMap: Map<string, AssemblyDefinition>
   projMap: Map<string, ProjectDefinition>
 
-  load(rootPath: string): void {
+  rootProject: ProjectDefinition  
+
+  load(rootPath: string, projectName: string): void {
     const globalPath = path.join(rootPath, GLOBAL_META_FOLDER)  
-    const keys = loadPrimaryKeys(globalPath)
-    
+    const KEYS = loadPrimaryKeys(globalPath)
+    const PROJECTS_DIR = path.join(rootPath, PROJECTS_FOLDER_NAME)
+
     /**
      * Problem:
      * I want to set the functionality of the getPrimaryKey Functional expression to get the value from whater
-     * member is specified in the keys collection.
+     * member is specified in the KEYS collection.
      * 
      * Desire Approach Example:
      * I want to assign the TypeDefintion.prototype.getPrimaryKey functional expression a function defined here
@@ -56,7 +61,7 @@ export default class CodebaseMapperManager implements ICodebaseMap {
      * and decided to give it a go. Therefore I created the solution below from the idea seeing the link gave me.
      */
 
-    keys.forEach(key => {
+    KEYS.forEach(key => {
       // Make the first character lowercase to match the style used in JS/TS (data was serialized and provided by a C# codebase)
       key.primaryKeyMemberName = key.primaryKeyMemberName.charAt(0).toLowerCase() + key.primaryKeyMemberName.slice(1)
       switch (key.definitionTypeName) {
@@ -85,7 +90,7 @@ export default class CodebaseMapperManager implements ICodebaseMap {
           }
           break;
         default:
-          throw Error(`Was unable to determine DefinitionPrimaryKey type instance of values: ${key} when mapping it's key to a bound functional expression.`)
+          throw new Error(`Was unable to determine DefinitionPrimaryKey type instance of values: ${key} when mapping it's key to a bound functional expression.`)
       }
     })
 
@@ -111,6 +116,20 @@ export default class CodebaseMapperManager implements ICodebaseMap {
     this.asmMap = new Map<string, AssemblyDefinition>(assemblies.map(entry => [AssemblyDefinition.getPrimaryKey(entry), entry]))    
     this.projMap = new Map<string, ProjectDefinition>(projects.map(entry => [ProjectDefinition.getPrimaryKey(entry), entry]))
     
+    /*
+    1. Create a one-way reference from each local project to it's local project dependencies if it has any.
+    2. Load the models for each project.
+    */
+    this.projMap.forEach(_proj => {
+      if (_proj.foreignKeysOfLocalProjects.length > 0)
+      {
+        _proj.foreignKeysOfLocalProjects.forEach(projectDepName => {
+          _proj.localProjects.push(this.projMap.get(projectDepName))
+        })
+      }
+      _proj.loadCodebase(PROJECTS_DIR)      
+    })
+
     /*  
     Create bi-directional references to improve future lookups
     */
@@ -132,6 +151,10 @@ export default class CodebaseMapperManager implements ICodebaseMap {
         // The assembly's project now can reference back to the assembly
         proj.assembly = asm
       }      
+    })    
+
+    this.projMap.forEach(_proj => {
+      _proj.codebase.bindToCodebaseMap(this)
     })
 
     // Show References
@@ -140,6 +163,9 @@ export default class CodebaseMapperManager implements ICodebaseMap {
     // console.log("-------------- assemblies ---------------- ")
     // assemblies.forEach(v => console.log(v))
     // console.log("-------------- projects ---------------- ")
-    // projects.forEach(v => console.log(v))
+    // projects.forEach(v => console.log(v))   
+    // Set the root project 
+    console.log(projectName)
+    this.rootProject = this.projMap.get(projectName)
   }  
 }
