@@ -37,6 +37,8 @@ globalMapManager.load('json/core-info')
 const root = new ModelTree(projectName, null);
 root.parseChildren('json/core-info/project', new Array<string>(), root);
 
+root.bindToCodebaseMap(globalMapManager)
+
 // Clean old documentation 
 rmSync(router.outputPath, { recursive: true, force: true })
 

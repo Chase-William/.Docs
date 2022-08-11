@@ -13,6 +13,8 @@ import IHaveProperties from "../interfaces/IHaveProperties";
 import IHaveEvents from "../interfaces/IHaveEvents";
 import IHaveFields from "../interfaces/IHaveFields";
 import IHaveMethods from "../interfaces/IHaveMethods";
+import ICodebaseMap from "../global/ICodebaseMap";
+import IAmBindable, { bindToCodebaseMapImplementation } from "../interfaces/IAmBindable";
 
 /**
  * Represents any <type> that can contain the following:
@@ -29,9 +31,9 @@ export default class LessGenericTypeModel
              IHaveProperties, 
              IHaveEvents, 
              IHaveFields, 
-             IHaveMethods 
+             IHaveMethods
 {
-  children = new Map<string, (Model | IHaveNestableTypes) & IAmRenderable>()
+  children = new Map<string, (Model | IHaveNestableTypes) & IAmRenderable & IAmBindable>()
   
   @jsonArrayMember(PropertyModel, { name: 'Properties' })
   properties: PropertyModel[];
@@ -42,13 +44,20 @@ export default class LessGenericTypeModel
   @jsonArrayMember(EventModel, { name: 'Events' })
   events: EventModel[];
 
+  bindChildrenToCodebaseMap(map: ICodebaseMap): void {
+    // Link children
+    this.children.forEach(child => child.bindToCodebaseMap(map));
+    // Link self
+    bindToCodebaseMapImplementation(this, map)
+  }
+
   parseChildren(extraPathing: string, namespaces: string[], model: Model & IHaveNestableTypes): void {
     parseChildrenImplementation(extraPathing, namespaces, model)
   }
 
   renderChildren(renderManager: RenderManager) {
     this.children.forEach((model) => {
-      (model as IAmRenderable).render(renderManager)
+      model.render(renderManager)
     })
   }
 }

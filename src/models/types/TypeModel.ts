@@ -4,6 +4,7 @@ import AccessibilityModel from '../AccessibilityModel';
 import Model from '../Model';
 import TypeDefinition from '../global/TypeDefinition';
 import ICodebaseMap from '../global/ICodebaseMap';
+import IAmBindable, { bindToCodebaseMapImplementation } from '../interfaces/IAmBindable';
 
 export enum Accessibility {
   Public,
@@ -16,7 +17,7 @@ export enum Accessibility {
  * Represents any kind of <type> that can be defined.
  */
  @jsonObject()
-export default class TypeModel<T extends CommonComment> extends AccessibilityModel {
+export default class TypeModel<T extends CommonComment> extends AccessibilityModel implements IAmBindable {  
   @jsonMember(String, { name: 'Namespace' })
   namespace: string;
   @jsonMember(String, { name: 'FullName' })
@@ -26,9 +27,15 @@ export default class TypeModel<T extends CommonComment> extends AccessibilityMod
   @jsonMember(CommonComment, { name: 'Comments' }) // CommentComment in serialization may be a limitation
   comments: T;
 
-  constructor(name: string, parent: Model) {
-    super(name, parent);
-  }  
+  /**
+   * Set during the loading phase of the project and links this model to its global definition.
+   */
+  globalTypeDef: TypeDefinition
+
+  bindToCodebaseMap(map: ICodebaseMap): void {
+    // Link self
+    bindToCodebaseMapImplementation(this, map)
+  }
 
   getOrderedBaseTypes(map: ICodebaseMap): TypeDefinition[] {
     const types = new Array<TypeDefinition>()

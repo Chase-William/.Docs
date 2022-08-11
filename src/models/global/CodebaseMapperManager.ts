@@ -36,11 +36,7 @@ export default class CodebaseMapperManager implements ICodebaseMap {
   projMap: Map<string, ProjectDefinition>
 
   load(rootPath: string): void {
-    const globalPath = path.join(rootPath, GLOBAL_META_FOLDER)
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore    
-    
+    const globalPath = path.join(rootPath, GLOBAL_META_FOLDER)  
     const keys = loadPrimaryKeys(globalPath)
     
     /**
@@ -68,8 +64,7 @@ export default class CodebaseMapperManager implements ICodebaseMap {
           {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            const keyGetter = (v: TypeDefinition) => (v[key.primaryKeyMemberName] as string)
-            keyGetter.bind(TypeDefinition)
+            const keyGetter = (v: TypeDefinition) => v[key.primaryKeyMemberName]
             TypeDefinition.getPrimaryKey = keyGetter
           }          
           break;
@@ -77,8 +72,7 @@ export default class CodebaseMapperManager implements ICodebaseMap {
           {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            const keyGetter = (v: AssemblyDefinition) => (v[key.primaryKeyMemberName] as string)
-            keyGetter.bind(TypeDefinition)
+            const keyGetter = (v: AssemblyDefinition) => v[key.primaryKeyMemberName]
             AssemblyDefinition.getPrimaryKey = keyGetter
           }
             break;
@@ -86,8 +80,7 @@ export default class CodebaseMapperManager implements ICodebaseMap {
           {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            const keyGetter = (v: ProjectDefinition) => (v[key.primaryKeyMemberName] as string)
-            keyGetter.bind(TypeDefinition)
+            const keyGetter = (v: ProjectDefinition) => v[key.primaryKeyMemberName]
             ProjectDefinition.getPrimaryKey = keyGetter
           }
           break;
@@ -96,21 +89,57 @@ export default class CodebaseMapperManager implements ICodebaseMap {
       }
     })
 
+    /*
+    Load types, assemblies, projects from provided json files
+    */
     const types = loadTypeDefinitions(globalPath)      
     const assemblies = loadAssemblyDefinitions(globalPath)
     const projects = loadProjectDefinitions(globalPath)
 
-    console.log("-------------- types ---------------- ")
-    types.forEach(v => console.log(TypeDefinition.getPrimaryKey(v)))
-    console.log("-------------- assemblies ---------------- ")
-    assemblies.forEach(v => console.log(AssemblyDefinition.getPrimaryKey(v)))
-    console.log("-------------- projects ---------------- ")
-    projects.forEach(v => console.log(ProjectDefinition.getPrimaryKey(v)))
+    // Test Keys
+    // console.log("-------------- types ---------------- ")
+    // types.forEach(v => console.log(TypeDefinition.getPrimaryKey(v)))
+    // console.log("-------------- assemblies ---------------- ")
+    // assemblies.forEach(v => console.log(AssemblyDefinition.getPrimaryKey(v)))
+    // console.log("-------------- projects ---------------- ")
+    // projects.forEach(v => console.log(ProjectDefinition.getPrimaryKey(v)))
 
-    this.typeMap = new Map<string, TypeDefinition>(types.map(entry => [entry.typeDescription, entry]))    
-    this.asmMap = new Map<string, AssemblyDefinition>(assemblies.map(entry => [entry.assemblyName, entry]))    
-    this.projMap = new Map<string, ProjectDefinition>(projects.map(entry => [entry.projectName, entry]))    
-  }
+    /*
+    Create maps
+    */
+    this.typeMap = new Map<string, TypeDefinition>(types.map(entry => [TypeDefinition.getPrimaryKey(entry), entry]))    
+    this.asmMap = new Map<string, AssemblyDefinition>(assemblies.map(entry => [AssemblyDefinition.getPrimaryKey(entry), entry]))    
+    this.projMap = new Map<string, ProjectDefinition>(projects.map(entry => [ProjectDefinition.getPrimaryKey(entry), entry]))
+    
+    /*  
+    Create bi-directional references to improve future lookups
+    */
+    this.typeMap.forEach(_type => {
+      // A type now has a reference to it's assembly
+      const asm = this.asmMap.get(_type.assemblyForeignKey)
+      // Type has a reference to it's assembly
+      _type.assembly = asm
+      // Assembly has a collection of types with this type now in it
+      asm.types.push(_type)
+    })
+    this.asmMap.forEach(asm => {
+      // If a value for the key was provided (not fasley) create a reference, otherwise skip
+      if (asm.projectForeignKey)
+      {
+        const proj = this.projMap.get(asm.projectForeignKey)
+        // This assembly now references it's project
+        asm.project = proj
+        // The assembly's project now can reference back to the assembly
+        proj.assembly = asm
+      }      
+    })
 
-  
+    // Show References
+    // console.log("-------------- types ---------------- ")
+    // types.forEach(v => console.log(v))
+    // console.log("-------------- assemblies ---------------- ")
+    // assemblies.forEach(v => console.log(v))
+    // console.log("-------------- projects ---------------- ")
+    // projects.forEach(v => console.log(v))
+  }  
 }
