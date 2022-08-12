@@ -13,7 +13,7 @@ Represents a namespace as a node.
 
 Contains all the namespaces containe within this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes\.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
+### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
 
 The node this node branches off of.
 

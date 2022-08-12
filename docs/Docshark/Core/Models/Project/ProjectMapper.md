@@ -8,7 +8,7 @@ Summary not provided.
 
 Summary not provided.
 
-### RootProject <code><<a href="./Docshark\Core\Models\Project\.md">Docshark.Core.Models.Project.LocalProject</a>></code> `readonly`
+### RootProject <code><<a href="./Docshark\Core\Models\Project.md">Docshark.Core.Models.Project.LocalProject</a>></code> `readonly`
 
 Summary not provided.
 

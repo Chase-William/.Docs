@@ -15,7 +15,7 @@ export function renderField(field: FieldModel, config: FieldConfigModel, map: IC
 
 function renderFieldHeader(field: FieldModel, config: FieldConfigModel, map: ICodebaseMap): string {
   return (
-    `### ${field.name} ${renderTypeName(field.type, map)}` +
+    `### ${field.name} ${renderTypeName(field, map)}` +
     renderIsStaticTag(field, config) +
     (field.isConstant ? ' `const`' : '') +
     (field.isReadonly ? ' `readonly`' : '')

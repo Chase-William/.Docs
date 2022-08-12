@@ -14,7 +14,7 @@ A type that can contain other types.
 
 Information about the type this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.TypeNode" /> represents.
 
-### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes\.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
+### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
 
 The node this node branches off of.
 

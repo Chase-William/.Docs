@@ -42,7 +42,7 @@ export default class LessGenericTypeModel
   @jsonArrayMember(MethodModel, { name: 'Methods' })
   methods: MethodModel[];
   @jsonArrayMember(EventModel, { name: 'Events' })
-  events: EventModel[];
+  events: EventModel[]
 
   bindChildrenToCodebaseMap(map: ICodebaseMap): void {
     // Link children

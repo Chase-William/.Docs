@@ -271,10 +271,10 @@ export default class RenderManager {
   /**
    * Gets the directory of a model via it's namespace location.
    * @param namespace Location of the type.
-   * @returns Directory that resembles the namespace location, but with the top level namespace and type itself omitted.
+   * @returns Directory that resembles the namespace location with the type itself omitted
    */
   getDirectory(namespace: string): string {
     const names = namespace.split('.')
-    return names.slice(1, names.length - 1).join('/')
+    return names.slice(0, names.length - 1).join('/')
   }
 }

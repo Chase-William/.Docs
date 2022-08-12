@@ -26,7 +26,7 @@ export default class Namespace
   render(renderManager: RenderManager): void {
     this.children.forEach((model) => {
       (model as IAmRenderable).render(renderManager)
-    })
+    })    
   }
 
   parseChildren(basePath: string, namespaces: string[], model: Model & IHaveNestableTypes): void {

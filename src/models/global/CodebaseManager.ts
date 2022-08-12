@@ -164,8 +164,7 @@ export default class CodebaseManager implements ICodebaseMap {
     // assemblies.forEach(v => console.log(v))
     // console.log("-------------- projects ---------------- ")
     // projects.forEach(v => console.log(v))   
-    // Set the root project 
-    console.log(projectName)
+    // Set the root project     
     this.rootProject = this.projMap.get(projectName)
   }  
 }

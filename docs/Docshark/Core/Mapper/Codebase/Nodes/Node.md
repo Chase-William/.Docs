@@ -4,7 +4,7 @@ The most basic building block of all node types.
 
 ## `public` Properties
 
-### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes\.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `readonly`
+### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `readonly`
 
 The node this node branches off of.
 

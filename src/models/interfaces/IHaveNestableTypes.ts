@@ -9,6 +9,10 @@ import DelegateModel from '../types/DelegateModel';
 import EnumModel from '../types/EnumModel';
 import InterfaceModel from '../types/InterfaceModel';
 import StructModel from '../types/StructModel';
+import { setParentForEvents } from './IHaveEvents';
+import { setParentForProperties } from './IHaveProperties';
+import { setParentForFields } from './IHaveFields';
+import { setParentForMethods } from './IHaveMethods';
 
 export default interface IHaveNestableTypes {
   children: Map<string, (Model | IHaveNestableTypes) & IAmRenderable>
@@ -82,32 +86,57 @@ export function parseChildrenImplementation(basePath: string, namespaces: Array<
 
       switch (tester.type) {
         case 'class':        
-          handleParentChildSetup(
-            name, 
-            model, 
-            classSerializer.parse(fileStr)
-          )                    
+          {
+            const _class = classSerializer.parse(fileStr)
+            handleParentChildSetup(
+              name, 
+              model, 
+              _class
+            )
+            // setParentForProperties(_class)
+            // setParentForFields(_class)
+            // setParentForEvents(_class)            
+            // setParentForMethods(_class)
+          }                 
           break;
         case 'enum':
-          handleParentChildSetup(
-            name, 
-            model, 
-            enumSerializer.parse(fileStr)
-          ) 
+          {
+            const _enum = enumSerializer.parse(fileStr)
+            handleParentChildSetup(
+              name, 
+              model, 
+              _enum
+            )
+            // setParentForFields(_enum)
+          }
           break;
         case 'interface':
-          handleParentChildSetup(
-            name, 
-            model, 
-            interfaceSerializer.parse(fileStr)
-          )  
+          {
+            const _interface = interfaceSerializer.parse(fileStr)
+            handleParentChildSetup(
+              name, 
+              model, 
+              _interface
+            )
+            // setParentForProperties(_interface)
+            // setParentForFields(_interface)
+            // setParentForEvents(_interface)            
+            // setParentForMethods(_interface)
+          }  
           break;
         case 'struct':
-          handleParentChildSetup(
-            name, 
-            model, 
-            structSeralizer.parse(fileStr)
-          )  
+          {
+            const _struct = structSeralizer.parse(fileStr)
+            handleParentChildSetup(
+              name, 
+              model, 
+              _struct
+            )
+            // setParentForProperties(_struct)
+            // setParentForFields(_struct)
+            // setParentForEvents(_struct)            
+            // setParentForMethods(_struct)
+          }          
           break;
         case 'delegate':
           handleParentChildSetup(

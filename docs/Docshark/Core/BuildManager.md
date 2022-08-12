@@ -4,11 +4,11 @@ Summary not provided.
 
 ## `public` Properties
 
-### ProjectManager <code><<a href="./Docshark\Core\Models\Project\.md">Docshark.Core.Models.Project.ProjectMapper</a>></code> `readonly`
+### ProjectManager <code><<a href="./Docshark\Core\Models\Project.md">Docshark.Core.Models.Project.ProjectMapper</a>></code> `readonly`
 
 A tree that contains all the local projects the root depends on.
 
-### TypeMapper <code><<a href="./Docshark\Core\.md">Docshark.Core.MetaManager</a>></code> `readonly`
+### TypeMapper <code><<a href="./Docshark\Core.md">Docshark.Core.MetaManager</a>></code> `readonly`
 
 Summary not provided.
 

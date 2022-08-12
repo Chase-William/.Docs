@@ -4,7 +4,7 @@ A tree of namespaces and types created lazily that represents the structure of o
 
 ## `public` Properties
 
-### Root <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes\.md">Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode</a>></code> `readonly`
+### Root <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode</a>></code> `readonly`
 
 The entry point node.
 

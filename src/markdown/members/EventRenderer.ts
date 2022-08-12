@@ -15,7 +15,7 @@ export function renderEvent(event: EventModel, config: EventConfigModel, map: IC
 
 function renderEventHeader(event: EventModel, config: EventConfigModel, map: ICodebaseMap): string {
   return (
-    `### ${event.name} ${renderTypeName(event.type, map)}` +
+    `### ${event.name} ${renderTypeName(event, map)}` +
     renderIsStaticTag(event, config) +
     renderVirtualAndStaticTags(event, config)
   )

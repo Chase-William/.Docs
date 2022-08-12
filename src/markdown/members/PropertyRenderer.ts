@@ -92,7 +92,7 @@ export default class PropertyRenderer {
   
   renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel, map: ICodebaseMap): string {
     return (
-      `### ${prop.name} ${renderTypeName(prop.type, map)}` +
+      `### ${prop.name} ${renderTypeName(prop, map)}` +
       renderIsStaticTag(prop, config) +
       renderVirtualAndStaticTags(prop, config) +
       this.renderReadonlyTag(prop, config) +

@@ -4,7 +4,7 @@ The main hub for Charp.Core.
 
 ## `public` Properties
 
-### Builder <code><<a href="./Docshark\Core\.md">Docshark.Core.BuildManager</a>></code>
+### Builder <code><<a href="./Docshark\Core.md">Docshark.Core.BuildManager</a>></code>
 
 Summary not provided.
 

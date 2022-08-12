@@ -17,7 +17,7 @@ Summary not provided.
 
 Summary not provided.
 
-### Codebase <code><<a href="./Docshark\Core\Mapper\Codebase\.md">Docshark.Core.Mapper.Codebase.CodebaseMapper</a>></code>
+### Codebase <code><<a href="./Docshark\Core\Mapper\Codebase.md">Docshark.Core.Mapper.Codebase.CodebaseMapper</a>></code>
 
 Summary not provided.
 
