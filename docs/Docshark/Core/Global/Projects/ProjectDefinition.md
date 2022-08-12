@@ -1,8 +1,8 @@
-# ProjectDefinition check renderTypeName
+# ProjectDefinition `class`
 
 ```
-ட Docshark.Core.Global.Definition
-  ட System.Object
+ட Definition
+  ட Object
 ```
 
 Represents a .csproj and is referenced by <see cref="T:System.Reflection.Metadata.TypeDefinition" />s.

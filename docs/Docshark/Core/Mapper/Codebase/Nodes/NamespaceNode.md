@@ -1,8 +1,8 @@
-# NamespaceNode check renderTypeName
+# NamespaceNode `class`
 
 ```
-ட Docshark.Core.Mapper.Codebase.Nodes.Node
-  ட System.Object
+ட Node
+  ட Object
 ```
 
 Represents a namespace as a node.

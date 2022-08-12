@@ -1,4 +1,4 @@
-# Docsharker check renderTypeName
+# Docsharker `class`
 
 The main hub for Charp.Core.
 

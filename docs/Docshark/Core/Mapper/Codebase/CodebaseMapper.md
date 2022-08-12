@@ -1,4 +1,4 @@
-# CodebaseMapper check renderTypeName
+# CodebaseMapper `class`
 
 A tree of namespaces and types created lazily that represents the structure of one's source code.
 

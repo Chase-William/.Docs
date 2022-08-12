@@ -44,7 +44,7 @@ export default class LessGenericTypeModel
   @jsonArrayMember(EventModel, { name: 'Events' })
   events: EventModel[]
 
-  bindChildrenToCodebaseMap(map: ICodebaseMap): void {
+  bindToCodebaseMap(map: ICodebaseMap): void {    
     // Link children
     this.children.forEach(child => child.bindToCodebaseMap(map));
     // Link self

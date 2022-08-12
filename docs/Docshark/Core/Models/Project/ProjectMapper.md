@@ -1,4 +1,4 @@
-# ProjectMapper check renderTypeName
+# ProjectMapper `class`
 
 Summary not provided.
 

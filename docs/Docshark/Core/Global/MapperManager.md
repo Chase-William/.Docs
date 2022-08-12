@@ -1,4 +1,4 @@
-# MapperManager check renderTypeName
+# MapperManager `class`
 
 Summary not provided.
 

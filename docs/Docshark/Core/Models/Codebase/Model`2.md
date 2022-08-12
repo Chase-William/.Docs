@@ -1,14 +1,14 @@
-# Model`2 check renderTypeName
+#  `class`
 
 The root base class to all types and members.
 
 ## `public` Properties
 
-### Comments check renderTypeName
+### Comments `T2`
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### Meta check renderTypeName `readonly`
+### Meta `T1` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 

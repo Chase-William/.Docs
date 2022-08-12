@@ -1,4 +1,4 @@
-# Dependency check renderTypeName
+# Dependency `class`
 
 Represents a dependency that has a dll and a documentation file.
 

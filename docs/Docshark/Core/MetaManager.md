@@ -1,4 +1,4 @@
-# MetaManager check renderTypeName
+# MetaManager `class`
 
 Maps each type used in the target project.
 
@@ -21,7 +21,7 @@ IMPORTANT: This method will perform a deep analysis of all types used in any man
 For example, types used in inheritance, encapsulated members, and even type arguments are analysed
 and added to the type mapper if needed.
 
-- *@param* type check renderTypeName
+- *@param* type `T`
 
 - *@returns* <code title="comments here">System.Void</code>
 

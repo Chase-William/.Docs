@@ -1,8 +1,8 @@
-# FieldModel check renderTypeName
+# FieldModel `class`
 
 ```
-ட Docshark.Core.Models.Codebase.Model<System.Reflection.FieldInfo, LoxSmoke.DocXml.CommonComments>
-  ட System.Object
+ட Model<FieldInfo, CommonComments>
+  ட Object
 ```
 
 Summary not provided.

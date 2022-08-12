@@ -1,4 +1,4 @@
-# TypeMapper check renderTypeName
+# TypeMapper `class`
 
 Maps types into a dictionary designed to be serialized and usable like a database.
 

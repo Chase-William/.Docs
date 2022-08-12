@@ -1,8 +1,8 @@
-# EventModel check renderTypeName
+# EventModel `class`
 
 ```
-ட Docshark.Core.Models.Codebase.Model<System.Reflection.EventInfo, LoxSmoke.DocXml.CommonComments>
-  ட System.Object
+ட Model<EventInfo, CommonComments>
+  ட Object
 ```
 
 Summary not provided.

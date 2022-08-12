@@ -9,7 +9,7 @@ import MemberModel from "../models/members/MemberModel";
 import TypeModel from "../models/types/TypeModel"
 import CommonComment from "../models/written/CommonComment"
 import { getOptionalSummary } from "./CommentsRenderer"
-import { renderTypeInheritanceBlock } from "./InheritanceRenderer"
+import { renderTypeInheritanceBlock, renderTypeNameWithArguments } from "./InheritanceRenderer"
 
 export default function divider(): string {
   return '\n\n'
@@ -30,8 +30,13 @@ export function optionalDivider(col: unknown): string {
 }
 
 export function renderTypeHeader(model: TypeModel<CommonComment>, map: ICodebaseMap): string {
+  if (!model.globalTypeDef)
+  {
+    console.log(model.fullName)
+    console.log(map.typeMap.get(model.fullName))
+  }
   return (
-    `# ${model.name} ${renderTypeName(model, model.type, map)}` +
+    `# ${renderTypeNameWithArguments(model.globalTypeDef, map)} \`${model.type}\`` +
     divider() + 
     renderTypeInheritanceBlock(model, map) +
     getOptionalSummary(model.comments) +
@@ -72,7 +77,7 @@ export function renderTypeName(containingModel: Model, targetType: string, map: 
   const result = map.typeMap.get(targetType)
   // Generic types like T1 & T2 trigger this
   if (typeof result === 'undefined')  
-    return 'check renderTypeName'  
+    return `\`${targetType}\`` 
 
   // Only runs for types defined in the Local project that also are not intermediary
   if (result.model) {

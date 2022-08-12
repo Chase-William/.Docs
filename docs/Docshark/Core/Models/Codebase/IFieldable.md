@@ -1,4 +1,4 @@
-# IFieldable check renderTypeName
+# IFieldable `interface`
 
 Represents a type that can contain fields.
 This was added for the single purpose of making enumerations work as

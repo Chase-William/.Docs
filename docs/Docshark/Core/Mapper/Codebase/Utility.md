@@ -1,4 +1,4 @@
-# Utility check renderTypeName
+# Utility `class`
 
 Summary not provided.
 

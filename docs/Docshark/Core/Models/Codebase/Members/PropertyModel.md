@@ -1,8 +1,8 @@
-# PropertyModel check renderTypeName
+# PropertyModel `class`
 
 ```
-ட Docshark.Core.Models.Codebase.Model<System.Reflection.PropertyInfo, LoxSmoke.DocXml.CommonComments>
-  ட System.Object
+ட Model<PropertyInfo, CommonComments>
+  ட Object
 ```
 
 Summary not provided.

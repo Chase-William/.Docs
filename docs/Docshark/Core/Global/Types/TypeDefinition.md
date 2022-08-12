@@ -1,8 +1,8 @@
-# TypeDefinition check renderTypeName
+# TypeDefinition `class`
 
 ```
-ட Docshark.Core.Global.Definition
-  ட System.Object
+ட Definition
+  ட Object
 ```
 
 Represents a type in a codebase that is linked to a specific project.

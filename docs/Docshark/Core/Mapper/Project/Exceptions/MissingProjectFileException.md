@@ -1,8 +1,8 @@
-# MissingProjectFileException check renderTypeName
+# MissingProjectFileException `class`
 
 ```
-ட System.Exception
-  ட System.Object
+ட Exception
+  ட Object
 ```
 
 Summary not provided.

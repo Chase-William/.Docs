@@ -1,4 +1,4 @@
-# AssemblyMapper check renderTypeName
+# AssemblyMapper `class`
 
 Summary not provided.
 

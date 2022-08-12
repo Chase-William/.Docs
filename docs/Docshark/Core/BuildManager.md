@@ -1,4 +1,4 @@
-# BuildManager check renderTypeName
+# BuildManager `class`
 
 Summary not provided.
 

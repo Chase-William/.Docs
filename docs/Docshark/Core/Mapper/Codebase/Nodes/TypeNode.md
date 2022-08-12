@@ -1,8 +1,8 @@
-# TypeNode check renderTypeName
+# TypeNode `class`
 
 ```
-ட Docshark.Core.Mapper.Codebase.Nodes.Node
-  ட System.Object
+ட Node
+  ட Object
 ```
 
 A class that represents a defined type.

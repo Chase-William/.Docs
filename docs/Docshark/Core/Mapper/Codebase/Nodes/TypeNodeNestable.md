@@ -1,9 +1,9 @@
-# TypeNodeNestable check renderTypeName
+# TypeNodeNestable `class`
 
 ```
-ட Docshark.Core.Mapper.Codebase.Nodes.TypeNode
-  ட Docshark.Core.Mapper.Codebase.Nodes.Node
-    ட System.Object
+ட TypeNode
+  ட Node
+    ட Object
 ```
 
 A type that can contain other types.

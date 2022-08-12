@@ -1,4 +1,4 @@
-# ITypeNodeNestable check renderTypeName
+# ITypeNodeNestable `interface`
 
 Represents a type that can contain other type definitions internally.
 For example, this can represent a class or struct as both can contain other class/struct type definitions.

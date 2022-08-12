@@ -1,4 +1,4 @@
-# Builder check renderTypeName
+# CodebaseMapper+Builder `class`
 
 Summary not provided.
 

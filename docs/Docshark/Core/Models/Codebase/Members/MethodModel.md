@@ -1,8 +1,8 @@
-# MethodModel check renderTypeName
+# MethodModel `class`
 
 ```
-ட Docshark.Core.Models.Codebase.Model<System.Reflection.MethodInfo, LoxSmoke.DocXml.CommonComments>
-  ட System.Object
+ட Model<MethodInfo, CommonComments>
+  ட Object
 ```
 
 Summary not provided.

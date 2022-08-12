@@ -1,8 +1,8 @@
-# BuildException check renderTypeName
+# BuildException `class`
 
 ```
-ட System.Exception
-  ட System.Object
+ட Exception
+  ட Object
 ```
 
 Summary not provided.

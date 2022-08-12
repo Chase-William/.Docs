@@ -1,4 +1,4 @@
-# IMemberContainable check renderTypeName
+# IMemberContainable `interface`
 
 Represents a entity that can contain properties, fields, events, and methods.
 

@@ -1,4 +1,4 @@
-# TypeMember`2 check renderTypeName
+#  `class`
 
 Represents a type.
 
@@ -8,7 +8,7 @@ Represents a type.
 
 Denotes whether this type can have internal types.
 
-### Comments check renderTypeName
+### Comments `T2`
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
@@ -32,7 +32,7 @@ Denotes if this type is protected.
 
 Denotes if this type is public.
 
-### Meta check renderTypeName `static` `readonly`
+### Meta `T1` `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 

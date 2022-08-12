@@ -1,9 +1,9 @@
-# DelegateModel check renderTypeName
+# DelegateModel `class`
 
 ```
-ட Docshark.Core.Models.Codebase.Types.TypeMember<System.Reflection.TypeInfo, LoxSmoke.DocXml.TypeComments>
-  ட Docshark.Core.Models.Codebase.Model<System.Reflection.TypeInfo, LoxSmoke.DocXml.TypeComments>
-    ட System.Object
+ட TypeMember<TypeInfo, TypeComments>
+  ட Model<TypeInfo, TypeComments>
+    ட Object
 ```
 
 Represents a delegate.

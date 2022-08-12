@@ -1,8 +1,8 @@
-# Parameter check renderTypeName
+# Parameter `struct`
 
 ```
-ட System.ValueType
-  ட System.Object
+ட ValueType
+  ட Object
 ```
 
 Represents a parameter in a function signature.

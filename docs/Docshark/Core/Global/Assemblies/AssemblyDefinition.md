@@ -1,8 +1,8 @@
-# AssemblyDefinition check renderTypeName
+# AssemblyDefinition `class`
 
 ```
-ட Docshark.Core.Global.Definition
-  ட System.Object
+ட Definition
+  ட Object
 ```
 
 Summary not provided.

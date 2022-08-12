@@ -1,8 +1,8 @@
-# LocalProject check renderTypeName
+# LocalProject `class`
 
 ```
-ட Docshark.Core.Models.Project.Dependency
-  ட System.Object
+ட Dependency
+  ட Object
 ```
 
 Represents a local project with a .csproj file.

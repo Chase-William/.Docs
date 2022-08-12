@@ -1,4 +1,4 @@
-# Node check renderTypeName
+# Node `class`
 
 The most basic building block of all node types.
 

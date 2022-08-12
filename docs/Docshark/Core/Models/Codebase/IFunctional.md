@@ -1,4 +1,4 @@
-# IFunctional check renderTypeName
+# IFunctional `interface`
 
 Represents a type that has functional based documentation like parameters and return type.
 

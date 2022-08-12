@@ -15,7 +15,7 @@ export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>, map:
   for (let i = 0; i < baseTypes.length; i++) {
     content += (
       renderIndent(i) +
-      renderTypeName(baseTypes[i], map) +
+      renderTypeNameWithArguments(baseTypes[i], map) +
       '\n'
     )
   }
@@ -35,11 +35,18 @@ function renderIndent(index: number): string {
 
 // ˪ட―↘ ↳
 
-function renderTypeName(type: TypeDefinition, map: ICodebaseMap): string {
+export function renderTypeNameWithArguments(type: TypeDefinition, map: ICodebaseMap): string {
+  //console.log(type)
+  if (!type)
+    return ''
   if (type.typeArguments.length > 0) {
-    //let temp = ''
-    // Set top line of content to type and opening type angular bracket
-    let content = type.typeDescription.substring(0, type.typeDescription.indexOf('`')) + '<'
+    /*
+    Get only the text before the "`" which signifies arguments.
+    Then remove the leading namespace.
+    */         
+    let content = type.typeDescription.substring(0, type.typeDescription.indexOf('`'))
+    content = getTypeNameWithoutNamespace(content) + '<'
+    // let content = type.typeDescription.substring(0, type.typeDescription.indexOf('`')) + '<'
     // Used to contain all the type defs
     const argDefs = new Array<TypeDefinition>(type.typeArguments.length)
     // Get all arguments' full type def
@@ -49,10 +56,10 @@ function renderTypeName(type: TypeDefinition, map: ICodebaseMap): string {
       argDefs[i] = tDef
       // Check if recursive processing of type argumented types is needed
       if (argDefs[i].typeArguments.length > 0)
-        content += renderTypeName(tDef, map)
+        content += renderTypeNameWithArguments(tDef, map)
       else { 
         // has no arguments, just add type name
-        content += argDefs[i].typeDescription
+        content += getTypeNameWithoutNamespace(argDefs[i].typeDescription)
       }
 
       // Only add a comma to the end if it is not the last argument
@@ -61,5 +68,14 @@ function renderTypeName(type: TypeDefinition, map: ICodebaseMap): string {
     }
     return content + '>'
   }
-  return type.typeDescription
+  return getTypeNameWithoutNamespace(type.typeDescription)
+}
+
+/**
+ * Returns a slice of the string without the leading namespace.
+ * @param typeDescription Type description to be formatted.
+ * @returns A type description without the leading namespace.
+ */
+function getTypeNameWithoutNamespace(typeDescription: string): string {
+  return typeDescription.slice(typeDescription.lastIndexOf('.') + 1)
 }

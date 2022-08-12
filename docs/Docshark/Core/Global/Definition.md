@@ -1,4 +1,4 @@
-# Definition check renderTypeName
+# Definition `class`
 
 Enforces standards upon all other definitions which inherit from this type.  
 
