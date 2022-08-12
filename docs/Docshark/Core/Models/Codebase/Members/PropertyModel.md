@@ -1,4 +1,4 @@
-# PropertyModel check renderTypeName #1
+# PropertyModel check renderTypeName
 
 ```
 ட Docshark.Core.Models.Codebase.Model<System.Reflection.PropertyInfo, LoxSmoke.DocXml.CommonComments>
@@ -9,87 +9,87 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments check renderTypeName #2
+### Comments <code title="comments here">LoxSmoke.DocXml.CommonComments</code>
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### HasGetter check renderTypeName #2 `static` `readonly`
+### HasGetter <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### HasSetter check renderTypeName #2 `static` `readonly`
+### HasSetter <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### IsAbstract check renderTypeName #2 `static` `readonly`
+### IsAbstract <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Determines if the propert is abstract if either of it's methods are abstract themselves.
 
-### IsGetInternal check renderTypeName #2 `static` `readonly`
+### IsGetInternal <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetPrivate check renderTypeName #2 `static` `readonly`
+### IsGetPrivate <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetProtected check renderTypeName #2 `static` `readonly`
+### IsGetProtected <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetPublic check renderTypeName #2 `static` `readonly`
+### IsGetPublic <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsInternal check renderTypeName #2 `static` `virtual` `readonly`
+### IsInternal <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Determines if the property is internal as a whole. This means both the set and get methods are internal if present.
 
-### IsPrivate check renderTypeName #2 `static` `virtual` `readonly`
+### IsPrivate <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsProtected check renderTypeName #2 `static` `virtual` `readonly`
+### IsProtected <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Determines if the property is protected as a whole. This means both the set and get methods are protected if present.
 
-### IsPublic check renderTypeName #2 `static` `virtual` `readonly`
+### IsPublic <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Determines if the property is publicly accessible to any degree.
 
-### IsSetInternal check renderTypeName #2 `static` `readonly`
+### IsSetInternal <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetPrivate check renderTypeName #2 `static` `readonly`
+### IsSetPrivate <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetProtected check renderTypeName #2 `static` `readonly`
+### IsSetProtected <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetPublic check renderTypeName #2 `static` `readonly`
+### IsSetPublic <code title="comments here">System.Nullable`1[System.Boolean]</code> `static` `readonly`
 
 Summary not provided.
 
-### IsStatic check renderTypeName #2 `static` `readonly`
+### IsStatic <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Determines if the property is static if either of it's methods are static themselves.
 
-### IsVirtual check renderTypeName #2 `static` `readonly`
+### IsVirtual <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Determines if the property is virtual if either of it's methods are virtual themselves.
 
-### Meta check renderTypeName #2 `static` `readonly`
+### Meta <code title="comments here">System.Reflection.PropertyInfo</code> `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### Name check renderTypeName #2 `static` `readonly`
+### Name <code title="comments here">System.String</code> `static` `readonly`
 
 Returns the name of the type or member.
 
-### Type check renderTypeName #2 `static` `virtual` `readonly`
+### Type <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Summary not provided.
 

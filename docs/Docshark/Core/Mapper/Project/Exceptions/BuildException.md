@@ -1,4 +1,4 @@
-# BuildException check renderTypeName #1
+# BuildException check renderTypeName
 
 ```
 ட System.Exception
@@ -9,39 +9,39 @@ Summary not provided.
 
 ## `public` Properties
 
-### Data check renderTypeName #2 `static` `virtual` `readonly`
+### Data <code title="comments here">System.Collections.IDictionary</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Errors check renderTypeName #2
+### Errors <code title="comments here">System.Collections.Generic.IReadOnlyList`1[Microsoft.Build.Logging.StructuredLogger.Error]</code>
 
 Summary not provided.
 
-### HelpLink check renderTypeName #2 `virtual`
+### HelpLink <code title="comments here">System.String</code> `virtual`
 
 Summary not provided.
 
-### HResult check renderTypeName #2
+### HResult <code title="comments here">System.Int32</code>
 
 Summary not provided.
 
-### InnerException check renderTypeName #2 `static` `readonly`
+### InnerException <code title="comments here">System.Exception</code> `static` `readonly`
 
 Summary not provided.
 
-### Message check renderTypeName #2 `static` `virtual` `readonly`
+### Message <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Source check renderTypeName #2 `virtual`
+### Source <code title="comments here">System.String</code> `virtual`
 
 Summary not provided.
 
-### StackTrace check renderTypeName #2 `static` `virtual` `readonly`
+### StackTrace <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### TargetSite check renderTypeName #2 `static` `readonly`
+### TargetSite <code title="comments here">System.Reflection.MethodBase</code> `static` `readonly`
 
 Summary not provided.
 
@@ -53,19 +53,19 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* System.Exception
+- *@returns* <code title="comments here">System.Exception</code>
 
 ### GetObjectData `virtual`
 
 Summary not provided.
 
-- *@param* info check renderTypeName #2
-- *@param* context check renderTypeName #2
+- *@param* info <code title="comments here">System.Runtime.Serialization.SerializationInfo</code>
+- *@param* context <code title="comments here">System.Runtime.Serialization.StreamingContext</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ## `protected` Events
 
-### SerializeObjectState check renderTypeName #2
+### SerializeObjectState <code title="comments here">System.EventHandler`1[System.Runtime.Serialization.SafeSerializationEventArgs]</code>
 
 Summary not provided.

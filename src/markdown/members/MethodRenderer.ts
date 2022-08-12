@@ -20,7 +20,7 @@ function renderMethodReturn(method: MethodModel, config: MethodConfigModel, map:
   return (
     (method.parameters ? divider() : '') +
     '- *@returns* ' +
-    method.returnType
+    renderTypeName(method, method.returnType, map)
   )  
 }
 

@@ -1,10 +1,10 @@
-# ProjectMapper check renderTypeName #1
+# ProjectMapper check renderTypeName
 
 Summary not provided.
 
 ## `public` Properties
 
-### MappedDefinitions check renderTypeName #2 `static` `virtual` `readonly`
+### MappedDefinitions <code title="comments here">System.Collections.Generic.IReadOnlyDictionary`2[System.String,Docshark.Core.Global.Projects.ProjectDefinition]</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
@@ -16,17 +16,17 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* projectName check renderTypeName #2
-- *@param* projectFileName check renderTypeName #2
-- *@param* projectDirectory check renderTypeName #2
-- *@param* projectPath check renderTypeName #2
-- *@param* projectDependencyNames check renderTypeName #2
-- *@param* assembly check renderTypeName #2
+- *@param* projectName <code title="comments here">System.String</code>
+- *@param* projectFileName <code title="comments here">System.String</code>
+- *@param* projectDirectory <code title="comments here">System.String</code>
+- *@param* projectPath <code title="comments here">System.String</code>
+- *@param* projectDependencyNames <code title="comments here">System.String[]</code>
+- *@param* assembly <code title="comments here">System.Reflection.Assembly</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ## `public` Fields
 
-### PROJECT_MAPPER_FILENAME check renderTypeName #2 `const`
+### PROJECT_MAPPER_FILENAME <code title="comments here">System.String</code> `const`
 
 Summary not provided.

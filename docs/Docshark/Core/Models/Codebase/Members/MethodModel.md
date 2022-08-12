@@ -1,4 +1,4 @@
-# MethodModel check renderTypeName #1
+# MethodModel check renderTypeName
 
 ```
 ட Docshark.Core.Models.Codebase.Model<System.Reflection.MethodInfo, LoxSmoke.DocXml.CommonComments>
@@ -9,59 +9,59 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments check renderTypeName #2
+### Comments <code title="comments here">LoxSmoke.DocXml.CommonComments</code>
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### IsAbstract check renderTypeName #2 `static` `readonly`
+### IsAbstract <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### IsInternal check renderTypeName #2 `static` `virtual` `readonly`
+### IsInternal <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsPrivate check renderTypeName #2 `static` `virtual` `readonly`
+### IsPrivate <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsProtected check renderTypeName #2 `static` `virtual` `readonly`
+### IsProtected <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsPublic check renderTypeName #2 `static` `virtual` `readonly`
+### IsPublic <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsStatic check renderTypeName #2 `static` `readonly`
+### IsStatic <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### IsVirtual check renderTypeName #2 `static` `readonly`
+### IsVirtual <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### Meta check renderTypeName #2 `static` `readonly`
+### Meta <code title="comments here">System.Reflection.MethodInfo</code> `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### MethodType check renderTypeName #2 `readonly`
+### MethodType <code title="comments here">System.Type</code> `readonly`
 
 Summary not provided.
 
-### Name check renderTypeName #2 `static` `readonly`
+### Name <code title="comments here">System.String</code> `static` `readonly`
 
 Returns the name of the type or member.
 
-### Parameters check renderTypeName #2 `virtual`
+### Parameters <code title="comments here">Docshark.Core.Models.Codebase.Parameter[]</code> `virtual`
 
 Summary not provided.
 
-### ReturnType check renderTypeName #2 `static` `virtual` `readonly`
+### ReturnType <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Type check renderTypeName #2 `static` `virtual` `readonly`
+### Type <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Summary not provided.
 

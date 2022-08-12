@@ -72,7 +72,7 @@ export function renderTypeName(containingModel: Model, targetType: string, map: 
   const result = map.typeMap.get(targetType)
   // Generic types like T1 & T2 trigger this
   if (typeof result === 'undefined')  
-    return 'check renderTypeName #1'  
+    return 'check renderTypeName'  
 
   // Only runs for types defined in the Local project that also are not intermediary
   if (result.model) {
@@ -93,5 +93,7 @@ export function renderTypeName(containingModel: Model, targetType: string, map: 
     )
   }
 
-  return 'check renderTypeName #2'
+  return (
+    `<code title="comments here">${result.typeDescription}</code>`
+  )
 }

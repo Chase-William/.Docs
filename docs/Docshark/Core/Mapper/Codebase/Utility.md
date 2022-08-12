@@ -1,4 +1,4 @@
-# Utility check renderTypeName #1
+# Utility check renderTypeName
 
 Summary not provided.
 
@@ -10,6 +10,6 @@ Summary not provided.
 
 Deletes all elements within a directory if it exists and ensures the directory given exist afterwards.
 
-- *@param* pathToClean check renderTypeName #2
+- *@param* pathToClean <code title="comments here">System.String</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>

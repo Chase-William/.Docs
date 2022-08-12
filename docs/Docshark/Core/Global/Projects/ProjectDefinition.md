@@ -1,4 +1,4 @@
-# ProjectDefinition check renderTypeName #1
+# ProjectDefinition check renderTypeName
 
 ```
 ட Docshark.Core.Global.Definition
@@ -9,23 +9,23 @@ Represents a .csproj and is referenced by <see cref="T:System.Reflection.Metadat
 
 ## `public` Properties
 
-### LocalProjectDependencies check renderTypeName #2
+### LocalProjectDependencies <code title="comments here">System.String[]</code>
 
 Summary not provided.
 
-### ProjectDirectory check renderTypeName #2
+### ProjectDirectory <code title="comments here">System.String</code>
 
 The location where the .csproj resides.
 
-### ProjectFileName check renderTypeName #2
+### ProjectFileName <code title="comments here">System.String</code>
 
 The name of the project with its file extension.
 
-### ProjectName check renderTypeName #2
+### ProjectName <code title="comments here">System.String</code>
 
 The name of the project.
 
-### ProjectPath check renderTypeName #2
+### ProjectPath <code title="comments here">System.String</code>
 
 A complete path to the project with the project file included.
 
@@ -37,18 +37,18 @@ A complete path to the project with the project file included.
 
 Summary not provided.
 
-- *@param* projectName check renderTypeName #2
-- *@param* projectFileName check renderTypeName #2
-- *@param* projectDirectory check renderTypeName #2
-- *@param* projectPath check renderTypeName #2
-- *@param* projectDependencyNames check renderTypeName #2
-- *@param* assembly check renderTypeName #2
+- *@param* projectName <code title="comments here">System.String</code>
+- *@param* projectFileName <code title="comments here">System.String</code>
+- *@param* projectDirectory <code title="comments here">System.String</code>
+- *@param* projectPath <code title="comments here">System.String</code>
+- *@param* projectDependencyNames <code title="comments here">System.String[]</code>
+- *@param* assembly <code title="comments here">System.Reflection.Assembly</code>
 - *@param* asmMapper <code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>
 
-- *@returns* Docshark.Core.Global.Projects.ProjectDefinition
+- *@returns* <code><<a href="./ProjectDefinition.md">Docshark.Core.Global.Projects.ProjectDefinition</a>></code>
 
 ### GetPrimaryKey `virtual`
 
 Summary not provided.
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>

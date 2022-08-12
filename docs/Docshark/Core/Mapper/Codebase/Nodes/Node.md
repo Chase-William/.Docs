@@ -1,4 +1,4 @@
-# Node check renderTypeName #1
+# Node check renderTypeName
 
 The most basic building block of all node types.
 
@@ -16,17 +16,17 @@ The node this node branches off of.
 
 Gets the name of the node.
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>
 
 ### Save `abstract`
 
 Begins the process of writing this node to file.
 
-- *@param* outputPath check renderTypeName #2
-- *@param* namespaces check renderTypeName #2
-- *@param* nestables check renderTypeName #2
+- *@param* outputPath <code title="comments here">System.String</code>
+- *@param* namespaces <code title="comments here">System.Collections.Generic.Stack`1[System.String]</code>
+- *@param* nestables <code title="comments here">System.Collections.Generic.Stack`1[System.String]</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ## `protected` Methods
 
@@ -34,14 +34,14 @@ Begins the process of writing this node to file.
 
 Joins namespaces into a path.
 
-- *@param* namespaces check renderTypeName #2
+- *@param* namespaces <code title="comments here">System.Collections.Generic.Stack`1[System.String]</code>
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>
 
 ### JoinNestables
 
 Joins nestables into a valid filename.
 
-- *@param* nestables check renderTypeName #2
+- *@param* nestables <code title="comments here">System.Collections.Generic.Stack`1[System.String]</code>
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>

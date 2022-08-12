@@ -1,4 +1,4 @@
-# Builder check renderTypeName #1
+# Builder check renderTypeName
 
 Summary not provided.
 
@@ -10,8 +10,8 @@ Summary not provided.
 
 Builds the tree of types in the <see cref="P:Docshark.Core.Mapper.Codebase.CodebaseMapper.Root" /> from the given assembly.
 
-- *@param* assembly check renderTypeName #2
-- *@param* documentationPath check renderTypeName #2
-- *@param* getTypeCallback check renderTypeName #2
+- *@param* assembly <code title="comments here">System.Reflection.Assembly</code>
+- *@param* documentationPath <code title="comments here">System.String</code>
+- *@param* getTypeCallback <code title="comments here">System.Action`1[Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]]</code>
 
-- *@returns* Docshark.Core.Mapper.Codebase.CodebaseMapper
+- *@returns* <code><<a href="./CodebaseMapper.md">Docshark.Core.Mapper.Codebase.CodebaseMapper</a>></code>

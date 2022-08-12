@@ -1,10 +1,10 @@
-# ProjectMapper check renderTypeName #1
+# ProjectMapper check renderTypeName
 
 Summary not provided.
 
 ## `public` Properties
 
-### Assemblies check renderTypeName #2 `readonly`
+### Assemblies <code title="comments here">System.String[]</code> `readonly`
 
 Summary not provided.
 
@@ -20,39 +20,39 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* csProjPath check renderTypeName #2
+- *@param* csProjPath <code title="comments here">System.String</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Dispose `virtual`
 
 Disposes all <see cref="T:Docshark.Core.Models.Project.LocalProject" /> within <see cref="P:Docshark.Core.Models.Project.ProjectMapper.RootProject" /> recursively.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Load
 
 Summary not provided.
 
-- *@param* assemblies check renderTypeName #2
-- *@param* getTypeCallback check renderTypeName #2
+- *@param* assemblies <code title="comments here">System.String[]</code>
+- *@param* getTypeCallback <code title="comments here">System.Action`1[Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]]</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Prepare
 
 Prepares given and all dependent .csproj files recursively for further processing.
 
-- *@param* projectFile check renderTypeName #2
-- *@param* processedFiles check renderTypeName #2
+- *@param* projectFile <code title="comments here">System.String</code>
+- *@param* processedFiles <code title="comments here">System.Collections.Generic.List`1[System.String]</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Save
 
 Saves both the <see cref="T:Docshark.Core.Models.Project.ProjectMapper" /> and the root project's trees.
 
-- *@param* projectOutPath check renderTypeName #2
-- *@param* metadataOutPath check renderTypeName #2
+- *@param* projectOutPath <code title="comments here">System.String</code>
+- *@param* metadataOutPath <code title="comments here">System.String</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>

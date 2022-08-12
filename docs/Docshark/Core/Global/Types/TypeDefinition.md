@@ -1,4 +1,4 @@
-# TypeDefinition check renderTypeName #1
+# TypeDefinition check renderTypeName
 
 ```
 ட Docshark.Core.Global.Definition
@@ -9,27 +9,27 @@ Represents a type in a codebase that is linked to a specific project.
 
 ## `public` Properties
 
-### AssemblyForeignKey check renderTypeName #2
+### AssemblyForeignKey <code title="comments here">System.String</code>
 
 A foreign key that links to the project and assembly.
 
-### Comments check renderTypeName #2
+### Comments <code title="comments here">LoxSmoke.DocXml.CommonComments</code>
 
 Comments written about this type.
 
-### Namespace check renderTypeName #2
+### Namespace <code title="comments here">System.String</code>
 
 The entire namespace leading to this types location.        
 
-### Parent check renderTypeName #2
+### Parent <code title="comments here">System.String</code>
 
 A primary key identifying the parent type.
 
-### TypeArguments check renderTypeName #2
+### TypeArguments <code title="comments here">System.Collections.Generic.List`1[System.String]</code>
 
 A list of primary keys identifying the type arguments.
 
-### TypeDescription check renderTypeName #2
+### TypeDescription <code title="comments here">System.String</code>
 
 The namespace to the type with the type name and all type arguments if present.
 
@@ -44,13 +44,13 @@ Uses the <see cref="T:Docshark.Core.Global.Assemblies.AssemblyMapper" /> if give
 <see cref="P:Docshark.Core.Global.Assemblies.AssemblyMapper.MappedDefinitions" /> map while building the 
 <see cref="P:Docshark.Core.Global.Types.TypeMapper.MappedDefinitions" />.
 
-- *@param* info check renderTypeName #2
+- *@param* info <code title="comments here">System.Type</code>
 - *@param* asmMapper <code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>
 
-- *@returns* Docshark.Core.Global.Types.TypeDefinition
+- *@returns* <code><<a href="./TypeDefinition.md">Docshark.Core.Global.Types.TypeDefinition</a>></code>
 
 ### GetPrimaryKey `virtual`
 
 Summary not provided.
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>

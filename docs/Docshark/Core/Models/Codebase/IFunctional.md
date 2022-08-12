@@ -1,14 +1,14 @@
-# IFunctional check renderTypeName #1
+# IFunctional check renderTypeName
 
 Represents a type that has functional based documentation like parameters and return type.
 
 ## `public` Properties
 
-### Parameters check renderTypeName #2 `static` `abstract` `readonly`
+### Parameters <code title="comments here">Docshark.Core.Models.Codebase.Parameter[]</code> `static` `abstract` `readonly`
 
 Parameters used in the function signature.
 
-### ReturnType check renderTypeName #2 `static` `abstract` `readonly`
+### ReturnType <code title="comments here">System.String</code> `static` `abstract` `readonly`
 
 Return type of the function signature.
 
@@ -20,6 +20,6 @@ Return type of the function signature.
 
 Gets all the parameter information and organizes it before returning it.
 
-- *@param* info check renderTypeName #2
+- *@param* info <code title="comments here">System.Reflection.MethodInfo</code>
 
-- *@returns* Docshark.Core.Models.Codebase.Parameter[]
+- *@returns* <code title="comments here">Docshark.Core.Models.Codebase.Parameter[]</code>

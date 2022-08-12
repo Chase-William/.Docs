@@ -1,4 +1,4 @@
-# Docsharker check renderTypeName #1
+# Docsharker check renderTypeName
 
 The main hub for Charp.Core.
 
@@ -16,22 +16,22 @@ Summary not provided.
 
 Cleanup unmanaged resources linked with <see cref="P:Docshark.Core.Docsharker.Builder" />.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Load
 
 Summary not provided.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Make
 
 Summary not provided.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Prepare
 
 Summary not provided.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>

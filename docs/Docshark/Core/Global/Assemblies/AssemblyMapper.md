@@ -1,10 +1,10 @@
-# AssemblyMapper check renderTypeName #1
+# AssemblyMapper check renderTypeName
 
 Summary not provided.
 
 ## `public` Properties
 
-### MappedDefinitions check renderTypeName #2 `static` `virtual` `readonly`
+### MappedDefinitions <code title="comments here">System.Collections.Generic.IReadOnlyDictionary`2[System.String,Docshark.Core.Global.Assemblies.AssemblyDefinition]</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
@@ -12,6 +12,6 @@ Summary not provided.
 
 ## `public` Fields
 
-### ASSEMBLY_MAPPER_FILENAME check renderTypeName #2 `const`
+### ASSEMBLY_MAPPER_FILENAME <code title="comments here">System.String</code> `const`
 
 Summary not provided.

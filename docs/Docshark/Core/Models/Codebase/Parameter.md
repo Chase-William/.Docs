@@ -1,4 +1,4 @@
-# Parameter check renderTypeName #1
+# Parameter check renderTypeName
 
 ```
 ட System.ValueType
@@ -9,11 +9,11 @@ Represents a parameter in a function signature.
 
 ## `public` Properties
 
-### Name check renderTypeName #2
+### Name <code title="comments here">System.String</code>
 
 Name of the parameter.
 
-### Type check renderTypeName #2
+### Type <code title="comments here">System.String</code>
 
 Type of the parameter.
 

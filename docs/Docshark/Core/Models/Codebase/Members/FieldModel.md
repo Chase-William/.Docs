@@ -1,4 +1,4 @@
-# FieldModel check renderTypeName #1
+# FieldModel check renderTypeName
 
 ```
 ட Docshark.Core.Models.Codebase.Model<System.Reflection.FieldInfo, LoxSmoke.DocXml.CommonComments>
@@ -9,47 +9,47 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments check renderTypeName #2
+### Comments <code title="comments here">LoxSmoke.DocXml.CommonComments</code>
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### IsConstant check renderTypeName #2 `static` `readonly`
+### IsConstant <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### IsInternal check renderTypeName #2 `static` `virtual` `readonly`
+### IsInternal <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsPrivate check renderTypeName #2 `static` `virtual` `readonly`
+### IsPrivate <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsProtected check renderTypeName #2 `static` `virtual` `readonly`
+### IsProtected <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsPublic check renderTypeName #2 `static` `virtual` `readonly`
+### IsPublic <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsReadonly check renderTypeName #2 `static` `readonly`
+### IsReadonly <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### IsStatic check renderTypeName #2 `static` `readonly`
+### IsStatic <code title="comments here">System.Boolean</code> `static` `readonly`
 
 Summary not provided.
 
-### Meta check renderTypeName #2 `static` `readonly`
+### Meta <code title="comments here">System.Reflection.FieldInfo</code> `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### Name check renderTypeName #2 `static` `readonly`
+### Name <code title="comments here">System.String</code> `static` `readonly`
 
 Returns the name of the type or member.
 
-### Type check renderTypeName #2 `static` `virtual` `readonly`
+### Type <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Summary not provided.
 

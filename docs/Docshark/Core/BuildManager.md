@@ -1,4 +1,4 @@
-# BuildManager check renderTypeName #1
+# BuildManager check renderTypeName
 
 Summary not provided.
 
@@ -20,36 +20,36 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Load
 
 Summary not provided.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Make
 
 Summary not provided.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Prepare
 
 Summary not provided.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ## `public` Fields
 
-### DOCSHARK_CORE_ROOT_FOLDER check renderTypeName #2 `const`
+### DOCSHARK_CORE_ROOT_FOLDER <code title="comments here">System.String</code> `const`
 
 Summary not provided.
 
-### GLOBAL_META_FOLDER check renderTypeName #2 `const`
+### GLOBAL_META_FOLDER <code title="comments here">System.String</code> `const`
 
 Summary not provided.
 
-### PROJECT_STRUCTURE_FOLDER check renderTypeName #2 `const`
+### PROJECT_STRUCTURE_FOLDER <code title="comments here">System.String</code> `const`
 
 Summary not provided.

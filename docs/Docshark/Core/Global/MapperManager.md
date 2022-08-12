@@ -1,4 +1,4 @@
-# MapperManager check renderTypeName #1
+# MapperManager check renderTypeName
 
 Summary not provided.
 
@@ -24,6 +24,6 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* baseOutputPath check renderTypeName #2
+- *@param* baseOutputPath <code title="comments here">System.String</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>

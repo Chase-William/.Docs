@@ -1,4 +1,4 @@
-# DelegateModel check renderTypeName #1
+# DelegateModel check renderTypeName
 
 ```
 ட Docshark.Core.Models.Codebase.Types.TypeMember<System.Reflection.TypeInfo, LoxSmoke.DocXml.TypeComments>
@@ -10,59 +10,59 @@ Represents a delegate.
 
 ## `public` Properties
 
-### CanHaveInternalTypes check renderTypeName #2 `static` `virtual` `readonly`
+### CanHaveInternalTypes <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type can have internal types.
 
-### Comments check renderTypeName #2
+### Comments <code title="comments here">LoxSmoke.DocXml.TypeComments</code>
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### FullName check renderTypeName #2 `static` `readonly`
+### FullName <code title="comments here">System.String</code> `static` `readonly`
 
 Gets the namespace with the name of this type.
 
-### IsInternal check renderTypeName #2 `static` `virtual` `readonly`
+### IsInternal <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is internal.
 
-### IsPrivate check renderTypeName #2 `static` `virtual` `readonly`
+### IsPrivate <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is private.
 
-### IsProtected check renderTypeName #2 `static` `virtual` `readonly`
+### IsProtected <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is protected.
 
-### IsPublic check renderTypeName #2 `static` `virtual` `readonly`
+### IsPublic <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is public.
 
-### Meta check renderTypeName #2 `static` `readonly`
+### Meta <code title="comments here">System.Reflection.TypeInfo</code> `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### Name check renderTypeName #2 `static` `readonly`
+### Name <code title="comments here">System.String</code> `static` `readonly`
 
 Returns the name of the type or member.
 
-### Namespace check renderTypeName #2 `static` `readonly`
+### Namespace <code title="comments here">System.String</code> `static` `readonly`
 
 Gets the namespace of this type.
 
-### Parameters check renderTypeName #2 `virtual`
+### Parameters <code title="comments here">Docshark.Core.Models.Codebase.Parameter[]</code> `virtual`
 
 Parameters expect of this <see cref="T:Docshark.Core.Models.Codebase.Types.DelegateModel" />.
 
-### Parent check renderTypeName #2 `static` `readonly`
+### Parent <code title="comments here">System.String</code> `static` `readonly`
 
 Gets the parent of this type.
 
-### ReturnType check renderTypeName #2 `virtual`
+### ReturnType <code title="comments here">System.String</code> `virtual`
 
 Return type of this <see cref="T:Docshark.Core.Models.Codebase.Types.DelegateModel" /> as a string.
 
-### Type check renderTypeName #2 `static` `virtual` `readonly`
+### Type <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Identifier for determining type used by json parsers.
 
@@ -70,6 +70,6 @@ Identifier for determining type used by json parsers.
 
 ## `public` Fields
 
-### DELEGATE_TYPE_STRING check renderTypeName #2 `const`
+### DELEGATE_TYPE_STRING <code title="comments here">System.String</code> `const`
 
 Summary not provided.

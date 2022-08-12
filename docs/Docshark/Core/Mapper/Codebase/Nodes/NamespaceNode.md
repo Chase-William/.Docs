@@ -1,4 +1,4 @@
-# NamespaceNode check renderTypeName #1
+# NamespaceNode check renderTypeName
 
 ```
 ட Docshark.Core.Mapper.Codebase.Nodes.Node
@@ -9,7 +9,7 @@ Represents a namespace as a node.
 
 ## `public` Properties
 
-### Namespaces check renderTypeName #2
+### Namespaces <code title="comments here">System.Collections.Generic.Dictionary`2[System.String,Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode]</code>
 
 Contains all the namespaces containe within this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
@@ -17,7 +17,7 @@ Contains all the namespaces containe within this <see cref="T:Docshark.Core.Mapp
 
 The node this node branches off of.
 
-### Types check renderTypeName #2 `virtual`
+### Types <code title="comments here">System.Collections.Generic.Dictionary`2[System.String,Docshark.Core.Mapper.Codebase.Nodes.TypeNode]</code> `virtual`
 
 Contains all the types within this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
@@ -29,55 +29,55 @@ Contains all the types within this <see cref="T:Docshark.Core.Mapper.Codebase.No
 
 Summary not provided.
 
-- *@param* segments check renderTypeName #2
-- *@param* member check renderTypeName #2
+- *@param* segments <code title="comments here">System.ArraySegment`1[System.String]</code>
+- *@param* member <code title="comments here">Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### FindEvent `virtual`
 
 Searches for an event that branches off this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments check renderTypeName #2
+- *@param* segments <code title="comments here">System.ArraySegment`1[System.String]</code>
 
-- *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.EventInfo,LoxSmoke.DocXml.CommonComments]
+- *@returns* <code title="comments here">Docshark.Core.Models.Codebase.Model`2[System.Reflection.EventInfo,LoxSmoke.DocXml.CommonComments]</code>
 
 ### FindField `virtual`
 
 Searches for a field that branches off this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments check renderTypeName #2
+- *@param* segments <code title="comments here">System.ArraySegment`1[System.String]</code>
 
-- *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.FieldInfo,LoxSmoke.DocXml.CommonComments]
+- *@returns* <code title="comments here">Docshark.Core.Models.Codebase.Model`2[System.Reflection.FieldInfo,LoxSmoke.DocXml.CommonComments]</code>
 
 ### FindProperty `virtual`
 
 Searches for a property that branches of this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments check renderTypeName #2
+- *@param* segments <code title="comments here">System.ArraySegment`1[System.String]</code>
 
-- *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.PropertyInfo,LoxSmoke.DocXml.CommonComments]
+- *@returns* <code title="comments here">Docshark.Core.Models.Codebase.Model`2[System.Reflection.PropertyInfo,LoxSmoke.DocXml.CommonComments]</code>
 
 ### FindType `virtual`
 
 Searches for a type that branches of this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments check renderTypeName #2
+- *@param* segments <code title="comments here">System.ArraySegment`1[System.String]</code>
 
-- *@returns* Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]
+- *@returns* <code title="comments here">Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]</code>
 
 ### GetName `virtual`
 
 Gets the namespace name.
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>
 
 ### Save `virtual`
 
 Summary not provided.
 
-- *@param* outputPath check renderTypeName #2
-- *@param* namespaces check renderTypeName #2
-- *@param* nestables check renderTypeName #2
+- *@param* outputPath <code title="comments here">System.String</code>
+- *@param* namespaces <code title="comments here">System.Collections.Generic.Stack`1[System.String]</code>
+- *@param* nestables <code title="comments here">System.Collections.Generic.Stack`1[System.String]</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>

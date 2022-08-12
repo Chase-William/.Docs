@@ -1,4 +1,4 @@
-# Definition check renderTypeName #1
+# Definition check renderTypeName
 
 Enforces standards upon all other definitions which inherit from this type.  
 
@@ -10,4 +10,4 @@ Enforces standards upon all other definitions which inherit from this type.
 
 The primary identifer (id) for a <see cref="T:Docshark.Core.Global.Definition" />.
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>

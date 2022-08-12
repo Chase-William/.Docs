@@ -1,4 +1,4 @@
-# StructModel check renderTypeName #1
+# StructModel check renderTypeName
 
 ```
 ட Docshark.Core.Models.Codebase.Types.TypeMember<System.Reflection.TypeInfo, LoxSmoke.DocXml.TypeComments>
@@ -10,67 +10,67 @@ Represents a struct.
 
 ## `public` Properties
 
-### CanHaveInternalTypes check renderTypeName #2 `static` `virtual` `readonly`
+### CanHaveInternalTypes <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type can have internal types.
 
-### Comments check renderTypeName #2
+### Comments <code title="comments here">LoxSmoke.DocXml.TypeComments</code>
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### Events check renderTypeName #2 `virtual`
+### Events <code title="comments here">Docshark.Core.Models.Codebase.Members.EventModel[]</code> `virtual`
 
 Events of this struct.
 
-### Fields check renderTypeName #2 `virtual`
+### Fields <code title="comments here">Docshark.Core.Models.Codebase.Members.FieldModel[]</code> `virtual`
 
 Fields of this struct.
 
-### FullName check renderTypeName #2 `static` `readonly`
+### FullName <code title="comments here">System.String</code> `static` `readonly`
 
 Gets the namespace with the name of this type.
 
-### IsInternal check renderTypeName #2 `static` `virtual` `readonly`
+### IsInternal <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is internal.
 
-### IsPrivate check renderTypeName #2 `static` `virtual` `readonly`
+### IsPrivate <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is private.
 
-### IsProtected check renderTypeName #2 `static` `virtual` `readonly`
+### IsProtected <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is protected.
 
-### IsPublic check renderTypeName #2 `static` `virtual` `readonly`
+### IsPublic <code title="comments here">System.Boolean</code> `static` `virtual` `readonly`
 
 Denotes if this type is public.
 
-### Meta check renderTypeName #2 `static` `readonly`
+### Meta <code title="comments here">System.Reflection.TypeInfo</code> `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### Methods check renderTypeName #2 `virtual`
+### Methods <code title="comments here">Docshark.Core.Models.Codebase.Members.MethodModel[]</code> `virtual`
 
 Methods of this class.
 
-### Name check renderTypeName #2 `static` `readonly`
+### Name <code title="comments here">System.String</code> `static` `readonly`
 
 Returns the name of the type or member.
 
-### Namespace check renderTypeName #2 `static` `readonly`
+### Namespace <code title="comments here">System.String</code> `static` `readonly`
 
 Gets the namespace of this type.
 
-### Parent check renderTypeName #2 `static` `readonly`
+### Parent <code title="comments here">System.String</code> `static` `readonly`
 
 Gets the parent of this type.
 
-### Properties check renderTypeName #2 `virtual`
+### Properties <code title="comments here">Docshark.Core.Models.Codebase.Members.PropertyModel[]</code> `virtual`
 
 Properties of this struct.
 
-### Type check renderTypeName #2 `static` `virtual` `readonly`
+### Type <code title="comments here">System.String</code> `static` `virtual` `readonly`
 
 Identifier for determining the type used by json parsers.
 
@@ -78,6 +78,6 @@ Identifier for determining the type used by json parsers.
 
 ## `public` Fields
 
-### STRUCT_TYPE_STRING check renderTypeName #2 `const`
+### STRUCT_TYPE_STRING <code title="comments here">System.String</code> `const`
 
 Summary not provided.

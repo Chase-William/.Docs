@@ -1,4 +1,4 @@
-# LocalProject check renderTypeName #1
+# LocalProject check renderTypeName
 
 ```
 ட Docshark.Core.Models.Project.Dependency
@@ -9,11 +9,11 @@ Represents a local project with a .csproj file.
 
 ## `public` Properties
 
-### Assembly check renderTypeName #2
+### Assembly <code title="comments here">System.Reflection.Assembly</code>
 
 Summary not provided.
 
-### AssemblyLoadPath check renderTypeName #2
+### AssemblyLoadPath <code title="comments here">System.String</code>
 
 Summary not provided.
 
@@ -21,27 +21,27 @@ Summary not provided.
 
 Summary not provided.
 
-### DocumentationPath check renderTypeName #2
+### DocumentationPath <code title="comments here">System.String</code>
 
 Summary not provided.
 
-### LocalProjects check renderTypeName #2
+### LocalProjects <code title="comments here">System.Collections.Generic.List`1[Docshark.Core.Models.Project.LocalProject]</code>
 
 Collection of all <see cref="T:Docshark.Core.Models.Project.LocalProject" /> dependencies.
 
-### ProjectDirectory check renderTypeName #2
+### ProjectDirectory <code title="comments here">System.String</code>
 
 Directory where the .csproj file resides.
 
-### ProjectFileName check renderTypeName #2
+### ProjectFileName <code title="comments here">System.String</code>
 
 Just the file name.
 
-### ProjectName check renderTypeName #2
+### ProjectName <code title="comments here">System.String</code>
 
 Just the project name with no extension.
 
-### ProjectPath check renderTypeName #2
+### ProjectPath <code title="comments here">System.String</code>
 
 Entire path to file include name with extension.
 
@@ -54,30 +54,30 @@ Entire path to file include name with extension.
 Disposes of unmanaged resources for this <see cref="T:Docshark.Core.Models.Project.LocalProject" /> only.
 Does not dispose of children projects in <see cref="P:Docshark.Core.Models.Project.LocalProject.LocalProjects" />.
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Exists
 
 Determines if a projectFile
 Uses a depth-first-search (DFS) approach.
 
-- *@param* projectFile check renderTypeName #2
+- *@param* projectFile <code title="comments here">System.String</code>
 
-- *@returns* System.Boolean
+- *@returns* <code title="comments here">System.Boolean</code>
 
 ### Load
 
 Summary not provided.
 
-- *@param* assemblies check renderTypeName #2
-- *@param* getTypeCallback check renderTypeName #2
+- *@param* assemblies <code title="comments here">System.String[]</code>
+- *@param* getTypeCallback <code title="comments here">System.Action`1[Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]]</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>
 
 ### Save
 
 Summary not provided.
 
-- *@param* baseOutputPath check renderTypeName #2
+- *@param* baseOutputPath <code title="comments here">System.String</code>
 
-- *@returns* System.Void
+- *@returns* <code title="comments here">System.Void</code>

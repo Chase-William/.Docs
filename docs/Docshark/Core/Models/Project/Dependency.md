@@ -1,18 +1,18 @@
-# Dependency check renderTypeName #1
+# Dependency check renderTypeName
 
 Represents a dependency that has a dll and a documentation file.
 
 ## `public` Properties
 
-### Assembly check renderTypeName #2
+### Assembly <code title="comments here">System.Reflection.Assembly</code>
 
 Summary not provided.
 
-### AssemblyLoadPath check renderTypeName #2
+### AssemblyLoadPath <code title="comments here">System.String</code>
 
 Summary not provided.
 
-### DocumentationPath check renderTypeName #2
+### DocumentationPath <code title="comments here">System.String</code>
 
 Summary not provided.
 

@@ -1,4 +1,4 @@
-# AssemblyDefinition check renderTypeName #1
+# AssemblyDefinition check renderTypeName
 
 ```
 ட Docshark.Core.Global.Definition
@@ -9,11 +9,11 @@ Summary not provided.
 
 ## `public` Properties
 
-### AssemblyName check renderTypeName #2
+### AssemblyName <code title="comments here">System.String</code>
 
 Summary not provided.
 
-### ProjectForeignKey check renderTypeName #2
+### ProjectForeignKey <code title="comments here">System.String</code>
 
 Summary not provided.
 
@@ -25,13 +25,13 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* assembly check renderTypeName #2
-- *@param* name check renderTypeName #2
+- *@param* assembly <code title="comments here">System.Reflection.Assembly</code>
+- *@param* name <code title="comments here">System.String</code>
 
-- *@returns* Docshark.Core.Global.Assemblies.AssemblyDefinition
+- *@returns* <code><<a href="./AssemblyDefinition.md">Docshark.Core.Global.Assemblies.AssemblyDefinition</a>></code>
 
 ### GetPrimaryKey `virtual`
 
 Summary not provided.
 
-- *@returns* System.String
+- *@returns* <code title="comments here">System.String</code>
