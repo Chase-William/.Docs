@@ -2,8 +2,7 @@ import PropertyConfigModel from "../../models/config/members/PropertyConfigModel
 import ICodebaseMap from "../../models/global/ICodebaseMap"
 import PropertyModel from "../../models/members/PropertyModel"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { renderIsStaticTag, renderVirtualAndStaticTags } from "../Util"
-import { renderTypeName } from "./MemberTypeRenderer"
+import divider, { renderIsStaticTag, renderTypeName, renderVirtualAndStaticTags } from "../Util"
 
 export default class PropertyRenderer {
   content = ''

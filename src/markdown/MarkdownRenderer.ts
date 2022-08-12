@@ -73,19 +73,19 @@ export default class MarkdownRenderer implements Renderer {
   renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel, map: ICodebaseMap): void {
     this.content += divider() + `## \`${accessibility}\` Methods`
     for (const method of methods) {
-      this.content += renderMethod(method, config)
+      this.content += renderMethod(method, config, map)
     }
   }
   renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel, map: ICodebaseMap): void {
     this.content += divider() + `## \`${accessibility}\` Events`
     for (const event of events) {
-      this.content += renderEvent(event, config)
+      this.content += renderEvent(event, config, map)
     }
   }
   renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel, map: ICodebaseMap): void {
     this.content += divider() + `## \`${accessibility}\` Fields`
     for (const field of fields) {
-      this.content += renderField(field, config)
+      this.content += renderField(field, config, map)
     }
   }
   renderValues(model: EnumModel, values: FieldModel[]): void {

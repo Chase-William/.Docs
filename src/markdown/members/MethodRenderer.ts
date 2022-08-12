@@ -1,9 +1,10 @@
 import MethodConfigModel from "../../models/config/members/MethodConfigModel"
+import ICodebaseMap from "../../models/global/ICodebaseMap"
 import MethodModel from "../../models/members/MethodModel"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderVirtualAndStaticTags } from "../Util"
 
-export function renderMethod(method: MethodModel, config: MethodConfigModel): string {
+export function renderMethod(method: MethodModel, config: MethodConfigModel, map: ICodebaseMap): string {
   return (
     divider() +
     renderMethodHeader(method, config) +

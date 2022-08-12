@@ -1,0 +1,17 @@
+# AssemblyMapper undefined
+
+Summary not provided.
+
+## `public` Properties
+
+### MappedDefinitions <code title="comments go here"><System.Collections.Generic.IReadOnlyDictionary`2[System.String,Docshark.Core.Global.Assemblies.AssemblyDefinition]></code> `static` `virtual` `readonly`
+
+Summary not provided.
+
+
+
+## `public` Fields
+
+### ASSEMBLY_MAPPER_FILENAME <code title="comments go here"><System.String></code> `const`
+
+Summary not provided.

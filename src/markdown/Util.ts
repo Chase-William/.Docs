@@ -32,7 +32,7 @@ export function optionalDivider(col: unknown): string {
 
 export function renderTypeHeader(model: TypeModel<CommonComment>, map: ICodebaseMap): string {
   return (
-    `# ${model.name} \`${model.type}\`` +
+    `# ${model.name} ${renderTypeName(model.type, map)}` +
     divider() + 
     renderTypeInheritanceBlock(model, map) +
     getOptionalSummary(model.comments) +
@@ -67,4 +67,22 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
   if (config.denoteIfAbstract)
     content += model.isAbstract ? ' `abstract`' : ''
   return content
+}
+
+export function renderTypeName(typeStr: string, map: ICodebaseMap) {
+  const result = map.typeMap.get(typeStr)
+  // Generic types like T1 & T2 trigger this
+  if (typeof result === 'undefined')  
+    return 'undefined'  
+
+  // Only runs for types defined in the Local project that also are not intermediary
+  if (result.model) {
+    return (
+      `<code><<a href="./${result.model.getFilePath() + '.md'}">${result.typeDescription}</a>></code>`
+    )
+  } 
+
+  return (
+    `<code title="comments go here"><${result.typeDescription}></code>`
+  )
 }
