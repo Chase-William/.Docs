@@ -37,13 +37,13 @@ A complete path to the project with the project file included.
 
 Summary not provided.
 
-- *@param* projectName `check renderTypeName #2`
-- *@param* projectFileName `check renderTypeName #2`
-- *@param* projectDirectory `check renderTypeName #2`
-- *@param* projectPath `check renderTypeName #2`
-- *@param* projectDependencyNames `check renderTypeName #2`
-- *@param* assembly `check renderTypeName #2`
-- *@param* asmMapper `<code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>`
+- *@param* projectName check renderTypeName #2
+- *@param* projectFileName check renderTypeName #2
+- *@param* projectDirectory check renderTypeName #2
+- *@param* projectPath check renderTypeName #2
+- *@param* projectDependencyNames check renderTypeName #2
+- *@param* assembly check renderTypeName #2
+- *@param* asmMapper <code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>
 
 - *@returns* Docshark.Core.Global.Projects.ProjectDefinition
 

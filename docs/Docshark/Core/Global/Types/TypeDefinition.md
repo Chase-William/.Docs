@@ -44,8 +44,8 @@ Uses the <see cref="T:Docshark.Core.Global.Assemblies.AssemblyMapper" /> if give
 <see cref="P:Docshark.Core.Global.Assemblies.AssemblyMapper.MappedDefinitions" /> map while building the 
 <see cref="P:Docshark.Core.Global.Types.TypeMapper.MappedDefinitions" />.
 
-- *@param* info `check renderTypeName #2`
-- *@param* asmMapper `<code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>`
+- *@param* info check renderTypeName #2
+- *@param* asmMapper <code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>
 
 - *@returns* Docshark.Core.Global.Types.TypeDefinition
 

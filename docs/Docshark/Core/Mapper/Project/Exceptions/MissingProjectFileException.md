@@ -59,8 +59,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* info `check renderTypeName #2`
-- *@param* context `check renderTypeName #2`
+- *@param* info check renderTypeName #2
+- *@param* context check renderTypeName #2
 
 - *@returns* System.Void
 

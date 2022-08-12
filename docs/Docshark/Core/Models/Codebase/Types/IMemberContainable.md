@@ -24,8 +24,8 @@ Properties of this <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberConta
 
 Gets all the desired events from the type info with documentation.
 
-- *@param* info `check renderTypeName #2`
-- *@param* reader `check renderTypeName #2`
+- *@param* info check renderTypeName #2
+- *@param* reader check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Members.EventModel[]
 
@@ -33,8 +33,8 @@ Gets all the desired events from the type info with documentation.
 
 Gets all the desired methods from the type info with documentation.
 
-- *@param* info `check renderTypeName #2`
-- *@param* reader `check renderTypeName #2`
+- *@param* info check renderTypeName #2
+- *@param* reader check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Members.MethodModel[]
 
@@ -42,8 +42,8 @@ Gets all the desired methods from the type info with documentation.
 
 Gets all the desired properties from the type info with documentation.
 
-- *@param* info `check renderTypeName #2`
-- *@param* reader `check renderTypeName #2`
+- *@param* info check renderTypeName #2
+- *@param* reader check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Members.PropertyModel[]
 
@@ -51,9 +51,9 @@ Gets all the desired properties from the type info with documentation.
 
 Loads <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberContainable" />'s properties, fields, events, and methods with members.
 
-- *@param* constructable `<code><<a href="./IMemberContainable.md">Docshark.Core.Models.Codebase.Types.IMemberContainable</a>></code>`
-- *@param* info `check renderTypeName #2`
-- *@param* reader `check renderTypeName #2`
+- *@param* constructable <code><<a href="./IMemberContainable.md">Docshark.Core.Models.Codebase.Types.IMemberContainable</a>></code>
+- *@param* info check renderTypeName #2
+- *@param* reader check renderTypeName #2
 
 - *@returns* System.Void
 

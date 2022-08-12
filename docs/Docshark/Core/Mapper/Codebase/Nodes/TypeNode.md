@@ -31,9 +31,9 @@ Gets the short name of the current type.
 
 Modifies the provided traces while making a call to <see cref="M:Docshark.Core.Mapper.Codebase.Nodes.TypeNode.WriteInfo(System.String,System.Collections.Generic.Stack{System.String},System.Collections.Generic.Stack{System.String})" /> for writing information as JSON to file.
 
-- *@param* outputPath `check renderTypeName #2`
-- *@param* namespaces `check renderTypeName #2`
-- *@param* nestables `check renderTypeName #2`
+- *@param* outputPath check renderTypeName #2
+- *@param* namespaces check renderTypeName #2
+- *@param* nestables check renderTypeName #2
 
 - *@returns* System.Void
 
@@ -43,8 +43,8 @@ Modifies the provided traces while making a call to <see cref="M:Docshark.Core.M
 
 Writes all information regarding this type to file as JSON.
 
-- *@param* outputPath `check renderTypeName #2`
-- *@param* namespaces `check renderTypeName #2`
-- *@param* nestables `check renderTypeName #2`
+- *@param* outputPath check renderTypeName #2
+- *@param* namespaces check renderTypeName #2
+- *@param* nestables check renderTypeName #2
 
 - *@returns* System.Void

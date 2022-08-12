@@ -20,7 +20,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* csProjPath `check renderTypeName #2`
+- *@param* csProjPath check renderTypeName #2
 
 - *@returns* System.Void
 
@@ -34,8 +34,8 @@ Disposes all <see cref="T:Docshark.Core.Models.Project.LocalProject" /> within <
 
 Summary not provided.
 
-- *@param* assemblies `check renderTypeName #2`
-- *@param* getTypeCallback `check renderTypeName #2`
+- *@param* assemblies check renderTypeName #2
+- *@param* getTypeCallback check renderTypeName #2
 
 - *@returns* System.Void
 
@@ -43,8 +43,8 @@ Summary not provided.
 
 Prepares given and all dependent .csproj files recursively for further processing.
 
-- *@param* projectFile `check renderTypeName #2`
-- *@param* processedFiles `check renderTypeName #2`
+- *@param* projectFile check renderTypeName #2
+- *@param* processedFiles check renderTypeName #2
 
 - *@returns* System.Void
 
@@ -52,7 +52,7 @@ Prepares given and all dependent .csproj files recursively for further processin
 
 Saves both the <see cref="T:Docshark.Core.Models.Project.ProjectMapper" /> and the root project's trees.
 
-- *@param* projectOutPath `check renderTypeName #2`
-- *@param* metadataOutPath `check renderTypeName #2`
+- *@param* projectOutPath check renderTypeName #2
+- *@param* metadataOutPath check renderTypeName #2
 
 - *@returns* System.Void

@@ -22,9 +22,9 @@ Gets the name of the node.
 
 Begins the process of writing this node to file.
 
-- *@param* outputPath `check renderTypeName #2`
-- *@param* namespaces `check renderTypeName #2`
-- *@param* nestables `check renderTypeName #2`
+- *@param* outputPath check renderTypeName #2
+- *@param* namespaces check renderTypeName #2
+- *@param* nestables check renderTypeName #2
 
 - *@returns* System.Void
 
@@ -34,7 +34,7 @@ Begins the process of writing this node to file.
 
 Joins namespaces into a path.
 
-- *@param* namespaces `check renderTypeName #2`
+- *@param* namespaces check renderTypeName #2
 
 - *@returns* System.String
 
@@ -42,6 +42,6 @@ Joins namespaces into a path.
 
 Joins nestables into a valid filename.
 
-- *@param* nestables `check renderTypeName #2`
+- *@param* nestables check renderTypeName #2
 
 - *@returns* System.String

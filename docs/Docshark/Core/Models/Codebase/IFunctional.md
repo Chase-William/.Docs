@@ -20,6 +20,6 @@ Return type of the function signature.
 
 Gets all the parameter information and organizes it before returning it.
 
-- *@param* info `check renderTypeName #2`
+- *@param* info check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Parameter[]

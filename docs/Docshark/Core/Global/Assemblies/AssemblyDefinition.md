@@ -25,8 +25,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* assembly `check renderTypeName #2`
-- *@param* name `check renderTypeName #2`
+- *@param* assembly check renderTypeName #2
+- *@param* name check renderTypeName #2
 
 - *@returns* Docshark.Core.Global.Assemblies.AssemblyDefinition
 

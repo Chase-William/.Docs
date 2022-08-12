@@ -16,12 +16,12 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* projectName `check renderTypeName #2`
-- *@param* projectFileName `check renderTypeName #2`
-- *@param* projectDirectory `check renderTypeName #2`
-- *@param* projectPath `check renderTypeName #2`
-- *@param* projectDependencyNames `check renderTypeName #2`
-- *@param* assembly `check renderTypeName #2`
+- *@param* projectName check renderTypeName #2
+- *@param* projectFileName check renderTypeName #2
+- *@param* projectDirectory check renderTypeName #2
+- *@param* projectPath check renderTypeName #2
+- *@param* projectDependencyNames check renderTypeName #2
+- *@param* assembly check renderTypeName #2
 
 - *@returns* System.Void
 

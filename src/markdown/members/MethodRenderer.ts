@@ -29,7 +29,7 @@ function renderMethodParams(method: MethodModel, config: MethodConfigModel, map:
   method.parameters.forEach(param => {
     content += (
       '\n- *@param* ' +
-      `${param.name} \`${renderTypeName(method, param.type, map)}\``
+      `${param.name} ${renderTypeName(method, param.type, map)}`
     )
   })
   return content

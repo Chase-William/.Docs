@@ -16,7 +16,7 @@ The entry point node.
 
 Adds a new type under the provided namespace.
 
-- *@param* member `check renderTypeName #2`
+- *@param* member check renderTypeName #2
 
 - *@returns* System.Void
 
@@ -24,7 +24,7 @@ Adds a new type under the provided namespace.
 
 Searches for an event in the tree.
 
-- *@param* fullName `check renderTypeName #2`
+- *@param* fullName check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.EventInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -32,7 +32,7 @@ Searches for an event in the tree.
 
 Searches for a field in the tree.
 
-- *@param* fullName `check renderTypeName #2`
+- *@param* fullName check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.FieldInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -40,7 +40,7 @@ Searches for a field in the tree.
 
 Searches for a property in the tree.
 
-- *@param* fullName `check renderTypeName #2`
+- *@param* fullName check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.PropertyInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -48,7 +48,7 @@ Searches for a property in the tree.
 
 Searches for a type in the tree.
 
-- *@param* fullName `check renderTypeName #2`
+- *@param* fullName check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]
 
@@ -56,6 +56,6 @@ Searches for a type in the tree.
 
 Begins the process of iterating through the tree and writing all nodes to file.
 
-- *@param* outputPath `check renderTypeName #2`
+- *@param* outputPath check renderTypeName #2
 
 - *@returns* System.Void

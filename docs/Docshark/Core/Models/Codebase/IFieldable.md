@@ -18,7 +18,7 @@ Fields of this type.
 
 Gets all the desired fields from the type info with documentation.
 
-- *@param* info `check renderTypeName #2`
-- *@param* reader `check renderTypeName #2`
+- *@param* info check renderTypeName #2
+- *@param* reader check renderTypeName #2
 
 - *@returns* Docshark.Core.Models.Codebase.Members.FieldModel[]

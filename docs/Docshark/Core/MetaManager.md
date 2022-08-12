@@ -10,7 +10,7 @@ Maps each type used in the target project.
 
 Summary not provided.
 
-- *@param* rootProject `<code><<a href="./Models\Project\LocalProject.md">Docshark.Core.Models.Project.LocalProject</a>></code>`
+- *@param* rootProject <code><<a href="./Models\Project\LocalProject.md">Docshark.Core.Models.Project.LocalProject</a>></code>
 
 - *@returns* System.Void
 
@@ -21,7 +21,7 @@ IMPORTANT: This method will perform a deep analysis of all types used in any man
 For example, types used in inheritance, encapsulated members, and even type arguments are analysed
 and added to the type mapper if needed.
 
-- *@param* type `check renderTypeName #1`
+- *@param* type check renderTypeName #1
 
 - *@returns* System.Void
 
@@ -29,6 +29,6 @@ and added to the type mapper if needed.
 
 Summary not provided.
 
-- *@param* outputPath `check renderTypeName #2`
+- *@param* outputPath check renderTypeName #2
 
 - *@returns* System.Void

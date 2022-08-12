@@ -24,6 +24,6 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* baseOutputPath `check renderTypeName #2`
+- *@param* baseOutputPath check renderTypeName #2
 
 - *@returns* System.Void

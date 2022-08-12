@@ -16,7 +16,7 @@ Contains all <see cref="T:Docshark.Core.Global.Types.TypeDefinition" /> used in 
 
 Summary not provided.
 
-- *@param* info `check renderTypeName #2`
+- *@param* info check renderTypeName #2
 
 - *@returns* System.Void
 

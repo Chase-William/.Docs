@@ -61,7 +61,7 @@ Does not dispose of children projects in <see cref="P:Docshark.Core.Models.Proje
 Determines if a projectFile
 Uses a depth-first-search (DFS) approach.
 
-- *@param* projectFile `check renderTypeName #2`
+- *@param* projectFile check renderTypeName #2
 
 - *@returns* System.Boolean
 
@@ -69,8 +69,8 @@ Uses a depth-first-search (DFS) approach.
 
 Summary not provided.
 
-- *@param* assemblies `check renderTypeName #2`
-- *@param* getTypeCallback `check renderTypeName #2`
+- *@param* assemblies check renderTypeName #2
+- *@param* getTypeCallback check renderTypeName #2
 
 - *@returns* System.Void
 
@@ -78,6 +78,6 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* baseOutputPath `check renderTypeName #2`
+- *@param* baseOutputPath check renderTypeName #2
 
 - *@returns* System.Void
