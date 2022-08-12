@@ -1,4 +1,4 @@
-# TypeNodeNestable undefined
+# TypeNodeNestable check renderTypeName #1
 
 ```
 ட Docshark.Core.Mapper.Codebase.Nodes.TypeNode
@@ -10,15 +10,15 @@ A type that can contain other types.
 
 ## `public` Properties
 
-### Member <code title="comments go here"><Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]></code> `static` `readonly`
+### Member check renderTypeName #2 `static` `readonly`
 
 Information about the type this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.TypeNode" /> represents.
 
-### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
+### Parent <code><<a href="./Node.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
 
 The node this node branches off of.
 
-### Types <code title="comments go here"><System.Collections.Generic.Dictionary`2[System.String,Docshark.Core.Mapper.Codebase.Nodes.TypeNode]></code> `virtual`
+### Types check renderTypeName #2 `virtual`
 
 Nested types.
 
@@ -30,8 +30,8 @@ Nested types.
 
 A recursive method for adding a type to another <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.TypeNodeNestable" />.
 
-- *@param* types `System.ArraySegment`1[System.String]`
-- *@param* member `Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]`
+- *@param* types `check renderTypeName #2`
+- *@param* member `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -39,7 +39,7 @@ A recursive method for adding a type to another <see cref="T:Docshark.Core.Mappe
 
 Searches through this <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNode.Member" /> as a <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberContainable" /> to find the target event.
 
-- *@param* types `System.ArraySegment`1[System.String]`
+- *@param* types `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.EventInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -47,7 +47,7 @@ Searches through this <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNode.
 
 Searches through this <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNode.Member" /> as a <see cref="T:Docshark.Core.Models.Codebase.IFieldable" /> to find the target field.
 
-- *@param* types `System.ArraySegment`1[System.String]`
+- *@param* types `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.FieldInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -55,7 +55,7 @@ Searches through this <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNode.
 
 Searches through this <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNode.Member" /> as a <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberContainable" /> to find the target property.
 
-- *@param* types `System.ArraySegment`1[System.String]`
+- *@param* types `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.PropertyInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -63,7 +63,7 @@ Searches through this <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNode.
 
 Searches through this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.TypeNodeNestable" /> and it's nested <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNodeNestable.Types" />.
 
-- *@param* types `System.ArraySegment`1[System.String]`
+- *@param* types `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]
 
@@ -78,9 +78,9 @@ Gets the short name of the current type.
 Iterate through <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNodeNestable.Types" /> defined in this type and save them, along with
 <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.TypeNodeNestable" /> info.
 
-- *@param* outputPath `System.String`
-- *@param* namespaces `System.Collections.Generic.Stack`1[System.String]`
-- *@param* nestables `System.Collections.Generic.Stack`1[System.String]`
+- *@param* outputPath `check renderTypeName #2`
+- *@param* namespaces `check renderTypeName #2`
+- *@param* nestables `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -90,8 +90,8 @@ Iterate through <see cref="P:Docshark.Core.Mapper.Codebase.Nodes.TypeNodeNestabl
 
 Writes all information regarding this type to file as JSON.
 
-- *@param* outputPath `System.String`
-- *@param* namespaces `System.Collections.Generic.Stack`1[System.String]`
-- *@param* nestables `System.Collections.Generic.Stack`1[System.String]`
+- *@param* outputPath `check renderTypeName #2`
+- *@param* namespaces `check renderTypeName #2`
+- *@param* nestables `check renderTypeName #2`
 
 - *@returns* System.Void

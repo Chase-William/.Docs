@@ -1,4 +1,4 @@
-# EventModel undefined
+# EventModel check renderTypeName #1
 
 ```
 ட Docshark.Core.Models.Codebase.Model<System.Reflection.EventInfo, LoxSmoke.DocXml.CommonComments>
@@ -9,47 +9,47 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code title="comments go here"><LoxSmoke.DocXml.CommonComments></code>
+### Comments check renderTypeName #2
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### IsAbstract <code title="comments go here"><System.Boolean></code> `static` `readonly`
+### IsAbstract check renderTypeName #2 `static` `readonly`
 
 Summary not provided.
 
-### IsInternal <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsInternal check renderTypeName #2 `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsPrivate <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsPrivate check renderTypeName #2 `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsProtected <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsProtected check renderTypeName #2 `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsPublic <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsPublic check renderTypeName #2 `static` `virtual` `readonly`
 
 Summary not provided.
 
-### IsStatic <code title="comments go here"><System.Boolean></code> `static` `readonly`
+### IsStatic check renderTypeName #2 `static` `readonly`
 
 Summary not provided.
 
-### IsVirtual <code title="comments go here"><System.Boolean></code> `static` `readonly`
+### IsVirtual check renderTypeName #2 `static` `readonly`
 
 Summary not provided.
 
-### Meta <code title="comments go here"><System.Reflection.EventInfo></code> `static` `readonly`
+### Meta check renderTypeName #2 `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### Name <code title="comments go here"><System.String></code> `static` `readonly`
+### Name check renderTypeName #2 `static` `readonly`
 
 Returns the name of the type or member.
 
-### Type <code title="comments go here"><System.String></code> `static` `virtual` `readonly`
+### Type check renderTypeName #2 `static` `virtual` `readonly`
 
 Summary not provided.
 

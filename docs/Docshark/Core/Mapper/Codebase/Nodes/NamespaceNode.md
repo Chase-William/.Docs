@@ -1,4 +1,4 @@
-# NamespaceNode undefined
+# NamespaceNode check renderTypeName #1
 
 ```
 ட Docshark.Core.Mapper.Codebase.Nodes.Node
@@ -9,15 +9,15 @@ Represents a namespace as a node.
 
 ## `public` Properties
 
-### Namespaces <code title="comments go here"><System.Collections.Generic.Dictionary`2[System.String,Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode]></code>
+### Namespaces check renderTypeName #2
 
 Contains all the namespaces containe within this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
+### Parent <code><<a href="./Node.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `static` `readonly`
 
 The node this node branches off of.
 
-### Types <code title="comments go here"><System.Collections.Generic.Dictionary`2[System.String,Docshark.Core.Mapper.Codebase.Nodes.TypeNode]></code> `virtual`
+### Types check renderTypeName #2 `virtual`
 
 Contains all the types within this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
@@ -29,8 +29,8 @@ Contains all the types within this <see cref="T:Docshark.Core.Mapper.Codebase.No
 
 Summary not provided.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
-- *@param* member `Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]`
+- *@param* segments `check renderTypeName #2`
+- *@param* member `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -38,7 +38,7 @@ Summary not provided.
 
 Searches for an event that branches off this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.EventInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -46,7 +46,7 @@ Searches for an event that branches off this <see cref="T:Docshark.Core.Mapper.C
 
 Searches for a field that branches off this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.FieldInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -54,7 +54,7 @@ Searches for a field that branches off this <see cref="T:Docshark.Core.Mapper.Co
 
 Searches for a property that branches of this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.PropertyInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -62,7 +62,7 @@ Searches for a property that branches of this <see cref="T:Docshark.Core.Mapper.
 
 Searches for a type that branches of this <see cref="T:Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode" />.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]
 
@@ -76,8 +76,8 @@ Gets the namespace name.
 
 Summary not provided.
 
-- *@param* outputPath `System.String`
-- *@param* namespaces `System.Collections.Generic.Stack`1[System.String]`
-- *@param* nestables `System.Collections.Generic.Stack`1[System.String]`
+- *@param* outputPath `check renderTypeName #2`
+- *@param* namespaces `check renderTypeName #2`
+- *@param* nestables `check renderTypeName #2`
 
 - *@returns* System.Void

@@ -1,11 +1,11 @@
 import path = require("path");
+import Model from "../models/Model";
 import PolymorphicConfigable from "../models/config/interfaces/PolymorphicConfigable"
 import SingletonConfigurable from "../models/config/interfaces/SingletonConfigurable"
 import ICodebaseMap from "../models/global/ICodebaseMap";
 import IAmPolymorphicable from "../models/interfaces/IAmPolymorphicable"
 import IAmSingletonable from "../models/interfaces/IAmSingletonable"
 import MemberModel from "../models/members/MemberModel";
-import Model from "../models/Model";
 import TypeModel from "../models/types/TypeModel"
 import CommonComment from "../models/written/CommonComment"
 import { getOptionalSummary } from "./CommentsRenderer"
@@ -19,10 +19,6 @@ export function check(col: unknown[]): boolean {
   return !col || !col.length
 }
 
-// export function optionalDivider(col: unknown): string {
-//   return (!col || !col.length) ? '' : divider()
-// }
-
 export function optionalDivider(col: unknown): string {
   if (!col)
     return ''
@@ -35,7 +31,7 @@ export function optionalDivider(col: unknown): string {
 
 export function renderTypeHeader(model: TypeModel<CommonComment>, map: ICodebaseMap): string {
   return (
-    `# ${model.name} ${renderTypeName(model, map)}` +
+    `# ${model.name} ${renderTypeName(model, model.type, map)}` +
     divider() + 
     renderTypeInheritanceBlock(model, map) +
     getOptionalSummary(model.comments) +
@@ -72,31 +68,30 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
   return content
 }
 
-export function renderTypeName(model: Model, map: ICodebaseMap) {
-  const result = map.typeMap.get(model.type)
+export function renderTypeName(containingModel: Model, targetType: string, map: ICodebaseMap) {
+  const result = map.typeMap.get(targetType)
   // Generic types like T1 & T2 trigger this
   if (typeof result === 'undefined')  
-    return 'undefined'  
+    return 'check renderTypeName #1'  
 
   // Only runs for types defined in the Local project that also are not intermediary
   if (result.model) {
     let from = ''
     // If the model given is a MemberModel, we need to get the path of the parent
-    if (model instanceof MemberModel) {
-      from = model.parent.getFilePath()
+    if (containingModel instanceof MemberModel) {
+      from = containingModel.parent.getFilePath()
     } else {
-      from = model.getFilePath()
+      from = containingModel.getFilePath()
     }
-    console.log(`from: ${model.getFilePath()} to: ${result.model.getFilePath()}`)
-    console.log(`rel: ${path.relative(model.getFilePath(), result.model.getFilePath())}`)
-    
+
+    // console.log(`from: ${containingModel.getFilePath()} to: ${result.model.getFilePath()}`)
+    // console.log(`rel: ${path.relative(containingModel.getFilePath(), result.model.getFilePath())}`)
+
     const relPath = path.relative(from, result.model.getFilePath())
     return (
-      `<code><<a href="./${relPath + '.md'}">${result.typeDescription}</a>></code>`
+      `<code><<a href="./${path.join(relPath, result.model.name) + '.md'}">${result.typeDescription}</a>></code>`
     )
-  } 
+  }
 
-  return (
-    `<code title="comments go here"><${result.typeDescription}></code>`
-  )
+  return 'check renderTypeName #2'
 }

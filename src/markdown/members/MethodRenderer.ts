@@ -2,7 +2,7 @@ import MethodConfigModel from "../../models/config/members/MethodConfigModel"
 import ICodebaseMap from "../../models/global/ICodebaseMap"
 import MethodModel from "../../models/members/MethodModel"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { renderVirtualAndStaticTags } from "../Util"
+import divider, { renderTypeName, renderVirtualAndStaticTags } from "../Util"
 
 export function renderMethod(method: MethodModel, config: MethodConfigModel, map: ICodebaseMap): string {
   return (
@@ -11,12 +11,12 @@ export function renderMethod(method: MethodModel, config: MethodConfigModel, map
     divider() +
     getOptionalSummary(method.comments) +
     (!(method.parameters) || method.parameters.length == 0 ? '' : '\n') +
-    renderMethodParams(method, config) + 
-    renderMethodReturn(method, config)
+    renderMethodParams(method, config, map) + 
+    renderMethodReturn(method, config, map)
   )
 }
 
-function renderMethodReturn(method: MethodModel, config: MethodConfigModel): string {
+function renderMethodReturn(method: MethodModel, config: MethodConfigModel, map: ICodebaseMap): string {
   return (
     (method.parameters ? divider() : '') +
     '- *@returns* ' +
@@ -24,12 +24,12 @@ function renderMethodReturn(method: MethodModel, config: MethodConfigModel): str
   )  
 }
 
-function renderMethodParams(method: MethodModel, config: MethodConfigModel): string {
+function renderMethodParams(method: MethodModel, config: MethodConfigModel, map: ICodebaseMap): string {
   let content = ''
   method.parameters.forEach(param => {
     content += (
       '\n- *@param* ' +
-      `${param.name} \`${param.type}\``
+      `${param.name} \`${renderTypeName(method, param.type, map)}\``
     )
   })
   return content

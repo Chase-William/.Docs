@@ -1,10 +1,10 @@
-# TypeMapper undefined
+# TypeMapper check renderTypeName #1
 
 Maps types into a dictionary designed to be serialized and usable like a database.
 
 ## `public` Properties
 
-### MappedDefinitions <code title="comments go here"><System.Collections.Generic.IReadOnlyDictionary`2[System.String,Docshark.Core.Global.Types.TypeDefinition]></code> `static` `virtual` `readonly`
+### MappedDefinitions check renderTypeName #2 `static` `virtual` `readonly`
 
 Contains all <see cref="T:Docshark.Core.Global.Types.TypeDefinition" /> used in the root project and its dependencies.
 
@@ -16,12 +16,12 @@ Contains all <see cref="T:Docshark.Core.Global.Types.TypeDefinition" /> used in 
 
 Summary not provided.
 
-- *@param* info `System.Type`
+- *@param* info `check renderTypeName #2`
 
 - *@returns* System.Void
 
 ## `public` Fields
 
-### TYPE_MAPPER_FILENAME <code title="comments go here"><System.String></code> `const`
+### TYPE_MAPPER_FILENAME check renderTypeName #2 `const`
 
 Summary not provided.

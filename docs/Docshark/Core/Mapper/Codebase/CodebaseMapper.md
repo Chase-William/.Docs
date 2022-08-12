@@ -1,10 +1,10 @@
-# CodebaseMapper undefined
+# CodebaseMapper check renderTypeName #1
 
 A tree of namespaces and types created lazily that represents the structure of one's source code.
 
 ## `public` Properties
 
-### Root <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode</a>></code> `readonly`
+### Root <code><<a href="./Nodes\NamespaceNode.md">Docshark.Core.Mapper.Codebase.Nodes.NamespaceNode</a>></code> `readonly`
 
 The entry point node.
 
@@ -16,7 +16,7 @@ The entry point node.
 
 Adds a new type under the provided namespace.
 
-- *@param* member `Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]`
+- *@param* member `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -24,7 +24,7 @@ Adds a new type under the provided namespace.
 
 Searches for an event in the tree.
 
-- *@param* fullName `System.String`
+- *@param* fullName `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.EventInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -32,7 +32,7 @@ Searches for an event in the tree.
 
 Searches for a field in the tree.
 
-- *@param* fullName `System.String`
+- *@param* fullName `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.FieldInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -40,7 +40,7 @@ Searches for a field in the tree.
 
 Searches for a property in the tree.
 
-- *@param* fullName `System.String`
+- *@param* fullName `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.PropertyInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -48,7 +48,7 @@ Searches for a property in the tree.
 
 Searches for a type in the tree.
 
-- *@param* fullName `System.String`
+- *@param* fullName `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]
 
@@ -56,6 +56,6 @@ Searches for a type in the tree.
 
 Begins the process of iterating through the tree and writing all nodes to file.
 
-- *@param* outputPath `System.String`
+- *@param* outputPath `check renderTypeName #2`
 
 - *@returns* System.Void

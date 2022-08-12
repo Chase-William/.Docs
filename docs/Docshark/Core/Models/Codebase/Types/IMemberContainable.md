@@ -1,18 +1,18 @@
-# IMemberContainable undefined
+# IMemberContainable check renderTypeName #1
 
 Represents a entity that can contain properties, fields, events, and methods.
 
 ## `public` Properties
 
-### Events <code title="comments go here"><Docshark.Core.Models.Codebase.Members.EventModel[]></code> `abstract`
+### Events check renderTypeName #2 `abstract`
 
 Events of this <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberContainable" />.
 
-### Methods <code title="comments go here"><Docshark.Core.Models.Codebase.Members.MethodModel[]></code> `abstract`
+### Methods check renderTypeName #2 `abstract`
 
 Methods of this <see cref="P:Docshark.Core.Models.Codebase.Types.IMemberContainable.Methods" />.
 
-### Properties <code title="comments go here"><Docshark.Core.Models.Codebase.Members.PropertyModel[]></code> `abstract`
+### Properties check renderTypeName #2 `abstract`
 
 Properties of this <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberContainable" />.
 
@@ -24,8 +24,8 @@ Properties of this <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberConta
 
 Gets all the desired events from the type info with documentation.
 
-- *@param* info `System.Reflection.TypeInfo`
-- *@param* reader `LoxSmoke.DocXml.DocXmlReader`
+- *@param* info `check renderTypeName #2`
+- *@param* reader `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Members.EventModel[]
 
@@ -33,8 +33,8 @@ Gets all the desired events from the type info with documentation.
 
 Gets all the desired methods from the type info with documentation.
 
-- *@param* info `System.Reflection.TypeInfo`
-- *@param* reader `LoxSmoke.DocXml.DocXmlReader`
+- *@param* info `check renderTypeName #2`
+- *@param* reader `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Members.MethodModel[]
 
@@ -42,8 +42,8 @@ Gets all the desired methods from the type info with documentation.
 
 Gets all the desired properties from the type info with documentation.
 
-- *@param* info `System.Reflection.TypeInfo`
-- *@param* reader `LoxSmoke.DocXml.DocXmlReader`
+- *@param* info `check renderTypeName #2`
+- *@param* reader `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Members.PropertyModel[]
 
@@ -51,14 +51,14 @@ Gets all the desired properties from the type info with documentation.
 
 Loads <see cref="T:Docshark.Core.Models.Codebase.Types.IMemberContainable" />'s properties, fields, events, and methods with members.
 
-- *@param* constructable `Docshark.Core.Models.Codebase.Types.IMemberContainable`
-- *@param* info `System.Reflection.TypeInfo`
-- *@param* reader `LoxSmoke.DocXml.DocXmlReader`
+- *@param* constructable `<code><<a href="./IMemberContainable.md">Docshark.Core.Models.Codebase.Types.IMemberContainable</a>></code>`
+- *@param* info `check renderTypeName #2`
+- *@param* reader `check renderTypeName #2`
 
 - *@returns* System.Void
 
 ## `public` Fields
 
-### DEFAULT_OBJ_METHODS <code title="comments go here"><System.String[]></code> `readonly`
+### DEFAULT_OBJ_METHODS check renderTypeName #2 `readonly`
 
 Summary not provided.

@@ -1,14 +1,14 @@
-# BuildManager undefined
+# BuildManager check renderTypeName #1
 
 Summary not provided.
 
 ## `public` Properties
 
-### ProjectManager <code><<a href="./Docshark\Core\Models\Project.md">Docshark.Core.Models.Project.ProjectMapper</a>></code> `readonly`
+### ProjectManager <code><<a href="./Models\Project\ProjectMapper.md">Docshark.Core.Models.Project.ProjectMapper</a>></code> `readonly`
 
 A tree that contains all the local projects the root depends on.
 
-### TypeMapper <code><<a href="./Docshark\Core.md">Docshark.Core.MetaManager</a>></code> `readonly`
+### TypeMapper <code><<a href="./MetaManager.md">Docshark.Core.MetaManager</a>></code> `readonly`
 
 Summary not provided.
 
@@ -42,14 +42,14 @@ Summary not provided.
 
 ## `public` Fields
 
-### DOCSHARK_CORE_ROOT_FOLDER <code title="comments go here"><System.String></code> `const`
+### DOCSHARK_CORE_ROOT_FOLDER check renderTypeName #2 `const`
 
 Summary not provided.
 
-### GLOBAL_META_FOLDER <code title="comments go here"><System.String></code> `const`
+### GLOBAL_META_FOLDER check renderTypeName #2 `const`
 
 Summary not provided.
 
-### PROJECT_STRUCTURE_FOLDER <code title="comments go here"><System.String></code> `const`
+### PROJECT_STRUCTURE_FOLDER check renderTypeName #2 `const`
 
 Summary not provided.

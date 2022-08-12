@@ -1,18 +1,18 @@
-# MapperManager undefined
+# MapperManager check renderTypeName #1
 
 Summary not provided.
 
 ## `public` Properties
 
-### AssemblyMap <code><<a href="./Docshark\Core\Global\Assemblies.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>
+### AssemblyMap <code><<a href="./Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>
 
 Summary not provided.
 
-### ProjectMap <code><<a href="./Docshark\Core\Global\Projects.md">Docshark.Core.Global.Projects.ProjectMapper</a>></code>
+### ProjectMap <code><<a href="./Projects\ProjectMapper.md">Docshark.Core.Global.Projects.ProjectMapper</a>></code>
 
 Summary not provided.
 
-### TypeMap <code><<a href="./Docshark\Core\Global\Types.md">Docshark.Core.Global.Types.TypeMapper</a>></code>
+### TypeMap <code><<a href="./Types\TypeMapper.md">Docshark.Core.Global.Types.TypeMapper</a>></code>
 
 Summary not provided.
 
@@ -24,6 +24,6 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* baseOutputPath `System.String`
+- *@param* baseOutputPath `check renderTypeName #2`
 
 - *@returns* System.Void

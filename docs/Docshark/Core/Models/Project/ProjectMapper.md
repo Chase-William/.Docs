@@ -1,14 +1,14 @@
-# ProjectMapper undefined
+# ProjectMapper check renderTypeName #1
 
 Summary not provided.
 
 ## `public` Properties
 
-### Assemblies <code title="comments go here"><System.String[]></code> `readonly`
+### Assemblies check renderTypeName #2 `readonly`
 
 Summary not provided.
 
-### RootProject <code><<a href="./Docshark\Core\Models\Project.md">Docshark.Core.Models.Project.LocalProject</a>></code> `readonly`
+### RootProject <code><<a href="./LocalProject.md">Docshark.Core.Models.Project.LocalProject</a>></code> `readonly`
 
 Summary not provided.
 
@@ -20,7 +20,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* csProjPath `System.String`
+- *@param* csProjPath `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -34,8 +34,8 @@ Disposes all <see cref="T:Docshark.Core.Models.Project.LocalProject" /> within <
 
 Summary not provided.
 
-- *@param* assemblies `System.String[]`
-- *@param* getTypeCallback `System.Action`1[Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]]`
+- *@param* assemblies `check renderTypeName #2`
+- *@param* getTypeCallback `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -43,8 +43,8 @@ Summary not provided.
 
 Prepares given and all dependent .csproj files recursively for further processing.
 
-- *@param* projectFile `System.String`
-- *@param* processedFiles `System.Collections.Generic.List`1[System.String]`
+- *@param* projectFile `check renderTypeName #2`
+- *@param* processedFiles `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -52,7 +52,7 @@ Prepares given and all dependent .csproj files recursively for further processin
 
 Saves both the <see cref="T:Docshark.Core.Models.Project.ProjectMapper" /> and the root project's trees.
 
-- *@param* projectOutPath `System.String`
-- *@param* metadataOutPath `System.String`
+- *@param* projectOutPath `check renderTypeName #2`
+- *@param* metadataOutPath `check renderTypeName #2`
 
 - *@returns* System.Void

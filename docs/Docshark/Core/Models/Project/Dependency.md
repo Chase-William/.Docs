@@ -1,18 +1,18 @@
-# Dependency undefined
+# Dependency check renderTypeName #1
 
 Represents a dependency that has a dll and a documentation file.
 
 ## `public` Properties
 
-### Assembly <code title="comments go here"><System.Reflection.Assembly></code>
+### Assembly check renderTypeName #2
 
 Summary not provided.
 
-### AssemblyLoadPath <code title="comments go here"><System.String></code>
+### AssemblyLoadPath check renderTypeName #2
 
 Summary not provided.
 
-### DocumentationPath <code title="comments go here"><System.String></code>
+### DocumentationPath check renderTypeName #2
 
 Summary not provided.
 

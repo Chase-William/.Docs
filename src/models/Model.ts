@@ -1,7 +1,4 @@
 import { jsonMember, jsonObject } from "typedjson";
-import IHaveNestableTypes from "./interfaces/IHaveNestableTypes";
-import IAmRenderable from "./interfaces/IAmRenderable";
-import Namespace from "./Namespace";
 
 export const CLASS_TYPE_CODE = 'class'
 export const INTERFACE_TYPE_CODE = 'interface'
@@ -36,7 +33,7 @@ export default class Model {
     let namespace = ''
     let current = this.parent
     while (current) {
-      if (current instanceof Namespace) { // . seperation for namespaces
+      if (current.type === NAMESPACE_TYPE_CODE) { // . seperation for namespaces
         namespace = current.name + '.' + namespace
       }
       // Update for next interation
@@ -54,10 +51,14 @@ function getPath(model: Model, namespaceDelimiter: string) {
   let namespace = ''
   let current = model.parent
   while (current) {
-    if (current instanceof Namespace) { // . seperation for namespaces
+    /*
+    I cannot use instanceof as importing Namespace in Model creates a circular dependency
+    */
+    if (current.type === NAMESPACE_TYPE_CODE) { // . seperation for namespaces
       namespace = current.name + namespaceDelimiter + namespace
     } else { // + seperation for types
-      namespace = current.name + '+' + namespace
+      if (current.parent?.type !== NAMESPACE_TYPE_CODE)
+        namespace = current.name + '+' + namespace
     }
     // Update for next interation
     current = current.parent

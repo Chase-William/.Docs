@@ -1,7 +1,6 @@
 import { readFileSync } from "fs"
 import path = require("path")
 import { TypedJSON } from "typedjson"
-import RenderManager from "../../renderer/RenderManager"
 import AssemblyDefinition from "./AssemblyDefinition"
 import DefinitionPrimaryKey from "./DefinitionPrimaryKey"
 import ICodebaseMap from "./ICodebaseMap"

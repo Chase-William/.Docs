@@ -1,4 +1,4 @@
-# TypeDefinition undefined
+# TypeDefinition check renderTypeName #1
 
 ```
 ட Docshark.Core.Global.Definition
@@ -9,27 +9,27 @@ Represents a type in a codebase that is linked to a specific project.
 
 ## `public` Properties
 
-### AssemblyForeignKey <code title="comments go here"><System.String></code>
+### AssemblyForeignKey check renderTypeName #2
 
 A foreign key that links to the project and assembly.
 
-### Comments <code title="comments go here"><LoxSmoke.DocXml.CommonComments></code>
+### Comments check renderTypeName #2
 
 Comments written about this type.
 
-### Namespace <code title="comments go here"><System.String></code>
+### Namespace check renderTypeName #2
 
 The entire namespace leading to this types location.        
 
-### Parent <code title="comments go here"><System.String></code>
+### Parent check renderTypeName #2
 
 A primary key identifying the parent type.
 
-### TypeArguments <code title="comments go here"><System.Collections.Generic.List`1[System.String]></code>
+### TypeArguments check renderTypeName #2
 
 A list of primary keys identifying the type arguments.
 
-### TypeDescription <code title="comments go here"><System.String></code>
+### TypeDescription check renderTypeName #2
 
 The namespace to the type with the type name and all type arguments if present.
 
@@ -44,8 +44,8 @@ Uses the <see cref="T:Docshark.Core.Global.Assemblies.AssemblyMapper" /> if give
 <see cref="P:Docshark.Core.Global.Assemblies.AssemblyMapper.MappedDefinitions" /> map while building the 
 <see cref="P:Docshark.Core.Global.Types.TypeMapper.MappedDefinitions" />.
 
-- *@param* info `System.Type`
-- *@param* asmMapper `Docshark.Core.Global.Assemblies.AssemblyMapper`
+- *@param* info `check renderTypeName #2`
+- *@param* asmMapper `<code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>`
 
 - *@returns* Docshark.Core.Global.Types.TypeDefinition
 

@@ -1,22 +1,22 @@
-# Model`2 undefined
+# Model`2 check renderTypeName #1
 
 The root base class to all types and members.
 
 ## `public` Properties
 
-### Comments undefined
+### Comments check renderTypeName #1
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### Meta undefined `readonly`
+### Meta check renderTypeName #1 `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### Name <code title="comments go here"><System.String></code> `static` `readonly`
+### Name check renderTypeName #2 `static` `readonly`
 
 Returns the name of the type or member.
 
-### Type <code title="comments go here"><System.String></code> `static` `abstract` `readonly`
+### Type check renderTypeName #2 `static` `abstract` `readonly`
 
 Returns the type of the type or member.
 

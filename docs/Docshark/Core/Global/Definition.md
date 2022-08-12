@@ -1,4 +1,4 @@
-# Definition undefined
+# Definition check renderTypeName #1
 
 Enforces standards upon all other definitions which inherit from this type.  
 

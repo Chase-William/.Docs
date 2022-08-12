@@ -1,4 +1,4 @@
-# EnumModel undefined
+# EnumModel check renderTypeName #1
 
 ```
 ட Docshark.Core.Models.Codebase.Types.TypeMember<System.Reflection.TypeInfo, LoxSmoke.DocXml.TypeComments>
@@ -10,59 +10,59 @@ Represents a enum.
 
 ## `public` Properties
 
-### CanHaveInternalTypes <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### CanHaveInternalTypes check renderTypeName #2 `static` `virtual` `readonly`
 
 Denotes if this type can have internal types.
 
-### Comments <code title="comments go here"><LoxSmoke.DocXml.TypeComments></code>
+### Comments check renderTypeName #2
 
 Written documentation about the <see cref="P:Docshark.Core.Models.Codebase.Model`2.Meta" />.
 
-### Fields <code title="comments go here"><Docshark.Core.Models.Codebase.Members.FieldModel[]></code> `virtual`
+### Fields check renderTypeName #2 `virtual`
 
 Values of this enum as fields.
 
-### FullName <code title="comments go here"><System.String></code> `static` `readonly`
+### FullName check renderTypeName #2 `static` `readonly`
 
 Gets the namespace with the name of this type.
 
-### IsInternal <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsInternal check renderTypeName #2 `static` `virtual` `readonly`
 
 Denotes if this type is internal.
 
-### IsPrivate <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsPrivate check renderTypeName #2 `static` `virtual` `readonly`
 
 Denotes if this type is private.
 
-### IsProtected <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsProtected check renderTypeName #2 `static` `virtual` `readonly`
 
 Denotes if this type is protected.
 
-### IsPublic <code title="comments go here"><System.Boolean></code> `static` `virtual` `readonly`
+### IsPublic check renderTypeName #2 `static` `virtual` `readonly`
 
 Denotes if this type is public.
 
-### Meta <code title="comments go here"><System.Reflection.TypeInfo></code> `static` `readonly`
+### Meta check renderTypeName #2 `static` `readonly`
 
 Metadata attained using the MetadataContextLoader.
 
-### Name <code title="comments go here"><System.String></code> `static` `readonly`
+### Name check renderTypeName #2 `static` `readonly`
 
 Returns the name of the type or member.
 
-### Namespace <code title="comments go here"><System.String></code> `static` `readonly`
+### Namespace check renderTypeName #2 `static` `readonly`
 
 Gets the namespace of this type.
 
-### Parent <code title="comments go here"><System.String></code> `static` `readonly`
+### Parent check renderTypeName #2 `static` `readonly`
 
 Gets the parent of this type.
 
-### Type <code title="comments go here"><System.String></code> `static` `virtual` `readonly`
+### Type check renderTypeName #2 `static` `virtual` `readonly`
 
 Identifier for determining the type used by json parsers.
 
-### UnderlyingType <code title="comments go here"><System.String></code> `static` `readonly`
+### UnderlyingType check renderTypeName #2 `static` `readonly`
 
 The underlying datatype used to represent each case.
 
@@ -70,6 +70,6 @@ The underlying datatype used to represent each case.
 
 ## `public` Fields
 
-### ENUM_TYPE_STRING <code title="comments go here"><System.String></code> `const`
+### ENUM_TYPE_STRING check renderTypeName #2 `const`
 
 Summary not provided.

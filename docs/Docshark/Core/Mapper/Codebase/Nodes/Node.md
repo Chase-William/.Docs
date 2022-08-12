@@ -1,10 +1,10 @@
-# Node undefined
+# Node check renderTypeName #1
 
 The most basic building block of all node types.
 
 ## `public` Properties
 
-### Parent <code><<a href="./Docshark\Core\Mapper\Codebase\Nodes.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `readonly`
+### Parent <code><<a href="./Node.md">Docshark.Core.Mapper.Codebase.Nodes.Node</a>></code> `readonly`
 
 The node this node branches off of.
 
@@ -22,9 +22,9 @@ Gets the name of the node.
 
 Begins the process of writing this node to file.
 
-- *@param* outputPath `System.String`
-- *@param* namespaces `System.Collections.Generic.Stack`1[System.String]`
-- *@param* nestables `System.Collections.Generic.Stack`1[System.String]`
+- *@param* outputPath `check renderTypeName #2`
+- *@param* namespaces `check renderTypeName #2`
+- *@param* nestables `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -34,7 +34,7 @@ Begins the process of writing this node to file.
 
 Joins namespaces into a path.
 
-- *@param* namespaces `System.Collections.Generic.Stack`1[System.String]`
+- *@param* namespaces `check renderTypeName #2`
 
 - *@returns* System.String
 
@@ -42,6 +42,6 @@ Joins namespaces into a path.
 
 Joins nestables into a valid filename.
 
-- *@param* nestables `System.Collections.Generic.Stack`1[System.String]`
+- *@param* nestables `check renderTypeName #2`
 
 - *@returns* System.String

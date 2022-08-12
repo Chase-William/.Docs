@@ -1,10 +1,10 @@
-# Docsharker undefined
+# Docsharker check renderTypeName #1
 
 The main hub for Charp.Core.
 
 ## `public` Properties
 
-### Builder <code><<a href="./Docshark\Core.md">Docshark.Core.BuildManager</a>></code>
+### Builder <code><<a href="./BuildManager.md">Docshark.Core.BuildManager</a>></code>
 
 Summary not provided.
 

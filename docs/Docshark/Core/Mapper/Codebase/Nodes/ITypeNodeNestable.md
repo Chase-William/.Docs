@@ -1,11 +1,11 @@
-# ITypeNodeNestable undefined
+# ITypeNodeNestable check renderTypeName #1
 
 Represents a type that can contain other type definitions internally.
 For example, this can represent a class or struct as both can contain other class/struct type definitions.
 
 ## `public` Properties
 
-### Types <code title="comments go here"><System.Collections.Generic.Dictionary`2[System.String,Docshark.Core.Mapper.Codebase.Nodes.TypeNode]></code> `abstract`
+### Types check renderTypeName #2 `abstract`
 
 Contains the types defined within the implementing type.
 
@@ -17,8 +17,8 @@ Contains the types defined within the implementing type.
 
 Adds a given type with it's member info.
 
-- *@param* fullName `System.ArraySegment`1[System.String]`
-- *@param* member `Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]`
+- *@param* fullName `check renderTypeName #2`
+- *@param* member `check renderTypeName #2`
 
 - *@returns* System.Void
 
@@ -26,7 +26,7 @@ Adds a given type with it's member info.
 
 Finds a given event within a type.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.EventInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -34,7 +34,7 @@ Finds a given event within a type.
 
 Finds a given field within a type.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.FieldInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -42,7 +42,7 @@ Finds a given field within a type.
 
 Finds a given property within a type.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Model`2[System.Reflection.PropertyInfo,LoxSmoke.DocXml.CommonComments]
 
@@ -50,6 +50,6 @@ Finds a given property within a type.
 
 Finds the given type.
 
-- *@param* segments `System.ArraySegment`1[System.String]`
+- *@param* segments `check renderTypeName #2`
 
 - *@returns* Docshark.Core.Models.Codebase.Types.TypeMember`2[System.Reflection.TypeInfo,LoxSmoke.DocXml.TypeComments]

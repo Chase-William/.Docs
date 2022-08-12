@@ -1,4 +1,4 @@
-# ProjectDefinition undefined
+# ProjectDefinition check renderTypeName #1
 
 ```
 ட Docshark.Core.Global.Definition
@@ -9,23 +9,23 @@ Represents a .csproj and is referenced by <see cref="T:System.Reflection.Metadat
 
 ## `public` Properties
 
-### LocalProjectDependencies <code title="comments go here"><System.String[]></code>
+### LocalProjectDependencies check renderTypeName #2
 
 Summary not provided.
 
-### ProjectDirectory <code title="comments go here"><System.String></code>
+### ProjectDirectory check renderTypeName #2
 
 The location where the .csproj resides.
 
-### ProjectFileName <code title="comments go here"><System.String></code>
+### ProjectFileName check renderTypeName #2
 
 The name of the project with its file extension.
 
-### ProjectName <code title="comments go here"><System.String></code>
+### ProjectName check renderTypeName #2
 
 The name of the project.
 
-### ProjectPath <code title="comments go here"><System.String></code>
+### ProjectPath check renderTypeName #2
 
 A complete path to the project with the project file included.
 
@@ -37,13 +37,13 @@ A complete path to the project with the project file included.
 
 Summary not provided.
 
-- *@param* projectName `System.String`
-- *@param* projectFileName `System.String`
-- *@param* projectDirectory `System.String`
-- *@param* projectPath `System.String`
-- *@param* projectDependencyNames `System.String[]`
-- *@param* assembly `System.Reflection.Assembly`
-- *@param* asmMapper `Docshark.Core.Global.Assemblies.AssemblyMapper`
+- *@param* projectName `check renderTypeName #2`
+- *@param* projectFileName `check renderTypeName #2`
+- *@param* projectDirectory `check renderTypeName #2`
+- *@param* projectPath `check renderTypeName #2`
+- *@param* projectDependencyNames `check renderTypeName #2`
+- *@param* assembly `check renderTypeName #2`
+- *@param* asmMapper `<code><<a href="./..\Assemblies\AssemblyMapper.md">Docshark.Core.Global.Assemblies.AssemblyMapper</a>></code>`
 
 - *@returns* Docshark.Core.Global.Projects.ProjectDefinition
 

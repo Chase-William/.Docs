@@ -93,10 +93,10 @@ export function parseChildrenImplementation(basePath: string, namespaces: Array<
               model, 
               _class
             )
-            // setParentForProperties(_class)
-            // setParentForFields(_class)
-            // setParentForEvents(_class)            
-            // setParentForMethods(_class)
+            setParentForProperties(_class)
+            setParentForFields(_class)
+            setParentForEvents(_class)            
+            setParentForMethods(_class)
           }                 
           break;
         case 'enum':
@@ -107,7 +107,7 @@ export function parseChildrenImplementation(basePath: string, namespaces: Array<
               model, 
               _enum
             )
-            // setParentForFields(_enum)
+            setParentForFields(_enum)
           }
           break;
         case 'interface':
@@ -118,10 +118,10 @@ export function parseChildrenImplementation(basePath: string, namespaces: Array<
               model, 
               _interface
             )
-            // setParentForProperties(_interface)
-            // setParentForFields(_interface)
-            // setParentForEvents(_interface)            
-            // setParentForMethods(_interface)
+            setParentForProperties(_interface)
+            setParentForFields(_interface)
+            setParentForEvents(_interface)            
+            setParentForMethods(_interface)
           }  
           break;
         case 'struct':
@@ -132,10 +132,10 @@ export function parseChildrenImplementation(basePath: string, namespaces: Array<
               model, 
               _struct
             )
-            // setParentForProperties(_struct)
-            // setParentForFields(_struct)
-            // setParentForEvents(_struct)            
-            // setParentForMethods(_struct)
+            setParentForProperties(_struct)
+            setParentForFields(_struct)
+            setParentForEvents(_struct)            
+            setParentForMethods(_struct)
           }          
           break;
         case 'delegate':
