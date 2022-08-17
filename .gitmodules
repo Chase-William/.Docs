@@ -1,0 +1,3 @@
+[submodule "vendor/DotDocs.Core"]
+	path = vendor/DotDocs.Core
+	url = https://github.com/Chase-William/DotDocs.Core
