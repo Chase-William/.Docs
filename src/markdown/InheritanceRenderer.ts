@@ -1,3 +1,4 @@
+import GenericParameterDefinition from "../models/global/GenericParameterDefinition";
 import ICodebaseMap from "../models/global/ICodebaseMap";
 import TypeDefinition from "../models/global/TypeDefinition";
 import TypeModel from "../models/types/TypeModel"
@@ -36,9 +37,6 @@ function renderIndent(index: number): string {
 // ˪ட―↘ ↳
 
 export function renderTypeNameWithArguments(type: TypeDefinition, map: ICodebaseMap): string {
-  //console.log(type)
-  if (!type)
-    return ''
   if (type.typeArguments.length > 0) {
     /*
     Get only the text before the "`" which signifies arguments.
@@ -46,22 +44,19 @@ export function renderTypeNameWithArguments(type: TypeDefinition, map: ICodebase
     */         
     let content = type.typeDescription.substring(0, type.typeDescription.indexOf('`'))
     content = getTypeNameWithoutNamespace(content) + '<'
-    // let content = type.typeDescription.substring(0, type.typeDescription.indexOf('`')) + '<'
-    // Used to contain all the type defs
-    const argDefs = new Array<TypeDefinition>(type.typeArguments.length)
     // Get all arguments' full type def
     for (let i = 0; i < type.typeArguments.length; i++) {
       // Get type from dictionary of types
-      const tDef = map.typeMap.get(type.typeArguments[i])
-      argDefs[i] = tDef
-      // Check if recursive processing of type argumented types is needed
-      if (argDefs[i].typeArguments.length > 0)
-        content += renderTypeNameWithArguments(tDef, map)
-      else { 
-        // has no arguments, just add type name
-        content += getTypeNameWithoutNamespace(argDefs[i].typeDescription)
+      const definition = map.findTypeKeyDefinition(type.typeArguments[i])
+      // Check if recursive processing of the type's argumented types is needed
+      if (definition instanceof TypeDefinition) {
+        if (definition.typeArguments.length > 0)
+          content += renderTypeNameWithArguments(definition, map)
+        else { 
+          // has no arguments, just add type name
+          content += getTypeNameWithoutNamespace(definition.typeDescription)
+        }
       }
-
       // Only add a comma to the end if it is not the last argument
       if ((i + 1) < type.typeArguments.length)
         content += ', '

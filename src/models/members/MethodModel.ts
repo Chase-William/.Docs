@@ -1,16 +1,17 @@
-import { jsonArrayMember, jsonMapMember, jsonMember, jsonObject } from 'typedjson';
+import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
 import IAmPolymorphicable from '../interfaces/IAmPolymorphicable';
 import IHaveSignature from '../interfaces/IHaveSignature';
-import { Parameter } from '../Parameter';
+import TypeKey from '../TypeKey';
+import TypeKeyParameter from '../TypeKeyParameter';
 import MethodComment from '../written/MethodComment';
 import MemberModel from './MemberModel';
 
 @jsonObject()
 export default class MethodModel extends MemberModel<MethodComment> implements IAmPolymorphicable, IHaveSignature {
-  @jsonMember(String, { name: 'ReturnType' })
-  returnType: string;
-  @jsonArrayMember(Parameter, { name: 'Parameters' })
-  parameters: Parameter[];
+  @jsonMember(TypeKey, { name: 'ReturnType' })
+  returnType: TypeKey;
+  @jsonArrayMember(TypeKeyParameter, { name: 'Parameters' })
+  parameters: TypeKeyParameter[];
   @jsonMember(Boolean, { name: 'IsAbstract' })
   isAbstract: boolean;
   @jsonMember(Boolean, { name: 'IsVirtual' })

@@ -1,6 +1,7 @@
-import { Parameter } from "../Parameter";
+import TypeKey from "../TypeKey";
+import TypeKeyParameter from "../TypeKeyParameter";
 
 export default interface IHaveSignature {
-  returnType: string;
-  parameters: Parameter[];
+  returnType: TypeKey;
+  parameters: TypeKeyParameter[];
 }

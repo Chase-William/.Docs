@@ -4,6 +4,8 @@ import { jsonMember, jsonObject } from "typedjson"
 export default class DefinitionPrimaryKey {
   @jsonMember(String, { name: 'DefinitionTypeName' })
   definitionTypeName: string
-  @jsonMember(String, { name: 'PrimaryKeyName' })
+  @jsonMember(String, { name: 'PrimaryKeyMemberName' })
   primaryKeyMemberName: string
+  @jsonMember(String, { name: 'IsCompsite' })
+  isComposite: boolean
 }

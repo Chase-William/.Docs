@@ -15,7 +15,7 @@ export default class Namespace
 
   constructor(name: string, parent: Model) {
     super(name, parent);
-    this.type = 'namespace'
+    // this.type = 'namespace'
   }
 
   bindToCodebaseMap(map: ICodebaseMap): void {

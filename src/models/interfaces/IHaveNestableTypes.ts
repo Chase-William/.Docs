@@ -13,6 +13,7 @@ import { setParentForEvents } from './IHaveEvents';
 import { setParentForProperties } from './IHaveProperties';
 import { setParentForFields } from './IHaveFields';
 import { setParentForMethods } from './IHaveMethods';
+import TypeModel from '../types/TypeModel';
 
 export default interface IHaveNestableTypes {
   children: Map<string, (Model | IHaveNestableTypes) & IAmRenderable>
@@ -65,7 +66,7 @@ export function parseChildrenImplementation(basePath: string, namespaces: Array<
     return -1
   })
 
-  const serializer = new TypedJSON(Model)
+  const serializer = new TypedJSON(TypeModel)
   const classSerializer = new TypedJSON(ClassModel)
   const enumSerializer = new TypedJSON(EnumModel)
   const interfaceSerializer = new TypedJSON(InterfaceModel)

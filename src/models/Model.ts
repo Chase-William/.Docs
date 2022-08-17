@@ -9,59 +9,13 @@ export const NAMESPACE_TYPE_CODE = 'namespace'
 
 @jsonObject()
 export default class Model {
-  parent: Model | null
-
-  /**
-   * Used in the json to identify the object's type.
-   */
-  @jsonMember(String, { name: 'Type' })
-  type: string
+  parent: Model | null  
 
   @jsonMember(String, { name: 'Name' })
-  name: string  
+  name: string
 
   constructor(name: string, parent: Model | null) {
     this.name = name;
     this.parent = parent;    
-  }
-
-  getFilePath(): string {
-    return getPath(this, '\\')
-  }
-
-  getDirectory(): string {
-    let namespace = ''
-    let current = this.parent
-    while (current) {
-      if (current.type === NAMESPACE_TYPE_CODE) { // . seperation for namespaces
-        namespace = current.name + '.' + namespace
-      }
-      // Update for next interation
-      current = current.parent
-    }
-    return namespace
-  }
-
-  getNamespace(): string {
-    return getPath(this, '.')
-  }
-}
-
-function getPath(model: Model, namespaceDelimiter: string) {
-  let namespace = ''
-  let current = model.parent
-  while (current) {
-    /*
-    I cannot use instanceof as importing Namespace in Model creates a circular dependency
-    */
-    if (current.type === NAMESPACE_TYPE_CODE) { // . seperation for namespaces
-      namespace = current.name + namespaceDelimiter + namespace
-    } else { // + seperation for types
-      if (current.parent?.type !== NAMESPACE_TYPE_CODE)
-        namespace = current.name + '+' + namespace
-    }
-    // Update for next interation
-    current = current.parent
-  }
-  return namespace
+  }  
 }

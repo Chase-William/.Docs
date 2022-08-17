@@ -1,4 +1,5 @@
 import { jsonArrayMember, jsonMember, jsonObject } from "typedjson";
+import TypeKey from "../TypeKey";
 import TypeModel from "../types/TypeModel";
 import CommonComment from "../written/CommonComment";
 import AssemblyDefinition from "./AssemblyDefinition";
@@ -7,10 +8,12 @@ import AssemblyDefinition from "./AssemblyDefinition";
 export default class TypeDefinition {
   static getPrimaryKey: (def: TypeDefinition) => string
 
-  @jsonMember(String, { name: "Parent" })
-  parent: string
-  @jsonArrayMember(String, { name: "TypeArguments" })
-  typeArguments: string[]
+  @jsonMember(String, { name: "BaseType" })
+  baseType: string
+  @jsonArrayMember(TypeKey, { name: "TypeArguments" })
+  typeArguments: TypeKey[]
+  @jsonArrayMember(TypeKey, { name: 'TypeParameters' })
+  typeParameters: TypeKey[]
   @jsonMember(String, { name: "Namespace" })
   namespace: string  
   @jsonMember(String, { name: "TypeDescription" })

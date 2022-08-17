@@ -1,8 +1,10 @@
 import { readFileSync } from "fs"
 import path = require("path")
 import { TypedJSON } from "typedjson"
+import TypeKey from "../TypeKey"
 import AssemblyDefinition from "./AssemblyDefinition"
 import DefinitionPrimaryKey from "./DefinitionPrimaryKey"
+import GenericParameterDefinition from "./GenericParameterDefinition"
 import ICodebaseMap from "./ICodebaseMap"
 import ProjectDefinition from "./ProjectDefinition"
 import TypeDefinition from "./TypeDefinition"
@@ -10,6 +12,7 @@ import TypeDefinition from "./TypeDefinition"
 const PROJECTS_FOLDER_NAME = 'project'
 const GLOBAL_META_FOLDER = 'global'
 const GLOBAL_META_TYPES_FILE = 'types.json'
+const GLOBAL_META_PARAMETERS_FILE = 'parameters.json'
 const GLOBAL_META_ASSEMBLIES_FILE = 'assemblies.json'
 const GLOBAL_META_PROJECTS_FILE = 'projects.json'
 const GLOBAL_META_PRIMARY_KEY_FILE = '_keys.json'
@@ -27,16 +30,49 @@ function loadTypeDefinitions(globalPath: string): TypeDefinition[] {
   return new TypedJSON(TypeDefinition).parseAsArray(readFileSync(path.join(globalPath, GLOBAL_META_TYPES_FILE), { encoding: 'utf-8' }))
 }
 
+function loadParameterDefinitions(globalPath: string): GenericParameterDefinition[] {
+  return new TypedJSON(GenericParameterDefinition).parseAsArray(readFileSync(path.join(globalPath, GLOBAL_META_PARAMETERS_FILE), { encoding: 'utf-8' }))
+}
+
 function loadPrimaryKeys(globalPath: string): DefinitionPrimaryKey[] {
   return new TypedJSON(DefinitionPrimaryKey).parseAsArray(readFileSync(path.join(globalPath, GLOBAL_META_PRIMARY_KEY_FILE), { encoding: 'utf-8' }))
+}
+
+function getFormattedMemberName(memName: string): string {
+  return memName.charAt(0).toLowerCase() + memName.slice(1);
 }
 
 export default class CodebaseManager implements ICodebaseMap {
   typeMap: Map<string, TypeDefinition>
   asmMap: Map<string, AssemblyDefinition>
   projMap: Map<string, ProjectDefinition>
+  params: Map<string, GenericParameterDefinition>
 
   rootProject: ProjectDefinition  
+
+  /**
+   * Finds and returns a TypeDefinition for the given baseType.
+   * IMPORTANT: Make sure you only provide values that are from a baseType 
+   * property.
+   * @param baseType The baseType to search for.
+   * @returns A TypeDefinition for the given baseType.
+   */
+  findBaseTypeDefinition(baseType: string): TypeDefinition {
+    return this.typeMap.get(baseType)
+  }
+
+  /**
+   * Finds and returns a definition for the corresponding type key.
+   * @param typeKey The key object that contains a foreign key and other parameters that impact the search.
+   * @returns A TypeDefinition if the type key is not generic, otherwise returns a GenericParameterDefinition. 
+   * If either searches found nothing, undefined is returned.
+   */
+  findTypeKeyDefinition(typeKey: TypeKey): TypeDefinition | GenericParameterDefinition {
+    if (typeKey.isGenericParameter) {
+      return this.params.get(typeKey.foreignKey)
+    }
+    return this.typeMap.get(typeKey.foreignKey)
+  }
 
   load(rootPath: string, projectName: string): void {
     const globalPath = path.join(rootPath, GLOBAL_META_FOLDER)  
@@ -62,7 +98,7 @@ export default class CodebaseManager implements ICodebaseMap {
 
     KEYS.forEach(key => {
       // Make the first character lowercase to match the style used in JS/TS (data was serialized and provided by a C# codebase)
-      key.primaryKeyMemberName = key.primaryKeyMemberName.charAt(0).toLowerCase() + key.primaryKeyMemberName.slice(1)
+      key.primaryKeyMemberName = getFormattedMemberName(key.primaryKeyMemberName)
       switch (key.definitionTypeName) {
         case TypeDefinition.name:
           {
@@ -88,6 +124,27 @@ export default class CodebaseManager implements ICodebaseMap {
             ProjectDefinition.getPrimaryKey = keyGetter
           }
           break;
+        case GenericParameterDefinition.name:
+          {
+            const keyGetter = (v: GenericParameterDefinition) => 
+            {
+              const members = key.primaryKeyMemberName.split('+')
+              let pk = ''
+              const stopOffsetForDelim = members.length - 1;
+              for (let i = 0; i < members.length; i++) {
+                // make each member name start with a lowercase letter
+                members[i] = getFormattedMemberName(members[i])
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                //@ts-ignore
+                pk += v[members[i]]
+                if (i < stopOffsetForDelim)
+                  pk += '|'
+              }
+              return pk
+            }
+            GenericParameterDefinition.getPrimaryKey = keyGetter
+          }
+          break;
         default:
           throw new Error(`Was unable to determine DefinitionPrimaryKey type instance of values: ${key} when mapping it's key to a bound functional expression.`)
       }
@@ -96,7 +153,8 @@ export default class CodebaseManager implements ICodebaseMap {
     /*
     Load types, assemblies, projects from provided json files
     */
-    const types = loadTypeDefinitions(globalPath)      
+    const types = loadTypeDefinitions(globalPath)
+    const parameters = loadParameterDefinitions(globalPath)
     const assemblies = loadAssemblyDefinitions(globalPath)
     const projects = loadProjectDefinitions(globalPath)
 
@@ -112,9 +170,10 @@ export default class CodebaseManager implements ICodebaseMap {
     Create maps
     */
     this.typeMap = new Map<string, TypeDefinition>(types.map(entry => [TypeDefinition.getPrimaryKey(entry), entry]))    
+    this.params = new Map<string, GenericParameterDefinition>(parameters.map(entry => [GenericParameterDefinition.getPrimaryKey(entry), entry]))    
     this.asmMap = new Map<string, AssemblyDefinition>(assemblies.map(entry => [AssemblyDefinition.getPrimaryKey(entry), entry]))    
-    this.projMap = new Map<string, ProjectDefinition>(projects.map(entry => [ProjectDefinition.getPrimaryKey(entry), entry]))
-    
+    this.projMap = new Map<string, ProjectDefinition>(projects.map(entry => [ProjectDefinition.getPrimaryKey(entry), entry]))      
+
     /*
     1. Create a one-way reference from each local project to it's local project dependencies if it has any.
     2. Load the models for each project.

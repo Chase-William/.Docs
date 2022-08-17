@@ -12,7 +12,7 @@
     "etest": "tsc --build && node ./dist/app.js --development-env --test",
     "test": "tsc --build && jest",
     "build": "tsc --build",
-    "vendor": "git submodule init && git submodule update --remote --recursive && cd ./vendor/Docshark.Core && nuget restore & dotnet build",
+    "vendor": "git submodule init && git submodule update --remote --recursive && cd ./vendor/DotDocs.Core && nuget restore & dotnet build",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint eslintrc.json",
     "bundle": "yarn prepare-bundle && yarn bundle-node && yarn post-bundle",
