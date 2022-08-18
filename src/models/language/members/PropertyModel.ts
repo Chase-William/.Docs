@@ -1,10 +1,10 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import IAmPolymorphicable from '../interfaces/IAmPolymorphicable';
-import CommonComment from '../written/CommonComment';
+import IAmPropertyModel from '../../interfaces/IAmPropertyModel';
+import CommonComment from '../../written/CommonComment';
 import MemberModel from './MemberModel';
 
 @jsonObject()
-export default class PropertyModel extends MemberModel<CommonComment> implements IAmPolymorphicable {
+export default class PropertyModel extends MemberModel<CommonComment> implements IAmPropertyModel {
   @jsonMember(Boolean, { name: 'HasGetter' })
   hasGetter: boolean;
   @jsonMember(Boolean, { name: 'HasSetter' })
@@ -25,8 +25,12 @@ export default class PropertyModel extends MemberModel<CommonComment> implements
   isGetInternal: boolean;
   @jsonMember(Boolean, { name: 'IsSetInternal' })
   isSetInternal: boolean;
+
   @jsonMember(Boolean, { name: 'IsVirtual' })
   isVirtual: boolean;
   @jsonMember(Boolean, { name: 'IsAbstract' })
   isAbstract: boolean;
+
+  @jsonMember(String, { name: 'Type' })
+  type: string
 }

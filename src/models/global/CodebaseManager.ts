@@ -1,13 +1,11 @@
 import { readFileSync } from "fs"
 import path = require("path")
 import { TypedJSON } from "typedjson"
-import TypeKey from "../TypeKey"
 import AssemblyDefinition from "./AssemblyDefinition"
 import DefinitionPrimaryKey from "./DefinitionPrimaryKey"
 import GenericParameterDefinition from "./GenericParameterDefinition"
 import ICodebaseMap from "./ICodebaseMap"
 import ProjectDefinition from "./ProjectDefinition"
-import TypeDefinition from "./TypeDefinition"
 
 const PROJECTS_FOLDER_NAME = 'project'
 const GLOBAL_META_FOLDER = 'global'

@@ -1,9 +1,10 @@
 import { jsonMember, jsonObject } from "typedjson";
 
-@jsonObject
-export class Parameter {
+@jsonObject()
+export default class ParameterModel {
   @jsonMember(String, { name: 'Name' })
-  name: string;
+  name: string = null
+
   @jsonMember(String, { name: 'Type' })
-  type: string;
+  type: string
 }

@@ -1,5 +1,4 @@
 import { jsonMember, jsonObject } from "typedjson";
-import Model from "./Model";
 
 /**
  * 
@@ -7,7 +6,7 @@ import Model from "./Model";
  * 
  */
 @jsonObject()
-export default class AccessibilityModel extends Model {
+export default class AccessibilityModel {
   @jsonMember(Boolean, { name: 'IsPublic' })
   isPublic: boolean;
   @jsonMember(Boolean, { name: 'IsPrivate' })

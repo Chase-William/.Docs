@@ -2,7 +2,6 @@ import { readdirSync } from "fs";
 import path = require("path");
 import { jsonArrayMember, jsonMember, jsonObject } from "typedjson";
 import RenderManager from "../../renderer/RenderManager";
-import Namespace from "../Namespace";
 import AssemblyDefinition from "./AssemblyDefinition";
 
 @jsonObject()
