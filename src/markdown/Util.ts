@@ -1,17 +1,14 @@
 import path = require("path");
-import Model from "../models/Model";
 import PolymorphicConfigable from "../models/config/interfaces/PolymorphicConfigable"
 import SingletonConfigurable from "../models/config/interfaces/SingletonConfigurable"
-import ICodebaseMap from "../models/global/ICodebaseMap";
-import IAmPolymorphicable from "../models/interfaces/IAmPolymorphicable"
-import IAmSingletonable from "../models/interfaces/IAmSingletonable"
-import MemberModel from "../models/members/MemberModel";
-import TypeModel from "../models/types/TypeModel"
+import IAmPolymorphicable from "../models/language/interfaces/IAmPolymorphicable"
+import IAmSingletonable from "../models/language/interfaces/IAmSingletonable"
 import CommonComment from "../models/written/CommonComment"
 import { getOptionalSummary } from "./CommentsRenderer"
 import { renderTypeInheritanceBlock, renderTypeNameWithArguments } from "./InheritanceRenderer"
-import TypeKey from "../models/TypeKey";
-import GenericParameterDefinition from "../models/global/GenericParameterDefinition";
+import RenderTypeArgs from "../renderer/RenderTypeArgs";
+import IAmTypeModel from "../models/language/interfaces/IAmTypeModel";
+import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 
 export default function divider(): string {
   return '\n\n'
@@ -31,11 +28,11 @@ export function optionalDivider(col: unknown): string {
   return divider()
 }
 
-export function renderTypeHeader(model: TypeModel<CommonComment>, map: ICodebaseMap): string {  
+export function renderTypeHeader(model: IAmSlicedTypeModel, args: RenderTypeArgs): string {  
   return (
-    `# ${renderTypeNameWithArguments(model.globalTypeDef, map)} \`${model.type}\`` +
+    `# ${renderTypeNameWithArguments(model, args)} \`${model.type}\`` +
     divider() + 
-    renderTypeInheritanceBlock(model, map) +
+    renderTypeInheritanceBlock(model, args) +
     getOptionalSummary(model.comments) +
     divider()
   )

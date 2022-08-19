@@ -1,12 +1,16 @@
-import GenericParameterDefinition from "../models/global/GenericParameterDefinition";
-import ICodebaseMap from "../models/global/ICodebaseMap";
-import TypeDefinition from "../models/global/TypeDefinition";
-import TypeModel from "../models/types/TypeModel"
-import CommonComment from "../models/written/CommonComment"
+import IAmTypeModel from "../models/language/interfaces/IAmTypeModel";
+import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
+import TypeModel from "../models/language/TypeModel";
+import RenderTypeArgs from "../renderer/RenderTypeArgs";
 import divider from "./Util";
 
-export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>, map: ICodebaseMap): string {  
-  const baseTypes = model.getOrderedBaseTypes(map)
+export function renderTypeInheritanceBlock(model: IAmTypeModel, args: RenderTypeArgs): string {
+  const baseTypes = new Array<IAmTypeModel>()
+  let current = model
+  while(current.baseType) {
+    baseTypes.push(current.baseType)
+    current = current.baseType
+  }
 
   // Do not render only one parent.. its going to be System.Object
   if (baseTypes.length <= 1)
@@ -16,7 +20,7 @@ export function renderTypeInheritanceBlock(model: TypeModel<CommonComment>, map:
   for (let i = 0; i < baseTypes.length; i++) {
     content += (
       renderIndent(i) +
-      renderTypeNameWithArguments(baseTypes[i], map) +
+      renderTypeNameWithArguments(baseTypes[i], args) +
       '\n'
     )
   }
@@ -36,41 +40,33 @@ function renderIndent(index: number): string {
 
 // ˪ட―↘ ↳
 
-export function renderTypeNameWithArguments(type: TypeDefinition, map: ICodebaseMap): string {
-  if (type.typeArguments.length > 0) {
+export function renderTypeNameWithArguments(type: IAmSlicedTypeModel, args: RenderTypeArgs): string {
+  if (type.genericTypeArguments.length > 0) {
     /*
     Get only the text before the "`" which signifies arguments.
     Then remove the leading namespace.
     */         
-    let content = type.typeDescription.substring(0, type.typeDescription.indexOf('`'))
-    content = getTypeNameWithoutNamespace(content) + '<'
+    let content = type.name.substring(0, type.name.indexOf('`'))
+    // content = getTypeNameWithoutNamespace(content) + '<'
     // Get all arguments' full type def
-    for (let i = 0; i < type.typeArguments.length; i++) {
+    for (let i = 0; i < type.genericTypeArguments.length; i++) {
       // Get type from dictionary of types
-      const definition = map.findTypeKeyDefinition(type.typeArguments[i])
+      const definition = type.genericTypeArguments[i]
       // Check if recursive processing of the type's argumented types is needed
-      if (definition instanceof TypeDefinition) {
-        if (definition.typeArguments.length > 0)
-          content += renderTypeNameWithArguments(definition, map)
-        else { 
-          // has no arguments, just add type name
-          content += getTypeNameWithoutNamespace(definition.typeDescription)
-        }
-      }
+      content += definition.name
+      // if (definition instanceof TypeDefinition) {
+      //   if (definition.typeArguments.length > 0)
+      //     content += renderTypeNameWithArguments(definition, args)
+      //   else { 
+      //     // has no arguments, just add type name
+      //     content += getTypeNameWithoutNamespace(definition.typeDescription)
+      //   }
+      // }
       // Only add a comma to the end if it is not the last argument
-      if ((i + 1) < type.typeArguments.length)
+      if ((i + 1) < type.genericTypeArguments.length)
         content += ', '
     }
     return content + '>'
   }
-  return getTypeNameWithoutNamespace(type.typeDescription)
-}
-
-/**
- * Returns a slice of the string without the leading namespace.
- * @param typeDescription Type description to be formatted.
- * @returns A type description without the leading namespace.
- */
-function getTypeNameWithoutNamespace(typeDescription: string): string {
-  return typeDescription.slice(typeDescription.lastIndexOf('.') + 1)
+  return type.name
 }

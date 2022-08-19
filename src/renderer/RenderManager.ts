@@ -1,25 +1,56 @@
 import path = require("path");
-import AccessibilityModel from "../models/AccessibilityModel";
 import ConfigModel from "../models/config/ConfigModel";
 import Configuration from "../models/config/Configuration";
-import MemberConfig from "../models/config/MemberConfig";
 import MemberConfigModel from "../models/config/members/MemberConfigModel";
-import CodebaseManager from "../models/global/CodebaseManager";
-import ICodebaseMap from "../models/global/ICodebaseMap";
-import EventModel from "../models/members/EventModel";
-import FieldModel from "../models/members/FieldModel";
-import MemberModel from "../models/members/MemberModel";
-import MethodModel from "../models/members/MethodModel";
-import PropertyModel from "../models/members/PropertyModel";
-import ClassModel from "../models/types/ClassModel";
-import DelegateModel from "../models/types/DelegateModel";
-import EnumModel from "../models/types/EnumModel";
-import InterfaceModel from "../models/types/InterfaceModel";
-import LessGenericTypeModel from "../models/types/LessGenericTypeModel";
-import StructModel from "../models/types/StructModel";
-import TypeModel from "../models/types/TypeModel";
-import CommonComment from "../models/written/CommonComment";
+import IAmTypeModel from "../models/language/interfaces/IAmTypeModel";
+import IAmProjectManager from "../ProjectManager";
+import RenderTypeArgs from "./RenderTypeArgs";
 import Renderer from "./Renderer";
+import RenderMembersArgs from "./RenderMembersArgs";
+import AccessibilityModel from "../models/language/AccessibilityModel";
+import IAmAccessibilityModel from "../models/language/interfaces/IAmAccessibilityModel";
+import IAmSingletonable from "../models/language/interfaces/IAmSingletonable";
+import IAmEventModel from "../models/language/interfaces/members/IAmEventModel";
+import IAmModel from "../models/language/interfaces/IAmModel";
+import FieldConfigModel from "../models/config/members/FieldConfigModel";
+import IAmFieldModel from "../models/language/interfaces/members/IAmFieldModel";
+import IAmPropertyModel from "../models/language/interfaces/members/IAmPropertyModel";
+import IAmMethodModel from "../models/language/interfaces/members/IAmMethodModel";
+import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
+import IAmEnumModel from "../models/language/interfaces/types/IAmEnumModel";
+import PropertyConfigModel from "../models/config/members/PropertyConfigModel";
+
+function makeFilePath(model: IAmSlicedTypeModel): string {
+  return model.namespace.split('.').join('/')
+}
+
+/**
+ * We need to finish the type slicing, and unless we find a way to map our model type to the config type, we will need have a T4....
+ */
+
+function makeRenderTypeArgs<T extends IAmSlicedTypeModel>(model: T, renderManager: RenderManager): RenderTypeArgs<any> {
+  const dir = makeFilePath(model)
+  return {
+    projManager: renderManager.projManager,
+    config: renderManager.config,
+    directory: dir,
+    fileName: model.name,
+    fileExtension: '.md',
+    filePath: path.join(dir, model.name) + '.md'
+  }
+}
+
+function makeRenderMembersArgs
+  <TParent extends IAmSlicedTypeModel,
+   TMember extends IAmEventModel | IAmFieldModel | IAmMethodModel | IAmPropertyModel,
+   TConfig extends MemberConfigModel>(model: TParent, members: TMember[], config: TConfig, renderManager: RenderManager): RenderMembersArgs<TParent, TMember, TConfig> {
+  return {
+    more: makeRenderTypeArgs(model, renderManager),
+    members: members,
+    config: config,
+    parent: model
+  }
+}
 
 /**
  * The RenderManager doesn't perform any rendering, instead it 
@@ -36,114 +67,125 @@ export default class RenderManager {
   config: Configuration;
   path: string
   renderer: Renderer
-  map: ICodebaseMap
+  projManager: IAmProjectManager
 
-  render(codebaseManager: CodebaseManager): void {
-    this.map = codebaseManager;
-    codebaseManager.rootProject.render(this)
+  render(projManager: IAmProjectManager): void {
+    this.projManager = projManager;
+    // Render each type in this project
+    projManager.types.forEach(type => {
+      if (type.isClass)
+        this.renderClass(type)
+      else if (type.isValueType)
+        this.renderStruct(type)
+      else if (type.isEnum)
+        this.renderEnum(type)
+      else if (type.isInterface)
+        this.renderInterface(type)
+      else 
+        this.renderDelegate(type)
+    });
   }
 
-  renderClass(model: ClassModel): void {    
+  renderClass(model: IAmTypeModel): void {    
     // Check config to determine what shall be rendered
     if (!this.shouldRender(model, this.config.type.class))
       return
-    const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingClass(model, this.config.type.class, this.map)
+    this.renderer.beginRenderingClass(model, makeRenderTypeArgs(model, this))
     this.renderMembers(model)
-    this.renderer.endRenderingClass(model, filePath, this.config.type.class, this.map)
+    this.renderer.endRenderingClass(model, makeRenderTypeArgs(model, this))
   }
 
-  renderDelegate(model: DelegateModel): void {
+  renderDelegate(model: IAmTypeModel): void {
     if (!this.shouldRender(model, this.config.type.delegate))
       return
-    const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingDelegate(model, this.config.type.delegate, this.map)
-    this.renderer.endRenderingDelegate(model, filePath, this.config.type.delegate, this.map)
+    this.renderer.beginRenderingDelegate(model, makeRenderTypeArgs(model, this))
+    this.renderer.endRenderingDelegate(model, makeRenderTypeArgs(model, this))
   }
 
-  renderEnum(model: EnumModel): void {
+  renderEnum(model: IAmTypeModel): void {
     if (!this.shouldRender(model, this.config.type.enum))
       return
-    const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingEnum(model, this.config.type.enum, this.map)
-    this.renderer.renderValues(model, model.fields)
-    this.renderer.endRenderingEnum(model, filePath, this.config.type.enum, this.map)
+    this.renderer.beginRenderingEnum(model, makeRenderTypeArgs(model, this))
+    this.renderer.renderValues(makeRenderMembersArgs<IAmEnumModel, IAmFieldModel, FieldConfigModel>(model, model.fields, this.config.member.field, this))
+    this.renderer.endRenderingEnum(model, makeRenderTypeArgs(model, this))
   }
 
-  renderInterface(model: InterfaceModel): void {
+  renderInterface(model: IAmTypeModel): void {
     if (!this.shouldRender(model, this.config.type.interface))
       return
-    const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingInterface(model, this.config.type.interface, this.map)
+    this.renderer.beginRenderingInterface(model, makeRenderTypeArgs(model, this))
     this.renderMembers(model)
-    this.renderer.endRenderingInterface(model, filePath, this.config.type.interface, this.map)
+    this.renderer.endRenderingInterface(model, makeRenderTypeArgs(model, this))
   }
 
-  renderStruct(model: StructModel): void {
+  renderStruct(model: IAmTypeModel): void {
     if (!this.shouldRender(model, this.config.type.struct))
       return
-    const filePath = this.getFilePath(model)
-    this.renderer.beginRenderingStruct(model, this.config.type.struct, this.map)
+    this.renderer.beginRenderingStruct(model, makeRenderTypeArgs(model, this))
     this.renderMembers(model)
-    this.renderer.endRenderingStruct(model, filePath, this.config.type.struct, this.map)
+    this.renderer.endRenderingStruct(model, makeRenderTypeArgs(model, this))
   }
 
-  renderMembers(model: LessGenericTypeModel): void {
+  renderMembers(model: IAmTypeModel): void {
     // Properties
     if (model.properties && model.properties.length > 0) {
       if (this.hasRenderableModels(model.properties, this.config.member.property)) {    
-        this.renderProperties(model.properties)
+        this.renderProperties(model)
       }      
     }
     // Methods
     if (model.methods && model.methods.length > 0) {
       if (this.hasRenderableModels(model.methods, this.config.member.method)) {    
-        this.renderMethods(model.methods)
+        this.renderMethods(model)
       }      
     }
     // Events
     if (model.events && model.events.length > 0) {
       if (this.hasRenderableModels(model.events, this.config.member.event)) {    
-        this.renderEvents(model.events)
+        this.renderEvents(model)
       }      
     }
     // Fields
     if (model.fields && model.fields.length > 0) {
       if (this.hasRenderableModels(model.fields, this.config.member.field)) {    
-        this.renderFields(model.fields)
+        this.renderFields(model)
       }      
     }
   }
 
-  renderProperties(properties: PropertyModel[]): void {
+  renderProperties(model: IAmTypeModel): void {
     this.renderOrganizedMembers(
-      properties, 
+      model.properties, 
       this.config.member.property, 
-      (accessibility: string, models: PropertyModel[]) => this.renderer.renderProperties(accessibility, models, this.config.member.property, this.map))
+      (accessibility: string, members: IAmPropertyModel[]) => this.renderer.renderProperties(accessibility, makeRenderMembersArgs(model, members, this.config.member.property, this))
+    )
   }
 
-  renderMethods(methods: MethodModel[]): void {
+  renderMethods(model: IAmTypeModel): void {
     this.renderOrganizedMembers(
-      methods,
+      model.methods,
       this.config.member.method, 
-      (accessibility: string, models: MethodModel[]) => this.renderer.renderMethods(accessibility, models, this.config.member.method, this.map))
+      (accessibility: string, members: IAmMethodModel[]) => this.renderer.renderMethods(accessibility, makeRenderMembersArgs(model, members, this.config.member.method, this))
+    )
   }
 
-  renderEvents(event: EventModel[]): void {
+  renderEvents(model: IAmTypeModel): void {
     this.renderOrganizedMembers(
-      event, 
+      model.events, 
       this.config.member.event, 
-      (accessibility: string, models: EventModel[]) => this.renderer.renderEvents(accessibility, models, this.config.member.event, this.map))
+      (accessibility: string, members: IAmEventModel[]) => this.renderer.renderEvents(accessibility, makeRenderMembersArgs(model, members, this.config.member.event, this))
+    )
   }
   
-  renderFields(fields: FieldModel[]): void {
+  renderFields(model: IAmTypeModel): void {
     this.renderOrganizedMembers(
-      fields, 
+      model.fields, 
       this.config.member.field, 
-      (accessibility: string, models: FieldModel[]) => this.renderer.renderFields(accessibility, models, this.config.member.field, this.map))
+      (accessibility: string, members: IAmFieldModel[]) => this.renderer.renderFields(accessibility, makeRenderMembersArgs(model, members, this.config.member.field, this))
+    )
   }  
 
-  renderOrganizedMembers<T extends MemberModel<CommonComment>>(models: T[], config: MemberConfigModel, renderFunc: (accessibility: string, models: T[]) => void): void {
+  renderOrganizedMembers<T extends AccessibilityModel & IAmModel>(models: T[], config: MemberConfigModel, renderFunc: (accessibility: string, models: T[]) => void): void {
     models.sort((a, b) => a.name.localeCompare(b.name))
     const publicModels = new Array<T>()
     const privateModels = new Array<T>()
@@ -181,41 +223,6 @@ export default class RenderManager {
     if (config.showIfPrivate && privateModels.length > 0)
       renderFunc('private', privateModels)
   }
-
-
-  // renderOrganizedMembers<T extends MemberModel<CommonComment>>(models: T[], config: MemberConfigModel, renderFunc: (accessibility: string, models: MemberModel<CommonComment>[], config: MemberConfigModel) => void): void {
-  //   models.sort((a, b) => a.name.localeCompare(b.name))
-  //   const publicModels = new Array<T>()
-  //   const privateModels = new Array<T>()
-  //   const protectedModels = new Array<T>()
-  //   const internalModels = new Array<T>()
-  //   const internalAndProtectedModels = new Array<T>()
-
-  //   for (const model of models) {
-  //     if (model.isInternal && model.isProtected) {
-  //       internalAndProtectedModels.push(model)
-  //     } else if (model.isInternal) {
-  //       internalModels.push(model)
-  //     } else if (model.isProtected) {
-  //       protectedModels.push(model)
-  //     } else if (model.isPublic) {
-  //       publicModels.push(model)
-  //     } else { // private
-  //       privateModels.push(model)
-  //     }
-  //   }
-
-  //   if (config.showIfPublic)
-  //     renderFunc('public', publicModels, config)
-  //   if (config.showIfProtected)
-  //     renderFunc('protected', protectedModels, config)
-  //   if (config.showIfInternal)
-  //     renderFunc('internal', internalModels, config)
-  //   if (config.showIfInternalProtected)
-  //     renderFunc('internal protected', internalAndProtectedModels, config)
-  //   if (config.showIfPrivate)
-  //     renderFunc('private', privateModels, config)
-  // }
 
   /**
    * Determines if the given model should be rendered based on the config.
@@ -264,7 +271,7 @@ export default class RenderManager {
     return false
   }
 
-  getFilePath(model: TypeModel<CommonComment>): string {
+  getFilePath(model: IAmTypeModel): string {
     return path.join(this.path, this.getDirectory(model.fullName))
   }
 

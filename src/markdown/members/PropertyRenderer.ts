@@ -1,6 +1,7 @@
 import PropertyConfigModel from "../../models/config/members/PropertyConfigModel"
-import ICodebaseMap from "../../models/global/ICodebaseMap"
-import PropertyModel from "../../models/members/PropertyModel"
+import IAmPropertyModel from "../../models/language/interfaces/members/IAmPropertyModel"
+import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
+import RenderMembersArgs from "../../renderer/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderIsStaticTag, renderTypeName, renderVirtualAndStaticTags } from "../Util"
 
@@ -9,33 +10,33 @@ export default class PropertyRenderer {
   didRenderGetter: boolean = null
   didRenderSetter: boolean = null  
 
-  constructor(property: PropertyModel, config: PropertyConfigModel, map: ICodebaseMap) {
-    this.content = this.renderProperty(property, config, map)
+  constructor(property: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>) {
+    this.content = this.renderProperty(property, args)
   }
 
-  renderProperty(property: PropertyModel, config: PropertyConfigModel, map: ICodebaseMap): string {
+  renderProperty(property: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {
     return (    
-      this.renderPropertyHeader(property, config, map) +      
+      this.renderPropertyHeader(property, args) +      
       divider() +
       getOptionalSummary(property.comments) +
       divider() +
-      this.renderGetterAndSetter(property, config) +
+      this.renderGetterAndSetter(property, args) +
       ((this.didRenderGetter || this.didRenderSetter) ? divider() : '')
     )
   }
   
-  renderGetterAndSetter(prop: PropertyModel, config: PropertyConfigModel): string {
+  renderGetterAndSetter(prop: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {
     let getterContent = ''
     let setterContent = ''
 
-    getterContent += this.renderGetter(prop, config)    
+    getterContent += this.renderGetter(prop, args.config)    
   
     if (getterContent !== '') { // check to see if the getter was printed    
       this.didRenderGetter = true
     } else {
       this.didRenderGetter = false
     }
-    setterContent += this.renderSetter(prop, config)
+    setterContent += this.renderSetter(prop, args.config)
 
     if (setterContent !== '') {  
       this.didRenderSetter = true
@@ -50,7 +51,7 @@ export default class PropertyRenderer {
     return getterContent + setterContent
   }
   
-  renderSetter(prop: PropertyModel, config: PropertyConfigModel): string {
+  renderSetter(prop: IAmPropertyModel, config: PropertyConfigModel): string {
     if (!prop.hasSetter)
       return ''
 
@@ -70,7 +71,7 @@ export default class PropertyRenderer {
     return ''
   }
   
-  renderGetter(prop: PropertyModel, config: PropertyConfigModel): string {    
+  renderGetter(prop: IAmPropertyModel, config: PropertyConfigModel): string {    
     if (!prop.hasGetter)
       return ''
 
@@ -90,23 +91,23 @@ export default class PropertyRenderer {
     return ''
   }
   
-  renderPropertyHeader(prop: PropertyModel, config: PropertyConfigModel, map: ICodebaseMap): string {
+  renderPropertyHeader(prop: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {
     return (
-      `### ${prop.name} ${renderTypeName(prop, prop.type, map)}` +
-      renderIsStaticTag(prop, config) +
-      renderVirtualAndStaticTags(prop, config) +
-      this.renderReadonlyTag(prop, config) +
-      this.renderSetonlyTag(prop, config)
+      `### ${prop.name} ${renderTypeName(prop, args)}` +
+      renderIsStaticTag(prop, args.config) +
+      renderVirtualAndStaticTags(prop, args.config) +
+      this.renderReadonlyTag(prop, args.config) +
+      this.renderSetonlyTag(prop, args.config)
     )
   }
   
-  renderSetonlyTag(prop: PropertyModel, config: PropertyConfigModel): string {
+  renderSetonlyTag(prop: IAmPropertyModel, config: PropertyConfigModel): string {
     if (!config.denoteIfSetonly)
       return ''  
     return (prop.hasGetter && prop.isGetPublic) ? '' : ' `setonly`'
   }
   
-  renderReadonlyTag(prop: PropertyModel, config: PropertyConfigModel): string {
+  renderReadonlyTag(prop: IAmPropertyModel, config: PropertyConfigModel): string {
     if (!config.denoteIfReadonly)
       return ''  
     return (prop.hasSetter && prop.isSetPublic) ? '' : ' `readonly`'

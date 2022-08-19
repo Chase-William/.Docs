@@ -1,4 +1,6 @@
 import { jsonArrayMember, jsonMember, jsonObject } from "typedjson"
+import { ProjectManager } from "../ProjectManager"
+import AssemblyModel from "./AssemblyModel"
 
 @jsonObject()
 export default class LocalProjectModel {
@@ -11,5 +13,16 @@ export default class LocalProjectModel {
   @jsonMember(String, { name: 'ProjectPath' })
   projectPath: string
   @jsonArrayMember(String, { name: 'LocalProjects' })
-  localPrjects: string[]
+  localProjects: string[]
+
+  @jsonMember(String, { name: 'AssemblyId '})
+  _assemblyId: string
+  assembly: AssemblyModel
+
+  bind(projManager: ProjectManager): void {
+    // Bind the assembly & project in a bi-directional fashion
+    const assembly = projManager.assemblies.get(this._assemblyId)
+    this.assembly = assembly
+    assembly.project = this
+  }
 }

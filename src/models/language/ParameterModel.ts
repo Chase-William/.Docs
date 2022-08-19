@@ -1,4 +1,5 @@
 import { jsonMember, jsonObject } from "typedjson";
+import IAmTypeModel from "./interfaces/IAmTypeModel";
 
 @jsonObject()
 export default class ParameterModel {
@@ -6,5 +7,10 @@ export default class ParameterModel {
   name: string = null
 
   @jsonMember(String, { name: 'Type' })
-  type: string
+  _type: string
+  type: IAmTypeModel
+
+  bind(types: Map<string, IAmTypeModel>): void {
+    this.type = types.get(this._type)
+  }
 }

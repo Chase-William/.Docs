@@ -1,5 +1,5 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import IAmSingletonable from '../../interfaces/IAmSingletonable';
+import IAmSingletonable from '../interfaces/IAmSingletonable';
 import CommonComment from '../../written/CommonComment';
 import AccessibilityModel from '../AccessibilityModel';
 

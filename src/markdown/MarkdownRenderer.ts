@@ -8,19 +8,11 @@ import DelegateConfigModel from "../models/config/types/DelegateConfigModel";
 import EnumConfigModel from "../models/config/types/EnumConfigModel";
 import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel";
 import StructConfigModel from "../models/config/types/StructConfigModel";
-import ICodebaseMap from "../models/global/ICodebaseMap";
-import EventModel from "../models/members/EventModel";
-import FieldModel from "../models/members/FieldModel";
-import MethodModel from "../models/members/MethodModel";
-import PropertyModel from "../models/members/PropertyModel";
-import ClassModel from "../models/types/ClassModel";
-import DelegateModel from "../models/types/DelegateModel";
-import EnumModel from "../models/types/EnumModel";
-import InterfaceModel from "../models/types/InterfaceModel";
-import StructModel from "../models/types/StructModel";
-import TypeModel from "../models/types/TypeModel";
+import IAmEventModel from "../models/language/interfaces/members/IAmEventModel";
 import CommonComment from "../models/written/CommonComment";
 import Renderer from "../renderer/Renderer";
+import RenderMembersArgs from "../renderer/RenderMembersArgs";
+import RenderTypeArgs from "../renderer/RenderTypeArgs";
 import { renderEvent } from "./members/EventRenderer";
 import { renderField } from "./members/FieldRenderer";
 import { renderMethod } from "./members/MethodRenderer";
@@ -28,89 +20,98 @@ import PropertyRenderer from "./members/PropertyRenderer";
 import renderDelegate from "./types/DelegateRenderer";
 import { renderValue } from "./types/EnumRenderer";
 import divider, { renderTypeHeader } from "./Util";
+import IAmClassModel from "../models/language/interfaces/types/IAmClassModel";
+import IAmDelegateModel from "../models/language/interfaces/types/IAmDelegateModel";
+import IAmEnumModel from "../models/language/interfaces/types/IAmEnumModel";
+import IAmInterfaceModel from "../models/language/interfaces/types/IAmInterfaceModel";
+import IAmStructModel from "../models/language/interfaces/types/IAmStructModel";
+import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
+import IAmPropertyModel from "../models/language/interfaces/members/IAmPropertyModel";
+import IAmMethodModel from "../models/language/interfaces/members/IAmMethodModel";
+import IAmFieldModel from "../models/language/interfaces/members/IAmFieldModel";
 
 export default class MarkdownRenderer implements Renderer {  
   content = '';
    
-  beginRenderingClass(model: ClassModel, config: ClassConfigModel, map: ICodebaseMap): void {
+  beginRenderingClass(model: IAmClassModel, args: RenderTypeArgs): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model, map)
+      renderTypeHeader(model, args)
     )
   }
-  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel, map: ICodebaseMap): void {
+  beginRenderingDelegate(model: IAmDelegateModel, args: RenderTypeArgs): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model, map) +
+      renderTypeHeader(model, args) +
       '\n' +
       renderDelegate(model)
     )
   }
-  beginRenderingEnum(model: EnumModel, config: EnumConfigModel, map: ICodebaseMap): void {
+  beginRenderingEnum(model: IAmEnumModel, args: RenderTypeArgs): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model, map)
+      renderTypeHeader(model, args)
     )
   }
-  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel, map: ICodebaseMap): void {
+  beginRenderingInterface(model: IAmInterfaceModel, args: RenderTypeArgs): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model, map)
+      renderTypeHeader(model, args)
     )
   }
-  beginRenderingStruct(model: StructModel, config: StructConfigModel, map: ICodebaseMap): void {
+  beginRenderingStruct(model: IAmStructModel, args: RenderTypeArgs): void {
     this.content = ''
     this.content += (
-      renderTypeHeader(model, map)
+      renderTypeHeader(model, args)
     )
   }
-  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel, map: ICodebaseMap): void {    
+  renderProperties(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): void {    
     this.content +=  `## \`${accessibility}\` Properties` + divider()
-    for (const prop of properties) {
-      this.content += new PropertyRenderer(prop, config, map).content
+    for (const prop of args.members) {
+      this.content += new PropertyRenderer(prop, args.more).content
     }
   }
-  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel, map: ICodebaseMap): void {
+  renderMethods(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): void {
     this.content += divider() + `## \`${accessibility}\` Methods`
-    for (const method of methods) {
-      this.content += renderMethod(method, config, map)
+    for (const method of args.members) {
+      this.content += renderMethod(method, args)
     }
   }
-  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel, map: ICodebaseMap): void {
+  renderEvents(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmEventModel, EventConfigModel>): void {
     this.content += divider() + `## \`${accessibility}\` Events`
-    for (const event of events) {
-      this.content += renderEvent(event, config, map)
+    for (const event of args.members) {
+      this.content += renderEvent(event, args)
     }
   }
-  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel, map: ICodebaseMap): void {
-    this.content += divider() + `## \`${accessibility}\` Fields`
-    for (const field of fields) {
-      this.content += renderField(field, config, map)
+  renderFields(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): void {
+    this.content += divider() + `## \`${accessibility}\` Fields`    
+    for (const field of args.members) {
+      this.content += renderField(field, args)
     }
   }
-  renderValues(model: EnumModel, values: FieldModel[]): void {
+  renderValues(args: RenderMembersArgs<IAmEnumModel, IAmFieldModel, FieldConfigModel>): void {
     this.content += (
-      `## Values<\`${model.underlyingType}\`>` +
+      `## Values<\`${args.parent.underlyingType}\`>` +
       divider()
     )
-    for (const value of values) {
+    for (const value of args.members) {
       this.content += renderValue(value)
     }    
   }  
   
-  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel, map: ICodebaseMap): void {
+  endRenderingClass(model: IAmClassModel, filePath: string, config: ClassConfigModel, map: ICodebaseMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel, map: ICodebaseMap): void {
+  endRenderingDelegate(model: IAmDelegateModel, filePath: string, config: DelegateConfigModel, map: ICodebaseMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel, map: ICodebaseMap): void {
+  endRenderingEnum(model: IAmEnumModel, filePath: string, config: EnumConfigModel, map: ICodebaseMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel, map: ICodebaseMap): void {
+  endRenderingInterface(model: IAmInterfaceModel, filePath: string, config: InterfaceConfigModel, map: ICodebaseMap): void {
     this.writeToFile(model, filePath)
   }
-  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel, map: ICodebaseMap): void {
+  endRenderingStruct(model: IAmStructModel, args: RenderTypeArgs): void {
     this.writeToFile(model, filePath)
   }
 

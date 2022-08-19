@@ -1,5 +1,6 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import IAmFieldModel from '../../interfaces/IAmFieldModel';
+import IAmFieldModel from '../interfaces/IAmFieldModel';
+import IAmTypeModel from '../interfaces/IAmTypeModel';
 import CommonComment from '../../written/CommonComment';
 import MemberModel from './MemberModel';
 
@@ -11,5 +12,10 @@ export default class FieldModel extends MemberModel<CommonComment> implements IA
   isConstant: boolean;
 
   @jsonMember(String, { name: 'Type' })
-  type: string
+  _type: string
+  type: IAmTypeModel
+
+  bind(types: Map<string, IAmTypeModel>): void {
+    this.type = types.get(this._type)
+  }
 }

@@ -1,4 +1,4 @@
-import ParameterModel from "../language/ParameterModel";
+import ParameterModel from "../ParameterModel";
 
 export default interface IHaveSignature {
   returnParameter: ParameterModel;

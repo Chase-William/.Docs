@@ -1,60 +1,37 @@
-import ConfigModel from "../models/config/ConfigModel"
-import Configuration from "../models/config/Configuration"
+import IAmEventModel from "../models/language/interfaces/members/IAmEventModel"
+import IAmTypeModel from "../models/language/interfaces/IAmTypeModel"
+import RenderMembersArgs from "./RenderMembersArgs"
+import RenderTypeArgs from "./RenderTypeArgs"
+import IAmClassModel from "../models/language/interfaces/types/IAmClassModel"
+import IAmDelegateModel from "../models/language/interfaces/types/IAmDelegateModel"
+import IAmEnumModel from "../models/language/interfaces/types/IAmEnumModel"
+import IAmInterfaceModel from "../models/language/interfaces/types/IAmInterfaceModel"
+import IAmStructModel from "../models/language/interfaces/types/IAmStructModel"
+import PropertyConfigModel from "../models/config/members/PropertyConfigModel"
+import MethodConfigModel from "../models/config/members/MethodConfigModel"
 import EventConfigModel from "../models/config/members/EventConfigModel"
 import FieldConfigModel from "../models/config/members/FieldConfigModel"
-import MethodConfigModel from "../models/config/members/MethodConfigModel"
-import PropertyConfigModel from "../models/config/members/PropertyConfigModel"
-import ClassConfigModel from "../models/config/types/ClassConfigModel"
-import DelegateConfigModel from "../models/config/types/DelegateConfigModel"
-import EnumConfigModel from "../models/config/types/EnumConfigModel"
-import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel"
-import StructConfigModel from "../models/config/types/StructConfigModel"
-import ICodebaseMap from "../models/global/ICodebaseMap";
-import EventModel from "../models/members/EventModel"
-import FieldModel from "../models/members/FieldModel"
-import MethodModel from "../models/members/MethodModel"
-import PropertyModel from "../models/members/PropertyModel"
-import ClassModel from "../models/types/ClassModel"
-import DelegateModel from "../models/types/DelegateModel"
-import EnumModel from "../models/types/EnumModel"
-import InterfaceModel from "../models/types/InterfaceModel"
-import StructModel from "../models/types/StructModel"
+import IAmPropertyModel from "../models/language/interfaces/members/IAmPropertyModel"
+import IAmMethodModel from "../models/language/interfaces/members/IAmMethodModel"
+import IAmFieldModel from "../models/language/interfaces/members/IAmFieldModel"
+import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel"
 
 export default interface Renderer {
-  // render<T extends ClassModel |DelegateModel | EnumModel | InterfaceModel | StructModel>(model: T): string
+  beginRenderingClass(model: IAmClassModel, args: RenderTypeArgs): void
+  beginRenderingDelegate(model: IAmDelegateModel, args: RenderTypeArgs): void
+  beginRenderingEnum(model: IAmEnumModel, args: RenderTypeArgs): void
+  beginRenderingInterface(model: IAmInterfaceModel, args: RenderTypeArgs): void
+  beginRenderingStruct(model: IAmStructModel, args: RenderTypeArgs): void
 
-  // renderEvent(model: EventModel): string
-  // renderField(model: FieldModel): string
-  // renderMethod(model: MethodModel): string
-  // renderProperty(model: PropertyModel): string
+  renderProperties(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): void
+  renderMethods(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): void
+  renderEvents(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmEventModel, EventConfigModel>): void
+  renderFields(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): void
+  renderValues(args: RenderMembersArgs<IAmEnumModel, IAmFieldModel, FieldConfigModel>): void
 
-  beginRenderingClass(model: ClassModel, config: ClassConfigModel, map: ICodebaseMap): void
-  beginRenderingDelegate(model: DelegateModel, config: DelegateConfigModel, map: ICodebaseMap): void
-  beginRenderingEnum(model: EnumModel, config: EnumConfigModel, map: ICodebaseMap): void
-  beginRenderingInterface(model: InterfaceModel, config: InterfaceConfigModel, map: ICodebaseMap): void
-  beginRenderingStruct(model: StructModel, config: StructConfigModel, map: ICodebaseMap): void
-
-  //beginRenderingProperties(): void
-  renderProperties(accessibility: string, properties: PropertyModel[], config: PropertyConfigModel, map: ICodebaseMap): void
-  //endRenderingProperties(): void
-
-  //beginRenderingMethods(): void
-  renderMethods(accessibility: string, methods: MethodModel[], config: MethodConfigModel, map: ICodebaseMap): void
-  //endRenderingMethods(): void
-
-  //beginRenderingEvents(): void
-  renderEvents(accessibility: string, events: EventModel[], config: EventConfigModel, map: ICodebaseMap): void
-  //endRenderingEvents(): void
-
-  //beginRenderingFields(): void
-  renderFields(accessibility: string, fields: FieldModel[], config: FieldConfigModel, map: ICodebaseMap): void
-  //endRenderingFields(): void
-
-  renderValues(model: EnumModel, values: FieldModel[]): void
-
-  endRenderingClass(model: ClassModel, filePath: string, config: ClassConfigModel, map: ICodebaseMap): void
-  endRenderingDelegate(model: DelegateModel, filePath: string, config: DelegateConfigModel, map: ICodebaseMap): void
-  endRenderingEnum(model: EnumModel, filePath: string, config: EnumConfigModel, map: ICodebaseMap): void
-  endRenderingInterface(model: InterfaceModel, filePath: string, config: InterfaceConfigModel, map: ICodebaseMap): void
-  endRenderingStruct(model: StructModel, filePath: string, config: StructConfigModel, map: ICodebaseMap): void
+  endRenderingClass(model: IAmClassModel, args: RenderTypeArgs): void
+  endRenderingDelegate(model: IAmDelegateModel, args: RenderTypeArgs): void
+  endRenderingEnum(model: IAmEnumModel, args: RenderTypeArgs): void
+  endRenderingInterface(model: IAmInterfaceModel, args: RenderTypeArgs): void
+  endRenderingStruct(model: IAmStructModel, args: RenderTypeArgs): void
 }

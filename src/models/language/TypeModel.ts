@@ -4,18 +4,19 @@ import FieldModel from "./members/FieldModel";
 import MethodModel from "./members/MethodModel";
 import PropertyModel from "./members/PropertyModel";
 import CommonComment from "../written/CommonComment";
-import IAmTypeModel from "../interfaces/IAmTypeModel";
+import IAmTypeModel from "./interfaces/IAmTypeModel";
 import AccessibilityModel from "./AccessibilityModel";
-import IHaveEvents from "../interfaces/IHaveEvents";
-import IHaveMethods from "../interfaces/IHaveMethods";
+import AssemblyModel from "../AssemblyModel";
+import IAmProjectManager from "../../ProjectManager";
 
 @jsonObject()
-export default class TypeModel 
+export default class TypeModel
   extends AccessibilityModel 
   implements IAmTypeModel {
-    
+
   @jsonMember(String, { name: 'BaseType' })
-  baseType: string = null
+  _baseType: string = null
+  baseType: IAmTypeModel
 
   @jsonMember(String, { name: 'Namespace' })
   namespace: string = null
@@ -30,7 +31,8 @@ export default class TypeModel
   comments: CommonComment
 
   @jsonMember(String, { name: 'AssemblyName' })
-  assemblyName: string
+  _assemblyId: string
+  assembly: AssemblyModel
 
   @jsonMember(Boolean, { name: 'IsClass' })
   isClass: boolean
@@ -81,4 +83,20 @@ export default class TypeModel
 
   @jsonMember(String, { name: 'Id' })
   id: string
+
+  bind(projManager: IAmProjectManager): void {
+    // Bind to baseType
+    this.baseType = projManager.types.get(this._baseType)
+    // Bind type arguments
+    this.genericTypeArguments = this._genericTypeArguments.map(id => projManager.types.get(id))
+    // Bind type parameters
+    this.genericTypeParameters = this._genericTypeParameters.map(id => projManager.types.get(id))
+    // Bind Members
+    this.events.forEach(event => event.bind(projManager.types))
+    this.fields.forEach(field => field.bind(projManager.types))
+    this.properties.forEach(property => property.bind(projManager.types))
+    this.methods.forEach(method => method.bind(projManager.types))
+    // Bind to assembly
+    this.assembly = projManager.assemblies.get(this._assemblyId)
+  }
 }

@@ -1,7 +1,8 @@
 import { jsonMember, jsonObject } from 'typedjson';
-import IAmPropertyModel from '../../interfaces/IAmPropertyModel';
+import IAmTypeModel from '../interfaces/IAmTypeModel';
 import CommonComment from '../../written/CommonComment';
 import MemberModel from './MemberModel';
+import IAmPropertyModel from '../interfaces/members/IAmPropertyModel';
 
 @jsonObject()
 export default class PropertyModel extends MemberModel<CommonComment> implements IAmPropertyModel {
@@ -32,5 +33,10 @@ export default class PropertyModel extends MemberModel<CommonComment> implements
   isAbstract: boolean;
 
   @jsonMember(String, { name: 'Type' })
-  type: string
+  _type: string
+  type: IAmTypeModel
+
+  bind(types: Map<string, IAmTypeModel>): void {
+    this.type = types.get(this._type)
+  }
 }
