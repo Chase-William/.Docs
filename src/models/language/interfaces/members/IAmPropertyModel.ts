@@ -1,3 +1,4 @@
+import CommonComment from "../../../written/CommonComment";
 import IAmAccessibilityModel from "../IAmAccessibilityModel";
 import IAmModel from "../IAmModel";
 import IAmPolymorphicable from "../IAmPolymorphicable";
@@ -23,4 +24,5 @@ export default interface IAmPropertyModel
   isVirtual: boolean;
   isAbstract: boolean;
   type: IAmTypeModel
+  comments: CommonComment | null;
 }

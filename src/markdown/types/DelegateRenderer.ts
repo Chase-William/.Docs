@@ -1,27 +1,29 @@
-import { Parameter } from "../../models/Parameter";
-import TypeKey from "../../models/TypeKey";
-import TypeKeyParameter from "../../models/TypeKeyParameter";
-import DelegateModel from "../../models/types/DelegateModel";
+
+import DelegateConfigModel from "../../models/config/types/DelegateConfigModel";
+import IAmParameterModel from "../../models/language/interfaces/IAmParameterModel";
+import IAmDelegateModel from "../../models/language/interfaces/types/IAmDelegateModel";
+import RenderTypeArgs from "../../rendering/RenderTypeArgs";
 import divider from "../Util";
 
-export default function renderDelegate(model: DelegateModel): string {
+export default function renderDelegate(model: IAmDelegateModel, args: RenderTypeArgs<DelegateConfigModel>): string {
   return (
-    renderParameters(model.parameters) +
-    renderReturnType(model.returnType)
+    'Needs Implementation with new system...'
+    // renderParameters(model.para) +
+    // renderReturnType(model.returnType)
   )
 }
 
-function renderParameters(parameters: TypeKeyParameter[]): string {
+function renderParameters(parameters: IAmParameterModel[]): string {
   let content = ''
   for (const param of parameters) {
     content += (
-      `*@param* \`${param.foreignKey}\` ${param.paramName}` +
+      `*@param* \`${param.name}\` ${param.type.getName()}` +
       divider()
     )
   }
   return content
 }
 
-function renderReturnType(returnType: TypeKey): string {
-  return `*@returns* \`${returnType.foreignKey}\``
+function renderReturnType(returnType: IAmParameterModel): string {
+  return `*@returns* \`${returnType.type.getName()}\``
 }

@@ -1,6 +1,7 @@
 import ParameterModel from "../ParameterModel";
+import IAmParameterModel from "./IAmParameterModel";
 
 export default interface IHaveSignature {
-  returnParameter: ParameterModel;
-  parameters: ParameterModel[];
+  returnParameter: IAmParameterModel;
+  parameters: IAmParameterModel[];
 }

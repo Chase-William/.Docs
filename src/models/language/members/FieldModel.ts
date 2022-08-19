@@ -1,15 +1,17 @@
-import { jsonMember, jsonObject } from 'typedjson';
-import IAmFieldModel from '../interfaces/IAmFieldModel';
+import { AnyT, jsonMember, jsonObject } from 'typedjson';
 import IAmTypeModel from '../interfaces/IAmTypeModel';
 import CommonComment from '../../written/CommonComment';
 import MemberModel from './MemberModel';
+import IAmFieldModel from '../interfaces/members/IAmFieldModel';
 
 @jsonObject()
 export default class FieldModel extends MemberModel<CommonComment> implements IAmFieldModel {
   @jsonMember(Boolean, { name: 'IsReadonly' })
   isReadonly: boolean;
-  @jsonMember(Boolean, { name: 'IsConstant' })
-  isConstant: boolean;
+  @jsonMember(Boolean, { name: 'IsLiteral' })
+  isLiteral: boolean;
+  @jsonMember(AnyT, { name: 'RawConstantValue' })
+  rawConstantValue: unknown
 
   @jsonMember(String, { name: 'Type' })
   _type: string

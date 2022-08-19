@@ -1,22 +1,23 @@
 import EventConfigModel from "../../models/config/members/EventConfigModel"
-import ICodebaseMap from "../../models/global/ICodebaseMap"
-import EventModel from "../../models/members/EventModel"
+import IAmEventModel from "../../models/language/interfaces/members/IAmEventModel"
+import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
+import RenderMembersArgs from "../../rendering/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { renderIsStaticTag, renderTypeName, renderVirtualAndStaticTags } from "../Util"
+import divider, { renderIsStaticTag, renderVirtualAndStaticTags } from "../Util"
 
-export function renderEvent(event: EventModel, config: EventConfigModel, map: ICodebaseMap): string {
+export function renderEvent(event: IAmEventModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmEventModel, EventConfigModel>): string {
   return (
     divider() +
-    renderEventHeader(event, config, map) +
+    renderEventHeader(event, args) +
     divider() +
     getOptionalSummary(event.comments)
   )
 }
 
-function renderEventHeader(event: EventModel, config: EventConfigModel, map: ICodebaseMap): string {
+function renderEventHeader(event: IAmEventModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmEventModel, EventConfigModel>): string {
   return (
-    `### ${event.name} ${renderTypeName(event, event.type, map)}` +
-    renderIsStaticTag(event, config) +
-    renderVirtualAndStaticTags(event, config)
+    `### ${event.name}` +
+    renderIsStaticTag(event, args.config) +
+    renderVirtualAndStaticTags(event, args.config)
   )
 }

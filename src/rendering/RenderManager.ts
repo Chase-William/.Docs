@@ -4,35 +4,45 @@ import Configuration from "../models/config/Configuration";
 import MemberConfigModel from "../models/config/members/MemberConfigModel";
 import IAmTypeModel from "../models/language/interfaces/IAmTypeModel";
 import IAmProjectManager from "../ProjectManager";
-import RenderTypeArgs from "./RenderTypeArgs";
 import Renderer from "./Renderer";
-import RenderMembersArgs from "./RenderMembersArgs";
 import AccessibilityModel from "../models/language/AccessibilityModel";
-import IAmAccessibilityModel from "../models/language/interfaces/IAmAccessibilityModel";
-import IAmSingletonable from "../models/language/interfaces/IAmSingletonable";
 import IAmEventModel from "../models/language/interfaces/members/IAmEventModel";
 import IAmModel from "../models/language/interfaces/IAmModel";
-import FieldConfigModel from "../models/config/members/FieldConfigModel";
 import IAmFieldModel from "../models/language/interfaces/members/IAmFieldModel";
 import IAmPropertyModel from "../models/language/interfaces/members/IAmPropertyModel";
 import IAmMethodModel from "../models/language/interfaces/members/IAmMethodModel";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
-import IAmEnumModel from "../models/language/interfaces/types/IAmEnumModel";
-import PropertyConfigModel from "../models/config/members/PropertyConfigModel";
+import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "./RenderTypeArgs";
+import RenderMembersArgs, { MEMBER_CONFIGURATIONS_DEF, MEMBER_TYPES_DEF } from "./RenderMembersArgs";
+import TypeConfig from "../models/config/TypeConfig";
 
 function makeFilePath(model: IAmSlicedTypeModel): string {
   return model.namespace.split('.').join('/')
+}
+
+function getConfigForModel<T1 extends TYPE_CONFIGURATIONS_DEF>(model: IAmTypeModel, config: TypeConfig): T1 {
+  if (model.isClass)
+    return config.class as T1
+  else if (model.isInterface)
+    return config.interface as T1
+  else if (model.isValueType)
+    return config.struct as T1
+  else if (model.isEnum) 
+    return config.enum as T1
+  else
+    return config.delegate as T1
 }
 
 /**
  * We need to finish the type slicing, and unless we find a way to map our model type to the config type, we will need have a T4....
  */
 
-function makeRenderTypeArgs<T extends IAmSlicedTypeModel>(model: T, renderManager: RenderManager): RenderTypeArgs<any> {
+function makeRenderTypeArgs<T1 extends TYPE_CONFIGURATIONS_DEF>(model: IAmTypeModel, renderManager: RenderManager): RenderTypeArgs<T1> {
   const dir = makeFilePath(model)
   return {
     projManager: renderManager.projManager,
-    config: renderManager.config,
+    config: getConfigForModel(model, renderManager.config.type),
+    fullTypeInfo: model,
     directory: dir,
     fileName: model.name,
     fileExtension: '.md',
@@ -40,10 +50,11 @@ function makeRenderTypeArgs<T extends IAmSlicedTypeModel>(model: T, renderManage
   }
 }
 
-function makeRenderMembersArgs
-  <TParent extends IAmSlicedTypeModel,
-   TMember extends IAmEventModel | IAmFieldModel | IAmMethodModel | IAmPropertyModel,
-   TConfig extends MemberConfigModel>(model: TParent, members: TMember[], config: TConfig, renderManager: RenderManager): RenderMembersArgs<TParent, TMember, TConfig> {
+function makeRenderMembersArgs<
+  TParent extends IAmTypeModel,
+  TMember extends MEMBER_TYPES_DEF,
+  TConfig extends MEMBER_CONFIGURATIONS_DEF>
+  (model: TParent, members: TMember[], config: TConfig, renderManager: RenderManager): RenderMembersArgs<TParent, TMember, TConfig> {
   return {
     more: makeRenderTypeArgs(model, renderManager),
     members: members,
@@ -72,7 +83,7 @@ export default class RenderManager {
   render(projManager: IAmProjectManager): void {
     this.projManager = projManager;
     // Render each type in this project
-    projManager.types.forEach(type => {
+    projManager.types.forEach((type: IAmTypeModel) => {
       if (type.isClass)
         this.renderClass(type)
       else if (type.isValueType)
@@ -106,7 +117,7 @@ export default class RenderManager {
     if (!this.shouldRender(model, this.config.type.enum))
       return
     this.renderer.beginRenderingEnum(model, makeRenderTypeArgs(model, this))
-    this.renderer.renderValues(makeRenderMembersArgs<IAmEnumModel, IAmFieldModel, FieldConfigModel>(model, model.fields, this.config.member.field, this))
+    this.renderer.renderValues(makeRenderMembersArgs(model, model.fields, this.config.member.field, this))
     this.renderer.endRenderingEnum(model, makeRenderTypeArgs(model, this))
   }
 

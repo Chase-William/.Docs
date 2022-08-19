@@ -1,8 +1,9 @@
 import { jsonMember, jsonObject } from "typedjson";
+import IAmParameterModel from "./interfaces/IAmParameterModel";
 import IAmTypeModel from "./interfaces/IAmTypeModel";
 
 @jsonObject()
-export default class ParameterModel {
+export default class ParameterModel implements IAmParameterModel {
   @jsonMember(String, { name: 'Name' })
   name: string = null
 

@@ -1,14 +1,11 @@
 import MarkdownRenderer from './markdown/markdownRenderer';
-import { readFileSync, rmSync } from 'fs';
-import RenderManager from './renderer/RenderManager';
+import RenderManager from './rendering/RenderManager';
 import Router from './Router';
 import { execFileSync } from "child_process";
 import { exit } from 'process';
 import { handleError } from './error';
-import { TypedJSON } from 'typedjson';
-import TypeDefinition from './models/global/TypeDefinition';
-import CodebaseManager from './models/global/CodebaseManager';
-import Namespace from './models/Namespace';
+import { ProjectManager } from './ProjectManager';
+import { rmSync } from 'fs';
 
 const JSON_DIR = './json'
 
@@ -26,10 +23,10 @@ if (result.byteLength != 0)
   exit(1)
 }
 
-const projectName = router.csProjPath.substring(router.csProjPath.lastIndexOf('\\') + 1, router.csProjPath.lastIndexOf('.'))
+// const projectName = router.csProjPath.substring(router.csProjPath.lastIndexOf('\\') + 1, router.csProjPath.lastIndexOf('.'))
 
-const codebaseManager = new CodebaseManager()
-codebaseManager.load('json/core-info', projectName) 
+const projManager = new ProjectManager()
+projManager.load('json/core-info') 
 
 // const types = new TypedJSON(TypeDefinition).parseAsArray(readFileSync('json/core-info/meta/types.json', { encoding: 'utf-8' }))
 // export const TYPE_MAP = new Map<string, TypeDefinition>(types.map(entry => [entry.id, entry]))
@@ -39,15 +36,15 @@ codebaseManager.load('json/core-info', projectName)
 // root.bindToCodebaseMap(globalMapManager)
 
 // Clean old documentation 
-rmSync(router.outputPath, { recursive: true, force: true })
+rmSync('json/core-info', { recursive: true, force: true })
 
 const renderManager = new RenderManager()
 renderManager.config = router.config
 renderManager.path = router.outputPath
-renderManager.map = codebaseManager
+renderManager.projManager = projManager
 renderManager.renderer = new MarkdownRenderer()
 
-renderManager.render(codebaseManager)
+renderManager.render(projManager)
 
 // root.render(renderManager)
 

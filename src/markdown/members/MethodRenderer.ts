@@ -1,43 +1,44 @@
 import MethodConfigModel from "../../models/config/members/MethodConfigModel"
-import ICodebaseMap from "../../models/global/ICodebaseMap"
-import MethodModel from "../../models/members/MethodModel"
+import IAmMethodModel from "../../models/language/interfaces/members/IAmMethodModel"
+import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
+import RenderMembersArgs from "../../rendering/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderTypeName, renderVirtualAndStaticTags } from "../Util"
 
-export function renderMethod(method: MethodModel, config: MethodConfigModel, map: ICodebaseMap): string {
+export function renderMethod(method: IAmMethodModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): string {
   return (
     divider() +
-    renderMethodHeader(method, config) +
+    renderMethodHeader(method, args) +
     divider() +
     getOptionalSummary(method.comments) +
     (!(method.parameters) || method.parameters.length == 0 ? '' : '\n') +
-    renderMethodParams(method, config, map) + 
-    renderMethodReturn(method, config, map)
+    renderMethodParams(method, args) + 
+    renderMethodReturn(method, args)
   )
 }
 
-function renderMethodReturn(method: MethodModel, config: MethodConfigModel, map: ICodebaseMap): string {
+function renderMethodReturn(method: IAmMethodModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): string {
   return (
     (method.parameters ? divider() : '') +
-    '- *@returns* ' +
-    renderTypeName(method, method.returnType, map)
+    '- *@returns* '
+    // renderTypeName(method.)
   )  
 }
 
-function renderMethodParams(method: MethodModel, config: MethodConfigModel, map: ICodebaseMap): string {
+function renderMethodParams(method: IAmMethodModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): string {
   let content = ''
   method.parameters.forEach(param => {
     content += (
       '\n- *@param* ' +
-      `${param.paramName} ${renderTypeName(method, param, map)}`
+      `${param.name} ${renderTypeName(param.type)}`
     )
   })
   return content
 }
 
-function renderMethodHeader(method: MethodModel, config: MethodConfigModel): string {
+function renderMethodHeader(method: IAmMethodModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): string {
   return (
     `### ${method.name}` +
-    renderVirtualAndStaticTags(method, config)
+    renderVirtualAndStaticTags(method, args.config)
   )
 }

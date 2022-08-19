@@ -1,3 +1,4 @@
+import MethodComment from "../../../written/MethodComment";
 import IAmAccessibilityModel from "../IAmAccessibilityModel";
 import IAmModel from "../IAmModel";
 import IAmPolymorphicable from "../IAmPolymorphicable";
@@ -11,5 +12,5 @@ export default interface IAmMethodModel
   IAmSingletonable,
   IHaveSignature,
   IAmModel {
-  
+  comments: MethodComment | null
 }

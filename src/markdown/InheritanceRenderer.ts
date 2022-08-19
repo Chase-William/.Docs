@@ -1,11 +1,11 @@
 import IAmTypeModel from "../models/language/interfaces/IAmTypeModel";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import TypeModel from "../models/language/TypeModel";
-import RenderTypeArgs from "../renderer/RenderTypeArgs";
+import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../rendering/RenderTypeArgs";
 import divider from "./Util";
 
-export function renderTypeInheritanceBlock(model: IAmTypeModel, args: RenderTypeArgs): string {
-  const baseTypes = new Array<IAmTypeModel>()
+export function renderTypeInheritanceBlock(model: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
+  const baseTypes = new Array<IAmSlicedTypeModel>()
   let current = model
   while(current.baseType) {
     baseTypes.push(current.baseType)
@@ -40,7 +40,7 @@ function renderIndent(index: number): string {
 
 // ˪ட―↘ ↳
 
-export function renderTypeNameWithArguments(type: IAmSlicedTypeModel, args: RenderTypeArgs): string {
+export function renderTypeNameWithArguments(type: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
   if (type.genericTypeArguments.length > 0) {
     /*
     Get only the text before the "`" which signifies arguments.

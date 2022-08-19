@@ -1,9 +1,9 @@
 import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
-import IAmMethodModel from '../interfaces/IAmMethodModel';
 import IAmTypeModel from '../interfaces/IAmTypeModel';
 import MethodComment from '../../written/MethodComment';
 import ParameterModel from '../ParameterModel';
 import MemberModel from './MemberModel';
+import IAmMethodModel from '../interfaces/members/IAmMethodModel';
 
 @jsonObject()
 export default class MethodModel extends MemberModel<MethodComment> implements IAmMethodModel {

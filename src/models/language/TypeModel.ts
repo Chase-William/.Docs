@@ -1,4 +1,4 @@
-import { jsonArrayMember, jsonMember, jsonObject } from "typedjson";
+import { jsonArrayMember, jsonMember, jsonObject, Typelike } from "typedjson";
 import EventModel from "./members/EventModel";
 import FieldModel from "./members/FieldModel";
 import MethodModel from "./members/MethodModel";
@@ -8,6 +8,9 @@ import IAmTypeModel from "./interfaces/IAmTypeModel";
 import AccessibilityModel from "./AccessibilityModel";
 import AssemblyModel from "../AssemblyModel";
 import IAmProjectManager from "../../ProjectManager";
+import IAmSlicedTypeModel from "./interfaces/types/IAmSlicedTypeModel";
+import path = require("path");
+import TypeLink from "../../rendering/TypeLink";
 
 @jsonObject()
 export default class TypeModel
@@ -98,5 +101,55 @@ export default class TypeModel
     this.methods.forEach(method => method.bind(projManager.types))
     // Bind to assembly
     this.assembly = projManager.assemblies.get(this._assemblyId)
+  }
+
+  /**
+   * Gets the name of the type without the generics counter. For example, 
+   * "`2" is omitted from the type name.
+   * @returns The name of the type without the grave accent and generics count.
+   */
+  getName(): string {
+    const indexOfGraveAccent = this.name.indexOf('`')
+    // Omit the generics counter like "`2" from the name
+    return indexOfGraveAccent > 0 ? this.name.slice(0, indexOfGraveAccent) : this.name
+  }
+
+  getNameWithGenerics(fileEx: string): { name: TypeLink, generics: TypeLink[] } {
+    const name = new TypeLink(this.getName(), null, this.comments)
+    const generics = new Array<TypeLink>()
+    this.genericTypeArguments.forEach(arg => generics.push(this.getTypeLinkToOther(arg, fileEx)))
+    this.genericTypeParameters.forEach(param => generics.push(this.getTypeLinkToOther(param, fileEx)))
+    return {
+      name: name,
+      generics: generics
+    }
+  }
+
+  getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink {
+    return new TypeLink(to.getName(), this.getFilePathToOther(to, fileEx), to.comments)
+  }
+
+  /**
+   * Gets the relative path from the current to the target type. This is useful
+   * for creating hyper-links to another type.
+   * @param to Target type to route to.
+   * @param fileEx The file extension of the target type's file.
+   * @returns A complete relative path to the target type.
+   */
+  getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string = (to, fileEx) => {
+    const from = this.getFilePath()
+    const _to = to.getFilePath()
+    // Resolve the relative path and ensure the file ends with a .<file extension>
+    return path.relative(from, _to).concat(fileEx.charAt(0) == '.' ? fileEx : '.'.concat(fileEx))
+  }
+
+  /**
+   * Gets the path with the current file's name included.
+   * @returns A complete path using the namespace and type name.
+   */
+  getFilePath(): string {
+    const segments = this.namespace.split('.')
+    segments.push(this.name)
+    return segments.join('/')
   }
 }

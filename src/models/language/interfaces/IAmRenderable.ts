@@ -1,4 +1,4 @@
-import RenderManager from "../../../renderer/RenderManager";
+import RenderManager from "../../../rendering/RenderManager";
 
 /**
  * Represents and entity that can be rendered.

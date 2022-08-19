@@ -1,23 +1,24 @@
 import FieldConfigModel from "../../models/config/members/FieldConfigModel"
-import ICodebaseMap from "../../models/global/ICodebaseMap"
-import FieldModel from "../../models/members/FieldModel"
+import IAmFieldModel from "../../models/language/interfaces/members/IAmFieldModel"
+import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
+import RenderMembersArgs from "../../rendering/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { check, optionalDivider, renderIsStaticTag, renderTypeName } from "../Util"
 
-export function renderField(field: FieldModel, config: FieldConfigModel, map: ICodebaseMap): string {
+export function renderField(field: IAmFieldModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): string {
   return (
     divider() +
-    renderFieldHeader(field, config, map) +
+    renderFieldHeader(field, args) +
     divider() +
     getOptionalSummary(field.comments)
   )
 }
 
-function renderFieldHeader(field: FieldModel, config: FieldConfigModel, map: ICodebaseMap): string {
+function renderFieldHeader(field: IAmFieldModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): string {
   return (
-    `### ${field.name} ${renderTypeName(field, field.type, map)}` +
-    renderIsStaticTag(field, config) +
-    (field.isConstant ? ' `const`' : '') +
+    `### ${field.name} ${renderTypeName(field.type)}` +
+    renderIsStaticTag(field, args.config) +
+    (field.isLiteral ? ' `const`' : '') +
     (field.isReadonly ? ' `readonly`' : '')
   )
 }

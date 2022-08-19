@@ -10,9 +10,9 @@ import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel";
 import StructConfigModel from "../models/config/types/StructConfigModel";
 import IAmEventModel from "../models/language/interfaces/members/IAmEventModel";
 import CommonComment from "../models/written/CommonComment";
-import Renderer from "../renderer/Renderer";
-import RenderMembersArgs from "../renderer/RenderMembersArgs";
-import RenderTypeArgs from "../renderer/RenderTypeArgs";
+import Renderer from "../rendering/Renderer";
+import RenderMembersArgs from "../rendering/RenderMembersArgs";
+import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../rendering/RenderTypeArgs";
 import { renderEvent } from "./members/EventRenderer";
 import { renderField } from "./members/FieldRenderer";
 import { renderMethod } from "./members/MethodRenderer";
@@ -33,33 +33,33 @@ import IAmFieldModel from "../models/language/interfaces/members/IAmFieldModel";
 export default class MarkdownRenderer implements Renderer {  
   content = '';
    
-  beginRenderingClass(model: IAmClassModel, args: RenderTypeArgs): void {
+  beginRenderingClass(model: IAmClassModel, args: RenderTypeArgs<ClassConfigModel>): void {
     this.content = ''
     this.content += (
       renderTypeHeader(model, args)
     )
   }
-  beginRenderingDelegate(model: IAmDelegateModel, args: RenderTypeArgs): void {
+  beginRenderingDelegate(model: IAmDelegateModel, args: RenderTypeArgs<DelegateConfigModel>): void {
     this.content = ''
     this.content += (
       renderTypeHeader(model, args) +
       '\n' +
-      renderDelegate(model)
+      renderDelegate(model, args)
     )
   }
-  beginRenderingEnum(model: IAmEnumModel, args: RenderTypeArgs): void {
+  beginRenderingEnum(model: IAmEnumModel, args: RenderTypeArgs<EnumConfigModel>): void {
     this.content = ''
     this.content += (
       renderTypeHeader(model, args)
     )
   }
-  beginRenderingInterface(model: IAmInterfaceModel, args: RenderTypeArgs): void {
+  beginRenderingInterface(model: IAmInterfaceModel, args: RenderTypeArgs<InterfaceConfigModel>): void {
     this.content = ''
     this.content += (
       renderTypeHeader(model, args)
     )
   }
-  beginRenderingStruct(model: IAmStructModel, args: RenderTypeArgs): void {
+  beginRenderingStruct(model: IAmStructModel, args: RenderTypeArgs<StructConfigModel>): void {
     this.content = ''
     this.content += (
       renderTypeHeader(model, args)
@@ -68,7 +68,7 @@ export default class MarkdownRenderer implements Renderer {
   renderProperties(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): void {    
     this.content +=  `## \`${accessibility}\` Properties` + divider()
     for (const prop of args.members) {
-      this.content += new PropertyRenderer(prop, args.more).content
+      this.content += new PropertyRenderer(prop, args).content
     }
   }
   renderMethods(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): void {
@@ -91,7 +91,7 @@ export default class MarkdownRenderer implements Renderer {
   }
   renderValues(args: RenderMembersArgs<IAmEnumModel, IAmFieldModel, FieldConfigModel>): void {
     this.content += (
-      `## Values<\`${args.parent.underlyingType}\`>` +
+      `## Values<\`${args.parent.fields[0].type.getName()}\`>` +
       divider()
     )
     for (const value of args.members) {
@@ -99,20 +99,20 @@ export default class MarkdownRenderer implements Renderer {
     }    
   }  
   
-  endRenderingClass(model: IAmClassModel, filePath: string, config: ClassConfigModel, map: ICodebaseMap): void {
-    this.writeToFile(model, filePath)
+  endRenderingClass(model: IAmClassModel, args: RenderTypeArgs<ClassConfigModel>): void {
+    this.writeToFile(model, args)
   }
-  endRenderingDelegate(model: IAmDelegateModel, filePath: string, config: DelegateConfigModel, map: ICodebaseMap): void {
-    this.writeToFile(model, filePath)
+  endRenderingDelegate(model: IAmDelegateModel, args: RenderTypeArgs<DelegateConfigModel>): void {
+    this.writeToFile(model, args)
   }
-  endRenderingEnum(model: IAmEnumModel, filePath: string, config: EnumConfigModel, map: ICodebaseMap): void {
-    this.writeToFile(model, filePath)
+  endRenderingEnum(model: IAmEnumModel, args: RenderTypeArgs<EnumConfigModel>): void {
+    this.writeToFile(model, args)
   }
-  endRenderingInterface(model: IAmInterfaceModel, filePath: string, config: InterfaceConfigModel, map: ICodebaseMap): void {
-    this.writeToFile(model, filePath)
+  endRenderingInterface(model: IAmInterfaceModel, args: RenderTypeArgs<InterfaceConfigModel>): void {
+    this.writeToFile(model, args)
   }
-  endRenderingStruct(model: IAmStructModel, args: RenderTypeArgs): void {
-    this.writeToFile(model, filePath)
+  endRenderingStruct(model: IAmStructModel,args: RenderTypeArgs<StructConfigModel>): void {
+    this.writeToFile(model, args)
   }
 
   /**
@@ -120,14 +120,14 @@ export default class MarkdownRenderer implements Renderer {
    * @param model Contains the information required for path/file location.
    * @param content Markdown content to be written.
    */
-  writeToFile(model: TypeModel<CommonComment>, filePath: string): void {
+  writeToFile(model: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): void {
     // Build
-    if (!existsSync(filePath)) {
-      mkdirSync(filePath, { recursive: true })
+    if (!existsSync(args.filePath)) {
+      mkdirSync(args.filePath, { recursive: true })
     }
 
     // Write to file using the FullName prop because we may need parent class names if this type is nested.
-    writeFile(filePath + `/${model.fullName.substring(model.fullName.lastIndexOf('.') + 1)}.md`, this.content, (err) => {
+    writeFile(args.filePath + `/${model.fullName.substring(model.fullName.lastIndexOf('.') + 1)}.md`, this.content, (err) => {
       if (err) {
         console.log(err) // TODO: Change to logger later
         throw err

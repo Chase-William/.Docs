@@ -1,3 +1,4 @@
+import CommonComment from "../../../written/CommonComment";
 import IAmAccessibilityModel from "../IAmAccessibilityModel";
 import IAmModel from "../IAmModel";
 import IAmPolymorphicable from "../IAmPolymorphicable";
@@ -9,5 +10,5 @@ export default interface IAmEventModel
   IAmAccessibilityModel,
   IAmSingletonable,
   IAmModel {
-  
+    comments: CommonComment | null
 }
