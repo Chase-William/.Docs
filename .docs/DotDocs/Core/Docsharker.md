@@ -1,10 +1,10 @@
-# <code><span title="undefined">Docsharker</span></code>
+# <code><a href="Docsharker.md">Docsharker</a></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Builder <code><span title="undefined">BuildManager</span></code>
+### Builder <code><a href="BuildManager.md">BuildManager</a></code>
 
 Summary not provided.
 
@@ -22,7 +22,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><a href="..\..\System\Object.md">Object</a></code>
 
 - *@returns* 
 

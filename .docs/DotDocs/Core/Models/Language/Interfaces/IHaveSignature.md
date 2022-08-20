@@ -1,14 +1,14 @@
-# <code><span title="undefined">IHaveSignature</span></code>
+# <code><a href="IHaveSignature.md">IHaveSignature</a></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Parameters <code><span title="undefined">ParameterModel[]</span></code> `static` `abstract` `readonly`
+### Parameters <code><a href="..\Parameters\ParameterModel[].md">ParameterModel[]</a></code> `static` `abstract` `readonly`
 
 Summary not provided.
 
-### ReturnParameter <code><span title="undefined">ParameterModel</span></code> `static` `abstract` `readonly`
+### ReturnParameter <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a></code> `static` `abstract` `readonly`
 
 Summary not provided.
 
@@ -20,6 +20,6 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* info <code><span title="undefined">MethodInfo</span></code>
+- *@param* info <code><a href="..\..\..\..\..\System\Reflection\MethodInfo.md">MethodInfo</a></code>
 
 - *@returns* 

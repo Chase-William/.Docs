@@ -1,4 +1,4 @@
-# <code><span title="undefined">ParameterModel&</span></code>
+# <code><a href="ParameterModel&.md">ParameterModel&</a></code>
 
 Summary not provided.
 

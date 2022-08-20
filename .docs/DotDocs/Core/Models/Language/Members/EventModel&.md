@@ -1,4 +1,4 @@
-# <code><span title="undefined">EventModel&</span></code>
+# <code><a href="EventModel&.md">EventModel&</a></code>
 
 Summary not provided.
 

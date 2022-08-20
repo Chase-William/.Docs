@@ -1,4 +1,4 @@
-# <code><span title="undefined">MethodModel&</span></code>
+# <code><a href="MethodModel&.md">MethodModel&</a></code>
 
 Summary not provided.
 

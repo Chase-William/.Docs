@@ -67,7 +67,12 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
 export function renderTypeName(from: IAmSlicedTypeModel, constructableType: IAmSlicedTypeModel): string {
   const nameParts = from.getNameWithGenerics(constructableType, '.md')
   return (
-    `<code><span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>${(nameParts.generics.length > 0 ? ('<' + renderGenerics(nameParts.generics) + '>') : '')}</code>`
+    `<code>` + 
+    (nameParts.root.from.isFacade ? 
+      `<span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>` : 
+      `<a href="${nameParts.root.filePath}">${nameParts.root.name}</a>`) + 
+    (nameParts.generics.length > 0 ? ('<' + renderGenerics(nameParts.generics) + '>') : '') + 
+    `</code>`
   )
 }
 

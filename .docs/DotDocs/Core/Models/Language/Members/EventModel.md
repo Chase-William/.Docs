@@ -1,4 +1,4 @@
-# <code><span title="undefined">EventModel</span></code>
+# <code><a href="EventModel.md">EventModel</a></code>
 
 ```
 ட 
@@ -10,43 +10,43 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><span title="undefined">CommonComments</span></code>
+### Comments <code><a href="..\..\..\..\..\LoxSmoke\DocXml\CommonComments.md">CommonComments</a></code>
 
 Summary not provided.
 
-### Info <code><span title="undefined">EventInfo</span></code>
+### Info <code><a href="..\..\..\..\..\System\Reflection\EventInfo.md">EventInfo</a></code>
 
 Summary not provided.
 
-### IsAbstract <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsAbstract <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsInternal <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsInternal <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPrivate <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsPrivate <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsProtected <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsProtected <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPublic <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsPublic <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsStatic <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsStatic <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsVirtual <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsVirtual <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Name <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
@@ -58,7 +58,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><a href="..\..\..\..\..\System\Object.md">Object</a></code>
 
 - *@returns* 
 

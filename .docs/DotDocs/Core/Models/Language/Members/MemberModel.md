@@ -1,4 +1,4 @@
-# <code><span title="undefined">MemberModel</span><<a href="T1.md">T1</a>, <a href="T2.md">T2</a>></code>
+# <code><a href="MemberModel.md">MemberModel</a><<a href="T1.md">T1</a>, <a href="T2.md">T2</a>></code>
 
 ```
 ட 
@@ -9,15 +9,15 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><span title="undefined">T2</span></code>
+### Comments <code><a href="T2.md">T2</a></code>
 
 Summary not provided.
 
-### Info <code><span title="undefined">T1</span></code>
+### Info <code><a href="T1.md">T1</a></code>
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Name <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
@@ -29,7 +29,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><a href="..\..\..\..\..\System\Object.md">Object</a></code>
 
 - *@returns* 
 
@@ -63,10 +63,18 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* s* 
+- *@returns*  
+
+## `protected` Methods
+
+### Finalize `virtual`
+
+Summary not provided.
+
+- *@returns* 
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* ns* 
+- *@returns* urns* 
