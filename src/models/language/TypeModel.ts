@@ -143,7 +143,7 @@ export default class TypeModel
     const from = this.getDirectory()
     const _to = to.getDirectory()
     // Resolve the relative path and ensure the file ends with a .<file extension>
-    return path.join(path.relative(from, _to), this.getFileNameWithEx(fileEx))
+    return path.join(path.relative(from, _to), to.getFileNameWithEx(fileEx))
   }
   
   getFilePathWithEx(fileEx: string): string {

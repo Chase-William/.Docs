@@ -8,7 +8,7 @@ Summary not provided.
 
 Summary not provided.
 
-### DefinedTypes <code><span title="undefined">List</span><<a href="Language\LocalProjectModel.md">TypeModel</a>></code> `static` `readonly`
+### DefinedTypes <code><span title="undefined">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
