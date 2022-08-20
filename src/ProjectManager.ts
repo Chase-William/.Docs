@@ -31,13 +31,13 @@ export class ProjectManager implements IAmProjectManager {
   load(basePath: string): void {
     // Load all types & projects from file
     const _assemblies = new TypedJSON(AssemblyModel).parseAsArray(readFileSync(path.join(basePath, ASSEMBLY_FILE), { encoding: 'utf-8' }))
-    const _projects = new TypedJSON(LocalProjectModel).parseAsArray(readFileSync(path.join(basePath, PROJECTS_FILE), { encoding: 'utf-8' })) 
-    const _types = new TypedJSON(TypeModel).parseAsArray(readFileSync(path.join(basePath, TYPES_FILE), { encoding: 'utf-8' }))       
-    //const _types = new TypedJSON(TypeModel).parseAsMap<string>(readFileSync(path.join(basePath, TYPES_FILE)), (type: TypeModel) => [ type.id, type ])       
-    // Map types & projects into a dictionary
+    const _projects = new TypedJSON(LocalProjectModel).parseAsArray(readFileSync(path.join(basePath, PROJECTS_FILE), { encoding: 'utf-8' }))
+    const _types = new TypedJSON(TypeModel).parseAsArray(readFileSync(path.join(basePath, TYPES_FILE), { encoding: 'utf-8' }))
+    //const _types = new TypedJSON(TypeModel).parseAsMap<string>(readFileSync(path.join(basePath, TYPES_FILE)), (type: TypeModel) => [ type.id, type ])
+    // Map types & projects into a dictionary    
     this.assemblies = new Map(_assemblies.map(assembly => [ assembly.id, assembly ]))
     this.projects = new Map(_projects.map(project => [ project.projectName, project ]))
-    this.types = new Map(_types.map(type => [ type.id, type ]))    
+    this.types = new Map(_types.map(type => [ type.id, type ]))
     // Bind all types so that they reference other types in memory
     _types.forEach(type => type.bind(this))
     _projects.forEach(project => project.bind(this))

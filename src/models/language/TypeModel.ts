@@ -33,7 +33,7 @@ export default class TypeModel
   @jsonMember(CommonComment, { name: 'Comments' })
   comments: CommonComment | null = null
 
-  @jsonMember(String, { name: 'AssemblyName' })
+  @jsonMember(String, { name: 'AssemblyId' })
   _assemblyId: string
   assembly: AssemblyModel
 
@@ -87,8 +87,17 @@ export default class TypeModel
   @jsonMember(String, { name: 'Id' })
   id: string
 
-  @jsonMember(Boolean, { name: 'IsFacade' })
-  isFacade: boolean
+  @jsonMember(Boolean, { name: 'IsArray' })
+  isArray: boolean
+
+  @jsonMember(Boolean, { name: 'IsByRef' })
+  isByRef: boolean
+
+  isFacade(): boolean {
+    if (!this.assembly)
+      console.log(this.fullName)
+    return this.assembly.project == null
+  }
 
   bind(projManager: IAmProjectManager): void {
     // Bind to baseType
@@ -103,7 +112,10 @@ export default class TypeModel
     this.properties.forEach(property => property.bind(projManager.types))
     this.methods.forEach(method => method.bind(projManager.types))
     // Bind to assembly
+    // console.log(this.fullName + " -> " + this._assemblyId)
     this.assembly = projManager.assemblies.get(this._assemblyId)
+    // if (this.assembly == null)
+    //   console.log(this.fullName)
   }
 
   /**

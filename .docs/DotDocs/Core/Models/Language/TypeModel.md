@@ -1,4 +1,4 @@
-# <code><a href="TypeModel.md">TypeModel</a></code>
+# <code><span title="undefined">TypeModel</span></code>
 
 ```
 ட 
@@ -9,103 +9,111 @@ Summary not provided.
 
 ## `public` Properties
 
-### AssemblyId <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
+### AssemblyId <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### BaseType <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
+### BaseType <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Comments <code><a href="..\..\..\..\LoxSmoke\DocXml\CommonComments.md">CommonComments</a></code>
+### Comments <code><span title="undefined">CommonComments</span></code>
 
 Summary not provided.
 
-### Events <code><a href="Members\EventModel[].md">EventModel[]</a></code> `static` `readonly`
+### Events <code><span title="undefined">EventModel[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Fields <code><a href="Members\FieldModel[].md">FieldModel[]</a></code> `static` `readonly`
+### Fields <code><span title="undefined">FieldModel[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### FullName <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
+### FullName <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### GenericTypeArguments <code><a href="..\..\..\..\System\String[].md">String[]</a></code> `static` `readonly`
+### GenericTypeArguments <code><span title="undefined">String[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### GenericTypeParameters <code><a href="..\..\..\..\System\String[].md">String[]</a></code> `static` `readonly`
+### GenericTypeParameters <code><span title="undefined">String[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Id <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
+### Id <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsClass <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsArray <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsConstructedGenericType <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsByRef <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsDelegate <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsClass <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsEnum <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsConstructedGenericType <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsFacade <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code>
+### IsDefinedInLocalProject <code><span title="undefined">Boolean</span></code>
 
 Summary not provided.
 
-### IsGenericParameter <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsDelegate <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGenericType <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsEnum <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGenericTypeDefinition <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsGenericParameter <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsInterface <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsGenericType <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsValueType <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
+### IsGenericTypeDefinition <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### MetadataToken <code><a href="..\..\..\..\System\Int32.md">Int32</a></code> `static` `readonly`
+### IsInterface <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Methods <code><a href="Members\MethodModel[].md">MethodModel[]</a></code> `static` `readonly`
+### IsValueType <code><span title="undefined">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
+### MetadataToken <code><span title="undefined">Int32</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Namespace <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
+### Methods <code><span title="undefined">MethodModel[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Properties <code><a href="Members\PropertyModel[].md">PropertyModel[]</a></code> `static` `readonly`
+### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Type <code><a href="..\..\..\..\System\Reflection\TypeInfo.md">TypeInfo</a></code>
+### Namespace <code><span title="undefined">String</span></code> `static` `readonly`
+
+Summary not provided.
+
+### Properties <code><span title="undefined">PropertyModel[]</span></code> `static` `readonly`
+
+Summary not provided.
+
+### Type <code><span title="undefined">TypeInfo</span></code>
 
 Summary not provided.
 
@@ -117,7 +125,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 

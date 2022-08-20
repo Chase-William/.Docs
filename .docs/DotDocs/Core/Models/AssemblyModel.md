@@ -1,22 +1,22 @@
-# <code><a href="AssemblyModel.md">AssemblyModel</a></code>
+# <code><span title="undefined">AssemblyModel</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Assembly <code><a href="..\..\..\System\Reflection\Assembly.md">Assembly</a></code>
+### Assembly <code><span title="undefined">Assembly</span></code>
 
 Summary not provided.
 
-### FullName <code><a href="..\..\..\System\String.md">String</a></code> `static` `readonly`
+### FullName <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Id <code><a href="..\..\..\System\String.md">String</a></code> `static` `readonly`
+### Id <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><a href="..\..\..\System\String.md">String</a></code> `static` `readonly`
+### Name <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
@@ -28,7 +28,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 

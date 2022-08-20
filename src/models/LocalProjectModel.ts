@@ -15,9 +15,12 @@ export default class LocalProjectModel {
   @jsonArrayMember(String, { name: 'LocalProjects' })
   localProjects: string[]
 
-  @jsonMember(String, { name: 'AssemblyId '})
+  @jsonMember(String, { name: 'AssemblyId' })
   _assemblyId: string
   assembly: AssemblyModel
+
+  @jsonMember(String, { name: 'Id' })
+  id: string
 
   bind(projManager: ProjectManager): void {
     // Bind the assembly & project in a bi-directional fashion    

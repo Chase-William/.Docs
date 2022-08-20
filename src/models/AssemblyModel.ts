@@ -7,8 +7,8 @@ export default class AssemblyModel {
   name: string
   @jsonMember(String, { name: 'FullName' })
   fullName: string
-  @jsonMember(String, { name: 'AssemblyId' })
+  @jsonMember(String, { name: 'Id' })
   id: string
 
-  project: LocalProjectModel
+  project: LocalProjectModel | null = null
 }

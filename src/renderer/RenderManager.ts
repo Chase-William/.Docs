@@ -81,19 +81,18 @@ export default class RenderManager {
   render(): void {
     // Render each type in this project
     this.projManager.types.forEach((type: IAmFullTypeModel) => {
-      if (!type.isFacade)
-      {
-        if (type.isClass)
-          this.renderClass(type)
-        else if (type.isValueType)
-          this.renderStruct(type)
-        else if (type.isEnum)
-          this.renderEnum(type)
-        else if (type.isInterface)
-          this.renderInterface(type)
-        else 
-          this.renderDelegate(type)
-      }      
+      if (type.isFacade() || type.isArray || type.isByRef || type.isGenericParameter)
+        return
+      if (type.isClass)
+        this.renderClass(type)
+      else if (type.isValueType)
+        this.renderStruct(type)
+      else if (type.isEnum)
+        this.renderEnum(type)
+      else if (type.isInterface)
+        this.renderInterface(type)
+      else 
+        this.renderDelegate(type)         
     });
   }
 

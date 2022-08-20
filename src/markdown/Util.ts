@@ -68,7 +68,7 @@ export function renderTypeName(from: IAmSlicedTypeModel, constructableType: IAmS
   const nameParts = from.getNameWithGenerics(constructableType, '.md')
   return (
     `<code>` + 
-    (nameParts.root.from.isFacade ? 
+    (nameParts.root.from.isFacade || nameParts.root.from.isConstructedGenericType ? 
       `<span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>` : 
       `<a href="${nameParts.root.filePath}">${nameParts.root.name}</a>`) + 
     (nameParts.generics.length > 0 ? ('<' + renderGenerics(nameParts.generics) + '>') : '') + 

@@ -1,10 +1,10 @@
-# <code><a href="Model.md">Model</a></code>
+# <code><span title="undefined">Model</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Name <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `abstract` `readonly`
+### Name <code><span title="undefined">String</span></code> `static` `abstract` `readonly`
 
 Summary not provided.
 
@@ -16,7 +16,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 

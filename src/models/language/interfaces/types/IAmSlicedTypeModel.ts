@@ -20,7 +20,9 @@ export default interface IAmSlicedTypeModel
   isGenericParameter: boolean
   metadataToken: number
   id: string
-  isFacade: boolean
+  isFacade(): boolean
+  isArray: boolean
+  isByRef: boolean
 
   getNameWithGenerics(constructableType: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] }
   getTypeLinkToOther(foundationalType: IAmSlicedTypeModel, targetType: IAmSlicedTypeModel, fileEx: string): TypeLink
