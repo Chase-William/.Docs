@@ -1,31 +1,14 @@
-# <code><span title="undefined">LocalProjectContext</span></code>
-
-```
-ட LocalProjectModel
-  ட Object
-```
+# <code><span title="undefined">LocalProjectModel</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Assembly <code><span title="undefined">Assembly</span></code>
-
-Summary not provided.
-
 ### AssemblyId <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### AssemblyLoadPath <code><span title="undefined">String</span></code>
-
-Summary not provided.
-
 ### DefinedTypes <code><span title="undefined">List</span><<a href="..\..\..\..\DotDocs\Core\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
-
-Summary not provided.
-
-### DocumentationPath <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
@@ -61,12 +44,6 @@ Summary not provided.
 
 ## `public` Methods
 
-### Dispose
-
-Summary not provided.
-
-- *@returns* 
-
 ### Equals `virtual`
 
 Summary not provided.
@@ -92,14 +69,6 @@ Summary not provided.
 ### GetType
 
 Summary not provided.
-
-- *@returns* 
-
-### Load
-
-Summary not provided.
-
-- *@param* assemblies <code><span title="undefined">String[]</span></code>
 
 - *@returns* 
 

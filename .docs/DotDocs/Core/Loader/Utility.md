@@ -1,4 +1,4 @@
-# <code><span title="null">Utility</span></code>
+# <code><span title="undefined">Utility</span></code>
 
 Summary not provided.
 
@@ -10,7 +10,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* pathToClean <code><span title="null">String</span></code>
+- *@param* pathToClean <code><span title="undefined">String</span></code>
 
 - *@returns* 
 
@@ -18,7 +18,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="null">Object</span></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 

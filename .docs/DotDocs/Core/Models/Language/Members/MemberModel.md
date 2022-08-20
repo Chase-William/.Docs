@@ -1,4 +1,4 @@
-# <code><span title="null">MemberModel</span><<span title="undefined">T1</span>,<span title="undefined">T2</span>></code>
+# <code><span title="undefined">MemberModel</span><<a href="..\T1.md">T1</a>, <a href="..\T2.md">T2</a>></code>
 
 ```
 ட Model
@@ -9,15 +9,15 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><span title="null">T2</span></code>
+### Comments <code><span title="undefined">T2</span></code>
 
 Summary not provided.
 
-### Info <code><span title="null">T1</span></code>
+### Info <code><span title="undefined">T1</span></code>
 
 Summary not provided.
 
-### Name <code><span title="null">String</span></code> `static` `virtual` `readonly`
+### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
@@ -29,7 +29,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="null">Object</span></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 
@@ -63,7 +63,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* ne
+- *@returns* ## MemberwiseClone
 
 Summary not provided.
 

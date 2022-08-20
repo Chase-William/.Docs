@@ -118,7 +118,7 @@ export default class TypeModel
   }
 
   getNameWithGenerics(fileEx: string): { root: TypeLink, generics: TypeLink[] } {
-    const root = new TypeLink(this.getName(), null, this.comments)
+    const root = new TypeLink(this, null, fileEx)
     const generics = new Array<TypeLink>()
     this.genericTypeArguments.forEach(arg => generics.push(this.getTypeLinkToOther(arg, fileEx)))
     this.genericTypeParameters.forEach(param => generics.push(this.getTypeLinkToOther(param, fileEx)))
@@ -129,7 +129,7 @@ export default class TypeModel
   }
 
   getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink {
-    return new TypeLink(to.getName(), this.getFilePathToOther(to, fileEx), to.comments)
+    return new TypeLink(this, to, fileEx)
   }
 
   /**

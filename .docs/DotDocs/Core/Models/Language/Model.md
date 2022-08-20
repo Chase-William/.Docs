@@ -1,10 +1,10 @@
-# <code><span title="null">Model</span></code>
+# <code><span title="undefined">Model</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Name <code><span title="null">String</span></code> `static` `abstract` `readonly`
+### Name <code><span title="undefined">String</span></code> `static` `abstract` `readonly`
 
 Summary not provided.
 
@@ -16,7 +16,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="null">Object</span></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 

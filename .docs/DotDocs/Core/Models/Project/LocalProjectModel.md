@@ -1,42 +1,42 @@
-# <code><span title="null">LocalProjectModel</span></code>
+# <code><span title="undefined">LocalProjectModel</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### AssemblyId <code><span title="null">String</span></code>
+### AssemblyId <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### DefinedTypes <code><span title="null">List</span><<span title="undefined">TypeModel</span>></code> `static` `readonly`
+### DefinedTypes <code><span title="undefined">List</span><<a href="..\..\..\..\DotDocs\Core\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
-### Id <code><span title="null">String</span></code> `static` `readonly`
+### Id <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjects <code><span title="null">String[]</span></code> `static` `readonly`
+### LocalProjects <code><span title="undefined">String[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjectsAsObjects <code><span title="null">List</span><<span title="undefined">LocalProjectModel</span>></code>
+### LocalProjectsAsObjects <code><span title="undefined">List</span><<a href="..\..\..\..\DotDocs\Core\Models\Project\LocalProjectModel.md">LocalProjectModel</a>></code>
 
 Summary not provided.
 
-### ProjectDirectory <code><span title="null">String</span></code>
+### ProjectDirectory <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### ProjectFileName <code><span title="null">String</span></code>
+### ProjectFileName <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### ProjectName <code><span title="null">String</span></code>
+### ProjectName <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### ProjectPath <code><span title="null">String</span></code>
+### ProjectPath <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
@@ -48,7 +48,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="null">Object</span></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 
@@ -56,7 +56,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* projectFile <code><span title="null">String</span></code>
+- *@param* projectFile <code><span title="undefined">String</span></code>
 
 - *@returns* 
 

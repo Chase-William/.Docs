@@ -1,4 +1,4 @@
-# <code><span title="null">RequiredTypePropertyNullException</span></code>
+# <code><span title="undefined">RequiredTypePropertyNullException</span></code>
 
 ```
 ட Exception
@@ -9,43 +9,43 @@ Summary not provided.
 
 ## `public` Properties
 
-### Data <code><span title="null">IDictionary</span></code> `static` `virtual` `readonly`
+### Data <code><span title="undefined">IDictionary</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### HelpLink <code><span title="null">String</span></code> `virtual`
+### HelpLink <code><span title="undefined">String</span></code> `virtual`
 
 Summary not provided.
 
-### HResult <code><span title="null">Int32</span></code>
+### HResult <code><span title="undefined">Int32</span></code>
 
 Summary not provided.
 
-### InnerException <code><span title="null">Exception</span></code> `static` `readonly`
+### InnerException <code><span title="undefined">Exception</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Message <code><span title="null">String</span></code> `static` `virtual` `readonly`
+### Message <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### PropertyName <code><span title="null">String</span></code>
+### PropertyName <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### Source <code><span title="null">String</span></code> `virtual`
+### Source <code><span title="undefined">String</span></code> `virtual`
 
 Summary not provided.
 
-### StackTrace <code><span title="null">String</span></code> `static` `virtual` `readonly`
+### StackTrace <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### TargetSite <code><span title="null">MethodBase</span></code> `static` `readonly`
+### TargetSite <code><span title="undefined">MethodBase</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><span title="null">Type</span></code>
+### Type <code><span title="undefined">Type</span></code>
 
 Summary not provided.
 
@@ -57,7 +57,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="null">Object</span></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 
@@ -77,8 +77,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* info <code><span title="null">SerializationInfo</span></code>
-- *@param* context <code><span title="null">StreamingContext</span></code>
+- *@param* info <code><span title="undefined">SerializationInfo</span></code>
+- *@param* context <code><span title="undefined">StreamingContext</span></code>
 
 - *@returns* 
 

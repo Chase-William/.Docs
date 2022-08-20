@@ -20,6 +20,7 @@ export default interface IAmSlicedTypeModel
   isGenericParameter: boolean
   metadataToken: number
   id: string
+  isFacade: boolean
 
   getNameWithGenerics(fileEx: string): { root: TypeLink, generics: TypeLink[] }
   getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink

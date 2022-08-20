@@ -67,7 +67,7 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
 export function renderTypeName(type: IAmSlicedTypeModel): string {
   const nameParts = type.getNameWithGenerics('.md')
   return (
-    `<code><span title="${nameParts.root.comments}">${nameParts.root.name}</span>${(nameParts.generics.length > 0 ? ('<' + renderGenerics(nameParts.generics) + '>') : '')}</code>`
+    `<code><span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>${(nameParts.generics.length > 0 ? ('<' + renderGenerics(nameParts.generics) + '>') : '')}</code>`
   )
 }
 
@@ -77,5 +77,7 @@ export function renderTypeName(type: IAmSlicedTypeModel): string {
  * @returns A comma separated string of html elements denoting generics.
  */
 function renderGenerics(generics: TypeLink[]): string {
-  return generics.map(v => v.filePath ? `<span title="${v.comments?.summary}">${v.name}</span>` : `<a href="${v.filePath}">${v.name}</a>`).join(',')
+  return generics.map(v => {
+    return !v.to || !v.filePath || v.to?.isFacade ? `<span title="${v.to.comments?.summary}">${v.name}</span>` : `<a href="${v.filePath}">${v.name}</a>`
+  }).join(', ')
 }

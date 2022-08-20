@@ -4,15 +4,15 @@ Summary not provided.
 
 ## `public` Properties
 
-### Assemblies <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>,<a href="..\..\..\..\DotDocs\Core\Models\AssemblyModel.md">AssemblyModel</a>></code> `static` `readonly`
+### Assemblies <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\..\..\..\DotDocs\Core\Models\AssemblyModel.md">AssemblyModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
-### FullProjectTypeMap <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>,<a href="..\..\..\..\DotDocs\Core\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
+### FullProjectTypeMap <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\..\..\..\DotDocs\Core\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjects <code><span title="undefined">List</span><<a href="..\..\..\..\DotDocs\Core\Models\Project\LocalProjectModel.md">LocalProjectModel</a>></code> `static` `readonly`
+### LocalProjects <code><span title="undefined">List</span><<a href="..\..\..\..\DotDocs\Core\Models\LocalProjectModel.md">LocalProjectModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
