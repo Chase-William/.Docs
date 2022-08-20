@@ -21,4 +21,5 @@ export default interface IAmFullTypeModel extends IAmSlicedTypeModel {
   fields: IAmFieldModel[]
   properties: IAmPropertyModel[]
   methods: IAmMethodModel[]
+  isFacade: boolean
 }

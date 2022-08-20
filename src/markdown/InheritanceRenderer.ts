@@ -1,7 +1,7 @@
-import IAmTypeModel from "../models/language/interfaces/IAmTypeModel";
+import IAmTypeModel from "../models/language/interfaces/IAmFullTypeModel";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import TypeModel from "../models/language/TypeModel";
-import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../rendering/RenderTypeArgs";
+import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";
 import divider from "./Util";
 
 export function renderTypeInheritanceBlock(model: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {

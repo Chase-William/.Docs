@@ -10,9 +10,9 @@ import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel";
 import StructConfigModel from "../models/config/types/StructConfigModel";
 import IAmEventModel from "../models/language/interfaces/members/IAmEventModel";
 import CommonComment from "../models/written/CommonComment";
-import Renderer from "../rendering/Renderer";
-import RenderMembersArgs from "../rendering/RenderMembersArgs";
-import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../rendering/RenderTypeArgs";
+import Renderer from "../renderer/Renderer";
+import RenderMembersArgs from "../renderer/RenderMembersArgs";
+import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";
 import { renderEvent } from "./members/EventRenderer";
 import { renderField } from "./members/FieldRenderer";
 import { renderMethod } from "./members/MethodRenderer";
@@ -29,6 +29,7 @@ import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTyp
 import IAmPropertyModel from "../models/language/interfaces/members/IAmPropertyModel";
 import IAmMethodModel from "../models/language/interfaces/members/IAmMethodModel";
 import IAmFieldModel from "../models/language/interfaces/members/IAmFieldModel";
+import path = require("path");
 
 export default class MarkdownRenderer implements Renderer {  
   content = '';
@@ -121,13 +122,12 @@ export default class MarkdownRenderer implements Renderer {
    * @param content Markdown content to be written.
    */
   writeToFile(model: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): void {
-    // Build
-    if (!existsSync(args.filePath)) {
-      mkdirSync(args.filePath, { recursive: true })
+    const dir = path.join(args.outputPath, model.getDirectory())
+    if (!existsSync(dir)) {
+      mkdirSync(dir, { recursive: true })
     }
-
     // Write to file using the FullName prop because we may need parent class names if this type is nested.
-    writeFile(args.filePath + `/${model.fullName.substring(model.fullName.lastIndexOf('.') + 1)}.md`, this.content, (err) => {
+    writeFile(path.join(args.outputPath, model.getFilePathWithEx('.md')), this.content, (err) => {
       if (err) {
         console.log(err) // TODO: Change to logger later
         throw err

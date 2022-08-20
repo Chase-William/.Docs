@@ -1,8 +1,7 @@
-import path = require("path");
 import ConfigModel from "../models/config/ConfigModel";
 import Configuration from "../models/config/Configuration";
 import MemberConfigModel from "../models/config/members/MemberConfigModel";
-import IAmTypeModel from "../models/language/interfaces/IAmTypeModel";
+import IAmFullTypeModel from "../models/language/interfaces/IAmFullTypeModel";
 import IAmProjectManager from "../ProjectManager";
 import Renderer from "./Renderer";
 import AccessibilityModel from "../models/language/AccessibilityModel";
@@ -11,16 +10,12 @@ import IAmModel from "../models/language/interfaces/IAmModel";
 import IAmFieldModel from "../models/language/interfaces/members/IAmFieldModel";
 import IAmPropertyModel from "../models/language/interfaces/members/IAmPropertyModel";
 import IAmMethodModel from "../models/language/interfaces/members/IAmMethodModel";
-import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "./RenderTypeArgs";
 import RenderMembersArgs, { MEMBER_CONFIGURATIONS_DEF, MEMBER_TYPES_DEF } from "./RenderMembersArgs";
 import TypeConfig from "../models/config/TypeConfig";
+import path = require("path");
 
-function makeFilePath(model: IAmSlicedTypeModel): string {
-  return model.namespace.split('.').join('/')
-}
-
-function getConfigForModel<T1 extends TYPE_CONFIGURATIONS_DEF>(model: IAmTypeModel, config: TypeConfig): T1 {
+function getConfigForModel<T1 extends TYPE_CONFIGURATIONS_DEF>(model: IAmFullTypeModel, config: TypeConfig): T1 {
   if (model.isClass)
     return config.class as T1
   else if (model.isInterface)
@@ -37,21 +32,17 @@ function getConfigForModel<T1 extends TYPE_CONFIGURATIONS_DEF>(model: IAmTypeMod
  * We need to finish the type slicing, and unless we find a way to map our model type to the config type, we will need have a T4....
  */
 
-function makeRenderTypeArgs<T1 extends TYPE_CONFIGURATIONS_DEF>(model: IAmTypeModel, renderManager: RenderManager): RenderTypeArgs<T1> {
-  const dir = makeFilePath(model)
+function makeRenderTypeArgs<T1 extends TYPE_CONFIGURATIONS_DEF>(model: IAmFullTypeModel, renderManager: RenderManager): RenderTypeArgs<T1> {
   return {
     projManager: renderManager.projManager,
     config: getConfigForModel(model, renderManager.config.type),
     fullTypeInfo: model,
-    directory: dir,
-    fileName: model.name,
-    fileExtension: '.md',
-    filePath: path.join(dir, model.name) + '.md'
+    outputPath: renderManager.basePath
   }
 }
 
 function makeRenderMembersArgs<
-  TParent extends IAmTypeModel,
+  TParent extends IAmFullTypeModel,
   TMember extends MEMBER_TYPES_DEF,
   TConfig extends MEMBER_CONFIGURATIONS_DEF>
   (model: TParent, members: TMember[], config: TConfig, renderManager: RenderManager): RenderMembersArgs<TParent, TMember, TConfig> {
@@ -76,28 +67,37 @@ function makeRenderMembersArgs<
  */
 export default class RenderManager {
   config: Configuration;
-  path: string
+  basePath: string
   renderer: Renderer
   projManager: IAmProjectManager
 
-  render(projManager: IAmProjectManager): void {
-    this.projManager = projManager;
+  constructor(config: Configuration, basePath: string, renderer: Renderer, projManager: IAmProjectManager) {
+    this.config = config
+    this.basePath = basePath
+    this.renderer = renderer
+    this.projManager = projManager
+  }
+
+  render(): void {
     // Render each type in this project
-    projManager.types.forEach((type: IAmTypeModel) => {
-      if (type.isClass)
-        this.renderClass(type)
-      else if (type.isValueType)
-        this.renderStruct(type)
-      else if (type.isEnum)
-        this.renderEnum(type)
-      else if (type.isInterface)
-        this.renderInterface(type)
-      else 
-        this.renderDelegate(type)
+    this.projManager.types.forEach((type: IAmFullTypeModel) => {
+      if (!type.isFacade)
+      {
+        if (type.isClass)
+          this.renderClass(type)
+        else if (type.isValueType)
+          this.renderStruct(type)
+        else if (type.isEnum)
+          this.renderEnum(type)
+        else if (type.isInterface)
+          this.renderInterface(type)
+        else 
+          this.renderDelegate(type)
+      }      
     });
   }
 
-  renderClass(model: IAmTypeModel): void {    
+  renderClass(model: IAmFullTypeModel): void {        
     // Check config to determine what shall be rendered
     if (!this.shouldRender(model, this.config.type.class))
       return
@@ -106,14 +106,14 @@ export default class RenderManager {
     this.renderer.endRenderingClass(model, makeRenderTypeArgs(model, this))
   }
 
-  renderDelegate(model: IAmTypeModel): void {
+  renderDelegate(model: IAmFullTypeModel): void {
     if (!this.shouldRender(model, this.config.type.delegate))
       return
     this.renderer.beginRenderingDelegate(model, makeRenderTypeArgs(model, this))
     this.renderer.endRenderingDelegate(model, makeRenderTypeArgs(model, this))
   }
 
-  renderEnum(model: IAmTypeModel): void {
+  renderEnum(model: IAmFullTypeModel): void {
     if (!this.shouldRender(model, this.config.type.enum))
       return
     this.renderer.beginRenderingEnum(model, makeRenderTypeArgs(model, this))
@@ -121,7 +121,7 @@ export default class RenderManager {
     this.renderer.endRenderingEnum(model, makeRenderTypeArgs(model, this))
   }
 
-  renderInterface(model: IAmTypeModel): void {
+  renderInterface(model: IAmFullTypeModel): void {
     if (!this.shouldRender(model, this.config.type.interface))
       return
     this.renderer.beginRenderingInterface(model, makeRenderTypeArgs(model, this))
@@ -129,7 +129,7 @@ export default class RenderManager {
     this.renderer.endRenderingInterface(model, makeRenderTypeArgs(model, this))
   }
 
-  renderStruct(model: IAmTypeModel): void {
+  renderStruct(model: IAmFullTypeModel): void {
     if (!this.shouldRender(model, this.config.type.struct))
       return
     this.renderer.beginRenderingStruct(model, makeRenderTypeArgs(model, this))
@@ -137,7 +137,7 @@ export default class RenderManager {
     this.renderer.endRenderingStruct(model, makeRenderTypeArgs(model, this))
   }
 
-  renderMembers(model: IAmTypeModel): void {
+  renderMembers(model: IAmFullTypeModel): void {
     // Properties
     if (model.properties && model.properties.length > 0) {
       if (this.hasRenderableModels(model.properties, this.config.member.property)) {    
@@ -164,7 +164,7 @@ export default class RenderManager {
     }
   }
 
-  renderProperties(model: IAmTypeModel): void {
+  renderProperties(model: IAmFullTypeModel): void {
     this.renderOrganizedMembers(
       model.properties, 
       this.config.member.property, 
@@ -172,7 +172,7 @@ export default class RenderManager {
     )
   }
 
-  renderMethods(model: IAmTypeModel): void {
+  renderMethods(model: IAmFullTypeModel): void {
     this.renderOrganizedMembers(
       model.methods,
       this.config.member.method, 
@@ -180,7 +180,7 @@ export default class RenderManager {
     )
   }
 
-  renderEvents(model: IAmTypeModel): void {
+  renderEvents(model: IAmFullTypeModel): void {
     this.renderOrganizedMembers(
       model.events, 
       this.config.member.event, 
@@ -188,7 +188,7 @@ export default class RenderManager {
     )
   }
   
-  renderFields(model: IAmTypeModel): void {
+  renderFields(model: IAmFullTypeModel): void {
     this.renderOrganizedMembers(
       model.fields, 
       this.config.member.field, 
@@ -242,6 +242,7 @@ export default class RenderManager {
    * @returns true for to be rendered, false to skip rendering
    */
   shouldRender(model: AccessibilityModel, config: ConfigModel): boolean {
+    return true
     // Must process "internal protected" before other states because of it's composition of other states 
     // Otherwise it generates false truths in below conditionals
     if (model.isInternal && model.isProtected)
@@ -257,7 +258,6 @@ export default class RenderManager {
         model.isInternal && config.showIfInternal ||      
         model.isPrivate && config.showIfPrivate) 
       return true
-      
     return false
   }
 
@@ -282,8 +282,8 @@ export default class RenderManager {
     return false
   }
 
-  getFilePath(model: IAmTypeModel): string {
-    return path.join(this.path, this.getDirectory(model.fullName))
+  getFilePath(model: IAmFullTypeModel): string {
+    return path.join(this.basePath, this.getDirectory(model.fullName))
   }
 
   /**

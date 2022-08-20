@@ -4,13 +4,13 @@ import FieldModel from "./members/FieldModel";
 import MethodModel from "./members/MethodModel";
 import PropertyModel from "./members/PropertyModel";
 import CommonComment from "../written/CommonComment";
-import IAmTypeModel from "./interfaces/IAmTypeModel";
+import IAmTypeModel from "./interfaces/IAmFullTypeModel";
 import AccessibilityModel from "./AccessibilityModel";
 import AssemblyModel from "../AssemblyModel";
 import IAmProjectManager from "../../ProjectManager";
 import IAmSlicedTypeModel from "./interfaces/types/IAmSlicedTypeModel";
 import path = require("path");
-import TypeLink from "../../rendering/TypeLink";
+import TypeLink from "../../renderer/TypeLink";
 
 @jsonObject()
 export default class TypeModel
@@ -19,7 +19,7 @@ export default class TypeModel
 
   @jsonMember(String, { name: 'BaseType' })
   _baseType: string = null
-  baseType: IAmTypeModel
+  baseType: IAmTypeModel | null = null
 
   @jsonMember(String, { name: 'Namespace' })
   namespace: string = null
@@ -87,6 +87,9 @@ export default class TypeModel
   @jsonMember(String, { name: 'Id' })
   id: string
 
+  @jsonMember(Boolean, { name: 'IsFacade' })
+  isFacade: boolean
+
   bind(projManager: IAmProjectManager): void {
     // Bind to baseType
     this.baseType = projManager.types.get(this._baseType)
@@ -137,10 +140,14 @@ export default class TypeModel
    * @returns A complete relative path to the target type.
    */
   getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string = (to, fileEx) => {
-    const from = this.getFilePath()
-    const _to = to.getFilePath()
+    const from = this.getFilePathWithEx(fileEx)
+    const _to = to.getFilePathWithEx(fileEx)
     // Resolve the relative path and ensure the file ends with a .<file extension>
-    return path.relative(from, _to).concat(fileEx.charAt(0) == '.' ? fileEx : '.'.concat(fileEx))
+    return path.relative(from, _to)
+  }
+
+  getFilePathWithEx(fileEx: string): string {
+    return this.getFilePath().concat(fileEx.charAt(0) == '.' ? fileEx : '.'.concat(fileEx))
   }
 
   /**
@@ -148,8 +155,10 @@ export default class TypeModel
    * @returns A complete path using the namespace and type name.
    */
   getFilePath(): string {
-    const segments = this.namespace.split('.')
-    segments.push(this.name)
-    return segments.join('/')
+    return this.getDirectory() + '/' + this.getName()
+  }
+
+  getDirectory(): string {
+    return this.namespace.split('.').join('/')
   }
 }

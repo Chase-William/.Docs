@@ -1,7 +1,7 @@
 import FieldConfigModel from "../../models/config/members/FieldConfigModel"
 import IAmFieldModel from "../../models/language/interfaces/members/IAmFieldModel"
 import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
-import RenderMembersArgs from "../../rendering/RenderMembersArgs"
+import RenderMembersArgs from "../../renderer/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { check, optionalDivider, renderIsStaticTag, renderTypeName } from "../Util"
 

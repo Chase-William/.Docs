@@ -1,9 +1,9 @@
-import TypeLink from "../../../../rendering/TypeLink"
+import TypeLink from "../../../../renderer/TypeLink"
 import AssemblyModel from "../../../AssemblyModel"
 import CommonComment from "../../../written/CommonComment"
 import IAmAccessibilityModel from "../IAmAccessibilityModel"
 import IAmModel from "../IAmModel"
-import IAmTypeModel from "../IAmTypeModel"
+import IAmTypeModel from "../IAmFullTypeModel"
 
 export default interface IAmSlicedTypeModel
   extends IAmAccessibilityModel,
@@ -25,5 +25,7 @@ export default interface IAmSlicedTypeModel
   getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink
   getName(): string
   getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string
+  getFilePathWithEx(fileEx: string): string
   getFilePath(): string
+  getDirectory(): string
 }

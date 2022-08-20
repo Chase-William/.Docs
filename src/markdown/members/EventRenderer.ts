@@ -1,7 +1,7 @@
 import EventConfigModel from "../../models/config/members/EventConfigModel"
 import IAmEventModel from "../../models/language/interfaces/members/IAmEventModel"
 import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
-import RenderMembersArgs from "../../rendering/RenderMembersArgs"
+import RenderMembersArgs from "../../renderer/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderIsStaticTag, renderVirtualAndStaticTags } from "../Util"
 

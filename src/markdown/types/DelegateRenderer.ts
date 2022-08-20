@@ -2,7 +2,7 @@
 import DelegateConfigModel from "../../models/config/types/DelegateConfigModel";
 import IAmParameterModel from "../../models/language/interfaces/IAmParameterModel";
 import IAmDelegateModel from "../../models/language/interfaces/types/IAmDelegateModel";
-import RenderTypeArgs from "../../rendering/RenderTypeArgs";
+import RenderTypeArgs from "../../renderer/RenderTypeArgs";
 import divider from "../Util";
 
 export default function renderDelegate(model: IAmDelegateModel, args: RenderTypeArgs<DelegateConfigModel>): string {

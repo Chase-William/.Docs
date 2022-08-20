@@ -3,7 +3,7 @@ import IAmAccessibilityModel from "../IAmAccessibilityModel";
 import IAmModel from "../IAmModel";
 import IAmPolymorphicable from "../IAmPolymorphicable";
 import IAmSingletonable from "../IAmSingletonable";
-import IAmTypeModel from "../IAmTypeModel";
+import IAmTypeModel from "../IAmFullTypeModel";
 
 export default interface IAmPropertyModel 
   extends 

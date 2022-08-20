@@ -1,7 +1,7 @@
 import PropertyConfigModel from "../../models/config/members/PropertyConfigModel"
 import IAmPropertyModel from "../../models/language/interfaces/members/IAmPropertyModel"
 import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
-import RenderMembersArgs from "../../rendering/RenderMembersArgs"
+import RenderMembersArgs from "../../renderer/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderIsStaticTag, renderTypeName, renderVirtualAndStaticTags } from "../Util"
 
@@ -91,7 +91,9 @@ export default class PropertyRenderer {
     return ''
   }
   
-  renderPropertyHeader(prop: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {
+  renderPropertyHeader(prop: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {   
+    if (!prop.type)
+      console.log(prop)
     return (
       `### ${prop.name} ${renderTypeName(prop.type)}` +
       renderIsStaticTag(prop, args.config) +

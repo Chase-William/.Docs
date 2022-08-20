@@ -1,5 +1,5 @@
 import { AnyT, jsonMember, jsonObject } from 'typedjson';
-import IAmTypeModel from '../interfaces/IAmTypeModel';
+import IAmTypeModel from '../interfaces/IAmFullTypeModel';
 import CommonComment from '../../written/CommonComment';
 import MemberModel from './MemberModel';
 import IAmFieldModel from '../interfaces/members/IAmFieldModel';

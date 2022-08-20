@@ -20,7 +20,7 @@ export default class LocalProjectModel {
   assembly: AssemblyModel
 
   bind(projManager: ProjectManager): void {
-    // Bind the assembly & project in a bi-directional fashion
+    // Bind the assembly & project in a bi-directional fashion    
     const assembly = projManager.assemblies.get(this._assemblyId)
     this.assembly = assembly
     assembly.project = this

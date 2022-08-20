@@ -13,21 +13,10 @@ export default class RenderTypeArgs<TConfig extends TYPE_CONFIGURATIONS_DEF> {
   /**
    * A path to the file that includes it's name and extension.
    */
-  filePath: string
-  /**
-   * The directory the file will reside in.
-   */
-  directory: string
-  /**
-   * The file's name without extension.
-   */
-  fileName: string
-  /**
-   * The file's extension.
-   */
-  fileExtension: string
 
   fullTypeInfo: IAmSlicedTypeModel
+
+  outputPath: string
 
   projManager: IAmProjectManager
 }

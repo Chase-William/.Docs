@@ -4,11 +4,9 @@ import Configuration, { loadConfiguration } from "./models/config/Configuration"
 import { execSync } from "child_process";
 
 export default class Router {
-  outputPath = './docs'
+  outputPath = '.docs'
   docsharkCoreExePath = 'Docshark.Runner.exe'
   csProjPath: string
-  // dllPath: string
-  // xmlPath: string
   config: Configuration
 
   constructor(args: string[]) {
@@ -31,15 +29,10 @@ export default class Router {
         case '--development-env':
           {
             const devBasePath = process.cwd()
-            this.docsharkCoreExePath = path.join(devBasePath, 'vendor\\Docshark.Core\\src\\Docshark.Runner\\bin\\Debug\\net6.0\\Docshark.Runner.exe')
+            this.docsharkCoreExePath = path.join(devBasePath, 'vendor\\DotDocs.Core\\src\\DotDocs.Runner\\bin\\Debug\\net6.0\\DotDocs.Runner.exe')
             if (args[++i] == '--core') {
-              this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\src\\Docshark.Core\\Docshark.Core.csproj')
-            } else {
-              this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\Docshark.Test.Data.csproj')
-            }            
-            // this.csProjPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\Docshark.Test.Data.csproj')
-            // this.dllPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\bin\\Debug\\net6.0\\Docshark.Test.Data.dll')
-            // this.xmlPath = path.join(devBasePath, 'vendor\\Docshark.Core\\test\\Docshark.Test.Data\\bin\\Debug\\net6.0\\Docshark.Test.Data.xml')
+              this.csProjPath = path.join(devBasePath, 'vendor\\DotDocs.Core\\src\\DotDocs.Core\\DotDocs.Core.csproj')
+            }
             this.config = loadConfiguration(devBasePath, './configurations/external-perspective.json')
           }
         return
@@ -135,7 +128,7 @@ export default class Router {
    * @param fileName 
    */
   routeDefaultConfig(basePath: string, fileName: string): void {
-    if (basePath.includes('docshark.exe')) {
+    if (basePath.includes('DotDocs.exe')) {
       this.config = loadConfiguration(basePath, fileName)
     } else {
       this.config = loadConfiguration(process.cwd(), fileName)

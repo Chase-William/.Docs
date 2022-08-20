@@ -1,7 +1,7 @@
 import MethodConfigModel from "../../models/config/members/MethodConfigModel"
 import IAmMethodModel from "../../models/language/interfaces/members/IAmMethodModel"
 import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
-import RenderMembersArgs from "../../rendering/RenderMembersArgs"
+import RenderMembersArgs from "../../renderer/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
 import divider, { renderTypeName, renderVirtualAndStaticTags } from "../Util"
 
@@ -27,7 +27,7 @@ function renderMethodReturn(method: IAmMethodModel, args: RenderMembersArgs<IAmS
 
 function renderMethodParams(method: IAmMethodModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): string {
   let content = ''
-  method.parameters.forEach(param => {
+  method.parameters.forEach(param => {    
     content += (
       '\n- *@param* ' +
       `${param.name} ${renderTypeName(param.type)}`
