@@ -31,7 +31,7 @@ export default class TypeModel
   fullName: string = null
 
   @jsonMember(CommonComment, { name: 'Comments' })
-  comments: CommonComment
+  comments: CommonComment | null = null
 
   @jsonMember(String, { name: 'AssemblyName' })
   _assemblyId: string
@@ -117,13 +117,13 @@ export default class TypeModel
     return indexOfGraveAccent > 0 ? this.name.slice(0, indexOfGraveAccent) : this.name
   }
 
-  getNameWithGenerics(fileEx: string): { name: TypeLink, generics: TypeLink[] } {
-    const name = new TypeLink(this.getName(), null, this.comments)
+  getNameWithGenerics(fileEx: string): { root: TypeLink, generics: TypeLink[] } {
+    const root = new TypeLink(this.getName(), null, this.comments)
     const generics = new Array<TypeLink>()
     this.genericTypeArguments.forEach(arg => generics.push(this.getTypeLinkToOther(arg, fileEx)))
     this.genericTypeParameters.forEach(param => generics.push(this.getTypeLinkToOther(param, fileEx)))
     return {
-      name: name,
+      root: root,
       generics: generics
     }
   }

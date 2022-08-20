@@ -1,22 +1,22 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">ProjectLoadContext</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Assemblies <code><p title="undefined">[object Object]</p><<p title="undefined">String</p>,<p title="undefined">AssemblyModel</p>></code> `static` `readonly`
+### Assemblies <code><span title="null">IReadOnlyDictionary</span><<span title="undefined">String</span>,<span title="undefined">AssemblyModel</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### FullProjectTypeMap <code><p title="undefined">[object Object]</p><<p title="undefined">String</p>,<p title="undefined">TypeModel</p>></code> `static` `readonly`
+### FullProjectTypeMap <code><span title="null">IReadOnlyDictionary</span><<span title="undefined">String</span>,<span title="undefined">TypeModel</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjects <code><p title="undefined">[object Object]</p><<p title="undefined">LocalProjectModel</p>></code> `static` `readonly`
+### LocalProjects <code><span title="null">List</span><<span title="undefined">LocalProjectModel</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### RootProject <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### RootProject <code><span title="null">LocalProjectModel</span></code> `static` `readonly`
 
 Summary not provided.
 
@@ -28,7 +28,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* csProjPath <code><p title="undefined">[object Object]</p></code>
+- *@param* csProjPath <code><span title="null">String</span></code>
 
 - *@returns* 
 
@@ -42,7 +42,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 
@@ -68,8 +68,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* projectFile <code><p title="undefined">[object Object]</p></code>
-- *@param* processedFiles <code><p title="undefined">[object Object]</p><<p title="undefined">String</p>></code>
+- *@param* projectFile <code><span title="null">String</span></code>
+- *@param* processedFiles <code><span title="null">List</span><<span title="undefined">String</span>></code>
 
 - *@returns* 
 
@@ -77,7 +77,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* outputPath <code><p title="undefined">[object Object]</p></code>
+- *@param* outputPath <code><span title="null">String</span></code>
 
 - *@returns* 
 
@@ -103,14 +103,14 @@ Summary not provided.
 
 ## `public` Fields
 
-### ASSEMBLIES_FILE <code><p title="undefined">[object Object]</p></code> `const`
+### ASSEMBLIES_FILE <code><span title="null">String</span></code> `const`
 
 Summary not provided.
 
-### PROJECTS_FILE <code><p title="undefined">[object Object]</p></code> `const`
+### PROJECTS_FILE <code><span title="null">String</span></code> `const`
 
 Summary not provided.
 
-### TYPES_FILE <code><p title="undefined">[object Object]</p></code> `const`
+### TYPES_FILE <code><span title="null">String</span></code> `const`
 
 Summary not provided.

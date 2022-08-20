@@ -1,4 +1,4 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">Extensions</span></code>
 
 Summary not provided.
 
@@ -10,7 +10,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 
@@ -18,7 +18,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* assembly <code><p title="undefined">[object Object]</p></code>
+- *@param* assembly <code><span title="null">Assembly</span></code>
 
 - *@returns* 
 
@@ -26,7 +26,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* type <code><p title="undefined">[object Object]</p></code>
+- *@param* type <code><span title="null">Type</span></code>
 
 - *@returns* 
 
@@ -34,7 +34,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* type <code><p title="undefined">[object Object]</p></code>
+- *@param* type <code><span title="null">Type</span></code>
 
 - *@returns* 
 
@@ -42,7 +42,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* type <code><p title="undefined">[object Object]</p></code>
+- *@param* type <code><span title="null">Type</span></code>
 
 - *@returns* 
 
@@ -50,7 +50,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* type <code><p title="undefined">[object Object]</p></code>
+- *@param* type <code><span title="null">Type</span></code>
 
 - *@returns* 
 
@@ -58,7 +58,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* type <code><p title="undefined">[object Object]</p></code>
+- *@param* type <code><span title="null">Type</span></code>
 
 - *@returns* 
 
@@ -72,7 +72,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* project <code><p title="undefined">[object Object]</p></code>
+- *@param* project <code><span title="null">LocalProjectModel</span></code>
 
 - *@returns* 
 
@@ -86,7 +86,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* type <code><p title="undefined">[object Object]</p></code>
+- *@param* type <code><span title="null">Type</span></code>
 
 - *@returns* 
 

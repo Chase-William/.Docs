@@ -1,4 +1,4 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">FieldModel</span></code>
 
 ```
 ட MemberModelFieldInfo, CommonComments>
@@ -10,51 +10,51 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><p title="undefined">[object Object]</p></code>
+### Comments <code><span title="null">CommonComments</span></code>
 
 Summary not provided.
 
-### Info <code><p title="undefined">[object Object]</p></code>
+### Info <code><span title="null">FieldInfo</span></code>
 
 Summary not provided.
 
-### IsInternal <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsInternal <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsLiteral <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsLiteral <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPrivate <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsPrivate <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsProtected <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsProtected <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPublic <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsPublic <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsReadonly <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsReadonly <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsStatic <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsStatic <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><p title="undefined">[object Object]</p></code> `static` `virtual` `readonly`
+### Name <code><span title="null">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### RawConstantValue <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### RawConstantValue <code><span title="null">Object</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><p title="undefined">[object Object]</p></code>
+### Type <code><span title="null">String</span></code>
 
 Summary not provided.
 
@@ -66,7 +66,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 

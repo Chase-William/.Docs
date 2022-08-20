@@ -11,7 +11,7 @@ export default interface IAmSlicedTypeModel
   baseType: IAmTypeModel
   namespace: string
   fullName: string
-  comments: CommonComment
+  comments: CommonComment | null
   assembly: AssemblyModel
   genericTypeArguments: IAmTypeModel[]
   genericTypeParameters: IAmTypeModel[]
@@ -21,7 +21,7 @@ export default interface IAmSlicedTypeModel
   metadataToken: number
   id: string
 
-  getNameWithGenerics(fileEx: string): { name: TypeLink, generics: TypeLink[] }
+  getNameWithGenerics(fileEx: string): { root: TypeLink, generics: TypeLink[] }
   getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink
   getName(): string
   getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string

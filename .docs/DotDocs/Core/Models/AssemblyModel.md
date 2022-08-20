@@ -1,22 +1,22 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">AssemblyModel</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Assembly <code><p title="undefined">[object Object]</p></code>
+### Assembly <code><span title="null">Assembly</span></code>
 
 Summary not provided.
 
-### FullName <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### FullName <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Id <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Id <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Name <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
@@ -28,7 +28,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 

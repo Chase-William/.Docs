@@ -1,4 +1,4 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">PropertyModel</span></code>
 
 ```
 ட MemberModelPropertyInfo, CommonComments>
@@ -10,87 +10,87 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><p title="undefined">[object Object]</p></code>
+### Comments <code><span title="null">CommonComments</span></code>
 
 Summary not provided.
 
-### HasGetter <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### HasGetter <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### HasSetter <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### HasSetter <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Info <code><p title="undefined">[object Object]</p></code>
+### Info <code><span title="null">PropertyInfo</span></code>
 
 Summary not provided.
 
-### IsAbstract <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsAbstract <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetInternal <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsGetInternal <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetPrivate <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsGetPrivate <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetProtected <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsGetProtected <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetPublic <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsGetPublic <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsInternal <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsInternal <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPrivate <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsPrivate <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsProtected <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsProtected <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPublic <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsPublic <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetInternal <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsSetInternal <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetPrivate <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsSetPrivate <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetProtected <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsSetProtected <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetPublic <code><p title="undefined">[object Object]</p><<p title="undefined">Boolean</p>></code> `static` `readonly`
+### IsSetPublic <code><span title="null">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsStatic <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsStatic <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsVirtual <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsVirtual <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><p title="undefined">[object Object]</p></code> `static` `virtual` `readonly`
+### Name <code><span title="null">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Type <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Type <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
@@ -102,7 +102,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 

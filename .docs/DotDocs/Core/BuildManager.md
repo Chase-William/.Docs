@@ -1,10 +1,10 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">BuildManager</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### ProjectContext <code><p title="undefined">[object Object]</p></code>
+### ProjectContext <code><span title="null">ProjectLoadContext</span></code>
 
 Summary not provided.
 
@@ -22,7 +22,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 
@@ -78,6 +78,6 @@ Summary not provided.
 
 ## `public` Fields
 
-### DOCSHARK_CORE_ROOT_FOLDER <code><p title="undefined">[object Object]</p></code> `const`
+### DOCSHARK_CORE_ROOT_FOLDER <code><span title="null">String</span></code> `const`
 
 Summary not provided.

@@ -1,4 +1,4 @@
-# <code><p title="undefined">[object Object]</p><<p title="undefined">T1</p>,<p title="undefined">T2</p>></code>
+# <code><span title="null">MemberModel</span><<span title="undefined">T1</span>,<span title="undefined">T2</span>></code>
 
 ```
 ட Model
@@ -9,15 +9,15 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><p title="undefined">[object Object]</p></code>
+### Comments <code><span title="null">T2</span></code>
 
 Summary not provided.
 
-### Info <code><p title="undefined">[object Object]</p></code>
+### Info <code><span title="null">T1</span></code>
 
 Summary not provided.
 
-### Name <code><p title="undefined">[object Object]</p></code> `static` `virtual` `readonly`
+### Name <code><span title="null">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
@@ -29,7 +29,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 
@@ -63,6 +63,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* ided.
+- *@returns* ne
 
-- *@returns* * 
+Summary not provided.
+
+- *@returns* ns* 

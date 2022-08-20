@@ -1,4 +1,4 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">RequiredTypePropertyNullException</span></code>
 
 ```
 ட Exception
@@ -9,43 +9,43 @@ Summary not provided.
 
 ## `public` Properties
 
-### Data <code><p title="undefined">[object Object]</p></code> `static` `virtual` `readonly`
+### Data <code><span title="null">IDictionary</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### HelpLink <code><p title="undefined">[object Object]</p></code> `virtual`
+### HelpLink <code><span title="null">String</span></code> `virtual`
 
 Summary not provided.
 
-### HResult <code><p title="undefined">[object Object]</p></code>
+### HResult <code><span title="null">Int32</span></code>
 
 Summary not provided.
 
-### InnerException <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### InnerException <code><span title="null">Exception</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Message <code><p title="undefined">[object Object]</p></code> `static` `virtual` `readonly`
+### Message <code><span title="null">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### PropertyName <code><p title="undefined">[object Object]</p></code>
+### PropertyName <code><span title="null">String</span></code>
 
 Summary not provided.
 
-### Source <code><p title="undefined">[object Object]</p></code> `virtual`
+### Source <code><span title="null">String</span></code> `virtual`
 
 Summary not provided.
 
-### StackTrace <code><p title="undefined">[object Object]</p></code> `static` `virtual` `readonly`
+### StackTrace <code><span title="null">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### TargetSite <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### TargetSite <code><span title="null">MethodBase</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><p title="undefined">[object Object]</p></code>
+### Type <code><span title="null">Type</span></code>
 
 Summary not provided.
 
@@ -57,7 +57,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 
@@ -77,8 +77,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* info <code><p title="undefined">[object Object]</p></code>
-- *@param* context <code><p title="undefined">[object Object]</p></code>
+- *@param* info <code><span title="null">SerializationInfo</span></code>
+- *@param* context <code><span title="null">StreamingContext</span></code>
 
 - *@returns* 
 

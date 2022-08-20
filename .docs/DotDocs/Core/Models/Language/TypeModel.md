@@ -1,4 +1,4 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">TypeModel</span></code>
 
 ```
 ட Model
@@ -9,103 +9,103 @@ Summary not provided.
 
 ## `public` Properties
 
-### AssemblyId <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### AssemblyId <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### BaseType <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### BaseType <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Comments <code><p title="undefined">[object Object]</p></code>
+### Comments <code><span title="null">CommonComments</span></code>
 
 Summary not provided.
 
-### Events <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Events <code><span title="null">EventModel[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Fields <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Fields <code><span title="null">FieldModel[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### FullName <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### FullName <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### GenericTypeArguments <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### GenericTypeArguments <code><span title="null">String[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### GenericTypeParameters <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### GenericTypeParameters <code><span title="null">String[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Id <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Id <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsClass <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsClass <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsConstructedGenericType <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsConstructedGenericType <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsDelegate <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsDelegate <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsEnum <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsEnum <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsFacade <code><p title="undefined">[object Object]</p></code>
+### IsFacade <code><span title="null">Boolean</span></code>
 
 Summary not provided.
 
-### IsGenericParameter <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsGenericParameter <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGenericType <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsGenericType <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGenericTypeDefinition <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsGenericTypeDefinition <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsInterface <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsInterface <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### IsValueType <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### IsValueType <code><span title="null">Boolean</span></code> `static` `readonly`
 
 Summary not provided.
 
-### MetadataToken <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### MetadataToken <code><span title="null">Int32</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Methods <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Methods <code><span title="null">MethodModel[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><p title="undefined">[object Object]</p></code> `static` `virtual` `readonly`
+### Name <code><span title="null">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Namespace <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Namespace <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Properties <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Properties <code><span title="null">PropertyModel[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><p title="undefined">[object Object]</p></code>
+### Type <code><span title="null">TypeInfo</span></code>
 
 Summary not provided.
 
@@ -117,7 +117,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 

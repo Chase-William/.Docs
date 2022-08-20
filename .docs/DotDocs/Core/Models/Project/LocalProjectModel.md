@@ -1,42 +1,42 @@
-# <code><p title="undefined">[object Object]</p></code>
+# <code><span title="null">LocalProjectModel</span></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### AssemblyId <code><p title="undefined">[object Object]</p></code>
+### AssemblyId <code><span title="null">String</span></code>
 
 Summary not provided.
 
-### DefinedTypes <code><p title="undefined">[object Object]</p><<p title="undefined">TypeModel</p>></code> `static` `readonly`
+### DefinedTypes <code><span title="null">List</span><<span title="undefined">TypeModel</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### Id <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### Id <code><span title="null">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjects <code><p title="undefined">[object Object]</p></code> `static` `readonly`
+### LocalProjects <code><span title="null">String[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjectsAsObjects <code><p title="undefined">[object Object]</p><<p title="undefined">LocalProjectModel</p>></code>
+### LocalProjectsAsObjects <code><span title="null">List</span><<span title="undefined">LocalProjectModel</span>></code>
 
 Summary not provided.
 
-### ProjectDirectory <code><p title="undefined">[object Object]</p></code>
+### ProjectDirectory <code><span title="null">String</span></code>
 
 Summary not provided.
 
-### ProjectFileName <code><p title="undefined">[object Object]</p></code>
+### ProjectFileName <code><span title="null">String</span></code>
 
 Summary not provided.
 
-### ProjectName <code><p title="undefined">[object Object]</p></code>
+### ProjectName <code><span title="null">String</span></code>
 
 Summary not provided.
 
-### ProjectPath <code><p title="undefined">[object Object]</p></code>
+### ProjectPath <code><span title="null">String</span></code>
 
 Summary not provided.
 
@@ -48,7 +48,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><p title="undefined">[object Object]</p></code>
+- *@param* obj <code><span title="null">Object</span></code>
 
 - *@returns* 
 
@@ -56,7 +56,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* projectFile <code><p title="undefined">[object Object]</p></code>
+- *@param* projectFile <code><span title="null">String</span></code>
 
 - *@returns* 
 
