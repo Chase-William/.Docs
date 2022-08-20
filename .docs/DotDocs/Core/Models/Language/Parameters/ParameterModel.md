@@ -1,18 +1,18 @@
-# <code><span title="undefined">ParameterModel</span></code>
+# <code><a href="ParameterModel.md">ParameterModel</a></code>
 
 Summary not provided.
 
 ## `public` Properties
 
-### Info <code><span title="undefined">ParameterInfo</span></code>
+### Info <code><a href="..\..\..\..\..\System\Reflection\ParameterInfo.md">ParameterInfo</a></code>
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `readonly`
+### Name <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><span title="undefined">String</span></code> `static` `readonly`
+### Type <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
@@ -24,7 +24,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><a href="..\..\..\..\..\System\Object.md">Object</a></code>
 
 - *@returns* 
 

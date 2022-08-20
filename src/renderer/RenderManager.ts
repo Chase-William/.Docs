@@ -81,7 +81,7 @@ export default class RenderManager {
   render(): void {
     // Render each type in this project
     this.projManager.types.forEach((type: IAmFullTypeModel) => {
-      if (type.isRenderable())
+      if (!type.isRenderable())
         return
       if (type.isClass)
         this.renderClass(type)

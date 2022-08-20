@@ -1,4 +1,4 @@
-# <code><span title="undefined">PropertyModel</span></code>
+# <code><a href="PropertyModel.md">PropertyModel</a></code>
 
 ```
 ட 
@@ -10,87 +10,87 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><span title="undefined">CommonComments</span></code>
+### Comments <code><a href="..\..\..\..\..\LoxSmoke\DocXml\CommonComments.md">CommonComments</a></code>
 
 Summary not provided.
 
-### HasGetter <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### HasGetter <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### HasSetter <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### HasSetter <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Info <code><span title="undefined">PropertyInfo</span></code>
+### Info <code><a href="..\..\..\..\..\System\Reflection\PropertyInfo.md">PropertyInfo</a></code>
 
 Summary not provided.
 
-### IsAbstract <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsAbstract <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetInternal <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsGetInternal <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetPrivate <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsGetPrivate <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetProtected <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsGetProtected <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGetPublic <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsGetPublic <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsInternal <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsInternal <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPrivate <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsPrivate <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsProtected <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsProtected <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsPublic <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsPublic <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetInternal <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsSetInternal <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetPrivate <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsSetPrivate <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetProtected <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsSetProtected <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsSetPublic <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> `static` `readonly`
+### IsSetPublic <code><a href="..\..\..\..\..\System\Nullable.md">Nullable</a><<span title="undefined">Boolean</span>></code> `static` `readonly`
 
 Summary not provided.
 
-### IsStatic <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsStatic <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsVirtual <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsVirtual <code><a href="..\..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Name <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Type <code><span title="undefined">String</span></code> `static` `readonly`
+### Type <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
@@ -102,7 +102,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><a href="..\..\..\..\..\System\Object.md">Object</a></code>
 
 - *@returns* 
 

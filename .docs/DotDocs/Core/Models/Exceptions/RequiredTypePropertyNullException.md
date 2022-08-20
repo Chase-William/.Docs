@@ -1,4 +1,4 @@
-# <code><span title="undefined">RequiredTypePropertyNullException</span></code>
+# <code><a href="RequiredTypePropertyNullException.md">RequiredTypePropertyNullException</a></code>
 
 ```
 ட 
@@ -9,43 +9,43 @@ Summary not provided.
 
 ## `public` Properties
 
-### Data <code><span title="undefined">IDictionary</span></code> `static` `virtual` `readonly`
+### Data <code><a href="..\..\..\..\System\Collections\IDictionary.md">IDictionary</a></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### HelpLink <code><span title="undefined">String</span></code> `virtual`
+### HelpLink <code><a href="..\..\..\..\System\String.md">String</a></code> `virtual`
 
 Summary not provided.
 
-### HResult <code><span title="undefined">Int32</span></code>
+### HResult <code><a href="..\..\..\..\System\Int32.md">Int32</a></code>
 
 Summary not provided.
 
-### InnerException <code><span title="undefined">Exception</span></code> `static` `readonly`
+### InnerException <code><a href="..\..\..\..\System\Exception.md">Exception</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Message <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Message <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### PropertyName <code><span title="undefined">String</span></code>
+### PropertyName <code><a href="..\..\..\..\System\String.md">String</a></code>
 
 Summary not provided.
 
-### Source <code><span title="undefined">String</span></code> `virtual`
+### Source <code><a href="..\..\..\..\System\String.md">String</a></code> `virtual`
 
 Summary not provided.
 
-### StackTrace <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### StackTrace <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### TargetSite <code><span title="undefined">MethodBase</span></code> `static` `readonly`
+### TargetSite <code><a href="..\..\..\..\System\Reflection\MethodBase.md">MethodBase</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><span title="undefined">Type</span></code>
+### Type <code><a href="..\..\..\..\System\Type.md">Type</a></code>
 
 Summary not provided.
 
@@ -57,7 +57,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><a href="..\..\..\..\System\Object.md">Object</a></code>
 
 - *@returns* 
 
@@ -77,8 +77,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* info <code><span title="undefined">SerializationInfo</span></code>
-- *@param* context <code><span title="undefined">StreamingContext</span></code>
+- *@param* info <code><a href="..\..\..\..\System\Runtime\Serialization\SerializationInfo.md">SerializationInfo</a></code>
+- *@param* context <code><a href="..\..\..\..\System\Runtime\Serialization\StreamingContext.md">StreamingContext</a></code>
 
 - *@returns* 
 

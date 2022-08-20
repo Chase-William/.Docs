@@ -1,4 +1,4 @@
-# <code><span title="undefined">TypeModel</span></code>
+# <code><a href="TypeModel.md">TypeModel</a></code>
 
 ```
 ட 
@@ -9,111 +9,111 @@ Summary not provided.
 
 ## `public` Properties
 
-### AssemblyId <code><span title="undefined">String</span></code> `static` `readonly`
+### AssemblyId <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
-### BaseType <code><span title="undefined">String</span></code> `static` `readonly`
+### BaseType <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Comments <code><span title="undefined">CommonComments</span></code>
+### Comments <code><a href="..\..\..\..\LoxSmoke\DocXml\CommonComments.md">CommonComments</a></code>
 
 Summary not provided.
 
-### Events <code><span title="undefined">EventModel[]</span></code> `static` `readonly`
+### Events <code><a href="Members\EventModel[].md">EventModel[]</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Fields <code><span title="undefined">FieldModel[]</span></code> `static` `readonly`
+### Fields <code><a href="Members\FieldModel[].md">FieldModel[]</a></code> `static` `readonly`
 
 Summary not provided.
 
-### FullName <code><span title="undefined">String</span></code> `static` `readonly`
+### FullName <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
-### GenericTypeArguments <code><span title="undefined">String[]</span></code> `static` `readonly`
+### GenericTypeArguments <code><a href="..\..\..\..\System\String[].md">String[]</a></code> `static` `readonly`
 
 Summary not provided.
 
-### GenericTypeParameters <code><span title="undefined">String[]</span></code> `static` `readonly`
+### GenericTypeParameters <code><a href="..\..\..\..\System\String[].md">String[]</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Id <code><span title="undefined">String</span></code> `static` `readonly`
+### Id <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsArray <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsArray <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsByRef <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsByRef <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsClass <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsClass <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsConstructedGenericType <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsConstructedGenericType <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsDefinedInLocalProject <code><span title="undefined">Boolean</span></code>
+### IsDefinedInLocalProject <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code>
 
 Summary not provided.
 
-### IsDelegate <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsDelegate <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsEnum <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsEnum <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGenericParameter <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsGenericParameter <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGenericType <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsGenericType <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsGenericTypeDefinition <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsGenericTypeDefinition <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsInterface <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsInterface <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### IsValueType <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsValueType <code><a href="..\..\..\..\System\Boolean.md">Boolean</a></code> `static` `readonly`
 
 Summary not provided.
 
-### MetadataToken <code><span title="undefined">Int32</span></code> `static` `readonly`
+### MetadataToken <code><a href="..\..\..\..\System\Int32.md">Int32</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Methods <code><span title="undefined">MethodModel[]</span></code> `static` `readonly`
+### Methods <code><a href="Members\MethodModel[].md">MethodModel[]</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Name <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
-### Namespace <code><span title="undefined">String</span></code> `static` `readonly`
+### Namespace <code><a href="..\..\..\..\System\String.md">String</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Properties <code><span title="undefined">PropertyModel[]</span></code> `static` `readonly`
+### Properties <code><a href="Members\PropertyModel[].md">PropertyModel[]</a></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><span title="undefined">TypeInfo</span></code>
+### Type <code><a href="..\..\..\..\System\Reflection\TypeInfo.md">TypeInfo</a></code>
 
 Summary not provided.
 
@@ -125,7 +125,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><a href="..\..\..\..\System\Object.md">Object</a></code>
 
 - *@returns* 
 
