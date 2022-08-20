@@ -1,8 +1,8 @@
 # <code><span title="undefined">TypeModel</span></code>
 
 ```
-ட Model
-  ட Object
+ட 
+  ட 
 ```
 
 Summary not provided.

@@ -1,8 +1,8 @@
 # <code><span title="undefined">RequiredTypePropertyNullException</span></code>
 
 ```
-ட Exception
-  ட Object
+ட 
+  ட 
 ```
 
 Summary not provided.

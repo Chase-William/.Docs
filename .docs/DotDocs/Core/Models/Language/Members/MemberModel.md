@@ -1,8 +1,8 @@
-# <code><span title="undefined">MemberModel</span><<a href="..\T1.md">T1</a>, <a href="..\T2.md">T2</a>></code>
+# <code><span title="undefined">MemberModel</span><<a href="MemberModel.md">T1</a>, <a href="MemberModel.md">T2</a>></code>
 
 ```
-ட Model
-  ட Object
+ட 
+  ட 
 ```
 
 Summary not provided.
@@ -63,7 +63,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* ## MemberwiseClone
+- *@returns* eClone
 
 Summary not provided.
 

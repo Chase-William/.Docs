@@ -92,10 +92,13 @@ export default class PropertyRenderer {
   }
   
   renderPropertyHeader(prop: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {   
-    if (!prop.type)
-      console.log(prop)
+    // if (prop.name == 'FullProjectTypeMap')
+    //   {
+    //     //console.log(args.parent)
+    //     console.log(prop.type)
+    //   }
     return (
-      `### ${prop.name} ${renderTypeName(prop.type)}` +
+      `### ${prop.name} ${renderTypeName(args.parent, prop.type)}` +
       renderIsStaticTag(prop, args.config) +
       renderVirtualAndStaticTags(prop, args.config) +
       this.renderReadonlyTag(prop, args.config) +

@@ -1,8 +1,8 @@
 # <code><span title="undefined">RequiredAssemblyPropertyNullException</span></code>
 
 ```
-ட Exception
-  ட Object
+ட 
+  ட 
 ```
 
 Summary not provided.

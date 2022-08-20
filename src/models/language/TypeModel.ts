@@ -4,7 +4,7 @@ import FieldModel from "./members/FieldModel";
 import MethodModel from "./members/MethodModel";
 import PropertyModel from "./members/PropertyModel";
 import CommonComment from "../written/CommonComment";
-import IAmTypeModel from "./interfaces/IAmFullTypeModel";
+import IAmFullTypeModel from "./interfaces/IAmFullTypeModel";
 import AccessibilityModel from "./AccessibilityModel";
 import AssemblyModel from "../AssemblyModel";
 import IAmProjectManager from "../../ProjectManager";
@@ -15,11 +15,11 @@ import TypeLink from "../../renderer/TypeLink";
 @jsonObject()
 export default class TypeModel
   extends AccessibilityModel 
-  implements IAmTypeModel {
+  implements IAmFullTypeModel {
 
   @jsonMember(String, { name: 'BaseType' })
   _baseType: string = null
-  baseType: IAmTypeModel | null = null
+  baseType: IAmFullTypeModel | null = null
 
   @jsonMember(String, { name: 'Namespace' })
   namespace: string = null
@@ -66,11 +66,11 @@ export default class TypeModel
 
   @jsonArrayMember(String, { name: 'GenericTypeArguments' })
   _genericTypeArguments: string[]
-  genericTypeArguments: IAmTypeModel[]
+  genericTypeArguments: IAmFullTypeModel[]
   
   @jsonArrayMember(String, { name: 'GenericTypeParameters' })
   _genericTypeParameters: string[]
-  genericTypeParameters: IAmTypeModel[]
+  genericTypeParameters: IAmFullTypeModel[]
 
   @jsonMember(Boolean, { name: 'IsConstructedGenericType' })
   isConstructedGenericType: boolean
@@ -117,19 +117,19 @@ export default class TypeModel
     return indexOfGraveAccent > 0 ? this.name.slice(0, indexOfGraveAccent) : this.name
   }
 
-  getNameWithGenerics(fileEx: string): { root: TypeLink, generics: TypeLink[] } {
-    const root = new TypeLink(this, null, fileEx)
+  getNameWithGenerics(constructableType: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] } {
+    const root = new TypeLink(this, constructableType, null, fileEx)
     const generics = new Array<TypeLink>()
-    this.genericTypeArguments.forEach(arg => generics.push(this.getTypeLinkToOther(arg, fileEx)))
-    this.genericTypeParameters.forEach(param => generics.push(this.getTypeLinkToOther(param, fileEx)))
+    constructableType.genericTypeArguments.forEach(arg => generics.push(this.getTypeLinkToOther(constructableType, arg, fileEx)))
+    constructableType.genericTypeParameters.forEach(param => generics.push(this.getTypeLinkToOther(constructableType, param, fileEx)))        
     return {
       root: root,
       generics: generics
     }
   }
 
-  getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink {
-    return new TypeLink(this, to, fileEx)
+  getTypeLinkToOther(foundationalType: IAmSlicedTypeModel, targetType: IAmSlicedTypeModel, fileEx: string): TypeLink {
+    return new TypeLink(this, foundationalType, targetType, fileEx)
   }
 
   /**
@@ -140,22 +140,18 @@ export default class TypeModel
    * @returns A complete relative path to the target type.
    */
   getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string = (to, fileEx) => {
-    const from = this.getFilePathWithEx(fileEx)
-    const _to = to.getFilePathWithEx(fileEx)
+    const from = this.getDirectory()
+    const _to = to.getDirectory()
     // Resolve the relative path and ensure the file ends with a .<file extension>
-    return path.relative(from, _to)
+    return path.join(path.relative(from, _to), this.getFileNameWithEx(fileEx))
   }
-
+  
   getFilePathWithEx(fileEx: string): string {
-    return this.getFilePath().concat(fileEx.charAt(0) == '.' ? fileEx : '.'.concat(fileEx))
-  }
+    return path.join(this.getDirectory(), this.getFileNameWithEx(fileEx))
+  }  
 
-  /**
-   * Gets the path with the current file's name included.
-   * @returns A complete path using the namespace and type name.
-   */
-  getFilePath(): string {
-    return this.getDirectory() + '/' + this.getName()
+  getFileNameWithEx(fileEx: string): string {
+    return this.getName().concat(fileEx.charAt(0) == '.' ? fileEx : '.'.concat(fileEx))
   }
 
   getDirectory(): string {

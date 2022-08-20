@@ -1,8 +1,8 @@
 # <code><span title="undefined">PropertyModel[]</span></code>
 
 ```
-ட Array
-  ட Object
+ட 
+  ட 
 ```
 
 Summary not provided.

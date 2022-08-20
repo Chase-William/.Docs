@@ -1,9 +1,9 @@
 # <code><span title="undefined">PropertyModel</span></code>
 
 ```
-ட MemberModelPropertyInfo, CommonComments>
-  ட Model
-    ட Object
+ட 
+  ட 
+    ட 
 ```
 
 Summary not provided.

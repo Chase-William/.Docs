@@ -16,7 +16,7 @@ export function renderField(field: IAmFieldModel, args: RenderMembersArgs<IAmSli
 
 function renderFieldHeader(field: IAmFieldModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): string {
   return (
-    `### ${field.name} ${renderTypeName(field.type)}` +
+    `### ${field.name} ${renderTypeName(args.parent, field.type)}` +
     renderIsStaticTag(field, args.config) +
     (field.isLiteral ? ' `const`' : '') +
     (field.isReadonly ? ' `readonly`' : '')

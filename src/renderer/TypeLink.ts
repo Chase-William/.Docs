@@ -1,9 +1,9 @@
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel"
-import CommonComment from "../models/written/CommonComment"
 
 export default class TypeLink {
   name: string = null
   filePath: string | null = null
+  foundationalType: IAmSlicedTypeModel
   from: IAmSlicedTypeModel
   to: IAmSlicedTypeModel | null = null
 
@@ -13,14 +13,17 @@ export default class TypeLink {
   //   this.comments = comments
   // }
 
-  constructor(from: IAmSlicedTypeModel, to: IAmSlicedTypeModel | null, fileEx: string) {
+  constructor(from: IAmSlicedTypeModel, foundationalType: IAmSlicedTypeModel, to: IAmSlicedTypeModel | null, fileEx: string) {
+    this.from = from
     if (to) {
-      this.name = to.getName()
-      this.filePath = from.getFilePathToOther(to, fileEx)      
       this.to = to
+      this.name = to.getName()
+      // Prevent linking to types that do not have their own referenceable location
+      if (!to.isFacade)
+        this.filePath = from.getFilePathToOther(to, fileEx)            
     }
     else
-      this.name = from.getName()
-    this.from = from
+      this.name = foundationalType.getName()
+    this.foundationalType = foundationalType
   }
 }

@@ -1,8 +1,8 @@
 # <code><span title="undefined">MethodModel[]</span></code>
 
 ```
-ட Array
-  ட Object
+ட 
+  ட 
 ```
 
 Summary not provided.

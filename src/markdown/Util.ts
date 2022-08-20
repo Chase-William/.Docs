@@ -26,12 +26,12 @@ export function optionalDivider(col: unknown): string {
   return divider()
 }
 
-export function renderTypeHeader(model: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
+export function renderTypeHeader(from: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
   return (
-    `# ${renderTypeName(model)}` +
+    `# ${renderTypeName(from, from)}` +
     divider() + 
-    renderTypeInheritanceBlock(model, args) +
-    getOptionalSummary(model.comments) +
+    renderTypeInheritanceBlock(from, args) +
+    getOptionalSummary(from.comments) +
     divider()
   )
 }
@@ -64,8 +64,8 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
   return content
 }
 
-export function renderTypeName(type: IAmSlicedTypeModel): string {
-  const nameParts = type.getNameWithGenerics('.md')
+export function renderTypeName(from: IAmSlicedTypeModel, constructableType: IAmSlicedTypeModel): string {
+  const nameParts = from.getNameWithGenerics(constructableType, '.md')
   return (
     `<code><span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>${(nameParts.generics.length > 0 ? ('<' + renderGenerics(nameParts.generics) + '>') : '')}</code>`
   )
@@ -78,6 +78,6 @@ export function renderTypeName(type: IAmSlicedTypeModel): string {
  */
 function renderGenerics(generics: TypeLink[]): string {
   return generics.map(v => {
-    return !v.to || !v.filePath || v.to?.isFacade ? `<span title="${v.to.comments?.summary}">${v.name}</span>` : `<a href="${v.filePath}">${v.name}</a>`
+    return v.to.isFacade ? `<span title="${v.to.comments?.summary}">${v.name}</span>` : `<a href="${v.filePath}">${v.name}</a>`
   }).join(', ')
 }

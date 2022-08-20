@@ -8,7 +8,7 @@ Summary not provided.
 
 Summary not provided.
 
-### DefinedTypes <code><span title="undefined">List</span><<a href="..\..\..\..\DotDocs\Core\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
+### DefinedTypes <code><span title="undefined">List</span><<a href="Language\LocalProjectModel.md">TypeModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
@@ -20,7 +20,7 @@ Summary not provided.
 
 Summary not provided.
 
-### LocalProjectsAsObjects <code><span title="undefined">List</span><<a href="..\..\..\..\DotDocs\Core\Models\LocalProjectModel.md">LocalProjectModel</a>></code>
+### LocalProjectsAsObjects <code><span title="undefined">List</span><<a href="LocalProjectModel.md">LocalProjectModel</a>></code>
 
 Summary not provided.
 

@@ -22,11 +22,11 @@ export default interface IAmSlicedTypeModel
   id: string
   isFacade: boolean
 
-  getNameWithGenerics(fileEx: string): { root: TypeLink, generics: TypeLink[] }
-  getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink
+  getNameWithGenerics(constructableType: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] }
+  getTypeLinkToOther(foundationalType: IAmSlicedTypeModel, targetType: IAmSlicedTypeModel, fileEx: string): TypeLink
   getName(): string
-  getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string
+  getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string 
   getFilePathWithEx(fileEx: string): string
-  getFilePath(): string
+  getFileNameWithEx(fileEx: string): string
   getDirectory(): string
 }

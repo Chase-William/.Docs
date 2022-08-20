@@ -20,7 +20,7 @@ export function renderTypeInheritanceBlock(model: IAmSlicedTypeModel, args: Rend
   for (let i = 0; i < baseTypes.length; i++) {
     content += (
       renderIndent(i) +
-      renderTypeNameWithArguments(baseTypes[i], args) +
+      // renderTypeNameWithArguments(baseTypes[i], args) +
       '\n'
     )
   }
@@ -40,33 +40,33 @@ function renderIndent(index: number): string {
 
 // ˪ட―↘ ↳
 
-export function renderTypeNameWithArguments(type: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
-  if (type.genericTypeArguments.length > 0) {
-    /*
-    Get only the text before the "`" which signifies arguments.
-    Then remove the leading namespace.
-    */         
-    let content = type.name.substring(0, type.name.indexOf('`'))
-    // content = getTypeNameWithoutNamespace(content) + '<'
-    // Get all arguments' full type def
-    for (let i = 0; i < type.genericTypeArguments.length; i++) {
-      // Get type from dictionary of types
-      const definition = type.genericTypeArguments[i]
-      // Check if recursive processing of the type's argumented types is needed
-      content += definition.name
-      // if (definition instanceof TypeDefinition) {
-      //   if (definition.typeArguments.length > 0)
-      //     content += renderTypeNameWithArguments(definition, args)
-      //   else { 
-      //     // has no arguments, just add type name
-      //     content += getTypeNameWithoutNamespace(definition.typeDescription)
-      //   }
-      // }
-      // Only add a comma to the end if it is not the last argument
-      if ((i + 1) < type.genericTypeArguments.length)
-        content += ', '
-    }
-    return content + '>'
-  }
-  return type.name
-}
+// export function renderTypeNameWithArguments(type: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
+//   if (type.genericTypeArguments.length > 0) {
+//     /*
+//     Get only the text before the "`" which signifies arguments.
+//     Then remove the leading namespace.
+//     */         
+//     let content = type.name.substring(0, type.name.indexOf('`'))
+//     // content = getTypeNameWithoutNamespace(content) + '<'
+//     // Get all arguments' full type def
+//     for (let i = 0; i < type.genericTypeArguments.length; i++) {
+//       // Get type from dictionary of types
+//       const definition = type.genericTypeArguments[i]
+//       // Check if recursive processing of the type's argumented types is needed
+//       content += definition.name
+//       // if (definition instanceof TypeDefinition) {
+//       //   if (definition.typeArguments.length > 0)
+//       //     content += renderTypeNameWithArguments(definition, args)
+//       //   else { 
+//       //     // has no arguments, just add type name
+//       //     content += getTypeNameWithoutNamespace(definition.typeDescription)
+//       //   }
+//       // }
+//       // Only add a comma to the end if it is not the last argument
+//       if ((i + 1) < type.genericTypeArguments.length)
+//         content += ', '
+//     }
+//     return content + '>'
+//   }
+//   return type.name
+// }

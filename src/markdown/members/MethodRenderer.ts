@@ -30,7 +30,7 @@ function renderMethodParams(method: IAmMethodModel, args: RenderMembersArgs<IAmS
   method.parameters.forEach(param => {    
     content += (
       '\n- *@param* ' +
-      `${param.name} ${renderTypeName(param.type)}`
+      `${param.name} ${renderTypeName(args.parent, param.type)}`
     )
   })
   return content
