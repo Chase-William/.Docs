@@ -68,7 +68,7 @@ export function renderTypeName(from: IAmSlicedTypeModel, constructableType: IAmS
   const nameParts = from.getNameWithGenerics(constructableType, '.md')
   return (
     `<code>` + 
-    (nameParts.root.from.isFacade || nameParts.root.from.isConstructedGenericType ? 
+    (!nameParts.root.from.isRenderable() ? 
       `<span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>` : 
       `<a href="${nameParts.root.filePath}">${nameParts.root.name}</a>`) + 
     (nameParts.generics.length > 0 ? ('<' + renderGenerics(nameParts.generics) + '>') : '') + 
@@ -83,6 +83,6 @@ export function renderTypeName(from: IAmSlicedTypeModel, constructableType: IAmS
  */
 function renderGenerics(generics: TypeLink[]): string {
   return generics.map(v => {
-    return v.to.isFacade ? `<span title="${v.to.comments?.summary}">${v.name}</span>` : `<a href="${v.filePath}">${v.name}</a>`
+    return v.to.isRenderable() ? `<a href="${v.filePath}">${v.name}</a>` : `<span title="${v.to.comments?.summary}">${v.name}</span>`
   }).join(', ')
 }

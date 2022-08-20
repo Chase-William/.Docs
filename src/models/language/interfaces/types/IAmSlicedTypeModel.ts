@@ -23,6 +23,7 @@ export default interface IAmSlicedTypeModel
   isFacade(): boolean
   isArray: boolean
   isByRef: boolean
+  isRenderable(): boolean
 
   getNameWithGenerics(constructableType: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] }
   getTypeLinkToOther(foundationalType: IAmSlicedTypeModel, targetType: IAmSlicedTypeModel, fileEx: string): TypeLink

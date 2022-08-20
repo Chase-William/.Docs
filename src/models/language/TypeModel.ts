@@ -99,6 +99,14 @@ export default class TypeModel
     return this.assembly.project == null
   }
 
+  /**
+   * Denotes whether this type has it's own rendered output file.
+   * @returns indication of this type is renderable (can have it's own file).
+   */
+  isRenderable(): boolean {
+    return !(this.isFacade() || this.isArray || this.isByRef || this.isGenericParameter || this.isConstructedGenericType)
+  }
+
   bind(projManager: IAmProjectManager): void {
     // Bind to baseType
     this.baseType = projManager.types.get(this._baseType)
@@ -114,8 +122,6 @@ export default class TypeModel
     // Bind to assembly
     // console.log(this.fullName + " -> " + this._assemblyId)
     this.assembly = projManager.assemblies.get(this._assemblyId)
-    // if (this.assembly == null)
-    //   console.log(this.fullName)
   }
 
   /**

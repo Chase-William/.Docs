@@ -19,14 +19,15 @@ export default class TypeLink {
       this.to = to
       this.name = to.getName()
       // Prevent linking to types that do not have their own referenceable location
-      if (!to.isFacade) // Link to an argument type
+      if (!to.isRenderable())
         this.filePath = from.getFilePathToOther(to, fileEx)            
     }
     else
     {
       this.name = foundationalType.getName()
       // Link the type to the foundational type
-      this.filePath = from.getFilePathToOther(foundationalType, fileEx)
+      if (from.isRenderable())
+        this.filePath = from.getFilePathToOther(foundationalType, fileEx)
     }
     this.foundationalType = foundationalType
   }
