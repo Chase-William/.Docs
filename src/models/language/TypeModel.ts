@@ -94,9 +94,7 @@ export default class TypeModel
   isByRef: boolean
 
   isFacade(): boolean {
-    if (!this.assembly)
-      console.log(this.fullName)
-    return this.assembly.project == null
+    return !this.assembly.project
   }
 
   /**
@@ -135,19 +133,19 @@ export default class TypeModel
     return indexOfGraveAccent > 0 ? this.name.slice(0, indexOfGraveAccent) : this.name
   }
 
-  getNameWithGenerics(constructableType: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] } {
-    const root = new TypeLink(this, constructableType, null, fileEx)
+  getNameWithGenerics(to: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] } {
+    const root = new TypeLink(this, to, fileEx)
     const generics = new Array<TypeLink>()
-    constructableType.genericTypeArguments.forEach(arg => generics.push(this.getTypeLinkToOther(constructableType, arg, fileEx)))
-    constructableType.genericTypeParameters.forEach(param => generics.push(this.getTypeLinkToOther(constructableType, param, fileEx)))        
+    to.genericTypeArguments.forEach(arg => generics.push(this.getTypeLinkToOther(arg, fileEx)))
+    to.genericTypeParameters.forEach(param => generics.push(this.getTypeLinkToOther(param, fileEx)))        
     return {
       root: root,
       generics: generics
     }
   }
 
-  getTypeLinkToOther(foundationalType: IAmSlicedTypeModel, targetType: IAmSlicedTypeModel, fileEx: string): TypeLink {
-    return new TypeLink(this, foundationalType, targetType, fileEx)
+  getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink {
+    return new TypeLink(this, to, fileEx)
   }
 
   /**

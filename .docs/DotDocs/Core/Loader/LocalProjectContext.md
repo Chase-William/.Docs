@@ -9,51 +9,51 @@ Summary not provided.
 
 ## `public` Properties
 
-### Assembly <code><a href="..\..\..\System\Reflection\Assembly.md">Assembly</a></code>
+### Assembly <code><span title="undefined">Assembly</span></code>
 
 Summary not provided.
 
-### AssemblyId <code><a href="..\..\..\System\String.md">String</a></code>
+### AssemblyId <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### AssemblyLoadPath <code><a href="..\..\..\System\String.md">String</a></code>
+### AssemblyLoadPath <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### DefinedTypes <code><a href="..\..\..\System\Collections\Generic\List.md">List</a><<a href="null">TypeModel</a>></code> `static` `readonly`
+### DefinedTypes <code><span title="undefined">List</span><<a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
-### DocumentationPath <code><a href="..\..\..\System\String.md">String</a></code>
+### DocumentationPath <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### Id <code><a href="..\..\..\System\String.md">String</a></code> `static` `readonly`
+### Id <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjects <code><a href="..\..\..\System\String[].md">String[]</a></code> `static` `readonly`
+### LocalProjects <code><span title="undefined">String[]</span></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjectsAsObjects <code><a href="..\..\..\System\Collections\Generic\List.md">List</a><<a href="null">LocalProjectModel</a>></code>
+### LocalProjectsAsObjects <code><span title="undefined">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code>
 
 Summary not provided.
 
-### ProjectDirectory <code><a href="..\..\..\System\String.md">String</a></code>
+### ProjectDirectory <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### ProjectFileName <code><a href="..\..\..\System\String.md">String</a></code>
+### ProjectFileName <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### ProjectName <code><a href="..\..\..\System\String.md">String</a></code>
+### ProjectName <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### ProjectPath <code><a href="..\..\..\System\String.md">String</a></code>
+### ProjectPath <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
@@ -71,7 +71,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 
@@ -79,7 +79,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* projectFile <code><a href="..\..\..\System\String.md">String</a></code>
+- *@param* projectFile <code><span title="undefined">String</span></code>
 
 - *@returns* 
 
@@ -99,7 +99,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* assemblies <code><a href="..\..\..\System\String[].md">String[]</a></code>
+- *@param* assemblies <code><span title="undefined">String[]</span></code>
 
 - *@returns* 
 

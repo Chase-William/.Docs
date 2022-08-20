@@ -3,9 +3,8 @@ import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTyp
 export default class TypeLink {
   name: string = null
   filePath: string | null = null
-  foundationalType: IAmSlicedTypeModel
   from: IAmSlicedTypeModel
-  to: IAmSlicedTypeModel | null = null
+  to: IAmSlicedTypeModel
 
   // constructor(name: string, filePath: string | null, comments: CommonComment | null) {
   //   this.name = name
@@ -13,22 +12,12 @@ export default class TypeLink {
   //   this.comments = comments
   // }
 
-  constructor(from: IAmSlicedTypeModel, foundationalType: IAmSlicedTypeModel, to: IAmSlicedTypeModel | null, fileEx: string) {
+  constructor(from: IAmSlicedTypeModel, to: IAmSlicedTypeModel, fileEx: string) {
     this.from = from
-    if (to) {
-      this.to = to
-      this.name = to.getName()
-      // Prevent linking to types that do not have their own referenceable location
-      if (!to.isRenderable())
-        this.filePath = from.getFilePathToOther(to, fileEx)            
-    }
-    else
-    {
-      this.name = foundationalType.getName()
-      // Link the type to the foundational type
-      if (from.isRenderable())
-        this.filePath = from.getFilePathToOther(foundationalType, fileEx)
-    }
-    this.foundationalType = foundationalType
+    this.to = to
+    this.name = to.getName()
+    // Prevent linking to types that do not have their own referenceable location
+    if (to.isRenderable())
+      this.filePath = from.getFilePathToOther(to, fileEx)                
   }
 }

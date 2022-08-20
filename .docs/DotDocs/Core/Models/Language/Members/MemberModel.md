@@ -9,15 +9,15 @@ Summary not provided.
 
 ## `public` Properties
 
-### Comments <code><a href="T2.md">T2</a></code>
+### Comments <code><span title="undefined">T2</span></code>
 
 Summary not provided.
 
-### Info <code><a href="T1.md">T1</a></code>
+### Info <code><span title="undefined">T1</span></code>
 
 Summary not provided.
 
-### Name <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `virtual` `readonly`
+### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
 
 Summary not provided.
 
@@ -29,7 +29,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 

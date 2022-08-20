@@ -25,8 +25,8 @@ export default interface IAmSlicedTypeModel
   isByRef: boolean
   isRenderable(): boolean
 
-  getNameWithGenerics(constructableType: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] }
-  getTypeLinkToOther(foundationalType: IAmSlicedTypeModel, targetType: IAmSlicedTypeModel, fileEx: string): TypeLink
+  getNameWithGenerics(to: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] }
+  getTypeLinkToOther(to: IAmSlicedTypeModel, fileEx: string): TypeLink
   getName(): string
   getFilePathToOther: (to: IAmSlicedTypeModel, fileEx: string) => string 
   getFilePathWithEx(fileEx: string): string

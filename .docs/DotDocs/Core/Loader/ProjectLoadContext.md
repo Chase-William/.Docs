@@ -4,15 +4,15 @@ Summary not provided.
 
 ## `public` Properties
 
-### Assemblies <code><a href="..\..\..\System\Collections\Generic\IReadOnlyDictionary.md">IReadOnlyDictionary</a><<span title="undefined">String</span>, <a href="null">AssemblyModel</a>></code> `static` `readonly`
+### Assemblies <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\AssemblyModel.md">AssemblyModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
-### FullProjectTypeMap <code><a href="..\..\..\System\Collections\Generic\IReadOnlyDictionary.md">IReadOnlyDictionary</a><<span title="undefined">String</span>, <a href="null">TypeModel</a>></code> `static` `readonly`
+### FullProjectTypeMap <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
-### LocalProjects <code><a href="..\..\..\System\Collections\Generic\List.md">List</a><<a href="null">LocalProjectModel</a>></code> `static` `readonly`
+### LocalProjects <code><span title="undefined">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code> `static` `readonly`
 
 Summary not provided.
 
@@ -28,7 +28,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* csProjPath <code><a href="..\..\..\System\String.md">String</a></code>
+- *@param* csProjPath <code><span title="undefined">String</span></code>
 
 - *@returns* 
 
@@ -42,7 +42,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 
@@ -68,8 +68,8 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* projectFile <code><a href="..\..\..\System\String.md">String</a></code>
-- *@param* processedFiles <code><a href="..\..\..\System\Collections\Generic\List.md">List</a><<span title="undefined">String</span>></code>
+- *@param* projectFile <code><span title="undefined">String</span></code>
+- *@param* processedFiles <code><span title="undefined">List</span><<span title="undefined">String</span>></code>
 
 - *@returns* 
 
@@ -77,7 +77,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* outputPath <code><a href="..\..\..\System\String.md">String</a></code>
+- *@param* outputPath <code><span title="undefined">String</span></code>
 
 - *@returns* 
 
@@ -103,14 +103,14 @@ Summary not provided.
 
 ## `public` Fields
 
-### ASSEMBLIES_FILE <code><a href="..\..\..\System\String.md">String</a></code> `const`
+### ASSEMBLIES_FILE <code><span title="undefined">String</span></code> `const`
 
 Summary not provided.
 
-### PROJECTS_FILE <code><a href="..\..\..\System\String.md">String</a></code> `const`
+### PROJECTS_FILE <code><span title="undefined">String</span></code> `const`
 
 Summary not provided.
 
-### TYPES_FILE <code><a href="..\..\..\System\String.md">String</a></code> `const`
+### TYPES_FILE <code><span title="undefined">String</span></code> `const`
 
 Summary not provided.

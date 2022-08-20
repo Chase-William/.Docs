@@ -4,15 +4,15 @@ Summary not provided.
 
 ## `public` Properties
 
-### Info <code><a href="..\..\..\..\..\System\Reflection\ParameterInfo.md">ParameterInfo</a></code>
+### Info <code><span title="undefined">ParameterInfo</span></code>
 
 Summary not provided.
 
-### Name <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `readonly`
+### Name <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
-### Type <code><a href="..\..\..\..\..\System\String.md">String</a></code> `static` `readonly`
+### Type <code><span title="undefined">String</span></code> `static` `readonly`
 
 Summary not provided.
 
@@ -24,7 +24,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 

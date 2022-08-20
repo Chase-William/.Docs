@@ -10,7 +10,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* pathToClean <code><a href="..\..\..\System\String.md">String</a></code>
+- *@param* pathToClean <code><span title="undefined">String</span></code>
 
 - *@returns* 
 
@@ -18,7 +18,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><a href="..\..\..\System\Object.md">Object</a></code>
+- *@param* obj <code><span title="undefined">Object</span></code>
 
 - *@returns* 
 
