@@ -1,4 +1,4 @@
-# <code><a href="IHaveSignature.md">IHaveSignature</a></code>
+# <code><span title="undefined">IHaveSignature</span></code>
 
 Summary not provided.
 
@@ -22,4 +22,4 @@ Summary not provided.
 
 - *@param* info <code><span title="undefined">MethodInfo</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">ParameterModel[]</span></code>

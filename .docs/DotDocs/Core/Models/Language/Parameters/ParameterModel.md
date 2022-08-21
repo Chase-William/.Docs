@@ -1,4 +1,4 @@
-# <code><a href="ParameterModel.md">ParameterModel</a></code>
+# <code><span title="undefined">ParameterModel</span></code>
 
 Summary not provided.
 
@@ -26,25 +26,25 @@ Summary not provided.
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### GetHashCode `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">String</span></code>
 
 ## `protected` Methods
 
@@ -52,10 +52,10 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Object</span></code>

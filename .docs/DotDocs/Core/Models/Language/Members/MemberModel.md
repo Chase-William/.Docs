@@ -1,8 +1,8 @@
-# <code><a href="MemberModel.md">MemberModel</a><<span title="undefined">T1</span>, <span title="undefined">T2</span>></code>
+# <code><span title="undefined">MemberModel</span><<span title="undefined">T1</span>, <span title="undefined">T2</span>></code>
 
 ```
-ட 
-  ட 
+ட Model
+  ட Object
 ```
 
 Summary not provided.
@@ -31,25 +31,25 @@ Summary not provided.
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### GetHashCode `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">String</span></code>
 
 ## `protected` Methods
 
@@ -57,10 +57,10 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Object</span></code>

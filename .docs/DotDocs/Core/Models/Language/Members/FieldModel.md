@@ -1,9 +1,9 @@
-# <code><a href="FieldModel.md">FieldModel</a></code>
+# <code><span title="undefined">FieldModel</span></code>
 
 ```
-ட 
-  ட 
-    ட 
+ட MemberModel<FieldInfo, CommonComments>
+  ட Model
+    ட Object
 ```
 
 Summary not provided.
@@ -68,25 +68,25 @@ Summary not provided.
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### GetHashCode `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">String</span></code>
 
 ## `protected` Methods
 
@@ -94,10 +94,10 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Object</span></code>

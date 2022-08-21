@@ -64,11 +64,18 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
   return content
 }
 
-export function renderTypeName(from: IAmSlicedTypeModel, constructableType: IAmSlicedTypeModel): string {
-  const nameParts = from.getNameWithGenerics(constructableType, '.md')
+/**
+ * Renders the name of a type with it's generics type arguments or parameters if they exist. The
+ * type names will be hyper links relative to the @param from parameter.
+ * @param from The type the user is navigating from.
+ * @param to The type the user navigating to.
+ * @returns A string containing HTML that contains the name/args/params with links if appropriate.
+ */
+export function renderTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTypeModel): string {
+  const nameParts = from.getNameWithGenerics(to, '.md')
   return (
     `<code>` + 
-    (nameParts.root.to.isRenderable() ?
+    (nameParts.root.to.isRenderable() && from !== to ?
       `<a href="${nameParts.root.filePath}">${nameParts.root.name}</a>` :
       `<span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>`) +
     (nameParts.generics.length > 0 ?

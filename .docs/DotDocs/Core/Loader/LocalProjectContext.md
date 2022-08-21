@@ -1,8 +1,8 @@
-# <code><a href="LocalProjectContext.md">LocalProjectContext</a></code>
+# <code><span title="undefined">LocalProjectContext</span></code>
 
 ```
-ட 
-  ட 
+ட LocalProjectModel
+  ட Object
 ```
 
 Summary not provided.
@@ -65,7 +65,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### Equals `virtual`
 
@@ -73,7 +73,7 @@ Summary not provided.
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### Exists
 
@@ -81,19 +81,19 @@ Summary not provided.
 
 - *@param* projectFile <code><span title="undefined">String</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### GetHashCode `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### Load
 
@@ -101,13 +101,13 @@ Summary not provided.
 
 - *@param* assemblies <code><span title="undefined">String[]</span></code>
 
-- *@returns* 
+
 
 ### ToString `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">String</span></code>
 
 ## `protected` Methods
 
@@ -115,10 +115,10 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Object</span></code>

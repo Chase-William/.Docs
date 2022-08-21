@@ -1,4 +1,4 @@
-# <code><a href="ProjectLoadContext.md">ProjectLoadContext</a></code>
+# <code><span title="undefined">ProjectLoadContext</span></code>
 
 Summary not provided.
 
@@ -30,13 +30,13 @@ Summary not provided.
 
 - *@param* csProjPath <code><span title="undefined">String</span></code>
 
-- *@returns* 
+
 
 ### Dispose `virtual`
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### Equals `virtual`
 
@@ -44,25 +44,25 @@ Summary not provided.
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### GetHashCode `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### LoadTypes
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### Prepare
 
@@ -71,7 +71,7 @@ Summary not provided.
 - *@param* projectFile <code><span title="undefined">String</span></code>
 - *@param* processedFiles <code><span title="undefined">List</span><<span title="undefined">String</span>></code>
 
-- *@returns* 
+
 
 ### Save
 
@@ -79,13 +79,13 @@ Summary not provided.
 
 - *@param* outputPath <code><span title="undefined">String</span></code>
 
-- *@returns* 
+
 
 ### ToString `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">String</span></code>
 
 ## `protected` Methods
 
@@ -93,13 +93,13 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Object</span></code>
 
 ## `public` Fields
 

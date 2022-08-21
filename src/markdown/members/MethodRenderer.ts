@@ -19,9 +19,10 @@ export function renderMethod(method: IAmMethodModel, args: RenderMembersArgs<IAm
 
 function renderMethodReturn(method: IAmMethodModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): string {
   return (
-    (method.parameters ? divider() : '') +
-    '- *@returns* '
-    // renderTypeName(method.)
+    divider() +
+    (method.returnParameter.type.name === 'Void' ? '' :
+    '- *@returns* ' +
+    renderTypeName(args.parent, method.returnParameter.type))
   )  
 }
 

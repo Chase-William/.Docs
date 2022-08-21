@@ -1,8 +1,8 @@
-# <code><a href="MissingProjectFileException.md">MissingProjectFileException</a></code>
+# <code><span title="undefined">MissingProjectFileException</span></code>
 
 ```
-ட 
-  ட 
+ட Exception
+  ட Object
 ```
 
 Summary not provided.
@@ -55,19 +55,19 @@ Summary not provided.
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### GetBaseException `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Exception</span></code>
 
 ### GetHashCode `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetObjectData `virtual`
 
@@ -76,25 +76,25 @@ Summary not provided.
 - *@param* info <code><span title="undefined">SerializationInfo</span></code>
 - *@param* context <code><span title="undefined">StreamingContext</span></code>
 
-- *@returns* 
+
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">String</span></code>
 
 ## `protected` Methods
 
@@ -102,13 +102,13 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Object</span></code>
 
 ## `protected` Events
 

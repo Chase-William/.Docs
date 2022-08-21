@@ -2,11 +2,13 @@ import IAmTypeModel from "../models/language/interfaces/IAmFullTypeModel";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import TypeModel from "../models/language/TypeModel";
 import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";
-import divider from "./Util";
+import TypeLink from "../renderer/TypeLink";
+import divider, { renderTypeName } from "./Util";
 
 export function renderTypeInheritanceBlock(model: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
   const baseTypes = new Array<IAmSlicedTypeModel>()
   let current = model
+  let typeNames: { root: TypeLink; generics: TypeLink[]; }
   while(current.baseType) {
     baseTypes.push(current.baseType)
     current = current.baseType
@@ -16,11 +18,15 @@ export function renderTypeInheritanceBlock(model: IAmSlicedTypeModel, args: Rend
   if (baseTypes.length <= 1)
     return ''
 
-  let content = '```\nட '
+  let content = '```\nட '  
   for (let i = 0; i < baseTypes.length; i++) {
+    typeNames = model.getNameWithGenerics(baseTypes[i], '.md')
     content += (
       renderIndent(i) +
-      // renderTypeNameWithArguments(baseTypes[i], args) +
+      typeNames.root.name +
+      (typeNames.generics.length > 0 ? 
+      `<${typeNames.generics.map(v => v.name).join(', ')}>` :
+      '') +
       '\n'
     )
   }

@@ -1,4 +1,4 @@
-# <code><a href="BuildManager.md">BuildManager</a></code>
+# <code><span title="undefined">BuildManager</span></code>
 
 Summary not provided.
 
@@ -16,7 +16,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### Equals `virtual`
 
@@ -24,43 +24,43 @@ Summary not provided.
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Boolean</span></code>
 
 ### GetHashCode `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Type</span></code>
 
 ### Load
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### Make
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### Prepare
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### ToString `virtual`
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">String</span></code>
 
 ## `protected` Methods
 
@@ -68,13 +68,13 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* 
+
 
 ### MemberwiseClone
 
 Summary not provided.
 
-- *@returns* 
+- *@returns* <code><span title="undefined">Object</span></code>
 
 ## `public` Fields
 
