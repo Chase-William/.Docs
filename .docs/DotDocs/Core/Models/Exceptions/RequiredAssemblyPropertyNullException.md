@@ -1,4 +1,4 @@
-# <code><span title="undefined">RequiredAssemblyPropertyNullException</span></code>
+# <code><span title="undefined">RequiredAssemblyPropertyNullException</span></code> *class*
 
 ```
 ட Exception
@@ -7,17 +7,17 @@
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
 ### Assembly <code><span title="undefined">Assembly</span></code>
 
 Summary not provided.
 
-### Data <code><span title="undefined">IDictionary</span></code> `static` `virtual` `readonly`
+### Data <code><span title="undefined">IDictionary</span></code> *static* *virtual* *readonly*
 
 Summary not provided.
 
-### HelpLink <code><span title="undefined">String</span></code> `virtual`
+### HelpLink <code><span title="undefined">String</span></code> *virtual*
 
 Summary not provided.
 
@@ -25,11 +25,11 @@ Summary not provided.
 
 Summary not provided.
 
-### InnerException <code><span title="undefined">Exception</span></code> `static` `readonly`
+### InnerException <code><span title="undefined">Exception</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Message <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Message <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
 
 Summary not provided.
 
@@ -37,23 +37,23 @@ Summary not provided.
 
 Summary not provided.
 
-### Source <code><span title="undefined">String</span></code> `virtual`
+### Source <code><span title="undefined">String</span></code> *virtual*
 
 Summary not provided.
 
-### StackTrace <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### StackTrace <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
 
 Summary not provided.
 
-### TargetSite <code><span title="undefined">MethodBase</span></code> `static` `readonly`
+### TargetSite <code><span title="undefined">MethodBase</span></code> *static* *readonly*
 
 Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -61,19 +61,19 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetBaseException `virtual`
+### GetBaseException(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Exception</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetObjectData `virtual`
+### GetObjectData(...) *virtual*
 
 Summary not provided.
 
@@ -82,39 +82,39 @@ Summary not provided.
 
 
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Object</span></code>
 
-## `protected` Events
+## *protected* Events
 
 ### SerializeObjectState
 

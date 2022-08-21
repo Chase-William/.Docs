@@ -1,30 +1,30 @@
-# <code><span title="undefined">ProjectLoadContext</span></code>
+# <code><span title="undefined">ProjectLoadContext</span></code> *class*
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
-### Assemblies <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\AssemblyModel.md">AssemblyModel</a>></code> `static` `readonly`
-
-Summary not provided.
-
-### FullProjectTypeMap <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
+### Assemblies <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\AssemblyModel.md">AssemblyModel</a>></code> *static* *readonly*
 
 Summary not provided.
 
-### LocalProjects <code><span title="undefined">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code> `static` `readonly`
+### FullProjectTypeMap <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
 
 Summary not provided.
 
-### RootProject <code><a href="..\Models\LocalProjectModel.md">LocalProjectModel</a></code> `static` `readonly`
+### LocalProjects <code><span title="undefined">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code> *static* *readonly*
+
+Summary not provided.
+
+### RootProject <code><a href="..\Models\LocalProjectModel.md">LocalProjectModel</a></code> *static* *readonly*
 
 Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### BuildProject
+### BuildProject(...)
 
 Summary not provided.
 
@@ -32,13 +32,13 @@ Summary not provided.
 
 
 
-### Dispose `virtual`
+### Dispose(...) *virtual*
 
 Summary not provided.
 
 
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -46,25 +46,25 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### LoadTypes
+### LoadTypes(...)
 
 Summary not provided.
 
 
 
-### Prepare
+### Prepare(...)
 
 Summary not provided.
 
@@ -73,7 +73,7 @@ Summary not provided.
 
 
 
-### Save
+### Save(...)
 
 Summary not provided.
 
@@ -81,36 +81,36 @@ Summary not provided.
 
 
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Object</span></code>
 
-## `public` Fields
+## *public* Fields
 
-### ASSEMBLIES_FILE <code><span title="undefined">String</span></code> `const`
-
-Summary not provided.
-
-### PROJECTS_FILE <code><span title="undefined">String</span></code> `const`
+### ASSEMBLIES_FILE <code><span title="undefined">String</span></code> *const*
 
 Summary not provided.
 
-### TYPES_FILE <code><span title="undefined">String</span></code> `const`
+### PROJECTS_FILE <code><span title="undefined">String</span></code> *const*
+
+Summary not provided.
+
+### TYPES_FILE <code><span title="undefined">String</span></code> *const*
 
 Summary not provided.

@@ -7,6 +7,7 @@ import { renderTypeInheritanceBlock } from "./InheritanceRenderer"
 import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import TypeLink from "../renderer/TypeLink";
+import IAmFullTypeModel from "../models/language/interfaces/IAmFullTypeModel"
 
 export default function divider(): string {
   return '\n\n'
@@ -28,7 +29,7 @@ export function optionalDivider(col: unknown): string {
 
 export function renderTypeHeader(from: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
   return (
-    `# ${renderTypeName(from, from)}` +
+    `# ${renderTypeName(from, from)} *${getTypeModelConstructType(from)}*` +
     divider() + 
     renderTypeInheritanceBlock(from, args) +
     getOptionalSummary(from.comments) +
@@ -45,7 +46,7 @@ export function renderTypeHeader(from: IAmSlicedTypeModel, args: RenderTypeArgs<
 export function renderIsStaticTag(model: IAmSingletonable, config: SingletonConfigurable): string {
   let content = ''
   if (config.denoteIfStatic)
-    content += model.isStatic ? ' `static`' : ''
+    content += model.isStatic ? ' *static*' : ''
   return content
 }
 
@@ -58,9 +59,9 @@ export function renderIsStaticTag(model: IAmSingletonable, config: SingletonConf
 export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: PolymorphicConfigable): string {
   let content = ''
   if (config.denoteIfVirtual)
-    content += model.isVirtual ? ' `virtual`' : ''
+    content += model.isVirtual ? ' *virtual*' : ''
   if (config.denoteIfAbstract)
-    content += model.isAbstract ? ' `abstract`' : ''
+    content += model.isAbstract ? ' *abstract*' : ''
   return content
 }
 
@@ -94,4 +95,18 @@ function renderGenerics(generics: TypeLink[]): string {
   return generics.map(v => {
     return v.to.isRenderable() ? `<a href="${v.filePath}">${v.name}</a>` : `<span title="${v.to.comments?.summary}">${v.name}</span>`
   }).join(', ')
+}
+
+function getTypeModelConstructType(typeModel: IAmSlicedTypeModel): string {
+  const type = typeModel as IAmFullTypeModel
+  if (type.isClass)
+    return 'class'
+  else if (type.isEnum)
+    return 'enum'
+  else if (type.isDelegate)
+    return 'delegate'
+  else if (type.isValueType)
+    return 'struct'
+  else 
+    return 'interface'
 }

@@ -1,4 +1,4 @@
-# <code><span title="undefined">TypeModel</span></code>
+# <code><span title="undefined">TypeModel</span></code> *class*
 
 ```
 ட Model
@@ -7,13 +7,13 @@
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
-### AssemblyId <code><span title="undefined">String</span></code> `static` `readonly`
+### AssemblyId <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### BaseType <code><span title="undefined">String</span></code> `static` `readonly`
+### BaseType <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
@@ -21,43 +21,43 @@ Summary not provided.
 
 Summary not provided.
 
-### Events <code><span title="undefined">EventModel[]</span></code> `static` `readonly`
+### Events <code><span title="undefined">EventModel[]</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Fields <code><span title="undefined">FieldModel[]</span></code> `static` `readonly`
+### Fields <code><span title="undefined">FieldModel[]</span></code> *static* *readonly*
 
 Summary not provided.
 
-### FullName <code><span title="undefined">String</span></code> `static` `readonly`
+### FullName <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### GenericTypeArguments <code><span title="undefined">String[]</span></code> `static` `readonly`
+### GenericTypeArguments <code><span title="undefined">String[]</span></code> *static* *readonly*
 
 Summary not provided.
 
-### GenericTypeParameters <code><span title="undefined">String[]</span></code> `static` `readonly`
+### GenericTypeParameters <code><span title="undefined">String[]</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Id <code><span title="undefined">String</span></code> `static` `readonly`
+### Id <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsArray <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsArray <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsByRef <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsByRef <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsClass <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsClass <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsConstructedGenericType <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsConstructedGenericType <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
@@ -65,51 +65,51 @@ Summary not provided.
 
 Summary not provided.
 
-### IsDelegate <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsDelegate <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsEnum <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsEnum <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsGenericParameter <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsGenericParameter <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsGenericType <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsGenericType <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsGenericTypeDefinition <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsGenericTypeDefinition <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsInterface <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsInterface <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsValueType <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsValueType <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### MetadataToken <code><span title="undefined">Int32</span></code> `static` `readonly`
+### MetadataToken <code><span title="undefined">Int32</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Methods <code><span title="undefined">MethodModel[]</span></code> `static` `readonly`
+### Methods <code><span title="undefined">MethodModel[]</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Name <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
 
 Summary not provided.
 
-### Namespace <code><span title="undefined">String</span></code> `static` `readonly`
+### Namespace <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Properties <code><span title="undefined">PropertyModel[]</span></code> `static` `readonly`
+### Properties <code><span title="undefined">PropertyModel[]</span></code> *static* *readonly*
 
 Summary not provided.
 
@@ -119,9 +119,9 @@ Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -129,33 +129,33 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 

@@ -1,4 +1,4 @@
-# <code><span title="undefined">FieldModel</span></code>
+# <code><span title="undefined">FieldModel</span></code> *class*
 
 ```
 ட MemberModel<FieldInfo, CommonComments>
@@ -8,7 +8,7 @@
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
 ### Comments <code><span title="undefined">CommonComments</span></code>
 
@@ -18,39 +18,39 @@ Summary not provided.
 
 Summary not provided.
 
-### IsInternal <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsInternal <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsLiteral <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsLiteral <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsPrivate <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsPrivate <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsProtected <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsProtected <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsPublic <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsPublic <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsReadonly <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsReadonly <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsStatic <code><span title="undefined">Boolean</span></code> `static` `readonly`
+### IsStatic <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `virtual` `readonly`
+### Name <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
 
 Summary not provided.
 
-### RawConstantValue <code><span title="undefined">Object</span></code> `static` `readonly`
+### RawConstantValue <code><span title="undefined">Object</span></code> *static* *readonly*
 
 Summary not provided.
 
@@ -60,9 +60,9 @@ Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -70,33 +70,33 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 

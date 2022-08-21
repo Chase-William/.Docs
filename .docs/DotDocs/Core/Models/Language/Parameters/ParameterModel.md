@@ -1,26 +1,26 @@
-# <code><span title="undefined">ParameterModel</span></code>
+# <code><span title="undefined">ParameterModel</span></code> *class*
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
 ### Info <code><span title="undefined">ParameterInfo</span></code>
 
 Summary not provided.
 
-### Name <code><span title="undefined">String</span></code> `static` `readonly`
+### Name <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### Type <code><span title="undefined">String</span></code> `static` `readonly`
+### Type <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -28,33 +28,33 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 

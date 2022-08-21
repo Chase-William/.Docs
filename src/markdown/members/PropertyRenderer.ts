@@ -57,15 +57,15 @@ export default class PropertyRenderer {
 
     const base = '- *set* '
     if (config.denoteIfSetPublic && prop.isPublic) 
-      return base + '`public`'
+      return base + '*public*'
     if (config.denoteIfSetProtected && prop.isSetProtected) 
-      return base + '`protected`'
+      return base + '*protected*'
     if (config.denoteIfSetInternal && prop.isSetInternal) 
-      return base + '`internal`'
+      return base + '*internal*'
     if (config.denoteIfSetInternalProtected && prop.isSetInternal && prop.isSetProtected) 
-      return base + '`internal protected`'
+      return base + '*internal protected*'
     if (config.denoteIfSetPrivate && prop.isSetPrivate) 
-      return base + '`private`'
+      return base + '*private*'
     if (config.denoteIfHasSetter)
       return base
     return ''
@@ -77,26 +77,21 @@ export default class PropertyRenderer {
 
     const base = '- *get* '
     if (config.denoteIfGetPublic && prop.isGetPublic) 
-      return base + '`public`'
+      return base + '*public*'
     if (config.denoteIfGetProtected && prop.isGetProtected) 
-      return base + '`protected`'
+      return base + '*protected*'
     if (config.denoteIfGetInternal && prop.isGetInternal) 
-      return base + '`internal`'
+      return base + '*internal*'
     if (config.denoteIfGetInternalProtected && prop.isGetInternal && prop.isGetProtected) 
-      return base + '`internal protected`'
+      return base + '*internal protected*'
     if (config.denoteIfGetPrivate && prop.isGetPrivate) 
-      return base + '`private`'
+      return base + '*private*`'
     if (config.denoteIfHasGetter)
       return base
     return ''
   }
   
   renderPropertyHeader(prop: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {   
-    // if (prop.name == 'FullProjectTypeMap')
-    //   {
-    //     //console.log(args.parent)
-    //     console.log(prop.type)
-    //   }
     return (
       `### ${prop.name} ${renderTypeName(args.parent, prop.type)}` +
       renderIsStaticTag(prop, args.config) +
@@ -109,12 +104,12 @@ export default class PropertyRenderer {
   renderSetonlyTag(prop: IAmPropertyModel, config: PropertyConfigModel): string {
     if (!config.denoteIfSetonly)
       return ''  
-    return (prop.hasGetter && prop.isGetPublic) ? '' : ' `setonly`'
+    return (prop.hasGetter && prop.isGetPublic) ? '' : ' *setonly*'
   }
   
   renderReadonlyTag(prop: IAmPropertyModel, config: PropertyConfigModel): string {
     if (!config.denoteIfReadonly)
       return ''  
-    return (prop.hasSetter && prop.isSetPublic) ? '' : ' `readonly`'
+    return (prop.hasSetter && prop.isSetPublic) ? '' : ' *readonly*'
   }
 }

@@ -1,22 +1,22 @@
-# <code><span title="undefined">IHaveSignature</span></code>
+# <code><span title="undefined">IHaveSignature</span></code> *interface*
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
-### Parameters <code><span title="undefined">ParameterModel[]</span></code> `static` `abstract` `readonly`
-
-Summary not provided.
-
-### ReturnParameter <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a></code> `static` `abstract` `readonly`
+### Parameters <code><span title="undefined">ParameterModel[]</span></code> *static* *abstract* *readonly*
 
 Summary not provided.
 
+### ReturnParameter <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a></code> *static* *abstract* *readonly*
+
+Summary not provided.
 
 
-## `public` Methods
 
-### GetParameters `virtual`
+## *public* Methods
+
+### GetParameters(...) *virtual*
 
 Summary not provided.
 

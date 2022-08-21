@@ -39,7 +39,7 @@ function renderMethodParams(method: IAmMethodModel, args: RenderMembersArgs<IAmS
 
 function renderMethodHeader(method: IAmMethodModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): string {
   return (
-    `### ${method.name}` +
+    `### ${method.name}(...)` +
     renderVirtualAndStaticTags(method, args.config)
   )
 }

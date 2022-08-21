@@ -1,8 +1,8 @@
-# <code><span title="undefined">BuildManager</span></code>
+# <code><span title="undefined">BuildManager</span></code> *class*
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
 ### ProjectContext <code><a href="Loader\ProjectLoadContext.md">ProjectLoadContext</a></code>
 
@@ -10,15 +10,15 @@ Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Dispose `virtual`
+### Dispose(...) *virtual*
 
 Summary not provided.
 
 
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -26,58 +26,58 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### Load
+### Load(...)
 
 Summary not provided.
 
 
 
-### Make
+### Make(...)
 
 Summary not provided.
 
 
 
-### Prepare
+### Prepare(...)
 
 Summary not provided.
 
 
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Object</span></code>
 
-## `public` Fields
+## *public* Fields
 
-### DOCSHARK_CORE_ROOT_FOLDER <code><span title="undefined">String</span></code> `const`
+### DOCSHARK_CORE_ROOT_FOLDER <code><span title="undefined">String</span></code> *const*
 
 Summary not provided.

@@ -67,25 +67,25 @@ export default class MarkdownRenderer implements Renderer {
     )
   }
   renderProperties(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): void {    
-    this.content +=  `## \`${accessibility}\` Properties` + divider()
+    this.content +=  `## *${accessibility}* Properties` + divider()
     for (const prop of args.members) {
       this.content += new PropertyRenderer(prop, args).content
     }
   }
   renderMethods(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmMethodModel, MethodConfigModel>): void {
-    this.content += divider() + `## \`${accessibility}\` Methods`
+    this.content += divider() + `## *${accessibility}* Methods`
     for (const method of args.members) {
       this.content += renderMethod(method, args)
     }
   }
   renderEvents(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmEventModel, EventConfigModel>): void {
-    this.content += divider() + `## \`${accessibility}\` Events`
+    this.content += divider() + `## *${accessibility}* Events`
     for (const event of args.members) {
       this.content += renderEvent(event, args)
     }
   }
   renderFields(accessibility: string, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): void {
-    this.content += divider() + `## \`${accessibility}\` Fields`    
+    this.content += divider() + `## *${accessibility}* Fields`    
     for (const field of args.members) {
       this.content += renderField(field, args)
     }

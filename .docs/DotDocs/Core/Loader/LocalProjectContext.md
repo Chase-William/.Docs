@@ -1,4 +1,4 @@
-# <code><span title="undefined">LocalProjectContext</span></code>
+# <code><span title="undefined">LocalProjectContext</span></code> *class*
 
 ```
 ட LocalProjectModel
@@ -7,7 +7,7 @@
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
 ### Assembly <code><span title="undefined">Assembly</span></code>
 
@@ -21,7 +21,7 @@ Summary not provided.
 
 Summary not provided.
 
-### DefinedTypes <code><span title="undefined">List</span><<a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
+### DefinedTypes <code><span title="undefined">List</span><<a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
 
 Summary not provided.
 
@@ -29,11 +29,11 @@ Summary not provided.
 
 Summary not provided.
 
-### Id <code><span title="undefined">String</span></code> `static` `readonly`
+### Id <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### LocalProjects <code><span title="undefined">String[]</span></code> `static` `readonly`
+### LocalProjects <code><span title="undefined">String[]</span></code> *static* *readonly*
 
 Summary not provided.
 
@@ -59,15 +59,15 @@ Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Dispose
+### Dispose(...)
 
 Summary not provided.
 
 
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -75,7 +75,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### Exists
+### Exists(...)
 
 Summary not provided.
 
@@ -83,19 +83,19 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### Load
+### Load(...)
 
 Summary not provided.
 
@@ -103,21 +103,21 @@ Summary not provided.
 
 
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 

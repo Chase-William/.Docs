@@ -18,7 +18,7 @@ function renderFieldHeader(field: IAmFieldModel, args: RenderMembersArgs<IAmSlic
   return (
     `### ${field.name} ${renderTypeName(args.parent, field.type)}` +
     renderIsStaticTag(field, args.config) +
-    (field.isLiteral ? ' `const`' : '') +
-    (field.isReadonly ? ' `readonly`' : '')
+    (field.isLiteral ? ' *const*' : '') +
+    (field.isReadonly ? ' *readonly*' : '')
   )
 }

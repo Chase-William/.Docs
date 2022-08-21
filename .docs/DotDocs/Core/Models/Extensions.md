@@ -1,12 +1,12 @@
-# <code><span title="undefined">Extensions</span></code>
+# <code><span title="undefined">Extensions</span></code> *class*
 
 Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -14,7 +14,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetAssemblyId
+### GetAssemblyId(...)
 
 Summary not provided.
 
@@ -22,7 +22,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-### GetDesiredEvents
+### GetDesiredEvents(...)
 
 Summary not provided.
 
@@ -30,7 +30,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">EventInfo</span>></code>
 
-### GetDesiredFields
+### GetDesiredFields(...)
 
 Summary not provided.
 
@@ -38,7 +38,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">FieldInfo</span>></code>
 
-### GetDesiredMethods
+### GetDesiredMethods(...)
 
 Summary not provided.
 
@@ -46,7 +46,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">MethodInfo</span>></code>
 
-### GetDesiredProperties
+### GetDesiredProperties(...)
 
 Summary not provided.
 
@@ -54,7 +54,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">PropertyInfo</span>></code>
 
-### GetEnumDesiredFields
+### GetEnumDesiredFields(...)
 
 Summary not provided.
 
@@ -62,13 +62,13 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">FieldInfo</span>></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetProjectId
+### GetProjectId(...)
 
 Summary not provided.
 
@@ -76,13 +76,13 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### GetTypeId
+### GetTypeId(...)
 
 Summary not provided.
 
@@ -90,21 +90,21 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 

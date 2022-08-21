@@ -1,22 +1,22 @@
-# <code><span title="undefined">LocalProjectModel</span></code>
+# <code><span title="undefined">LocalProjectModel</span></code> *class*
 
 Summary not provided.
 
-## `public` Properties
+## *public* Properties
 
 ### AssemblyId <code><span title="undefined">String</span></code>
 
 Summary not provided.
 
-### DefinedTypes <code><span title="undefined">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code> `static` `readonly`
+### DefinedTypes <code><span title="undefined">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
 
 Summary not provided.
 
-### Id <code><span title="undefined">String</span></code> `static` `readonly`
+### Id <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### LocalProjects <code><span title="undefined">String[]</span></code> `static` `readonly`
+### LocalProjects <code><span title="undefined">String[]</span></code> *static* *readonly*
 
 Summary not provided.
 
@@ -42,9 +42,9 @@ Summary not provided.
 
 
 
-## `public` Methods
+## *public* Methods
 
-### Equals `virtual`
+### Equals(...) *virtual*
 
 Summary not provided.
 
@@ -52,7 +52,7 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### Exists
+### Exists(...)
 
 Summary not provided.
 
@@ -60,33 +60,33 @@ Summary not provided.
 
 - *@returns* <code><span title="undefined">Boolean</span></code>
 
-### GetHashCode `virtual`
+### GetHashCode(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
-### GetType
+### GetType(...)
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
-### ToString `virtual`
+### ToString(...) *virtual*
 
 Summary not provided.
 
 - *@returns* <code><span title="undefined">String</span></code>
 
-## `protected` Methods
+## *protected* Methods
 
-### Finalize `virtual`
+### Finalize(...) *virtual*
 
 Summary not provided.
 
 
 
-### MemberwiseClone
+### MemberwiseClone(...)
 
 Summary not provided.
 
