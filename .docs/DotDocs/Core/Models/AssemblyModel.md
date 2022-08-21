@@ -1,6 +1,6 @@
 # <code><span title="undefined">AssemblyModel</span></code> *class*
 
-
+undefined
 
 ## *public* Properties
 
@@ -34,6 +34,10 @@ Contains all the types defined specifically in this assembly.
 
 ### Equals(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@param* obj <code><span title="undefined">Object</span></code>
@@ -42,17 +46,29 @@ Contains all the types defined specifically in this assembly.
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -62,11 +78,19 @@ Contains all the types defined specifically in this assembly.
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

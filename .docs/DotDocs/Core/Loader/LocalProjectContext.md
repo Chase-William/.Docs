@@ -67,12 +67,16 @@
 
 ### Dispose(...)
 
-Disposes of unmanaged resources for this <see cref="!:LocalProject" /> only.
+undefinedDisposes of unmanaged resources for this <see cref="!:LocalProject" /> only.
 Does not dispose of children projects in <see cref="!:LocalProjects" />.
 
 
 
 ### Equals(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -82,6 +86,10 @@ Does not dispose of children projects in <see cref="!:LocalProjects" />.
 
 ### Exists(...)
 
+```
+ட LocalProjectModel
+```
+
 
 
 - *@param* projectFile <code><span title="undefined">String</span></code>
@@ -90,11 +98,19 @@ Does not dispose of children projects in <see cref="!:LocalProjects" />.
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
+
+```
+ட Object
+```
 
 
 
@@ -102,13 +118,17 @@ Does not dispose of children projects in <see cref="!:LocalProjects" />.
 
 ### Load(...)
 
-
+undefined
 
 - *@param* assemblies <code><span title="undefined">String[]</span></code>
 
 
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -118,11 +138,19 @@ Does not dispose of children projects in <see cref="!:LocalProjects" />.
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

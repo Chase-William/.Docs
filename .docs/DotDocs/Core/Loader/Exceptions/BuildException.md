@@ -51,6 +51,10 @@
 
 ### Equals(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@param* obj <code><span title="undefined">Object</span></code>
@@ -59,17 +63,29 @@
 
 ### GetBaseException(...) *virtual*
 
+```
+ட Exception
+```
+
 
 
 - *@returns* <code><span title="undefined">Exception</span></code>
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetObjectData(...) *virtual*
+
+```
+ட Exception
+```
 
 
 
@@ -80,17 +96,29 @@
 
 ### GetType(...)
 
+```
+ட Exception
+```
+
 
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### GetType(...)
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
+
+```
+ட Exception
+```
 
 
 
@@ -100,11 +128,19 @@
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

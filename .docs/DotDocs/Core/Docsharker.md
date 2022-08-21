@@ -1,6 +1,6 @@
 # <code><span title="The main hub for Charp.Core.">Docsharker</span></code> *class*
 
-The main hub for Charp.Core.
+undefinedThe main hub for Charp.Core.
 
 ## *public* Properties
 
@@ -14,11 +14,15 @@ The main hub for Charp.Core.
 
 ### Dispose(...) *virtual*
 
-Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Builder" />.
+undefinedCleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Builder" />.
 
 
 
 ### Equals(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -28,11 +32,19 @@ Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Bui
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="The main hub for Charp.Core.">Int32</span></code>
 
 ### GetType(...)
+
+```
+ட Object
+```
 
 
 
@@ -40,23 +52,27 @@ Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Bui
 
 ### Load(...)
 
-
+undefined
 
 
 
 ### Make(...)
 
-
+undefined
 
 
 
 ### Prepare(...)
 
-
+undefined
 
 
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -66,11 +82,19 @@ Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Bui
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

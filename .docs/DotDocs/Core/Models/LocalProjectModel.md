@@ -1,6 +1,6 @@
 # <code><span title="Represents a local project with a .csproj file.">LocalProjectModel</span></code> *class*
 
-Represents a local project with a .csproj file.
+undefinedRepresents a local project with a .csproj file.
 
 ## *public* Properties
 
@@ -50,6 +50,10 @@ Entire path to file include name with extension.
 
 ### Equals(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@param* obj <code><span title="Represents a local project with a .csproj file.">Object</span></code>
@@ -58,7 +62,7 @@ Entire path to file include name with extension.
 
 ### Exists(...)
 
-Determines if a projectFile
+undefinedDetermines if a projectFile
 Uses a depth-first-search (DFS) approach.
 
 - *@param* projectFile <code><span title="Represents a local project with a .csproj file.">String</span></code>
@@ -67,17 +71,29 @@ Uses a depth-first-search (DFS) approach.
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="Represents a local project with a .csproj file.">Int32</span></code>
 
 ### GetType(...)
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="Represents a local project with a .csproj file.">Type</span></code>
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -87,11 +103,19 @@ Uses a depth-first-search (DFS) approach.
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

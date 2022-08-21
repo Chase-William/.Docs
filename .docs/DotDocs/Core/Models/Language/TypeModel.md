@@ -132,6 +132,10 @@ to avoid retaining extra information and only keeping essentials like the type d
 
 ### Equals(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@param* obj <code><span title="undefined">Object</span></code>
@@ -140,17 +144,29 @@ to avoid retaining extra information and only keeping essentials like the type d
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -160,11 +176,19 @@ to avoid retaining extra information and only keeping essentials like the type d
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

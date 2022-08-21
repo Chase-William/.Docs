@@ -72,6 +72,10 @@ be that parent class as that parent is where it "resides".
 
 ### Equals(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@param* obj <code><span title="undefined">Object</span></code>
@@ -80,17 +84,29 @@ be that parent class as that parent is where it "resides".
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -100,11 +116,19 @@ be that parent class as that parent is where it "resides".
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

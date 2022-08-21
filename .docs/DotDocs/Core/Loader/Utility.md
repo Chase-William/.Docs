@@ -1,6 +1,6 @@
 # <code><span title="undefined">Utility</span></code> *class*
 
-
+undefined
 
 
 
@@ -8,13 +8,17 @@
 
 ### CleanDirectory(...)
 
-Deletes all elements within a directory if it exists and ensures the directory given exist afterwards.
+undefinedDeletes all elements within a directory if it exists and ensures the directory given exist afterwards.
 
 - *@param* pathToClean <code><span title="undefined">String</span></code>
 
 
 
 ### Equals(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -24,17 +28,29 @@ Deletes all elements within a directory if it exists and ensures the directory g
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -44,11 +60,19 @@ Deletes all elements within a directory if it exists and ensures the directory g
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

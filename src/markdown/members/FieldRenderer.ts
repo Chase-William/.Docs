@@ -3,7 +3,7 @@ import IAmFieldModel from "../../models/language/interfaces/members/IAmFieldMode
 import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
 import RenderMembersArgs from "../../renderer/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { check, optionalDivider, renderIsStaticTag, renderTypeName } from "../Util"
+import divider, { check, optionalDivider, renderIsStaticTag, renderLinkableTypeName } from "../Util"
 
 export function renderField(field: IAmFieldModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): string {
   return (
@@ -16,7 +16,7 @@ export function renderField(field: IAmFieldModel, args: RenderMembersArgs<IAmSli
 
 function renderFieldHeader(field: IAmFieldModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmFieldModel, FieldConfigModel>): string {
   return (
-    `### ${field.name} ${renderTypeName(args.parent, field.type)}` +
+    `### ${field.name} ${renderLinkableTypeName(args.parent, field.type)}` +
     renderIsStaticTag(field, args.config) +
     (field.isLiteral ? ' *const*' : '') +
     (field.isReadonly ? ' *readonly*' : '')

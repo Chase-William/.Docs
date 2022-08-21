@@ -8,6 +8,7 @@ import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeA
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import TypeLink from "../renderer/TypeLink";
 import IAmFullTypeModel from "../models/language/interfaces/IAmFullTypeModel"
+import IAmMemberModel from "../models/language/interfaces/members/IAmMemberModel"
 
 export default function divider(): string {
   return '\n\n'
@@ -40,7 +41,7 @@ export function optionalDivider(col: unknown): string {
  */
 export function renderTypeHeader(type: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
   return (
-    `# ${renderTypeName(type, type)} *${getTypeModelConstructType(type)}*` +
+    `# ${renderLinkableTypeName(type, type)} *${getTypeModelConstructType(type)}*` +
     divider() + 
     renderTypeInheritanceBlock(type, args) +
     getOptionalSummary(type.comments) +
@@ -83,7 +84,7 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
  * @param to The type the user navigating to.
  * @returns A string containing HTML that contains the name/args/params with links if appropriate.
  */
-export function renderTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTypeModel): string {
+export function renderLinkableTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTypeModel): string {
   const nameParts = from.getNameWithGenerics(to, '.md')
   return (
     `<code>` + 

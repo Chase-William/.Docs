@@ -3,7 +3,7 @@ import IAmPropertyModel from "../../models/language/interfaces/members/IAmProper
 import IAmSlicedTypeModel from "../../models/language/interfaces/types/IAmSlicedTypeModel"
 import RenderMembersArgs from "../../renderer/RenderMembersArgs"
 import { getOptionalSummary } from "../CommentsRenderer"
-import divider, { renderIsStaticTag, renderTypeName, renderVirtualAndStaticTags } from "../Util"
+import divider, { renderIsStaticTag, renderLinkableTypeName, renderVirtualAndStaticTags } from "../Util"
 
 export default class PropertyRenderer {
   content = ''
@@ -93,7 +93,7 @@ export default class PropertyRenderer {
   
   renderPropertyHeader(prop: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {   
     return (
-      `### ${prop.name} ${renderTypeName(args.parent, prop.type)}` +
+      `### ${prop.name} ${renderLinkableTypeName(args.parent, prop.type)}` +
       renderIsStaticTag(prop, args.config) +
       renderVirtualAndStaticTags(prop, args.config) +
       this.renderReadonlyTag(prop, args.config) +

@@ -1,12 +1,16 @@
 # <code><span title="undefined">Extensions</span></code> *class*
 
-
+undefined
 
 
 
 ## *public* Methods
 
 ### Equals(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -16,7 +20,7 @@
 
 ### GetAssemblyId(...)
 
-
+undefined
 
 - *@param* assembly <code><span title="undefined">Assembly</span></code>
 
@@ -24,7 +28,7 @@
 
 ### GetDesiredEvents(...)
 
-
+undefined
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -32,7 +36,7 @@
 
 ### GetDesiredFields(...)
 
-
+undefined
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -40,7 +44,7 @@
 
 ### GetDesiredMethods(...)
 
-
+undefined
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -48,7 +52,7 @@
 
 ### GetDesiredProperties(...)
 
-
+undefined
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -56,7 +60,7 @@
 
 ### GetEnumDesiredFields(...)
 
-
+undefined
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -64,13 +68,17 @@
 
 ### GetHashCode(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetProjectId(...)
 
-
+undefined
 
 - *@param* project <code><a href="LocalProjectModel.md">LocalProjectModel</a></code>
 
@@ -78,19 +86,27 @@
 
 ### GetType(...)
 
+```
+ட Object
+```
+
 
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### GetTypeId(...)
 
-
+undefined
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
 - *@returns* <code><span title="undefined">String</span></code>
 
 ### ToString(...) *virtual*
+
+```
+ட Object
+```
 
 
 
@@ -100,11 +116,19 @@
 
 ### Finalize(...) *virtual*
 
+```
+ட Object
+```
+
 
 
 
 
 ### MemberwiseClone(...)
+
+```
+ட Object
+```
 
 
 

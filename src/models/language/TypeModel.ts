@@ -124,6 +124,20 @@ export default class TypeModel
   }
 
   /**
+   * Gets all baseTypes and puts them in a ascending order where index 0 is the first parent.
+   * @returns A collection of all parents in ascending order.
+   */
+  getBaseTypes(): IAmSlicedTypeModel[] {
+    const baseTypes = new Array<IAmSlicedTypeModel>()
+    let current = this.baseType
+    while (current) {
+      baseTypes.push(current)
+      current = current.baseType
+    }
+    return baseTypes
+  }
+
+  /**
    * Gets the name of the type without the generics counter. For example, 
    * "`2" is omitted from the type name.
    * @returns The name of the type without the grave accent and generics count.
