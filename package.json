@@ -15,7 +15,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint eslintrc.json",
     "bundle": "yarn prepare-bundle && yarn bundle-node && yarn post-bundle",
-    "prepare-bundle": "yarn build && cd ./vendor/Docshark.Core && nuget restore & dotnet publish -c Release",
+    "prepare-bundle": "yarn build && cd ./vendor/DotDocs.Core && nuget restore & dotnet publish -c Release",
     "bundle-node": "pkg ./dist/app.js --targets latest-windows-x64 --out-path deployable",
     "post-bundle": "node bundler.js"
   },

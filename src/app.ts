@@ -14,6 +14,7 @@ const router = new Router(process.argv)
 
 // Clean old info out 
 rmSync('json/core-info', { recursive: true, force: true })
+rmSync('.docs', { recursive: true, force: true })
 
 const result = execFileSync(router.docsharkCoreExePath, [
   router.csProjPath,
@@ -32,4 +33,4 @@ const renderManager = new RenderManager(router.config, router.outputPath, new Ma
 renderManager.render()
 
 // Clean json
-// rmSync(JSON_DIR, { recursive: true, force: true })
+rmSync('json/core-info', { recursive: true, force: true })
