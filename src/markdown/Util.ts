@@ -13,6 +13,11 @@ export default function divider(): string {
   return '\n\n'
 }
 
+/**
+ * Check if value is fasly or empty array.
+ * @param col 
+ * @returns 
+ */
 export function check(col: unknown[]): boolean {
   return !col || !col.length
 }
@@ -27,12 +32,18 @@ export function optionalDivider(col: unknown): string {
   return divider()
 }
 
-export function renderTypeHeader(from: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
+/**
+ * Renders the header of a type with it's inheritance block.
+ * @param type The type to base the header on.
+ * @param args Arguments for rendering.
+ * @returns A string containing the markdown text for the header.
+ */
+export function renderTypeHeader(type: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
   return (
-    `# ${renderTypeName(from, from)} *${getTypeModelConstructType(from)}*` +
+    `# ${renderTypeName(type, type)} *${getTypeModelConstructType(type)}*` +
     divider() + 
-    renderTypeInheritanceBlock(from, args) +
-    getOptionalSummary(from.comments) +
+    renderTypeInheritanceBlock(type, args) +
+    getOptionalSummary(type.comments) +
     divider()
   )
 }
@@ -97,6 +108,11 @@ function renderGenerics(generics: TypeLink[]): string {
   }).join(', ')
 }
 
+/**
+ * Gets the name of the construct for the given type. Aka is it s class, enum or interface...
+ * @param typeModel To get construct name from.
+ * @returns Construct name.
+ */
 function getTypeModelConstructType(typeModel: IAmSlicedTypeModel): string {
   const type = typeModel as IAmFullTypeModel
   if (type.isClass)

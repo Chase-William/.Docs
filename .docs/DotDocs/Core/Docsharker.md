@@ -6,7 +6,7 @@ The main hub for Charp.Core.
 
 ### Builder <code><a href="BuildManager.md">BuildManager</a></code>
 
-Summary not provided.
+
 
 
 
@@ -20,7 +20,7 @@ Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Bui
 
 ### Equals(...) *virtual*
 
-Summary not provided.
+
 
 - *@param* obj <code><span title="The main hub for Charp.Core.">Object</span></code>
 
@@ -28,37 +28,37 @@ Summary not provided.
 
 ### GetHashCode(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="The main hub for Charp.Core.">Int32</span></code>
 
 ### GetType(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="The main hub for Charp.Core.">Type</span></code>
 
 ### Load(...)
 
-Summary not provided.
+
 
 
 
 ### Make(...)
 
-Summary not provided.
+
 
 
 
 ### Prepare(...)
 
-Summary not provided.
+
 
 
 
 ### ToString(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="The main hub for Charp.Core.">String</span></code>
 
@@ -66,12 +66,12 @@ Summary not provided.
 
 ### Finalize(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### MemberwiseClone(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="The main hub for Charp.Core.">Object</span></code>

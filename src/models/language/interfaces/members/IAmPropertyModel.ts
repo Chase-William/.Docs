@@ -3,13 +3,15 @@ import IAmAccessibilityModel from "../IAmAccessibilityModel";
 import IAmModel from "../IAmModel";
 import IAmPolymorphicable from "../IAmPolymorphicable";
 import IAmSingletonable from "../IAmSingletonable";
-import IAmTypeModel from "../IAmFullTypeModel";
+import IAmMemberModel from "./IAmMemberModel";
+import IAmSlicedTypeModel from "../types/IAmSlicedTypeModel";
 
 export default interface IAmPropertyModel 
   extends 
   IAmPolymorphicable, 
   IAmAccessibilityModel,
   IAmSingletonable,
+  IAmMemberModel,
   IAmModel {
   hasGetter: boolean;
   hasSetter: boolean;  
@@ -23,6 +25,6 @@ export default interface IAmPropertyModel
   isSetInternal: boolean;
   isVirtual: boolean;
   isAbstract: boolean;
-  type: IAmTypeModel
+  type: IAmSlicedTypeModel
   comments: CommonComment | null;
 }

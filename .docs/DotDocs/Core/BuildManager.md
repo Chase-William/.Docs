@@ -1,6 +1,6 @@
 # <code><span title="undefined">BuildManager</span></code> *class*
 
-Summary not provided.
+
 
 ## *public* Properties
 
@@ -14,13 +14,13 @@ A tree that contains all the local projects the root depends on.
 
 ### Dispose(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### Equals(...) *virtual*
 
-Summary not provided.
+
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
@@ -28,37 +28,37 @@ Summary not provided.
 
 ### GetHashCode(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### Load(...)
 
-Summary not provided.
+
 
 
 
 ### Make(...)
 
-Summary not provided.
+
 
 
 
 ### Prepare(...)
 
-Summary not provided.
+
 
 
 
 ### ToString(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">String</span></code>
 
@@ -66,13 +66,13 @@ Summary not provided.
 
 ### Finalize(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### MemberwiseClone(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Object</span></code>
 

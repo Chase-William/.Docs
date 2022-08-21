@@ -13,6 +13,7 @@ export default class EventModel extends MemberModel<CommonComment> implements IA
   isVirtual: boolean;
 
   bind(types: Map<string, IAmTypeModel>): void {
+    super.bind(types)
     return
   }
 }

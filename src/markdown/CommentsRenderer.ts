@@ -11,5 +11,5 @@ export function getOptionalSummary(comments: CommonComment) {
   if (comments?.summary) {
     return comments.summary
   }
-  return 'Summary not provided.'
+  return ''
 }

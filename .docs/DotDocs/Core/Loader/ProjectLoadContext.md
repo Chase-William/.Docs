@@ -41,7 +41,7 @@ Disposes all <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> within <see 
 
 ### Equals(...) *virtual*
 
-Summary not provided.
+
 
 - *@param* obj <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Object</span></code>
 
@@ -49,13 +49,13 @@ Summary not provided.
 
 ### GetHashCode(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Int32</span></code>
 
 ### GetType(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Type</span></code>
 
@@ -93,7 +93,7 @@ Writes the <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Assemblies" />, <
 
 ### ToString(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
 
@@ -101,13 +101,13 @@ Summary not provided.
 
 ### Finalize(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### MemberwiseClone(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Object</span></code>
 
@@ -115,12 +115,11 @@ Summary not provided.
 
 ### ASSEMBLIES_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
 
-Summary not provided.
+
 
 ### PROJECTS_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
 
-Summary not provided.
+
 
 ### TYPES_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
 
-Summary not provided.

@@ -1,6 +1,6 @@
 # <code><span title="undefined">Extensions</span></code> *class*
 
-Summary not provided.
+
 
 
 
@@ -8,7 +8,7 @@ Summary not provided.
 
 ### Equals(...) *virtual*
 
-Summary not provided.
+
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
@@ -16,7 +16,7 @@ Summary not provided.
 
 ### GetAssemblyId(...)
 
-Summary not provided.
+
 
 - *@param* assembly <code><span title="undefined">Assembly</span></code>
 
@@ -24,7 +24,7 @@ Summary not provided.
 
 ### GetDesiredEvents(...)
 
-Summary not provided.
+
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -32,7 +32,7 @@ Summary not provided.
 
 ### GetDesiredFields(...)
 
-Summary not provided.
+
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -40,7 +40,7 @@ Summary not provided.
 
 ### GetDesiredMethods(...)
 
-Summary not provided.
+
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -48,7 +48,7 @@ Summary not provided.
 
 ### GetDesiredProperties(...)
 
-Summary not provided.
+
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -56,7 +56,7 @@ Summary not provided.
 
 ### GetEnumDesiredFields(...)
 
-Summary not provided.
+
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -64,13 +64,13 @@ Summary not provided.
 
 ### GetHashCode(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetProjectId(...)
 
-Summary not provided.
+
 
 - *@param* project <code><a href="LocalProjectModel.md">LocalProjectModel</a></code>
 
@@ -78,13 +78,13 @@ Summary not provided.
 
 ### GetType(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### GetTypeId(...)
 
-Summary not provided.
+
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
@@ -92,7 +92,7 @@ Summary not provided.
 
 ### ToString(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">String</span></code>
 
@@ -100,12 +100,12 @@ Summary not provided.
 
 ### Finalize(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### MemberwiseClone(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Object</span></code>

@@ -10,7 +10,7 @@ Parameters used in the function signature.
 
 ### ReturnParameter <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a></code> *static* *abstract* *readonly*
 
-Summary not provided.
+
 
 
 

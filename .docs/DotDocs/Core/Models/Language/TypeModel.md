@@ -5,37 +5,37 @@
   ட Object
 ```
 
-Summary not provided.
+
 
 ## *public* Properties
 
 ### Assembly <code><a href="..\AssemblyModel.md">AssemblyModel</a></code>
 
-Summary not provided.
+
 
 ### AssemblyId <code><span title="undefined">String</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### BaseType <code><span title="undefined">String</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### Comments <code><span title="undefined">TypeComments</span></code>
 
-Summary not provided.
+
 
 ### Events <code><span title="undefined">EventModel[]</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### Fields <code><span title="undefined">FieldModel[]</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### FullName <code><span title="undefined">String</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### GenericTypeArguments <code><span title="undefined">String[]</span></code> *static* *readonly*
 
@@ -47,11 +47,11 @@ Contains the primary keys to each type's definition.
 
 ### Id <code><span title="undefined">String</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### Info <code><span title="undefined">TypeInfo</span></code>
 
-Summary not provided.
+
 
 ### IsArray <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
@@ -63,7 +63,7 @@ Denotes if this type is a by ref type.
 
 ### IsClass <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### IsConstructedGenericType <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
@@ -75,11 +75,11 @@ Denotes whether this type was defined inside a local project.
 
 ### IsDelegate <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### IsEnum <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### IsGenericParameter <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
@@ -95,31 +95,36 @@ Denotes that this type defines a generic type and can be used to create construc
 
 ### IsInterface <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### IsValueType <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### MetadataToken <code><span title="undefined">Int32</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### Methods <code><span title="undefined">MethodModel[]</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### Name <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
 
-Summary not provided.
+
 
 ### Namespace <code><span title="undefined">String</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### Properties <code><span title="undefined">PropertyModel[]</span></code> *static* *readonly*
 
-Summary not provided.
+
+
+### TreatAsFacade <code><span title="undefined">Boolean</span></code> *static* *readonly*
+
+Denotes whether this type should be treated as a facade. Facade in this context means
+to avoid retaining extra information and only keeping essentials like the type definition itself.
 
 
 
@@ -127,7 +132,7 @@ Summary not provided.
 
 ### Equals(...) *virtual*
 
-Summary not provided.
+
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
@@ -135,19 +140,19 @@ Summary not provided.
 
 ### GetHashCode(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">String</span></code>
 
@@ -155,12 +160,12 @@ Summary not provided.
 
 ### Finalize(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### MemberwiseClone(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Object</span></code>

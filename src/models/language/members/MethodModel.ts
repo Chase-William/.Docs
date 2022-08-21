@@ -1,9 +1,9 @@
 import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
-import IAmTypeModel from '../interfaces/IAmFullTypeModel';
 import MethodComment from '../../comments/MethodComment';
 import ParameterModel from '../ParameterModel';
 import MemberModel from './MemberModel';
 import IAmMethodModel from '../interfaces/members/IAmMethodModel';
+import IAmFullTypeModel from '../interfaces/IAmFullTypeModel';
 
 @jsonObject()
 export default class MethodModel extends MemberModel<MethodComment> implements IAmMethodModel {
@@ -17,10 +17,11 @@ export default class MethodModel extends MemberModel<MethodComment> implements I
   @jsonMember(Boolean, { name: 'IsVirtual' })
   isVirtual: boolean;
 
-  bind(types: Map<string, IAmTypeModel>): void {
+  bind(types: Map<string, IAmFullTypeModel>): void {
     // Bind return parameter
     this.returnParameter.bind(types)
     // Bind pamaraters
     this.parameters.forEach(param => param.bind(types))
+    super.bind(types)
   }
 }

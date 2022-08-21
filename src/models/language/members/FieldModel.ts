@@ -1,8 +1,9 @@
 import { AnyT, jsonMember, jsonObject } from 'typedjson';
-import IAmTypeModel from '../interfaces/IAmFullTypeModel';
 import CommonComment from '../../comments/CommonComment';
 import MemberModel from './MemberModel';
 import IAmFieldModel from '../interfaces/members/IAmFieldModel';
+import IAmFullTypeModel from '../interfaces/IAmFullTypeModel';
+import IAmSlicedTypeModel from '../interfaces/types/IAmSlicedTypeModel';
 
 @jsonObject()
 export default class FieldModel extends MemberModel<CommonComment> implements IAmFieldModel {
@@ -15,9 +16,10 @@ export default class FieldModel extends MemberModel<CommonComment> implements IA
 
   @jsonMember(String, { name: 'Type' })
   _type: string
-  type: IAmTypeModel
+  type: IAmSlicedTypeModel
 
-  bind(types: Map<string, IAmTypeModel>): void {
+  bind(types: Map<string, IAmFullTypeModel>): void {
     this.type = types.get(this._type)
+    super.bind(types)
   }
 }

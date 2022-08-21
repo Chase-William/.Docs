@@ -1,20 +1,20 @@
 # <code><span title="undefined">ParameterModel</span></code> *class*
 
-Summary not provided.
+
 
 ## *public* Properties
 
 ### Info <code><span title="undefined">ParameterInfo</span></code>
 
-Summary not provided.
+
 
 ### Name <code><span title="undefined">String</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 ### Type <code><span title="undefined">String</span></code> *static* *readonly*
 
-Summary not provided.
+
 
 
 
@@ -22,7 +22,7 @@ Summary not provided.
 
 ### Equals(...) *virtual*
 
-Summary not provided.
+
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
@@ -30,19 +30,19 @@ Summary not provided.
 
 ### GetHashCode(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">String</span></code>
 
@@ -50,12 +50,12 @@ Summary not provided.
 
 ### Finalize(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### MemberwiseClone(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Object</span></code>

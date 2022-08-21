@@ -1,6 +1,6 @@
 # <code><span title="undefined">Utility</span></code> *class*
 
-Summary not provided.
+
 
 
 
@@ -16,7 +16,7 @@ Deletes all elements within a directory if it exists and ensures the directory g
 
 ### Equals(...) *virtual*
 
-Summary not provided.
+
 
 - *@param* obj <code><span title="undefined">Object</span></code>
 
@@ -24,19 +24,19 @@ Summary not provided.
 
 ### GetHashCode(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Int32</span></code>
 
 ### GetType(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Type</span></code>
 
 ### ToString(...) *virtual*
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">String</span></code>
 
@@ -44,12 +44,12 @@ Summary not provided.
 
 ### Finalize(...) *virtual*
 
-Summary not provided.
+
 
 
 
 ### MemberwiseClone(...)
 
-Summary not provided.
+
 
 - *@returns* <code><span title="undefined">Object</span></code>
