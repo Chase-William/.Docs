@@ -8,7 +8,7 @@ Summary not provided.
 
 ### CleanDirectory(...)
 
-Summary not provided.
+Deletes all elements within a directory if it exists and ensures the directory given exist afterwards.
 
 - *@param* pathToClean <code><span title="undefined">String</span></code>
 

@@ -3,7 +3,7 @@ import EventModel from "./members/EventModel";
 import FieldModel from "./members/FieldModel";
 import MethodModel from "./members/MethodModel";
 import PropertyModel from "./members/PropertyModel";
-import CommonComment from "../written/CommonComment";
+import CommonComment from "../comments/CommonComment";
 import IAmFullTypeModel from "./interfaces/IAmFullTypeModel";
 import AccessibilityModel from "./AccessibilityModel";
 import AssemblyModel from "../AssemblyModel";
@@ -11,6 +11,7 @@ import IAmProjectManager from "../../ProjectManager";
 import IAmSlicedTypeModel from "./interfaces/types/IAmSlicedTypeModel";
 import path = require("path");
 import TypeLink from "../../renderer/TypeLink";
+import TypeComment from "../comments/TypeComments";
 
 @jsonObject()
 export default class TypeModel
@@ -31,7 +32,7 @@ export default class TypeModel
   fullName: string = null
 
   @jsonMember(CommonComment, { name: 'Comments' })
-  comments: CommonComment | null = null
+  comments: TypeComment | null = null
 
   @jsonMember(String, { name: 'AssemblyId' })
   _assemblyId: string

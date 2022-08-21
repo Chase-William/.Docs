@@ -1,7 +1,7 @@
 # <code><span title="undefined">MethodModel</span></code> *class*
 
 ```
-ட MemberModel<MethodInfo, CommonComments>
+ட MemberModel<MethodInfo, MethodComments>
   ட Model
     ட Object
 ```
@@ -10,7 +10,7 @@ Summary not provided.
 
 ## *public* Properties
 
-### Comments <code><span title="undefined">CommonComments</span></code>
+### Comments <code><span title="undefined">MethodComments</span></code>
 
 Summary not provided.
 

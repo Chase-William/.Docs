@@ -28,27 +28,27 @@ Summary not provided.
 
 ### IsAbstract <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Determines if the propert is abstract if either of it's methods are abstract themselves.
 
-### IsGetInternal <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
-
-Summary not provided.
-
-### IsGetPrivate <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
+### IsGetInternal <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
 
 Summary not provided.
 
-### IsGetProtected <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
+### IsGetPrivate <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
 
 Summary not provided.
 
-### IsGetPublic <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
+### IsGetProtected <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
+
+Summary not provided.
+
+### IsGetPublic <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
 
 Summary not provided.
 
 ### IsInternal <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Determines if the property is internal as a whole. This means both the set and get methods are internal if present.
 
 ### IsPrivate <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
@@ -56,35 +56,35 @@ Summary not provided.
 
 ### IsProtected <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Determines if the property is protected as a whole. This means both the set and get methods are protected if present.
 
 ### IsPublic <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Determines if the property is publicly accessible to any degree.
 
-### IsSetInternal <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
-
-Summary not provided.
-
-### IsSetPrivate <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
+### IsSetInternal <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
 
 Summary not provided.
 
-### IsSetProtected <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
+### IsSetPrivate <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
 
 Summary not provided.
 
-### IsSetPublic <code><span title="undefined">Nullable</span><<span title="undefined">Boolean</span>></code> *static* *readonly*
+### IsSetProtected <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
+
+Summary not provided.
+
+### IsSetPublic <code><span title="undefined">Nullable</span><<span title="Represents a Boolean (<see langword="true" /> or <see langword="false" />) value.">Boolean</span>></code> *static* *readonly*
 
 Summary not provided.
 
 ### IsStatic <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Determines if the property is static if either of it's methods are static themselves.
 
 ### IsVirtual <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Determines if the property is virtual if either of it's methods are virtual themselves.
 
 ### Name <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
 

@@ -1,6 +1,6 @@
 import { jsonMember, jsonObject } from 'typedjson';
 import IAmTypeModel from '../interfaces/IAmFullTypeModel';
-import CommonComment from '../../written/CommonComment';
+import CommonComment from '../../comments/CommonComment';
 import MemberModel from './MemberModel';
 import IAmPropertyModel from '../interfaces/members/IAmPropertyModel';
 

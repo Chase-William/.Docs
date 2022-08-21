@@ -1,5 +1,5 @@
 import AssemblyModel from "../../AssemblyModel"
-import CommonComment from "../../written/CommonComment"
+import CommonComment from "../../comments/CommonComment"
 import IAmAccessibilityModel from "./IAmAccessibilityModel"
 import IAmEventModel from "./members/IAmEventModel"
 import IAmModel from "./IAmModel"

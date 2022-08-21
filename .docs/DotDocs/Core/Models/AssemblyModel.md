@@ -6,7 +6,7 @@ Summary not provided.
 
 ### Assembly <code><span title="undefined">Assembly</span></code>
 
-Summary not provided.
+The underlying assembly instance from the runtime.
 
 ### FullName <code><span title="undefined">String</span></code> *static* *readonly*
 
@@ -16,9 +16,17 @@ Summary not provided.
 
 Summary not provided.
 
+### LocalProject <code><a href="LocalProjectModel.md">LocalProjectModel</a></code>
+
+A reference to the local project that creates this assembly if it exists in the context.
+
 ### Name <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
+
+### Types <code><span title="undefined">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code>
+
+Contains all the types defined specifically in this assembly.
 
 
 

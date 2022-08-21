@@ -1,4 +1,4 @@
-import CommonComment from "../models/written/CommonComment"
+import CommonComment from "../models/comments/CommonComment"
 
 export default function hasSummaryAndComment(comments: CommonComment): boolean {
   return typeof comments?.summary != undefined && comments?.summary != null

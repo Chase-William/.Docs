@@ -13,6 +13,10 @@ Summary not provided.
 
 Summary not provided.
 
+### Assembly <code><a href="..\Models\AssemblyModel.md">AssemblyModel</a></code>
+
+Summary not provided.
+
 ### AssemblyId <code><span title="undefined">String</span></code>
 
 Summary not provided.
@@ -63,7 +67,8 @@ Summary not provided.
 
 ### Dispose(...)
 
-Summary not provided.
+Disposes of unmanaged resources for this <see cref="!:LocalProject" /> only.
+Does not dispose of children projects in <see cref="!:LocalProjects" />.
 
 
 

@@ -28,7 +28,7 @@ Summary not provided.
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">EventInfo</span>></code>
+- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of an event and provides access to event metadata.">EventInfo</span>></code>
 
 ### GetDesiredFields(...)
 
@@ -36,7 +36,7 @@ Summary not provided.
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">FieldInfo</span>></code>
+- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a field and provides access to field metadata.">FieldInfo</span>></code>
 
 ### GetDesiredMethods(...)
 
@@ -44,7 +44,7 @@ Summary not provided.
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">MethodInfo</span>></code>
+- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a method and provides access to method metadata.">MethodInfo</span>></code>
 
 ### GetDesiredProperties(...)
 
@@ -52,7 +52,7 @@ Summary not provided.
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">PropertyInfo</span>></code>
+- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a property and provides access to property metadata.">PropertyInfo</span>></code>
 
 ### GetEnumDesiredFields(...)
 
@@ -60,7 +60,7 @@ Summary not provided.
 
 - *@param* type <code><span title="undefined">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="undefined">FieldInfo</span>></code>
+- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a field and provides access to field metadata.">FieldInfo</span>></code>
 
 ### GetHashCode(...) *virtual*
 

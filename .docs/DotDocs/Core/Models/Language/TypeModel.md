@@ -9,6 +9,10 @@ Summary not provided.
 
 ## *public* Properties
 
+### Assembly <code><a href="..\AssemblyModel.md">AssemblyModel</a></code>
+
+Summary not provided.
+
 ### AssemblyId <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
@@ -17,7 +21,7 @@ Summary not provided.
 
 Summary not provided.
 
-### Comments <code><span title="undefined">CommonComments</span></code>
+### Comments <code><span title="undefined">TypeComments</span></code>
 
 Summary not provided.
 
@@ -35,23 +39,27 @@ Summary not provided.
 
 ### GenericTypeArguments <code><span title="undefined">String[]</span></code> *static* *readonly*
 
-Summary not provided.
+Contains the primary keys to each type's definition.
 
 ### GenericTypeParameters <code><span title="undefined">String[]</span></code> *static* *readonly*
 
-Summary not provided.
+Contains the primary keys to each type's definition.
 
 ### Id <code><span title="undefined">String</span></code> *static* *readonly*
 
 Summary not provided.
 
-### IsArray <code><span title="undefined">Boolean</span></code> *static* *readonly*
+### Info <code><span title="undefined">TypeInfo</span></code>
 
 Summary not provided.
+
+### IsArray <code><span title="undefined">Boolean</span></code> *static* *readonly*
+
+Denotes if this type is actually an array type.
 
 ### IsByRef <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Denotes if this type is a by ref type.
 
 ### IsClass <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
@@ -59,11 +67,11 @@ Summary not provided.
 
 ### IsConstructedGenericType <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Denotes if this type is constructed from a generic type.
 
 ### IsDefinedInLocalProject <code><span title="undefined">Boolean</span></code>
 
-Summary not provided.
+Denotes whether this type was defined inside a local project.
 
 ### IsDelegate <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
@@ -75,15 +83,15 @@ Summary not provided.
 
 ### IsGenericParameter <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Indicates if this type is used as a generic parameter in a type definition or in a generic method definition.
 
 ### IsGenericType <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Denotes if this type is generic, meaning can be a generic type definition, open constructed type or closed constructed type.
 
 ### IsGenericTypeDefinition <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
-Summary not provided.
+Denotes that this type defines a generic type and can be used to create constructed types.
 
 ### IsInterface <code><span title="undefined">Boolean</span></code> *static* *readonly*
 
@@ -110,10 +118,6 @@ Summary not provided.
 Summary not provided.
 
 ### Properties <code><span title="undefined">PropertyModel[]</span></code> *static* *readonly*
-
-Summary not provided.
-
-### Type <code><span title="undefined">TypeInfo</span></code>
 
 Summary not provided.
 

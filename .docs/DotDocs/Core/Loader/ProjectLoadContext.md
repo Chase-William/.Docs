@@ -1,24 +1,24 @@
-# <code><span title="undefined">ProjectLoadContext</span></code> *class*
+# <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">ProjectLoadContext</span></code> *class*
 
-Summary not provided.
+A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.
 
 ## *public* Properties
 
-### Assemblies <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\AssemblyModel.md">AssemblyModel</a>></code> *static* *readonly*
+### Assemblies <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, <a href="..\Models\AssemblyModel.md">AssemblyModel</a>></code> *static* *readonly*
 
-Summary not provided.
+Assemblies needed by the root project and it's dependencies.
 
-### FullProjectTypeMap <code><span title="undefined">IReadOnlyDictionary</span><<span title="undefined">String</span>, <a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
+### LocalProjects <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code> *static* *readonly*
 
-Summary not provided.
-
-### LocalProjects <code><span title="undefined">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code> *static* *readonly*
-
-Summary not provided.
+All local projects involved in the build process.
 
 ### RootProject <code><a href="..\Models\LocalProjectModel.md">LocalProjectModel</a></code> *static* *readonly*
 
-Summary not provided.
+The root project all others stem from.
+
+### Types <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, <a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
+
+Types needed by the root project and it's dependencies.
 
 
 
@@ -26,15 +26,16 @@ Summary not provided.
 
 ### BuildProject(...)
 
-Summary not provided.
+Build the project and either report the error if the build fails or if it succeeds gather information
+from the build like projects local projects needed and assemblies required.
 
-- *@param* csProjPath <code><span title="undefined">String</span></code>
+- *@param* csProjPath <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
 
 
 
 ### Dispose(...) *virtual*
 
-Summary not provided.
+Disposes all <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> within <see cref="F:DotDocs.Core.Loader.ProjectLoadContext.rootProject" /> recursively.
 
 
 
@@ -42,42 +43,51 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Int32</span></code>
 
 ### GetType(...)
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Type</span></code>
+
+### LoadDocumentation(...)
+
+Loads the comments associated with each type. This function depends on <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Assemblies" />
+as it iterates through the types reference in the <see cref="P:DotDocs.Core.Models.AssemblyModel.Types" />. Therefore, it can load
+the documentation file associated with that assembly once and apply comments it to all types. Other approaches
+would result in more redundent file loading.
+
+
 
 ### LoadTypes(...)
 
-Summary not provided.
+Load all types used by the root project and it's project dependencies.
 
 
 
 ### Prepare(...)
 
-Summary not provided.
+Prepares given and all dependent .csproj files recursively for further processing.
 
-- *@param* projectFile <code><span title="undefined">String</span></code>
-- *@param* processedFiles <code><span title="undefined">List</span><<span title="undefined">String</span>></code>
+- *@param* projectFile <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
+- *@param* processedFiles <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">List</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>></code>
 
 
 
 ### Save(...)
 
-Summary not provided.
+Writes the <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Assemblies" />, <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.LocalProjects" />, and <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Types" /> collections to file.
 
-- *@param* outputPath <code><span title="undefined">String</span></code>
+- *@param* outputPath <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
 
 
 
@@ -85,7 +95,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
 
 ## *protected* Methods
 
@@ -99,18 +109,18 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Object</span></code>
 
 ## *public* Fields
 
-### ASSEMBLIES_FILE <code><span title="undefined">String</span></code> *const*
+### ASSEMBLIES_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
 
 Summary not provided.
 
-### PROJECTS_FILE <code><span title="undefined">String</span></code> *const*
+### PROJECTS_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
 
 Summary not provided.
 
-### TYPES_FILE <code><span title="undefined">String</span></code> *const*
+### TYPES_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
 
 Summary not provided.

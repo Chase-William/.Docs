@@ -1,44 +1,48 @@
-# <code><span title="undefined">LocalProjectModel</span></code> *class*
+# <code><span title="Represents a local project with a .csproj file.">LocalProjectModel</span></code> *class*
 
-Summary not provided.
+Represents a local project with a .csproj file.
 
 ## *public* Properties
 
-### AssemblyId <code><span title="undefined">String</span></code>
+### Assembly <code><a href="AssemblyModel.md">AssemblyModel</a></code>
 
 Summary not provided.
 
-### DefinedTypes <code><span title="undefined">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
+### AssemblyId <code><span title="Represents a local project with a .csproj file.">String</span></code>
+
+A unique identifier to the assembly this project produces.
+
+### DefinedTypes <code><span title="Represents a local project with a .csproj file.">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
 
 Summary not provided.
 
-### Id <code><span title="undefined">String</span></code> *static* *readonly*
+### Id <code><span title="Represents a local project with a .csproj file.">String</span></code> *static* *readonly*
+
+A unique idenfitier for this project.
+
+### LocalProjects <code><span title="Represents a local project with a .csproj file.">String[]</span></code> *static* *readonly*
+
+Contains unique identifiers to local projects that are dependencies.
+
+### LocalProjectsAsObjects <code><span title="Represents a local project with a .csproj file.">List</span><<a href="LocalProjectModel.md">LocalProjectModel</a>></code>
 
 Summary not provided.
 
-### LocalProjects <code><span title="undefined">String[]</span></code> *static* *readonly*
+### ProjectDirectory <code><span title="Represents a local project with a .csproj file.">String</span></code>
 
-Summary not provided.
+Directory where the .csproj file resides.
 
-### LocalProjectsAsObjects <code><span title="undefined">List</span><<a href="LocalProjectModel.md">LocalProjectModel</a>></code>
+### ProjectFileName <code><span title="Represents a local project with a .csproj file.">String</span></code>
 
-Summary not provided.
+Just the file name.
 
-### ProjectDirectory <code><span title="undefined">String</span></code>
+### ProjectName <code><span title="Represents a local project with a .csproj file.">String</span></code>
 
-Summary not provided.
+Just the project name with no extension.
 
-### ProjectFileName <code><span title="undefined">String</span></code>
+### ProjectPath <code><span title="Represents a local project with a .csproj file.">String</span></code>
 
-Summary not provided.
-
-### ProjectName <code><span title="undefined">String</span></code>
-
-Summary not provided.
-
-### ProjectPath <code><span title="undefined">String</span></code>
-
-Summary not provided.
+Entire path to file include name with extension.
 
 
 
@@ -48,35 +52,36 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="Represents a local project with a .csproj file.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="Represents a local project with a .csproj file.">Boolean</span></code>
 
 ### Exists(...)
 
-Summary not provided.
+Determines if a projectFile
+Uses a depth-first-search (DFS) approach.
 
-- *@param* projectFile <code><span title="undefined">String</span></code>
+- *@param* projectFile <code><span title="Represents a local project with a .csproj file.">String</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="Represents a local project with a .csproj file.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="Represents a local project with a .csproj file.">Int32</span></code>
 
 ### GetType(...)
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="Represents a local project with a .csproj file.">Type</span></code>
 
 ### ToString(...) *virtual*
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="Represents a local project with a .csproj file.">String</span></code>
 
 ## *protected* Methods
 
@@ -90,4 +95,4 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="Represents a local project with a .csproj file.">Object</span></code>

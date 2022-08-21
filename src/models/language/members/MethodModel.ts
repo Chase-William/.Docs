@@ -1,6 +1,6 @@
 import { jsonArrayMember, jsonMember, jsonObject } from 'typedjson';
 import IAmTypeModel from '../interfaces/IAmFullTypeModel';
-import MethodComment from '../../written/MethodComment';
+import MethodComment from '../../comments/MethodComment';
 import ParameterModel from '../ParameterModel';
 import MemberModel from './MemberModel';
 import IAmMethodModel from '../interfaces/members/IAmMethodModel';

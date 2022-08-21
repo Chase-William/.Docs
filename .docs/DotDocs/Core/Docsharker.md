@@ -1,6 +1,6 @@
-# <code><span title="undefined">Docsharker</span></code> *class*
+# <code><span title="The main hub for Charp.Core.">Docsharker</span></code> *class*
 
-Summary not provided.
+The main hub for Charp.Core.
 
 ## *public* Properties
 
@@ -14,7 +14,7 @@ Summary not provided.
 
 ### Dispose(...) *virtual*
 
-Summary not provided.
+Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Builder" />.
 
 
 
@@ -22,21 +22,21 @@ Summary not provided.
 
 Summary not provided.
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="The main hub for Charp.Core.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="The main hub for Charp.Core.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="The main hub for Charp.Core.">Int32</span></code>
 
 ### GetType(...)
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="The main hub for Charp.Core.">Type</span></code>
 
 ### Load(...)
 
@@ -60,7 +60,7 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="The main hub for Charp.Core.">String</span></code>
 
 ## *protected* Methods
 
@@ -74,4 +74,4 @@ Summary not provided.
 
 Summary not provided.
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="The main hub for Charp.Core.">Object</span></code>

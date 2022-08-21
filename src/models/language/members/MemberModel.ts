@@ -1,6 +1,6 @@
 import { jsonMember, jsonObject } from 'typedjson';
 import IAmSingletonable from '../interfaces/IAmSingletonable';
-import CommonComment from '../../written/CommonComment';
+import CommonComment from '../../comments/CommonComment';
 import AccessibilityModel from '../AccessibilityModel';
 
 @jsonObject()

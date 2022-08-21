@@ -6,7 +6,7 @@ Summary not provided.
 
 ### ProjectContext <code><a href="Loader\ProjectLoadContext.md">ProjectLoadContext</a></code>
 
-Summary not provided.
+A tree that contains all the local projects the root depends on.
 
 
 
@@ -80,4 +80,4 @@ Summary not provided.
 
 ### DOCSHARK_CORE_ROOT_FOLDER <code><span title="undefined">String</span></code> *const*
 
-Summary not provided.
+The root folder of all file output produced by this project.

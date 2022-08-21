@@ -1,4 +1,4 @@
-import MethodComment from "../../../written/MethodComment";
+import MethodComment from "../../../comments/MethodComment";
 import IAmAccessibilityModel from "../IAmAccessibilityModel";
 import IAmModel from "../IAmModel";
 import IAmPolymorphicable from "../IAmPolymorphicable";

@@ -1,6 +1,6 @@
 import TypeLink from "../../../../renderer/TypeLink"
 import AssemblyModel from "../../../AssemblyModel"
-import CommonComment from "../../../written/CommonComment"
+import CommonComment from "../../../comments/CommonComment"
 import IAmAccessibilityModel from "../IAmAccessibilityModel"
 import IAmModel from "../IAmModel"
 import IAmTypeModel from "../IAmFullTypeModel"

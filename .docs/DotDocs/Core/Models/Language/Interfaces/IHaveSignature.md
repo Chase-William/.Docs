@@ -1,12 +1,12 @@
-# <code><span title="undefined">IHaveSignature</span></code> *interface*
+# <code><span title="Represents a type that has functional based documentation like parameters and return type.">IHaveSignature</span></code> *interface*
 
-Summary not provided.
+Represents a type that has functional based documentation like parameters and return type.
 
 ## *public* Properties
 
-### Parameters <code><span title="undefined">ParameterModel[]</span></code> *static* *abstract* *readonly*
+### Parameters <code><span title="Represents a type that has functional based documentation like parameters and return type.">ParameterModel[]</span></code> *static* *abstract* *readonly*
 
-Summary not provided.
+Parameters used in the function signature.
 
 ### ReturnParameter <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a></code> *static* *abstract* *readonly*
 
@@ -18,8 +18,8 @@ Summary not provided.
 
 ### GetParameters(...) *virtual*
 
-Summary not provided.
+Gets all the parameter information and organizes it before returning it.
 
-- *@param* info <code><span title="undefined">MethodInfo</span></code>
+- *@param* info <code><span title="Represents a type that has functional based documentation like parameters and return type.">MethodInfo</span></code>
 
-- *@returns* <code><span title="undefined">ParameterModel[]</span></code>
+- *@returns* <code><span title="Represents a type that has functional based documentation like parameters and return type.">ParameterModel[]</span></code>
