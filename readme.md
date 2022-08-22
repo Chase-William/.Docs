@@ -1,61 +1,48 @@
 <p align="center">
-  <img src="./resources/media/charp-icon-1200x.jpg" style="width: 350px;margin-left: auto;margin-right: auto;">
+  <img src="./resources/media/.docs-yellow-1024x.png" style="width: 450px;margin-left: auto;margin-right: auto;">
 </p>
 
-# Charp
+# DotDocs *(.Docs)*
 
-The most intuitive & reliable documentation generator library for C# projects.
+DotDocs is an intuitive & reliable documentation generator library for C# projects.
 
-> Charp caters to C# and has no plans to expand to other languages. The C#/.NET community doesn't have a intuitive & reliable documentation generator, therefore I've dedicated many weekends of my summer building this solution 😊 enjoy!
+> DotDocs caters to C# and has no plans to expand to other languages. In my opinion, C#/.NET community doesn't have a intuitive documentation generator. Therefore, I am building this solution for the community, enjoy! 😊
 
 ## Installation Guide
 
-> **Makes sure you have the .NET 6.0 runtime installed on your machine for Charp to work.**
+> **Makes sure you have the .NET 6.0 runtime installed on your machine for DotDocs to work.**
 
 ### Through Chocolately *(recommended)*
 
-Download Charp through chocolately using the command below:
+Download DotDocs through chocolately using the command below:
 
 ```sh
-# Administrator Elevation Required
-choco install charp --pre 
+# Administrator Rights Required
+choco install dotdocs --pre 
 ```
 
 ### Directly From Github
 
-Download and unzip the latest release from [here](https://github.com/Chase-William/Charp/releases/).
+Download and unzip the latest release from [here](https://github.com/Chase-William/.Docs/releases/).
 
-Then configure your environment variables for *charp.exe* and you're set.
+Then configure your environment variables for *dotdocs.exe* and you're set.
 
 ## Usage Options
 
 ### Use `.csproj`
 
 ```sh
-# Must be ran from a dir with a .csproj
-# Puts output inside current dir within a default "docs" folder
-charp
-```
-```sh
-# Provide a path to where a .csproj is (uses the first one found if multiple exist)
+# Provide a path to a specific .csproj
 # Provide a location for docs to be put
-charp "<path-to-csproj>" -o "<output-path>"
+dotdocs "<path-to-project-file>.csproj"
 ```
 
 ```sh
 # Provide a path to a specific .csproj
-# Provide a location for docs to be put
-charp "<path>.csproj" -o "<output-path>"
-```
-
-```sh
-# Provide a path to where a .csproj is (uses the first one found if multiple exist)
-# Provide a location for docs to be put
+# Provide a location for the documentation to be put (.Docs will create a folder if needed)
 # Provide a configuration file
-charp "<path>" -o "<output-path>" -c "<config-file>.json"
+dotdocs "<path-to-project-file>.csproj" -o "<output-folder-path>" -c "<config-file>.json"
 ```
-
-> In above mentioned approaches, if your `.csproj` doesn't have `xml` comment generation enabled; it will add the flag to your `.csproj` file. Shortly followed by attempting to build your project.
 
 ### Use `.dll` & `.xml`
 
@@ -67,4 +54,4 @@ charp "<path>" -o "<output-path>" -c "<config-file>.json"
 charp -dll "<path>.dll" -xml "<path>.xml" -o "<output-path>" -c "<config-file>.json"
 ```
 
-Checkout the wiki for information about configurations and more! ☕
+Checkout the wiki for more information! ☕
