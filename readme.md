@@ -42,4 +42,8 @@ dotdocs "<path-to-project-file>.csproj"
 dotdocs "<path-to-project-file>.csproj" -o "<output-folder-path>" -c "<config-file>.json"
 ```
 
+### Examples
+
+Want to see an example? Either checkout the latest example in [releases](https://github.com/Chase-William/.Docs/releases). or check the `.docs/` directory on this page!
+
 Checkout the wiki for more information! ☕
