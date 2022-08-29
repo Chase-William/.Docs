@@ -43,6 +43,7 @@ export function renderTypeInheritanceBlock(model: IAmSlicedTypeModel, args: Rend
   // Only render the inheritance tree if it involves 2 or more baseTypes
   if (model.baseType?.baseType)
     return renderTypeChainBlock(model)
+  return ''
 }
 
 function renderIndent(index: number): string {
@@ -66,7 +67,7 @@ function renderIndent(index: number): string {
  */
  export function renderMemberInheritanceInfo(containingType: IAmSlicedTypeModel | null, member: IAmMemberModel): string {
   if (!member.DeclaringType || member.DeclaringType == containingType)
-    return // Member is defined in the current type
+    return '' // Member is defined in the current type
   // Member is inherited from a type other than the containingType (child of that parent.. who is the parent) 
   return (
     '```\nட ' +

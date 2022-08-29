@@ -1,30 +1,30 @@
-# <code><span title="undefined">AssemblyModel</span></code> *class*
+# <code><span title="A class that represents an assembly as a model.">AssemblyModel</span></code> *class*
 
-undefined
+A class that represents an assembly as a model.
 
 ## *public* Properties
 
-### Assembly <code><span title="undefined">Assembly</span></code>
+### Assembly <code><span title="A class that represents an assembly as a model.">Assembly</span></code>
 
 The underlying assembly instance from the runtime.
 
-### FullName <code><span title="undefined">String</span></code> *static* *readonly*
+### FullName <code><span title="A class that represents an assembly as a model.">String</span></code> *static* *readonly*
 
+<inheritdoc cref="P:System.Reflection.Assembly.FullName" />
 
+### Id <code><span title="A class that represents an assembly as a model.">String</span></code> *static* *readonly*
 
-### Id <code><span title="undefined">String</span></code> *static* *readonly*
-
-
+The id for this assembly.
 
 ### LocalProject <code><a href="LocalProjectModel.md">LocalProjectModel</a></code>
 
 A reference to the local project that creates this assembly if it exists in the context.
 
-### Name <code><span title="undefined">String</span></code> *static* *readonly*
+### Name <code><span title="A class that represents an assembly as a model.">String</span></code> *static* *readonly*
 
+<inheritdoc cref="P:System.Reflection.AssemblyName.Name" />
 
-
-### Types <code><span title="undefined">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code>
+### Types <code><span title="A class that represents an assembly as a model.">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code>
 
 Contains all the types defined specifically in this assembly.
 
@@ -40,9 +40,9 @@ Contains all the types defined specifically in this assembly.
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="A class that represents an assembly as a model.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="A class that represents an assembly as a model.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -52,7 +52,7 @@ Contains all the types defined specifically in this assembly.
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="A class that represents an assembly as a model.">Int32</span></code>
 
 ### GetType(...)
 
@@ -62,7 +62,7 @@ Contains all the types defined specifically in this assembly.
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="A class that represents an assembly as a model.">Type</span></code>
 
 ### ToString(...) *virtual*
 
@@ -72,7 +72,7 @@ Contains all the types defined specifically in this assembly.
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="A class that represents an assembly as a model.">String</span></code>
 
 ## *protected* Methods
 
@@ -94,4 +94,4 @@ Contains all the types defined specifically in this assembly.
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="A class that represents an assembly as a model.">Object</span></code>

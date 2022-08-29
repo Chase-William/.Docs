@@ -33,4 +33,4 @@ const renderManager = new RenderManager(router.config, router.outputPath, new Ma
 renderManager.render()
 
 // Clean json
-rmSync('json/core-info', { recursive: true, force: true })
+// rmSync('json/core-info', { recursive: true, force: true })

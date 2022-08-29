@@ -1,6 +1,6 @@
 # <code><span title="Represents a type that has functional based documentation like parameters and return type.">IHaveSignature</span></code> *interface*
 
-undefinedRepresents a type that has functional based documentation like parameters and return type.
+Represents a type that has functional based documentation like parameters and return type.
 
 ## *public* Properties
 
@@ -18,7 +18,7 @@ Parameters used in the function signature.
 
 ### GetParameters(...) *virtual*
 
-undefinedGets all the parameter information and organizes it before returning it.
+Gets all the parameter information and organizes it before returning it.
 
 - *@param* info <code><span title="Represents a type that has functional based documentation like parameters and return type.">MethodInfo</span></code>
 

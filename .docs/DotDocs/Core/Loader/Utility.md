@@ -1,6 +1,6 @@
-# <code><span title="undefined">Utility</span></code> *class*
+# <code><span title="Contains utility functionalities needed by this project.">Utility</span></code> *class*
 
-undefined
+Contains utility functionalities needed by this project.
 
 
 
@@ -8,9 +8,9 @@ undefined
 
 ### CleanDirectory(...)
 
-undefinedDeletes all elements within a directory if it exists and ensures the directory given exist afterwards.
+Deletes all elements within a directory if it exists and ensures the directory given exist afterwards.
 
-- *@param* pathToClean <code><span title="undefined">String</span></code>
+- *@param* pathToClean <code><span title="Contains utility functionalities needed by this project.">String</span></code>
 
 
 
@@ -22,9 +22,9 @@ undefinedDeletes all elements within a directory if it exists and ensures the di
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="Contains utility functionalities needed by this project.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="Contains utility functionalities needed by this project.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -34,7 +34,7 @@ undefinedDeletes all elements within a directory if it exists and ensures the di
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="Contains utility functionalities needed by this project.">Int32</span></code>
 
 ### GetType(...)
 
@@ -44,7 +44,7 @@ undefinedDeletes all elements within a directory if it exists and ensures the di
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="Contains utility functionalities needed by this project.">Type</span></code>
 
 ### ToString(...) *virtual*
 
@@ -54,7 +54,7 @@ undefinedDeletes all elements within a directory if it exists and ensures the di
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="Contains utility functionalities needed by this project.">String</span></code>
 
 ## *protected* Methods
 
@@ -76,4 +76,4 @@ undefinedDeletes all elements within a directory if it exists and ensures the di
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="Contains utility functionalities needed by this project.">Object</span></code>

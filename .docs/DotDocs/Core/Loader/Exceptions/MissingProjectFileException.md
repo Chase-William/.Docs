@@ -1,47 +1,47 @@
-# <code><span title="undefined">MissingProjectFileException</span></code> *class*
+# <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">MissingProjectFileException</span></code> *class*
 
 ```
 ட Exception
   ட Object
 ```
 
-
+An exception that is used when the root or a .csproj file referenced by another project cannot be found.
 
 ## *public* Properties
 
-### Data <code><span title="undefined">IDictionary</span></code> *static* *virtual* *readonly*
+### Data <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">IDictionary</span></code> *static* *virtual* *readonly*
 
 
 
-### HelpLink <code><span title="undefined">String</span></code> *virtual*
+### HelpLink <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">String</span></code> *virtual*
 
 
 
-### HResult <code><span title="undefined">Int32</span></code>
+### HResult <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Int32</span></code>
 
 
 
-### InnerException <code><span title="undefined">Exception</span></code> *static* *readonly*
+### InnerException <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Exception</span></code> *static* *readonly*
 
 
 
-### Message <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
+### Message <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">String</span></code> *static* *virtual* *readonly*
+
+<inheritdoc cref="P:DotDocs.Core.Loader.Exceptions.MissingProjectFileException.Message" />
+
+### ProjectFile <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">String</span></code>
+
+The project file that cannot be found.
+
+### Source <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">String</span></code> *virtual*
 
 
 
-### ProjectFile <code><span title="undefined">String</span></code>
+### StackTrace <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">String</span></code> *static* *virtual* *readonly*
 
 
 
-### Source <code><span title="undefined">String</span></code> *virtual*
-
-
-
-### StackTrace <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
-
-
-
-### TargetSite <code><span title="undefined">MethodBase</span></code> *static* *readonly*
+### TargetSite <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">MethodBase</span></code> *static* *readonly*
 
 
 
@@ -57,9 +57,9 @@
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Boolean</span></code>
 
 ### GetBaseException(...) *virtual*
 
@@ -69,7 +69,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Exception</span></code>
+- *@returns* <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Exception</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -79,7 +79,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Int32</span></code>
 
 ### GetObjectData(...) *virtual*
 
@@ -89,8 +89,8 @@
 
 
 
-- *@param* info <code><span title="undefined">SerializationInfo</span></code>
-- *@param* context <code><span title="undefined">StreamingContext</span></code>
+- *@param* info <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">SerializationInfo</span></code>
+- *@param* context <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">StreamingContext</span></code>
 
 
 
@@ -102,7 +102,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Type</span></code>
 
 ### GetType(...)
 
@@ -112,7 +112,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Type</span></code>
 
 ### ToString(...) *virtual*
 
@@ -122,7 +122,7 @@
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">String</span></code>
 
 ## *protected* Methods
 
@@ -144,7 +144,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="An exception that is used when the root or a .csproj file referenced by another project cannot be found.">Object</span></code>
 
 ## *protected* Events
 

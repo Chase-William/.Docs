@@ -1,6 +1,6 @@
-# <code><span title="undefined">BuildManager</span></code> *class*
+# <code><span title="The main class for using DotDoc's services.">BuildManager</span></code> *class*
 
-undefined
+The main class for using DotDoc's services.
 
 ## *public* Properties
 
@@ -14,7 +14,7 @@ A tree that contains all the local projects the root depends on.
 
 ### Dispose(...) *virtual*
 
-undefined
+Use to cleanup unmanaged resources used by the <see cref="P:DotDocs.Core.BuildManager.ProjectContext" />.
 
 
 
@@ -26,9 +26,9 @@ undefined
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="The main class for using DotDoc's services.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="The main class for using DotDoc's services.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -38,7 +38,7 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="The main class for using DotDoc's services.">Int32</span></code>
 
 ### GetType(...)
 
@@ -48,23 +48,23 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="The main class for using DotDoc's services.">Type</span></code>
 
 ### Load(...)
 
-undefined
-
-
-
-### Make(...)
-
-undefined
+Loads types from assemblies and documentation for all entities where available.
 
 
 
 ### Prepare(...)
 
-undefined
+Prepares the <see cref="T:DotDocs.Core.BuildManager" /> for loading information by modifing .csproj files where needed and building all projects to collect information.
+
+
+
+### Render(...)
+
+Cleans the output dir and renderers all documentation.
 
 
 
@@ -76,7 +76,7 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="The main class for using DotDoc's services.">String</span></code>
 
 ## *protected* Methods
 
@@ -98,10 +98,10 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="The main class for using DotDoc's services.">Object</span></code>
 
 ## *public* Fields
 
-### DOCSHARK_CORE_ROOT_FOLDER <code><span title="undefined">String</span></code> *const*
+### DOTDOCS_ROOT_FOLDER <code><span title="The main class for using DotDoc's services.">String</span></code> *const*
 
 The root folder of all file output produced by this project.

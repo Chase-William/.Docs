@@ -1,6 +1,6 @@
-# <code><span title="undefined">Extensions</span></code> *class*
+# <code><span title="A static class that exists purely to contain extension methods.">Extensions</span></code> *class*
 
-undefined
+A static class that exists purely to contain extension methods.
 
 
 
@@ -14,57 +14,60 @@ undefined
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="A static class that exists purely to contain extension methods.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">Boolean</span></code>
 
 ### GetAssemblyId(...)
 
-undefined
+Gets a unique idi for an assembly.
 
-- *@param* assembly <code><span title="undefined">Assembly</span></code>
+- *@param* assembly <code><span title="A static class that exists purely to contain extension methods.">Assembly</span></code>
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">String</span></code>
 
 ### GetDesiredEvents(...)
 
-undefined
+Gets a list of desired events that DotDocs will only filter down further as needed.
 
-- *@param* type <code><span title="undefined">Type</span></code>
+- *@param* type <code><span title="A static class that exists purely to contain extension methods.">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of an event and provides access to event metadata.">EventInfo</span>></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">IEnumerable</span><<span title="Discovers the attributes of an event and provides access to event metadata.">EventInfo</span>></code>
 
 ### GetDesiredFields(...)
 
-undefined
+Gets a list of the desired fields that DotDocs will only filter down further as needed.
+This method will prevent the returning of generates fields for properties.
 
-- *@param* type <code><span title="undefined">Type</span></code>
+- *@param* type <code><span title="A static class that exists purely to contain extension methods.">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a field and provides access to field metadata.">FieldInfo</span>></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">IEnumerable</span><<span title="Discovers the attributes of a field and provides access to field metadata.">FieldInfo</span>></code>
 
 ### GetDesiredMethods(...)
 
-undefined
+Gets a list of desired methods that DotDocs will only filter down further as needed. 
+This method will prevent the returning of generates methods for property getter and setters.
 
-- *@param* type <code><span title="undefined">Type</span></code>
+- *@param* type <code><span title="A static class that exists purely to contain extension methods.">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a method and provides access to method metadata.">MethodInfo</span>></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">IEnumerable</span><<span title="Discovers the attributes of a method and provides access to method metadata.">MethodInfo</span>></code>
 
 ### GetDesiredProperties(...)
 
-undefined
+Gets a list of the desired properties that DotDocs will only filter down further as needed.
 
-- *@param* type <code><span title="undefined">Type</span></code>
+- *@param* type <code><span title="A static class that exists purely to contain extension methods.">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a property and provides access to property metadata.">PropertyInfo</span>></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">IEnumerable</span><<span title="Discovers the attributes of a property and provides access to property metadata.">PropertyInfo</span>></code>
 
 ### GetEnumDesiredFields(...)
 
-undefined
+Gets a list of desired enums that DotDocs will only filter down further as needed.
+This methid will prevent the returning of any compiler generates fields.
 
-- *@param* type <code><span title="undefined">Type</span></code>
+- *@param* type <code><span title="A static class that exists purely to contain extension methods.">Type</span></code>
 
-- *@returns* <code><span title="undefined">IEnumerable</span><<span title="Discovers the attributes of a field and provides access to field metadata.">FieldInfo</span>></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">IEnumerable</span><<span title="Discovers the attributes of a field and provides access to field metadata.">FieldInfo</span>></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -74,15 +77,15 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">Int32</span></code>
 
 ### GetProjectId(...)
 
-undefined
+Gets a unique idenfier for a local project.
 
 - *@param* project <code><a href="LocalProjectModel.md">LocalProjectModel</a></code>
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">String</span></code>
 
 ### GetType(...)
 
@@ -92,15 +95,15 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">Type</span></code>
 
 ### GetTypeId(...)
 
-undefined
+Gets a unique identifier for a type.
 
-- *@param* type <code><span title="undefined">Type</span></code>
+- *@param* type <code><span title="A static class that exists purely to contain extension methods.">Type</span></code>
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">String</span></code>
 
 ### ToString(...) *virtual*
 
@@ -110,7 +113,7 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">String</span></code>
 
 ## *protected* Methods
 
@@ -132,4 +135,4 @@ undefined
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="A static class that exists purely to contain extension methods.">Object</span></code>

@@ -19,7 +19,8 @@
 
 ### BaseType <code><span title="undefined">String</span></code> *static* *readonly*
 
-
+Collection of members always present in an object.
+Works for structs too because they are <see cref="T:System.ValueType" /> which is a class behind the scenes.
 
 ### Comments <code><span title="undefined">TypeComments</span></code>
 

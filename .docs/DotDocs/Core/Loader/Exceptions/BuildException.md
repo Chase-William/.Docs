@@ -1,47 +1,47 @@
-# <code><span title="undefined">BuildException</span></code> *class*
+# <code><span title="An exception used when a project's build fails.">BuildException</span></code> *class*
 
 ```
 ட Exception
   ட Object
 ```
 
-
+An exception used when a project's build fails.
 
 ## *public* Properties
 
-### Data <code><span title="undefined">IDictionary</span></code> *static* *virtual* *readonly*
+### Data <code><span title="An exception used when a project's build fails.">IDictionary</span></code> *static* *virtual* *readonly*
 
 
 
-### Errors <code><span title="undefined">IReadOnlyList</span><<span title="undefined">Error</span>></code>
+### Errors <code><span title="An exception used when a project's build fails.">IReadOnlyList</span><<span title="undefined">Error</span>></code>
+
+Build errors reported from the build binlog.
+
+### HelpLink <code><span title="An exception used when a project's build fails.">String</span></code> *virtual*
 
 
 
-### HelpLink <code><span title="undefined">String</span></code> *virtual*
+### HResult <code><span title="An exception used when a project's build fails.">Int32</span></code>
 
 
 
-### HResult <code><span title="undefined">Int32</span></code>
+### InnerException <code><span title="An exception used when a project's build fails.">Exception</span></code> *static* *readonly*
 
 
 
-### InnerException <code><span title="undefined">Exception</span></code> *static* *readonly*
+### Message <code><span title="An exception used when a project's build fails.">String</span></code> *static* *virtual* *readonly*
+
+<inheritdoc cref="P:System.Exception.Message" />
+
+### Source <code><span title="An exception used when a project's build fails.">String</span></code> *virtual*
 
 
 
-### Message <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
+### StackTrace <code><span title="An exception used when a project's build fails.">String</span></code> *static* *virtual* *readonly*
 
 
 
-### Source <code><span title="undefined">String</span></code> *virtual*
-
-
-
-### StackTrace <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
-
-
-
-### TargetSite <code><span title="undefined">MethodBase</span></code> *static* *readonly*
+### TargetSite <code><span title="An exception used when a project's build fails.">MethodBase</span></code> *static* *readonly*
 
 
 
@@ -57,9 +57,9 @@
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="An exception used when a project's build fails.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="An exception used when a project's build fails.">Boolean</span></code>
 
 ### GetBaseException(...) *virtual*
 
@@ -69,7 +69,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Exception</span></code>
+- *@returns* <code><span title="An exception used when a project's build fails.">Exception</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -79,7 +79,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="An exception used when a project's build fails.">Int32</span></code>
 
 ### GetObjectData(...) *virtual*
 
@@ -89,8 +89,8 @@
 
 
 
-- *@param* info <code><span title="undefined">SerializationInfo</span></code>
-- *@param* context <code><span title="undefined">StreamingContext</span></code>
+- *@param* info <code><span title="An exception used when a project's build fails.">SerializationInfo</span></code>
+- *@param* context <code><span title="An exception used when a project's build fails.">StreamingContext</span></code>
 
 
 
@@ -102,7 +102,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="An exception used when a project's build fails.">Type</span></code>
 
 ### GetType(...)
 
@@ -112,7 +112,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="An exception used when a project's build fails.">Type</span></code>
 
 ### ToString(...) *virtual*
 
@@ -122,7 +122,7 @@
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="An exception used when a project's build fails.">String</span></code>
 
 ## *protected* Methods
 
@@ -144,7 +144,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="An exception used when a project's build fails.">Object</span></code>
 
 ## *protected* Events
 

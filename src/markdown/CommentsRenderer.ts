@@ -1,14 +1,14 @@
 import CommonComment from "../models/comments/CommonComment"
 
-export default function hasSummaryAndComment(comments: CommonComment): boolean {
-  return typeof comments?.summary != undefined && comments?.summary != null
+export default function hasSummaryAndComment(comments: CommonComment | null): boolean {
+  return !!(comments && comments?.summary)
 }
 
 export function getOptionalSummary(comments: CommonComment) {
-  // if (typeof comments == 'undefined' || comments === null) {
-  //   return ''
-  // }
-  if (comments?.summary) {
+  if (!comments) {
+    return ''
+  }
+  if (comments.summary) {
     return comments.summary
   }
   return ''

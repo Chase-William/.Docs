@@ -9,7 +9,6 @@ import EnumConfigModel from "../models/config/types/EnumConfigModel";
 import InterfaceConfigModel from "../models/config/types/InterfaceConfigModel";
 import StructConfigModel from "../models/config/types/StructConfigModel";
 import IAmEventModel from "../models/language/interfaces/members/IAmEventModel";
-import CommonComment from "../models/comments/CommonComment";
 import Renderer from "../renderer/Renderer";
 import RenderMembersArgs from "../renderer/RenderMembersArgs";
 import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";

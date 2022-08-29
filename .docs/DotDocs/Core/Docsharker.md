@@ -1,12 +1,12 @@
-# <code><span title="The main hub for Charp.Core.">Docsharker</span></code> *class*
+# <code><span title="The entry-point for .Docs.Core.">Docsharker</span></code> *class*
 
-undefinedThe main hub for Charp.Core.
+The entry-point for .Docs.Core.
 
 ## *public* Properties
 
 ### Builder <code><a href="BuildManager.md">BuildManager</a></code>
 
-
+The main hub for controlling preparing, loading, rendering.
 
 
 
@@ -14,7 +14,7 @@ undefinedThe main hub for Charp.Core.
 
 ### Dispose(...) *virtual*
 
-undefinedCleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Builder" />.
+Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Builder" />.
 
 
 
@@ -26,9 +26,9 @@ undefinedCleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsh
 
 
 
-- *@param* obj <code><span title="The main hub for Charp.Core.">Object</span></code>
+- *@param* obj <code><span title="The entry-point for .Docs.Core.">Object</span></code>
 
-- *@returns* <code><span title="The main hub for Charp.Core.">Boolean</span></code>
+- *@returns* <code><span title="The entry-point for .Docs.Core.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -38,7 +38,7 @@ undefinedCleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsh
 
 
 
-- *@returns* <code><span title="The main hub for Charp.Core.">Int32</span></code>
+- *@returns* <code><span title="The entry-point for .Docs.Core.">Int32</span></code>
 
 ### GetType(...)
 
@@ -48,23 +48,23 @@ undefinedCleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsh
 
 
 
-- *@returns* <code><span title="The main hub for Charp.Core.">Type</span></code>
+- *@returns* <code><span title="The entry-point for .Docs.Core.">Type</span></code>
 
 ### Load(...)
 
-undefined
-
-
-
-### Make(...)
-
-undefined
+<inheritdoc cref="M:DotDocs.Core.BuildManager.Load" />
 
 
 
 ### Prepare(...)
 
-undefined
+<inheritdoc cref="M:DotDocs.Core.BuildManager.Prepare" />
+
+
+
+### Render(...)
+
+<inheritdoc cref="M:DotDocs.Core.BuildManager.Render" />
 
 
 
@@ -76,7 +76,7 @@ undefined
 
 
 
-- *@returns* <code><span title="The main hub for Charp.Core.">String</span></code>
+- *@returns* <code><span title="The entry-point for .Docs.Core.">String</span></code>
 
 ## *protected* Methods
 
@@ -98,4 +98,4 @@ undefined
 
 
 
-- *@returns* <code><span title="The main hub for Charp.Core.">Object</span></code>
+- *@returns* <code><span title="The entry-point for .Docs.Core.">Object</span></code>

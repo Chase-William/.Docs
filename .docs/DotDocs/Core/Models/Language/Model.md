@@ -1,6 +1,6 @@
 # <code><span title="undefined">Model</span></code> *class*
 
-undefined
+
 
 ## *public* Properties
 

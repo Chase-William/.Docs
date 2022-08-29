@@ -1,20 +1,20 @@
 # <code><span title="Represents a local project with a .csproj file.">LocalProjectModel</span></code> *class*
 
-undefinedRepresents a local project with a .csproj file.
+Represents a local project with a .csproj file.
 
 ## *public* Properties
 
 ### _Assembly <code><a href="AssemblyModel.md">AssemblyModel</a></code>
 
-
+The assembly model instance this project generates.
 
 ### _DefinedTypes <code><span title="Represents a local project with a .csproj file.">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
 
-
+Contains all the projects declared in this project.
 
 ### _LocalProjects <code><span title="Represents a local project with a .csproj file.">List</span><<a href="LocalProjectModel.md">LocalProjectModel</a>></code>
 
-
+Collection of all <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> dependencies.
 
 ### AssemblyId <code><span title="Represents a local project with a .csproj file.">String</span></code>
 
@@ -62,7 +62,7 @@ Entire path to file include name with extension.
 
 ### Exists(...)
 
-undefinedDetermines if a projectFile
+Determines if a projectFile exists recursively from here down into other projects.
 Uses a depth-first-search (DFS) approach.
 
 - *@param* projectFile <code><span title="Represents a local project with a .csproj file.">String</span></code>
