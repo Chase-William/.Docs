@@ -6,7 +6,13 @@
 
 DotDocs is an intuitive & reliable documentation generator library for C# projects. Currently it produces markdown files for documentation and support for website generation is planned.
 
-> DotDocs caters to C# and has no plans to expand to other languages. In my opinion, C#/.NET community doesn't have a intuitive documentation generator. Therefore, I am building this solution for the community, enjoy! 😊
+> DotDocs caters to C# and has no plans to expand to other languages. I am not satisfied with the current documentation generation tools available for the C#/.NET community. Therefore, I am building my own for the community, so enjoy! 😊
+
+Take your C# project and create configurable markdown documentation!
+
+![DotDocs flowchart](./resources/media/.docs-flow-2155x-512x-linear.png)
+
+> DotDocs will include all local projects your main project depends on.
 
 ## Installation Guide
 
