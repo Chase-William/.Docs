@@ -4,7 +4,7 @@ Represents a type that has functional based documentation like parameters and re
 
 ## *public* Properties
 
-### Parameters <code><span title="Represents a type that has functional based documentation like parameters and return type.">ParameterModel[]</span></code> *static* *abstract* *readonly*
+### Parameters <code><span title="">ParameterModel[]</span></code> *static* *abstract* *readonly*
 
 Parameters used in the function signature.
 
@@ -20,6 +20,6 @@ Parameters used in the function signature.
 
 Gets all the parameter information and organizes it before returning it.
 
-- *@param* info <code><span title="Represents a type that has functional based documentation like parameters and return type.">MethodInfo</span></code>
+- *@param* info <code><span title="Discovers the attributes of a method and provides access to method metadata.">MethodInfo</span></code>
 
-- *@returns* <code><span title="Represents a type that has functional based documentation like parameters and return type.">ParameterModel[]</span></code>
+- *@returns* <code><span title="">ParameterModel[]</span></code>

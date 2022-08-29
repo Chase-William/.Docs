@@ -9,39 +9,39 @@ An exception used when a project's build fails.
 
 ## *public* Properties
 
-### Data <code><span title="An exception used when a project's build fails.">IDictionary</span></code> *static* *virtual* *readonly*
+### Data <code><span title="Represents a nongeneric collection of key/value pairs.">IDictionary</span></code> *static* *virtual* *readonly*
 
 
 
-### Errors <code><span title="An exception used when a project's build fails.">IReadOnlyList</span><<span title="undefined">Error</span>></code>
+### Errors <code><span title="">IReadOnlyList</span><<span title="undefined">Error</span>></code>
 
 Build errors reported from the build binlog.
 
-### HelpLink <code><span title="An exception used when a project's build fails.">String</span></code> *virtual*
+### HelpLink <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *virtual*
 
 
 
-### HResult <code><span title="An exception used when a project's build fails.">Int32</span></code>
+### HResult <code><span title="Represents a 32-bit signed integer.">Int32</span></code>
 
 
 
-### InnerException <code><span title="An exception used when a project's build fails.">Exception</span></code> *static* *readonly*
+### InnerException <code><span title="Represents errors that occur during application execution.">Exception</span></code> *static* *readonly*
 
 
 
-### Message <code><span title="An exception used when a project's build fails.">String</span></code> *static* *virtual* *readonly*
+### Message <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *static* *virtual* *readonly*
 
 <inheritdoc cref="P:System.Exception.Message" />
 
-### Source <code><span title="An exception used when a project's build fails.">String</span></code> *virtual*
+### Source <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *virtual*
 
 
 
-### StackTrace <code><span title="An exception used when a project's build fails.">String</span></code> *static* *virtual* *readonly*
+### StackTrace <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *static* *virtual* *readonly*
 
 
 
-### TargetSite <code><span title="An exception used when a project's build fails.">MethodBase</span></code> *static* *readonly*
+### TargetSite <code><span title="Provides information about methods and constructors.">MethodBase</span></code> *static* *readonly*
 
 
 
@@ -57,9 +57,9 @@ Build errors reported from the build binlog.
 
 
 
-- *@param* obj <code><span title="An exception used when a project's build fails.">Object</span></code>
+- *@param* obj <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
-- *@returns* <code><span title="An exception used when a project's build fails.">Boolean</span></code>
+- *@returns* <code><span title="Represents a Boolean (&lt;see langword=&quot;true&quot; /&gt; or &lt;see langword=&quot;false&quot; /&gt;) value.">Boolean</span></code>
 
 ### GetBaseException(...) *virtual*
 
@@ -69,7 +69,7 @@ Build errors reported from the build binlog.
 
 
 
-- *@returns* <code><span title="An exception used when a project's build fails.">Exception</span></code>
+- *@returns* <code><span title="Represents errors that occur during application execution.">Exception</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -79,7 +79,7 @@ Build errors reported from the build binlog.
 
 
 
-- *@returns* <code><span title="An exception used when a project's build fails.">Int32</span></code>
+- *@returns* <code><span title="Represents a 32-bit signed integer.">Int32</span></code>
 
 ### GetObjectData(...) *virtual*
 
@@ -89,8 +89,8 @@ Build errors reported from the build binlog.
 
 
 
-- *@param* info <code><span title="An exception used when a project's build fails.">SerializationInfo</span></code>
-- *@param* context <code><span title="An exception used when a project's build fails.">StreamingContext</span></code>
+- *@param* info <code><span title="Stores all the data needed to serialize or deserialize an object. This class cannot be inherited.">SerializationInfo</span></code>
+- *@param* context <code><span title="Describes the source and destination of a given serialized stream, and provides an additional caller-defined context.">StreamingContext</span></code>
 
 
 
@@ -102,7 +102,7 @@ Build errors reported from the build binlog.
 
 
 
-- *@returns* <code><span title="An exception used when a project's build fails.">Type</span></code>
+- *@returns* <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 ### GetType(...)
 
@@ -112,7 +112,7 @@ Build errors reported from the build binlog.
 
 
 
-- *@returns* <code><span title="An exception used when a project's build fails.">Type</span></code>
+- *@returns* <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 ### ToString(...) *virtual*
 
@@ -122,7 +122,7 @@ Build errors reported from the build binlog.
 
 
 
-- *@returns* <code><span title="An exception used when a project's build fails.">String</span></code>
+- *@returns* <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 ## *protected* Methods
 
@@ -144,7 +144,7 @@ Build errors reported from the build binlog.
 
 
 
-- *@returns* <code><span title="An exception used when a project's build fails.">Object</span></code>
+- *@returns* <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
 ## *protected* Events
 

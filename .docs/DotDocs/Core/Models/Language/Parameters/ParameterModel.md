@@ -1,18 +1,18 @@
-# <code><span title="undefined">ParameterModel</span></code> *class*
+# <code><span title="">ParameterModel</span></code> *class*
 
 
 
 ## *public* Properties
 
-### Info <code><span title="undefined">ParameterInfo</span></code>
+### Info <code><span title="Discovers the attributes of a parameter and provides access to parameter metadata.">ParameterInfo</span></code>
 
 
 
-### Name <code><span title="undefined">String</span></code> *static* *readonly*
+### Name <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *static* *readonly*
 
 
 
-### Type <code><span title="undefined">String</span></code> *static* *readonly*
+### Type <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *static* *readonly*
 
 
 
@@ -28,9 +28,9 @@
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="Represents a Boolean (&lt;see langword=&quot;true&quot; /&gt; or &lt;see langword=&quot;false&quot; /&gt;) value.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -40,7 +40,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="Represents a 32-bit signed integer.">Int32</span></code>
 
 ### GetType(...)
 
@@ -50,7 +50,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 ### ToString(...) *virtual*
 
@@ -60,7 +60,7 @@
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 ## *protected* Methods
 
@@ -82,4 +82,4 @@
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>

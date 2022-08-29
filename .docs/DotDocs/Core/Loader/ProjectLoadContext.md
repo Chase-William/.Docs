@@ -4,11 +4,11 @@ A class that provides a means to build and load a project with all its local pro
 
 ## *public* Properties
 
-### Assemblies <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, <a href="..\Models\AssemblyModel.md">AssemblyModel</a>></code> *static* *readonly*
+### Assemblies <code><span title="">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, <a href="..\Models\AssemblyModel.md">AssemblyModel</a>></code> *static* *readonly*
 
 Assemblies needed by the root project and it's dependencies.
 
-### LocalProjects <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code> *static* *readonly*
+### LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code> *static* *readonly*
 
 All local projects involved in the build process.
 
@@ -16,7 +16,7 @@ All local projects involved in the build process.
 
 The root project all others stem from.
 
-### Types <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, <a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
+### Types <code><span title="">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, <a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
 
 Types needed by the root project and it's dependencies.
 
@@ -29,7 +29,7 @@ Types needed by the root project and it's dependencies.
 Build the project and either report the error if the build fails or if it succeeds gather information
 from the build like projects local projects needed and assemblies required.
 
-- *@param* csProjPath <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
+- *@param* csProjPath <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 
 
@@ -47,9 +47,9 @@ Disposes all <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> within <see 
 
 
 
-- *@param* obj <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Object</span></code>
+- *@param* obj <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
-- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Boolean</span></code>
+- *@returns* <code><span title="Represents a Boolean (&lt;see langword=&quot;true&quot; /&gt; or &lt;see langword=&quot;false&quot; /&gt;) value.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -59,7 +59,7 @@ Disposes all <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> within <see 
 
 
 
-- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Int32</span></code>
+- *@returns* <code><span title="Represents a 32-bit signed integer.">Int32</span></code>
 
 ### GetType(...)
 
@@ -69,7 +69,7 @@ Disposes all <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> within <see 
 
 
 
-- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Type</span></code>
+- *@returns* <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 ### LoadDocumentation(...)
 
@@ -90,8 +90,8 @@ Load all types used by the root project and it's project dependencies.
 
 Prepares given and all dependent .csproj files recursively for further processing.
 
-- *@param* projectFile <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
-- *@param* processedFiles <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">List</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>></code>
+- *@param* projectFile <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
+- *@param* processedFiles <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>></code>
 
 
 
@@ -99,7 +99,7 @@ Prepares given and all dependent .csproj files recursively for further processin
 
 Writes the <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Assemblies" />, <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.LocalProjects" />, and <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Types" /> collections to file.
 
-- *@param* outputPath <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
+- *@param* outputPath <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 
 
@@ -111,7 +111,7 @@ Writes the <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Assemblies" />, <
 
 
 
-- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code>
+- *@returns* <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 ## *protected* Methods
 
@@ -133,17 +133,17 @@ Writes the <see cref="P:DotDocs.Core.Loader.ProjectLoadContext.Assemblies" />, <
 
 
 
-- *@returns* <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">Object</span></code>
+- *@returns* <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
 ## *public* Fields
 
-### ASSEMBLIES_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
+### ASSEMBLIES_FILE <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *const*
 
 
 
-### PROJECTS_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
+### PROJECTS_FILE <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *const*
 
 
 
-### TYPES_FILE <code><span title="A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.">String</span></code> *const*
+### TYPES_FILE <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *const*
 

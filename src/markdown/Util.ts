@@ -8,7 +8,6 @@ import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeA
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import TypeLink from "../renderer/TypeLink";
 import IAmFullTypeModel from "../models/language/interfaces/IAmFullTypeModel"
-import IAmMemberModel from "../models/language/interfaces/members/IAmMemberModel"
 
 export default function divider(): string {
   return '\n\n'
@@ -90,7 +89,7 @@ export function renderLinkableTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTy
     `<code>` + 
     (nameParts.root.to.isRenderable() && from !== to ?
       `<a href="${nameParts.root.filePath}">${nameParts.root.name}</a>` :
-      `<span title="${nameParts.root.from.comments?.summary}">${nameParts.root.name}</span>`) +
+      `<span title="${nameParts.root.to.comments?.getHTMLAttributeSafeSummary()}">${nameParts.root.name}</span>`) +
     (nameParts.generics.length > 0 ?
       ('<' + renderGenerics(nameParts.generics) + '>') :
       '') +

@@ -1,4 +1,4 @@
-# <code><span title="undefined">RequiredTypePropertyNullException</span></code> *class*
+# <code><span title="">RequiredTypePropertyNullException</span></code> *class*
 
 ```
 ட Exception
@@ -9,43 +9,43 @@
 
 ## *public* Properties
 
-### Data <code><span title="undefined">IDictionary</span></code> *static* *virtual* *readonly*
+### Data <code><span title="Represents a nongeneric collection of key/value pairs.">IDictionary</span></code> *static* *virtual* *readonly*
 
 
 
-### HelpLink <code><span title="undefined">String</span></code> *virtual*
+### HelpLink <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *virtual*
 
 
 
-### HResult <code><span title="undefined">Int32</span></code>
+### HResult <code><span title="Represents a 32-bit signed integer.">Int32</span></code>
 
 
 
-### InnerException <code><span title="undefined">Exception</span></code> *static* *readonly*
+### InnerException <code><span title="Represents errors that occur during application execution.">Exception</span></code> *static* *readonly*
 
 
 
-### Message <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
+### Message <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *static* *virtual* *readonly*
 
 
 
-### PropertyName <code><span title="undefined">String</span></code>
+### PropertyName <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 
 
-### Source <code><span title="undefined">String</span></code> *virtual*
+### Source <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *virtual*
 
 
 
-### StackTrace <code><span title="undefined">String</span></code> *static* *virtual* *readonly*
+### StackTrace <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *static* *virtual* *readonly*
 
 
 
-### TargetSite <code><span title="undefined">MethodBase</span></code> *static* *readonly*
+### TargetSite <code><span title="Provides information about methods and constructors.">MethodBase</span></code> *static* *readonly*
 
 
 
-### Type <code><span title="undefined">Type</span></code>
+### Type <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 
 
@@ -61,9 +61,9 @@
 
 
 
-- *@param* obj <code><span title="undefined">Object</span></code>
+- *@param* obj <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
-- *@returns* <code><span title="undefined">Boolean</span></code>
+- *@returns* <code><span title="Represents a Boolean (&lt;see langword=&quot;true&quot; /&gt; or &lt;see langword=&quot;false&quot; /&gt;) value.">Boolean</span></code>
 
 ### GetBaseException(...) *virtual*
 
@@ -73,7 +73,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Exception</span></code>
+- *@returns* <code><span title="Represents errors that occur during application execution.">Exception</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -83,7 +83,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Int32</span></code>
+- *@returns* <code><span title="Represents a 32-bit signed integer.">Int32</span></code>
 
 ### GetObjectData(...) *virtual*
 
@@ -93,8 +93,8 @@
 
 
 
-- *@param* info <code><span title="undefined">SerializationInfo</span></code>
-- *@param* context <code><span title="undefined">StreamingContext</span></code>
+- *@param* info <code><span title="Stores all the data needed to serialize or deserialize an object. This class cannot be inherited.">SerializationInfo</span></code>
+- *@param* context <code><span title="Describes the source and destination of a given serialized stream, and provides an additional caller-defined context.">StreamingContext</span></code>
 
 
 
@@ -106,7 +106,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 ### GetType(...)
 
@@ -116,7 +116,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Type</span></code>
+- *@returns* <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 ### ToString(...) *virtual*
 
@@ -126,7 +126,7 @@
 
 
 
-- *@returns* <code><span title="undefined">String</span></code>
+- *@returns* <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 ## *protected* Methods
 
@@ -148,7 +148,7 @@
 
 
 
-- *@returns* <code><span title="undefined">Object</span></code>
+- *@returns* <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
 ## *protected* Events
 

@@ -26,9 +26,9 @@ Use to cleanup unmanaged resources used by the <see cref="P:DotDocs.Core.BuildMa
 
 
 
-- *@param* obj <code><span title="The main class for using DotDoc's services.">Object</span></code>
+- *@param* obj <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
-- *@returns* <code><span title="The main class for using DotDoc's services.">Boolean</span></code>
+- *@returns* <code><span title="Represents a Boolean (&lt;see langword=&quot;true&quot; /&gt; or &lt;see langword=&quot;false&quot; /&gt;) value.">Boolean</span></code>
 
 ### GetHashCode(...) *virtual*
 
@@ -38,7 +38,7 @@ Use to cleanup unmanaged resources used by the <see cref="P:DotDocs.Core.BuildMa
 
 
 
-- *@returns* <code><span title="The main class for using DotDoc's services.">Int32</span></code>
+- *@returns* <code><span title="Represents a 32-bit signed integer.">Int32</span></code>
 
 ### GetType(...)
 
@@ -48,7 +48,7 @@ Use to cleanup unmanaged resources used by the <see cref="P:DotDocs.Core.BuildMa
 
 
 
-- *@returns* <code><span title="The main class for using DotDoc's services.">Type</span></code>
+- *@returns* <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 ### Load(...)
 
@@ -76,7 +76,7 @@ Cleans the output dir and renderers all documentation.
 
 
 
-- *@returns* <code><span title="The main class for using DotDoc's services.">String</span></code>
+- *@returns* <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 
 ## *protected* Methods
 
@@ -98,10 +98,10 @@ Cleans the output dir and renderers all documentation.
 
 
 
-- *@returns* <code><span title="The main class for using DotDoc's services.">Object</span></code>
+- *@returns* <code><span title="Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.">Object</span></code>
 
 ## *public* Fields
 
-### DOTDOCS_ROOT_FOLDER <code><span title="The main class for using DotDoc's services.">String</span></code> *const*
+### DOTDOCS_ROOT_FOLDER <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *const*
 
 The root folder of all file output produced by this project.
