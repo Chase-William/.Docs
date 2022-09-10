@@ -14,10 +14,10 @@ export function renderInterfaces(type: IAmSlicedTypeModel, args: RenderTypeArgs<
     if (link.filePath)
       content += `- ` + makeLink(link.filePath, link.name)
     else
-      content += `- ${link.name}`
+      content += `- <code title="${_interface.comments?.getHTMLAttributeSafeSummary()}">${link.name}</code>`
   }
 
-  return content
+  return content + '\n\n'
 }
 
 /**

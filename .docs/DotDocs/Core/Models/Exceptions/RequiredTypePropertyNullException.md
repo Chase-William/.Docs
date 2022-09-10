@@ -7,7 +7,9 @@
 
 ### Implemented Interfaces:
 
-- ISerializable
+- <code title="Allows an object to control its own serialization and deserialization.">ISerializable</code>
+
+
 
 ## *public* Properties:
 

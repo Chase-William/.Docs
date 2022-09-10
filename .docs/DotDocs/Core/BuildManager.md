@@ -2,7 +2,9 @@
 
 ### Implemented Interfaces:
 
-- IDisposableThe main class for using DotDoc's services.
+- <code title="Provides a mechanism for releasing unmanaged resources.">IDisposable</code>
+
+The main class for using DotDoc's services.
 
 ## *public* Properties:
 

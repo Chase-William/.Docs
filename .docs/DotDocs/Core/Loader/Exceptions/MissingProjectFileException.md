@@ -7,7 +7,9 @@
 
 ### Implemented Interfaces:
 
-- ISerializableAn exception that is used when the root or a .csproj file referenced by another project cannot be found.
+- <code title="Allows an object to control its own serialization and deserialization.">ISerializable</code>
+
+An exception that is used when the root or a .csproj file referenced by another project cannot be found.
 
 ## *public* Properties:
 

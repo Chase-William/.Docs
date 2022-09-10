@@ -10,6 +10,8 @@
 
 - [IHaveSignature](../Interfaces/IHaveSignature.md)
 
+
+
 ## *public* Properties:
 
 ### Comments <code><span title="Method, operator and constructor comments">MethodComments</span></code>

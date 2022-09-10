@@ -7,7 +7,9 @@
 
 ### Implemented Interfaces:
 
-- ISerializableAn exception used when a project's build fails.
+- <code title="Allows an object to control its own serialization and deserialization.">ISerializable</code>
+
+An exception used when a project's build fails.
 
 ## *public* Properties:
 

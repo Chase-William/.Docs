@@ -2,7 +2,9 @@
 
 ### Implemented Interfaces:
 
-- IDisposableA class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.
+- <code title="Provides a mechanism for releasing unmanaged resources.">IDisposable</code>
+
+A class that provides a means to build and load a project with all its local project dependencies, assemblies, and types.
 
 ## *public* Properties:
 

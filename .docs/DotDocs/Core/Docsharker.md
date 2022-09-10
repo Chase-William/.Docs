@@ -2,7 +2,9 @@
 
 ### Implemented Interfaces:
 
-- IDisposableThe entry-point for .Docs.Core.
+- <code title="Provides a mechanism for releasing unmanaged resources.">IDisposable</code>
+
+The entry-point for .Docs.Core.
 
 ## *public* Properties:
 
