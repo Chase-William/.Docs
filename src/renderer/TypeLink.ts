@@ -18,6 +18,8 @@ export default class TypeLink {
     this.name = to.getName()
     // Prevent linking to types that do not have their own referenceable location
     if (to.isRenderable())
-      this.filePath = from.getFilePathToOther(to, fileEx)                
+      this.filePath = from.getFilePathToOther(to, fileEx)
+    else if (to.isRenderableArrayType())
+      this.filePath = from.getFilePathToOther(to.elementType, fileEx)              
   }
 }

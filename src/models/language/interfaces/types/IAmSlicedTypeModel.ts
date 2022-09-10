@@ -21,9 +21,11 @@ export default interface IAmSlicedTypeModel
   metadataToken: number
   id: string
   isFacade(): boolean
+  elementType: IAmSlicedTypeModel | null
   isArray: boolean
   isByRef: boolean
   isRenderable(): boolean
+  isRenderableArrayType(): boolean
   getBaseTypes(): IAmSlicedTypeModel[]
 
   getNameWithGenerics(to: IAmSlicedTypeModel, fileEx: string): { root: TypeLink, generics: TypeLink[] }

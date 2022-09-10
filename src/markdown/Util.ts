@@ -85,16 +85,38 @@ export function renderVirtualAndStaticTags(model: IAmPolymorphicable, config: Po
  */
 export function renderLinkableTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTypeModel): string {
   const nameParts = from.getNameWithGenerics(to, '.md')
+  let content = ''
+
+  // Render a type that can be simply put into a hyper-link
+  if (nameParts.root.to.isRenderable() && from !== to)
+    content = renderTypeHyperLink(nameParts.root)
+  // Render a type that can be linked to with a little configuration
+  else if (nameParts.root.to.isRenderableArrayType()) {
+    content = renderTypeWithElementType(nameParts.root)
+  } else { // Render a type that cannot be linked to
+    content = renderTypeSpanWithComment(nameParts.root)
+  }
+
   return (
-    `<code>` + 
-    (nameParts.root.to.isRenderable() && from !== to ?
-      `<a href="${nameParts.root.filePath}">${nameParts.root.name}</a>` :
-      `<span title="${nameParts.root.to.comments?.getHTMLAttributeSafeSummary()}">${nameParts.root.name}</span>`) +
+    `<code>` +
+    content +
     (nameParts.generics.length > 0 ?
       ('<' + renderGenerics(nameParts.generics) + '>') :
       '') +
     `</code>`
   )
+}
+
+function renderTypeHyperLink(link: TypeLink): string {
+  return `<a href="${link.filePath}">${link.name}</a>`
+}
+
+function renderTypeSpanWithComment(link: TypeLink): string {
+  return `<span title="${link.to.comments?.getHTMLAttributeSafeSummary()}">${link.name}</span>`
+}
+
+function renderTypeWithElementType(link: TypeLink): string {
+  return `<a href="${link.filePath}">${link.name}</a>`
 }
 
 /**

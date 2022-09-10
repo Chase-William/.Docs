@@ -1,4 +1,4 @@
-import { jsonArrayMember, jsonMember, jsonObject, Typelike } from "typedjson";
+import { jsonArrayMember, jsonMember, jsonObject } from "typedjson";
 import EventModel from "./members/EventModel";
 import FieldModel from "./members/FieldModel";
 import MethodModel from "./members/MethodModel";
@@ -29,7 +29,7 @@ export default class TypeModel
   name: string
 
   @jsonMember(String, { name: 'FullName' })
-  fullName: string = null
+  fullName: string | null = null
 
   @jsonMember(CommonComment, { name: 'Comments' })
   comments: TypeComment | null = null
@@ -88,6 +88,10 @@ export default class TypeModel
   @jsonMember(String, { name: 'Id' })
   id: string
 
+  @jsonMember(String, { name: 'ElementTypeId' })
+  _elementTypeId: string | null = null
+  elementType: IAmFullTypeModel | null = null
+
   @jsonMember(Boolean, { name: 'IsArray' })
   isArray: boolean
 
@@ -99,11 +103,20 @@ export default class TypeModel
   }
 
   /**
-   * Denotes whether this type has it's own rendered output file.
+   * Denotes whether this type has it's own rendered output file. This means that this method
+   * will return false for constructed types and array types.
    * @returns indication of this type is renderable (can have it's own file).
    */
   isRenderable(): boolean {
     return !(this.isFacade() || this.isArray || this.isByRef || this.isGenericParameter || this.isConstructedGenericType)
+  }
+
+  /**
+   * Denotes whether this type is an array type and has an element type.
+   * @returns false if the type is not an array or doesn't have a element type otherwise true.
+   */
+  isRenderableArrayType(): boolean {
+    return this.isArray ? !!this.elementType : false
   }
 
   bind(projManager: IAmProjectManager): void {
@@ -121,6 +134,9 @@ export default class TypeModel
     // Bind to assembly
     // console.log(this.fullName + " -> " + this._assemblyId)
     this.assembly = projManager.assemblies.get(this._assemblyId)
+    // Bind element type if exists
+    if (this._elementTypeId) 
+      this.elementType = projManager.types.get(this._elementTypeId)    
   }
 
   /**

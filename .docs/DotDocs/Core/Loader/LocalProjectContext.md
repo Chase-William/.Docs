@@ -41,7 +41,7 @@ The path of the documentation if available.
 
 
 
-### LocalProjects <code><span title="">String[]</span></code> *static* *readonly*
+### LocalProjects <code><a href="..\..\..\System\String.md">String[]</a></code> *static* *readonly*
 
 
 
@@ -120,7 +120,7 @@ Does not dispose of children projects in <see cref="!:LocalProjects" />.
 
 Loads the project's assembly and processes it's types.
 
-- *@param* assemblies <code><span title="">String[]</span></code>
+- *@param* assemblies <code><a href="..\..\..\System\String.md">String[]</a></code>
 
 
 

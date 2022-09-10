@@ -1,7 +1,6 @@
 import IAmMemberModel from "../models/language/interfaces/members/IAmMemberModel";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";
-import TypeLink from "../renderer/TypeLink";
 import divider from "./Util";
 
 /**

@@ -52,19 +52,19 @@ Cleanup unmanaged resources linked with <see cref="P:DotDocs.Core.Docsharker.Bui
 
 ### Load(...)
 
-<inheritdoc cref="M:DotDocs.Core.BuildManager.Load" />
+Loads types from assemblies and documentation for all entities where available.
 
 
 
 ### Prepare(...)
 
-<inheritdoc cref="M:DotDocs.Core.BuildManager.Prepare" />
+Prepares the <see cref="T:DotDocs.Core.BuildManager" /> for loading information by modifing .csproj files where needed and building all projects to collect information.
 
 
 
 ### Render(...)
 
-<inheritdoc cref="M:DotDocs.Core.BuildManager.Render" />
+Cleans the output dir and renderers all documentation.
 
 
 
