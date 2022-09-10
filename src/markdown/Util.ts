@@ -94,7 +94,8 @@ export function renderLinkableTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTy
   // Render a type that can be linked to with a little configuration
   else if (
     nameParts.root.to.isRenderableArrayType() && 
-    nameParts.root.to.elementType.isRenderable()) {
+    nameParts.root.to.elementType.isRenderable()) 
+    {
     content = renderTypeWithElementType(nameParts.root)
   } else { // Render a type that cannot be linked to
     content = renderTypeSpanWithComment(nameParts.root)
@@ -138,7 +139,7 @@ function renderGenerics(generics: TypeLink[]): string {
 
 export function makeLink(filePath: string, content: string): string {
   // replace backslashes with forward slash otherwise the browser will 404
-  return `[${content}](${filePath.replace('\\', '/')})`
+  return `[${content}](${filePath.replace('/\\/g', '/')})`
 }
 
 /**

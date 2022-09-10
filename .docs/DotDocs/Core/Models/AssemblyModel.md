@@ -24,7 +24,7 @@ A reference to the local project that creates this assembly if it exists in the 
 
 <inheritdoc cref="P:System.Reflection.AssemblyName.Name" />
 
-### Types <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](Language/TypeModel.md)></code>
+### Types <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](Language\TypeModel.md)></code>
 
 Contains all the types defined specifically in this assembly.
 
