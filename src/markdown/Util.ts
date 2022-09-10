@@ -139,7 +139,7 @@ function renderGenerics(generics: TypeLink[]): string {
 
 export function makeLink(filePath: string, content: string): string {
   // replace backslashes with forward slash otherwise the browser will 404
-  return `[${content}](${filePath.replace('/\\/g', '/')})`
+  return `[${content}](${filePath.replace(/\\/g, '/')})`
 }
 
 /**
