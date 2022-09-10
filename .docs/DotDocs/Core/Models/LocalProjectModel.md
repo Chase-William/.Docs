@@ -8,7 +8,7 @@ Represents a local project with a .csproj file.
 
 The assembly model instance this project generates.
 
-### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](Language\TypeModel.md)></code> *static* *readonly*
+### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](Language/TypeModel.md)></code> *static* *readonly*
 
 Contains all the projects declared in this project.
 

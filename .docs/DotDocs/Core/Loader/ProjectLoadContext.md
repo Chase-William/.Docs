@@ -6,19 +6,19 @@
 
 ## *public* Properties:
 
-### Assemblies <code><span title="">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, [AssemblyModel](..\Models\AssemblyModel.md)></code> *static* *readonly*
+### Assemblies <code><span title="">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, [AssemblyModel](../Models\AssemblyModel.md)></code> *static* *readonly*
 
 Assemblies needed by the root project and it's dependencies.
 
-### LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[LocalProjectModel](..\Models\LocalProjectModel.md)></code> *static* *readonly*
+### LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[LocalProjectModel](../Models\LocalProjectModel.md)></code> *static* *readonly*
 
 All local projects involved in the build process.
 
-### RootProject <code>[LocalProjectModel](..\Models\LocalProjectModel.md)</code> *static* *readonly*
+### RootProject <code>[LocalProjectModel](../Models\LocalProjectModel.md)</code> *static* *readonly*
 
 The root project all others stem from.
 
-### Types <code><span title="">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, [TypeModel](..\Models\Language\TypeModel.md)></code> *static* *readonly*
+### Types <code><span title="">IReadOnlyDictionary</span><<span title="Represents text as a sequence of UTF-16 code units.">String</span>, [TypeModel](../Models\Language\TypeModel.md)></code> *static* *readonly*
 
 Types needed by the root project and it's dependencies.
 

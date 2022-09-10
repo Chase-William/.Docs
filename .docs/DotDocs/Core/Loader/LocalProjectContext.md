@@ -9,15 +9,15 @@ A class that extends <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> to a
 
 ## *public* Properties:
 
-### _Assembly <code>[AssemblyModel](..\Models\AssemblyModel.md)</code>
+### _Assembly <code>[AssemblyModel](../Models\AssemblyModel.md)</code>
 
 
 
-### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](..\Models\Language\TypeModel.md)></code> *static* *readonly*
+### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](../Models\Language\TypeModel.md)></code> *static* *readonly*
 
 
 
-### _LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[LocalProjectModel](..\Models\LocalProjectModel.md)></code>
+### _LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[LocalProjectModel](../Models\LocalProjectModel.md)></code>
 
 
 
