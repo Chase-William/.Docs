@@ -24,7 +24,7 @@ A unique identifier to the assembly this project produces.
 
 A unique idenfitier for this project.
 
-### LocalProjects <code><a href="..\..\..\System\String.md">String</a>[]</code> *static* *readonly*
+### LocalProjects <code><span title="Represents text as a sequence of UTF-16 code units.">String[]</span></code> *static* *readonly*
 
 Contains unique identifiers to local projects that are dependencies.
 

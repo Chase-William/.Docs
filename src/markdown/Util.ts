@@ -91,7 +91,9 @@ export function renderLinkableTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTy
   if (nameParts.root.to.isRenderable() && from !== to)
     content = renderTypeHyperLink(nameParts.root)
   // Render a type that can be linked to with a little configuration
-  else if (nameParts.root.to.isRenderableArrayType()) {
+  else if (
+    nameParts.root.to.isRenderableArrayType() && 
+    nameParts.root.to.elementType.isRenderable()) {
     content = renderTypeWithElementType(nameParts.root)
   } else { // Render a type that cannot be linked to
     content = renderTypeSpanWithComment(nameParts.root)
@@ -112,6 +114,9 @@ function renderTypeHyperLink(link: TypeLink): string {
 }
 
 function renderTypeSpanWithComment(link: TypeLink): string {
+  // If the type is an array type, provide a comment from the element type, otherwise the comment is null
+  if (link.to.isArray)
+    return `<span title="${link.to.elementType.comments?.getHTMLAttributeSafeSummary()}">${link.name}</span>`
   return `<span title="${link.to.comments?.getHTMLAttributeSafeSummary()}">${link.name}</span>`
 }
 

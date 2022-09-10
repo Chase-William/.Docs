@@ -42,11 +42,11 @@ Denotes the element type that supports the current type
 
 
 
-### GenericTypeArguments <code><a href="..\..\..\..\System\String.md">String</a>[]</code> *static* *readonly*
+### GenericTypeArguments <code><span title="Represents text as a sequence of UTF-16 code units.">String[]</span></code> *static* *readonly*
 
 Contains the primary keys to each type's definition.
 
-### GenericTypeParameters <code><a href="..\..\..\..\System\String.md">String</a>[]</code> *static* *readonly*
+### GenericTypeParameters <code><span title="Represents text as a sequence of UTF-16 code units.">String[]</span></code> *static* *readonly*
 
 Contains the primary keys to each type's definition.
 
