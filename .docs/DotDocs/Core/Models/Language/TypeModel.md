@@ -9,7 +9,7 @@ Represents a <see cref="T:System.Type" /> as a serializeable model.
 
 ## *public* Properties:
 
-### Assembly <code>[AssemblyModel](..\AssemblyModel.md)</code>
+### Assembly <code>[AssemblyModel](../AssemblyModel.md)</code>
 
 A reference to the assembly instance this type resides in.
 
@@ -29,11 +29,11 @@ Contains the developer documentation associated with this type if it is provided
 
 Denotes the element type that supports the current type
 
-### Events <code>[EventModel](Members\EventModel.md)[]</code> *static* *readonly*
+### Events <code>[EventModel](Members/EventModel.md)[]</code> *static* *readonly*
 
 
 
-### Fields <code>[FieldModel](Members\FieldModel.md)[]</code> *static* *readonly*
+### Fields <code>[FieldModel](Members/FieldModel.md)[]</code> *static* *readonly*
 
 
 
@@ -113,7 +113,7 @@ Denotes that this type defines a generic type and can be used to create construc
 
 
 
-### Methods <code>[MethodModel](Members\MethodModel.md)[]</code> *static* *readonly*
+### Methods <code>[MethodModel](Members/MethodModel.md)[]</code> *static* *readonly*
 
 
 
@@ -125,7 +125,7 @@ Denotes that this type defines a generic type and can be used to create construc
 
 
 
-### Properties <code>[PropertyModel](Members\PropertyModel.md)[]</code> *static* *readonly*
+### Properties <code>[PropertyModel](Members/PropertyModel.md)[]</code> *static* *readonly*
 
 
 

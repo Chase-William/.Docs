@@ -10,7 +10,7 @@ export function renderInterfaces(type: IAmSlicedTypeModel, args: RenderTypeArgs<
   let content = '### Implemented Interfaces:\n\n'
 
   for (const _interface of type.interfaces) {
-    const link = _interface.getTypeLinkToOther(_interface, '.md')
+    const link = type.getTypeLinkToOther(_interface, '.md')
     if (link.filePath)
       content += `- ` + makeLink(link.filePath, link.name)
     else

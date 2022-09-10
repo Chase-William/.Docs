@@ -8,7 +8,7 @@
 
 ### Implemented Interfaces:
 
-- [IHaveSignature](IHaveSignature.md)
+- [IHaveSignature](../Interfaces/IHaveSignature.md)
 
 ## *public* Properties:
 
@@ -60,11 +60,11 @@ be that parent class as that parent is where it "resides".
 
 
 
-### Parameters <code>[ParameterModel](..\Parameters\ParameterModel.md)[]</code> *static* *virtual* *readonly*
+### Parameters <code>[ParameterModel](../Parameters/ParameterModel.md)[]</code> *static* *virtual* *readonly*
 
 
 
-### ReturnParameter <code>[ParameterModel](..\Parameters\ParameterModel.md)</code> *static* *virtual* *readonly*
+### ReturnParameter <code>[ParameterModel](../Parameters/ParameterModel.md)</code> *static* *virtual* *readonly*
 
 
 
