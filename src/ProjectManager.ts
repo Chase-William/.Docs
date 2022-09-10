@@ -17,6 +17,19 @@ export default interface IAmProjectManager {
   types: Map<string, IAmTypeModel>
   projects: Map<string, LocalProjectModel>
   assemblies: Map<string, AssemblyModel>
+
+  /**
+   * Attempts to find the corresponding type instance for the given id.
+   * Will abort process if type isn't found.
+   * @param id Unique idenfitier of type to locate.
+   */
+  getTypeChecked(id: string): IAmTypeModel
+  /**
+   * Attempts to find the corresponding assembly instance for the given id.
+   * Will abort process if assembly isn't found.
+   * @param id 
+   */
+  getAssemblyChecked(id: string): AssemblyModel
 }
 
 /**
@@ -41,5 +54,19 @@ export class ProjectManager implements IAmProjectManager {
     // Bind all types so that they reference other types in memory
     _types.forEach(type => type.bind(this))
     _projects.forEach(project => project.bind(this))
+  }
+
+  getTypeChecked(id: string): IAmTypeModel {
+    const type = this.types.get(id)
+    if (!type)
+      throw Error(`Attempting to find type ${id} failed.`)
+    return type
+  }
+
+  getAssemblyChecked(id: string): AssemblyModel {
+    const assem = this.assemblies.get(id)
+    if (!assem)
+      throw Error(`Attempting to find assembly ${id} failed.`)
+    return assem
   }
 }

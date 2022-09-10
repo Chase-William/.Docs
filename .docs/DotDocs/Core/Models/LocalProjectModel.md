@@ -2,17 +2,17 @@
 
 Represents a local project with a .csproj file.
 
-## *public* Properties
+## *public* Properties:
 
-### _Assembly <code><a href="AssemblyModel.md">AssemblyModel</a></code>
+### _Assembly <code>[AssemblyModel](AssemblyModel.md)</code>
 
 The assembly model instance this project generates.
 
-### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
+### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](Language\TypeModel.md)></code> *static* *readonly*
 
 Contains all the projects declared in this project.
 
-### _LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><<a href="LocalProjectModel.md">LocalProjectModel</a>></code>
+### _LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[LocalProjectModel](LocalProjectModel.md)></code>
 
 Collection of all <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> dependencies.
 
@@ -46,7 +46,7 @@ Entire path to file include name with extension.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### Exists(...)
 

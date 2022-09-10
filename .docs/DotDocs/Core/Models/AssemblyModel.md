@@ -2,7 +2,7 @@
 
 A class that represents an assembly as a model.
 
-## *public* Properties
+## *public* Properties:
 
 ### Assembly <code><span title="Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.">Assembly</span></code>
 
@@ -16,7 +16,7 @@ The underlying assembly instance from the runtime.
 
 The id for this assembly.
 
-### LocalProject <code><a href="LocalProjectModel.md">LocalProjectModel</a></code>
+### LocalProject <code>[LocalProjectModel](LocalProjectModel.md)</code>
 
 A reference to the local project that creates this assembly if it exists in the context.
 
@@ -24,7 +24,7 @@ A reference to the local project that creates this assembly if it exists in the 
 
 <inheritdoc cref="P:System.Reflection.AssemblyName.Name" />
 
-### Types <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><<a href="Language\TypeModel.md">TypeModel</a>></code>
+### Types <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](Language\TypeModel.md)></code>
 
 Contains all the types defined specifically in this assembly.
 

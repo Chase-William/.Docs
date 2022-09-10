@@ -5,9 +5,11 @@
   ட Object
 ```
 
+### Implemented Interfaces:
 
+- ISerializable
 
-## *public* Properties
+## *public* Properties:
 
 ### Data <code><span title="Represents a nongeneric collection of key/value pairs.">IDictionary</span></code> *static* *virtual* *readonly*
 
@@ -51,7 +53,7 @@
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### GetBaseException(...) *virtual*
 
@@ -76,7 +78,7 @@
 
 
 
-## *protected* Events
+## *protected* Events:
 
 ### SerializeObjectState
 

@@ -3,7 +3,7 @@ import IAmSingletonable from '../interfaces/IAmSingletonable';
 import CommonComment from '../../comments/CommonComment';
 import AccessibilityModel from '../AccessibilityModel';
 import IAmSlicedTypeModel from '../interfaces/types/IAmSlicedTypeModel';
-import IAmFullTypeModel from '../interfaces/IAmFullTypeModel';
+import IAmProjectManager from '../../../ProjectManager';
 
 @jsonObject()
 export default class MemberModel<T extends CommonComment> extends AccessibilityModel implements IAmSingletonable {  
@@ -13,9 +13,10 @@ export default class MemberModel<T extends CommonComment> extends AccessibilityM
   isStatic: boolean;  
   @jsonMember(String, { name: 'DeclaringType' })
   _declaringTypeId: string
-  DeclaringType: IAmSlicedTypeModel | null = null
+  DeclaringType: IAmSlicedTypeModel | null
 
-  bind(types: Map<string, IAmFullTypeModel>): void {
-    this.DeclaringType = types.get(this._declaringTypeId) ?? null
+  bind(projManager: IAmProjectManager): void {
+    // Intentional unchecking
+    this.DeclaringType = projManager.types.get(this._declaringTypeId) ?? null
   }
 }

@@ -2,7 +2,7 @@
 
 
 
-## *public* Properties
+## *public* Properties:
 
 ### Info <code><span title="Discovers the attributes of a parameter and provides access to parameter metadata.">ParameterInfo</span></code>
 

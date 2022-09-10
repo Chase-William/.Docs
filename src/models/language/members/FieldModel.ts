@@ -2,8 +2,8 @@ import { AnyT, jsonMember, jsonObject } from 'typedjson';
 import CommonComment from '../../comments/CommonComment';
 import MemberModel from './MemberModel';
 import IAmFieldModel from '../interfaces/members/IAmFieldModel';
-import IAmFullTypeModel from '../interfaces/IAmFullTypeModel';
 import IAmSlicedTypeModel from '../interfaces/types/IAmSlicedTypeModel';
+import IAmProjectManager from '../../../ProjectManager';
 
 @jsonObject()
 export default class FieldModel extends MemberModel<CommonComment> implements IAmFieldModel {
@@ -18,8 +18,9 @@ export default class FieldModel extends MemberModel<CommonComment> implements IA
   _type: string
   type: IAmSlicedTypeModel
 
-  bind(types: Map<string, IAmFullTypeModel>): void {
-    this.type = types.get(this._type)
-    super.bind(types)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  bind(projManager: IAmProjectManager): void {
+    this.type = projManager.getTypeChecked(this._type)
+    super.bind(projManager)
   }
 }

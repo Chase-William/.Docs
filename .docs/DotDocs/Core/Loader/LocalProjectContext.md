@@ -7,17 +7,17 @@
 
 A class that extends <see cref="T:DotDocs.Core.Models.LocalProjectModel" /> to add project information loading functionalities.
 
-## *public* Properties
+## *public* Properties:
 
-### _Assembly <code><a href="..\Models\AssemblyModel.md">AssemblyModel</a></code>
-
-
-
-### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><<a href="..\Models\Language\TypeModel.md">TypeModel</a>></code> *static* *readonly*
+### _Assembly <code>[AssemblyModel](..\Models\AssemblyModel.md)</code>
 
 
 
-### _LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><<a href="..\Models\LocalProjectModel.md">LocalProjectModel</a>></code>
+### _DefinedTypes <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[TypeModel](..\Models\Language\TypeModel.md)></code> *static* *readonly*
+
+
+
+### _LocalProjects <code><span title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.">List</span><[LocalProjectModel](..\Models\LocalProjectModel.md)></code>
 
 
 
@@ -63,7 +63,7 @@ The path of the documentation if available.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### Dispose(...)
 

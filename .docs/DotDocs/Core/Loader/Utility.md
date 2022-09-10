@@ -4,7 +4,7 @@ Contains utility functionalities needed by this project.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### CleanDirectory(...)
 

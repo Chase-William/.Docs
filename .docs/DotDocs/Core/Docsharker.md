@@ -1,16 +1,18 @@
 # <code><span title="The entry-point for .Docs.Core.">Docsharker</span></code> *class*
 
-The entry-point for .Docs.Core.
+### Implemented Interfaces:
 
-## *public* Properties
+- IDisposableThe entry-point for .Docs.Core.
 
-### Builder <code><a href="BuildManager.md">BuildManager</a></code>
+## *public* Properties:
+
+### Builder <code>[BuildManager](BuildManager.md)</code>
 
 The main hub for controlling preparing, loading, rendering.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### Dispose(...) *virtual*
 

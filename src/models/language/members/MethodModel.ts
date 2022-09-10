@@ -4,6 +4,7 @@ import ParameterModel from '../ParameterModel';
 import MemberModel from './MemberModel';
 import IAmMethodModel from '../interfaces/members/IAmMethodModel';
 import IAmFullTypeModel from '../interfaces/IAmFullTypeModel';
+import IAmProjectManager from '../../../ProjectManager';
 
 @jsonObject()
 export default class MethodModel extends MemberModel<MethodComment> implements IAmMethodModel {
@@ -17,11 +18,11 @@ export default class MethodModel extends MemberModel<MethodComment> implements I
   @jsonMember(Boolean, { name: 'IsVirtual' })
   isVirtual: boolean;
 
-  bind(types: Map<string, IAmFullTypeModel>): void {
+  bind(projManager: IAmProjectManager): void {
     // Bind return parameter
-    this.returnParameter.bind(types)
+    this.returnParameter.bind(projManager)
     // Bind pamaraters
-    this.parameters.forEach(param => param.bind(types))
-    super.bind(types)
+    this.parameters.forEach(param => param.bind(projManager))
+    super.bind(projManager)
   }
 }

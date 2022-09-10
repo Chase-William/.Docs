@@ -1,16 +1,18 @@
 # <code><span title="The main class for using DotDoc's services.">BuildManager</span></code> *class*
 
-The main class for using DotDoc's services.
+### Implemented Interfaces:
 
-## *public* Properties
+- IDisposableThe main class for using DotDoc's services.
 
-### ProjectContext <code><a href="Loader\ProjectLoadContext.md">ProjectLoadContext</a></code>
+## *public* Properties:
+
+### ProjectContext <code>[ProjectLoadContext](Loader\ProjectLoadContext.md)</code>
 
 A tree that contains all the local projects the root depends on.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### Dispose(...) *virtual*
 
@@ -36,7 +38,7 @@ Cleans the output dir and renderers all documentation.
 
 
 
-## *public* Fields
+## *public* Fields:
 
 ### DOTDOCS_ROOT_FOLDER <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code> *const*
 

@@ -3,7 +3,7 @@ import SingletonConfigurable from "../models/config/interfaces/SingletonConfigur
 import IAmPolymorphicable from "../models/language/interfaces/IAmPolymorphicable"
 import IAmSingletonable from "../models/language/interfaces/IAmSingletonable"
 import { getOptionalSummary } from "./CommentsRenderer"
-import { renderTypeInheritanceBlock } from "./InheritanceRenderer"
+import { renderInterfaces, renderTypeInheritanceBlock } from "./InheritanceRenderer"
 import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import TypeLink from "../renderer/TypeLink";
@@ -43,6 +43,7 @@ export function renderTypeHeader(type: IAmSlicedTypeModel, args: RenderTypeArgs<
     `# ${renderLinkableTypeName(type, type)} *${getTypeModelConstructType(type)}*` +
     divider() + 
     renderTypeInheritanceBlock(type, args) +
+    renderInterfaces(type, args) +
     getOptionalSummary(type.comments) +
     divider()
   )
@@ -110,7 +111,7 @@ export function renderLinkableTypeName(from: IAmSlicedTypeModel, to: IAmSlicedTy
 }
 
 function renderTypeHyperLink(link: TypeLink): string {
-  return `<a href="${link.filePath}">${link.name}</a>`
+  return makeLink(link.filePath, link.name)
 }
 
 function renderTypeSpanWithComment(link: TypeLink): string {
@@ -121,7 +122,7 @@ function renderTypeSpanWithComment(link: TypeLink): string {
 }
 
 function renderTypeWithElementType(link: TypeLink): string {
-  return `<a href="${link.filePath}">${link.to.elementType.getName()}</a>[]`
+  return makeLink(link.filePath, link.to.elementType.getName()) + '[]'
 }
 
 /**
@@ -131,8 +132,12 @@ function renderTypeWithElementType(link: TypeLink): string {
  */
 function renderGenerics(generics: TypeLink[]): string {
   return generics.map(v => {
-    return v.to.isRenderable() ? `<a href="${v.filePath}">${v.name}</a>` : `<span title="${v.to.comments?.getHTMLAttributeSafeSummary()}">${v.name}</span>`
+    return v.to.isRenderable() ? makeLink(v.filePath, v.name) : `<span title="${v.to.comments?.getHTMLAttributeSafeSummary()}">${v.name}</span>`
   }).join(', ')
+}
+
+export function makeLink(filePath: string, content: string): string {
+  return `[${content}](${filePath})`
 }
 
 /**

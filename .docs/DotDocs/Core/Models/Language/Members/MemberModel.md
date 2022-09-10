@@ -7,7 +7,7 @@
 
 
 
-## *public* Properties
+## *public* Properties:
 
 ### Comments <code><span title="">T2</span></code>
 

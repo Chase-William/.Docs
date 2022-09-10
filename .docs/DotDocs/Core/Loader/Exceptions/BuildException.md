@@ -5,9 +5,11 @@
   ட Object
 ```
 
-An exception used when a project's build fails.
+### Implemented Interfaces:
 
-## *public* Properties
+- ISerializableAn exception used when a project's build fails.
+
+## *public* Properties:
 
 ### Data <code><span title="Represents a nongeneric collection of key/value pairs.">IDictionary</span></code> *static* *virtual* *readonly*
 
@@ -47,7 +49,7 @@ Build errors reported from the build binlog.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### GetBaseException(...) *virtual*
 
@@ -72,7 +74,7 @@ Build errors reported from the build binlog.
 
 
 
-## *protected* Events
+## *protected* Events:
 
 ### SerializeObjectState
 

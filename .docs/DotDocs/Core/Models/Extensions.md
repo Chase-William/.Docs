@@ -4,7 +4,7 @@ A static class that exists purely to contain extension methods.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### GetAssemblyId(...)
 
@@ -30,6 +30,14 @@ This method will prevent the returning of generates fields for properties.
 - *@param* type <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
 
 - *@returns* <code><span title="">IEnumerable</span><<span title="Discovers the attributes of a field and provides access to field metadata.">FieldInfo</span>></code>
+
+### GetDesiredInterfaces(...)
+
+
+
+- *@param* type <code><span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span></code>
+
+- *@returns* <code><span title="">IEnumerable</span><<span title="Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.">Type</span>></code>
 
 ### GetDesiredMethods(...)
 
@@ -61,7 +69,7 @@ This methid will prevent the returning of any compiler generates fields.
 
 Gets a unique idenfier for a local project.
 
-- *@param* project <code><a href="LocalProjectModel.md">LocalProjectModel</a></code>
+- *@param* project <code>[LocalProjectModel](LocalProjectModel.md)</code>
 
 - *@returns* <code><span title="Represents text as a sequence of UTF-16 code units.">String</span></code>
 

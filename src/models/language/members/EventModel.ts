@@ -1,9 +1,8 @@
 import { jsonMember, jsonObject } from 'typedjson';
 import IAmEventModel from '../interfaces/members/IAmEventModel';
-import IAmTypeModel from '../interfaces/IAmFullTypeModel';
 import CommonComment from '../../comments/CommonComment';
-import TypeModel from '../TypeModel';
 import MemberModel from './MemberModel';
+import IAmProjectManager from '../../../ProjectManager';
 
 @jsonObject()
 export default class EventModel extends MemberModel<CommonComment> implements IAmEventModel {
@@ -12,8 +11,7 @@ export default class EventModel extends MemberModel<CommonComment> implements IA
   @jsonMember(Boolean, { name: 'IsVirtual' })
   isVirtual: boolean;
 
-  bind(types: Map<string, IAmTypeModel>): void {
-    super.bind(types)
-    return
+  bind(projManager: IAmProjectManager): void {
+    super.bind(projManager)
   }
 }

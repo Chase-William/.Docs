@@ -6,9 +6,11 @@
     ட Object
 ```
 
+### Implemented Interfaces:
 
+- [IHaveSignature](IHaveSignature.md)
 
-## *public* Properties
+## *public* Properties:
 
 ### Comments <code><span title="Method, operator and constructor comments">MethodComments</span></code>
 
@@ -58,11 +60,11 @@ be that parent class as that parent is where it "resides".
 
 
 
-### Parameters <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a>[]</code> *static* *virtual* *readonly*
+### Parameters <code>[ParameterModel](..\Parameters\ParameterModel.md)[]</code> *static* *virtual* *readonly*
 
 
 
-### ReturnParameter <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a></code> *static* *virtual* *readonly*
+### ReturnParameter <code>[ParameterModel](..\Parameters\ParameterModel.md)</code> *static* *virtual* *readonly*
 
 
 

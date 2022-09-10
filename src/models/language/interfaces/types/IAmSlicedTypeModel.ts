@@ -24,6 +24,7 @@ export default interface IAmSlicedTypeModel
   elementType: IAmSlicedTypeModel | null
   isArray: boolean
   isByRef: boolean
+  interfaces: IAmSlicedTypeModel[]
   isRenderable(): boolean
   isRenderableArrayType(): boolean
   getBaseTypes(): IAmSlicedTypeModel[]

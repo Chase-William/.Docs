@@ -1,7 +1,24 @@
 import IAmMemberModel from "../models/language/interfaces/members/IAmMemberModel";
 import IAmSlicedTypeModel from "../models/language/interfaces/types/IAmSlicedTypeModel";
 import RenderTypeArgs, { TYPE_CONFIGURATIONS_DEF } from "../renderer/RenderTypeArgs";
-import divider from "./Util";
+import divider, { makeLink } from "./Util";
+
+export function renderInterfaces(type: IAmSlicedTypeModel, args: RenderTypeArgs<TYPE_CONFIGURATIONS_DEF>): string {
+  if (type.interfaces.length == 0)
+    return ''
+
+  let content = '### Implemented Interfaces:\n\n'
+
+  for (const _interface of type.interfaces) {
+    const link = _interface.getTypeLinkToOther(_interface, '.md')
+    if (link.filePath)
+      content += `- ` + makeLink(link.filePath, link.name)
+    else
+      content += `- ${link.name}`
+  }
+
+  return content
+}
 
 /**
  * Renders the chain of base types in a code block.

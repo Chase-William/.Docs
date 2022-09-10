@@ -4,6 +4,7 @@ import CommonComment from '../../comments/CommonComment';
 import MemberModel from './MemberModel';
 import IAmPropertyModel from '../interfaces/members/IAmPropertyModel';
 import IAmSlicedTypeModel from '../interfaces/types/IAmSlicedTypeModel';
+import IAmProjectManager from '../../../ProjectManager';
 
 @jsonObject()
 export default class PropertyModel extends MemberModel<CommonComment> implements IAmPropertyModel {
@@ -37,8 +38,8 @@ export default class PropertyModel extends MemberModel<CommonComment> implements
   _type: string
   type: IAmSlicedTypeModel
 
-  bind(types: Map<string, IAmFullTypeModel>): void {
-    this.type = types.get(this._type)
-    super.bind(types)
+  bind(projManager: IAmProjectManager): void {
+    this.type = projManager.getTypeChecked(this._type)
+    super.bind(projManager)
   }
 }

@@ -15,8 +15,8 @@ export default class PropertyRenderer {
   }
 
   renderProperty(property: IAmPropertyModel, args: RenderMembersArgs<IAmSlicedTypeModel, IAmPropertyModel, PropertyConfigModel>): string {
-    return (    
-      this.renderPropertyHeader(property, args) +      
+    return (
+      this.renderPropertyHeader(property, args) +
       divider() +
       getOptionalSummary(property.comments) +
       divider() +

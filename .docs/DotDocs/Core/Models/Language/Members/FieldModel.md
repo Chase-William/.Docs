@@ -8,7 +8,7 @@
 
 
 
-## *public* Properties
+## *public* Properties:
 
 ### Comments <code><span title="Base class for comments classes">CommonComments</span></code>
 

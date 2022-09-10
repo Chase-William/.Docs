@@ -92,6 +92,10 @@ export default class TypeModel
   _elementTypeId: string | null = null
   elementType: IAmFullTypeModel | null = null
 
+  @jsonArrayMember(String, { name: 'InterfaceIds' })
+  _interfaces: string[] | null = null
+  interfaces: IAmFullTypeModel[] = Array<IAmFullTypeModel>()
+
   @jsonMember(Boolean, { name: 'IsArray' })
   isArray: boolean
 
@@ -121,22 +125,33 @@ export default class TypeModel
 
   bind(projManager: IAmProjectManager): void {
     // Bind to baseType
-    this.baseType = projManager.types.get(this._baseType)
+    if (this._baseType)
+      this.baseType = projManager.getTypeChecked(this._baseType)
     // Bind type arguments
-    this.genericTypeArguments = this._genericTypeArguments.map(id => projManager.types.get(id))
+    this.genericTypeArguments = this._genericTypeArguments.map(id => projManager.getTypeChecked(id))
     // Bind type parameters
-    this.genericTypeParameters = this._genericTypeParameters.map(id => projManager.types.get(id))
+    this.genericTypeParameters = this._genericTypeParameters.map(id => projManager.getTypeChecked(id))
     // Bind Members
-    this.events.forEach(event => event.bind(projManager.types))
-    this.fields.forEach(field => field.bind(projManager.types))
-    this.properties.forEach(property => property.bind(projManager.types))
-    this.methods.forEach(method => method.bind(projManager.types))
+    this.events.forEach(event => event.bind(projManager))
+    this.fields.forEach(field => field.bind(projManager))
+    this.properties.forEach(property => property.bind(projManager))
+    this.methods.forEach(method => method.bind(projManager))
     // Bind to assembly
     // console.log(this.fullName + " -> " + this._assemblyId)
-    this.assembly = projManager.assemblies.get(this._assemblyId)
+    this.assembly = projManager.getAssemblyChecked(this._assemblyId)
     // Bind element type if exists
     if (this._elementTypeId) 
-      this.elementType = projManager.types.get(this._elementTypeId)    
+      this.elementType = projManager.getTypeChecked(this._elementTypeId)
+    // Bind implemented interfaces
+    if (this._interfaces)
+      for (const id of this._interfaces)
+        this.interfaces.push(projManager.getTypeChecked(id))
+    // if (this.interfaces.length > 0)
+    // {
+    //   console.log(this.name)
+    //   for (const inter of this.interfaces)
+    //     console.log('\t' + inter.name)
+    // }   
   }
 
   /**

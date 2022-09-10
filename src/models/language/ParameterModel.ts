@@ -1,6 +1,7 @@
 import { jsonMember, jsonObject } from "typedjson";
 import IAmParameterModel from "./interfaces/IAmParameterModel";
 import IAmTypeModel from "./interfaces/IAmFullTypeModel";
+import IAmProjectManager from "../../ProjectManager";
 
 @jsonObject()
 export default class ParameterModel implements IAmParameterModel {
@@ -11,7 +12,7 @@ export default class ParameterModel implements IAmParameterModel {
   _type: string
   type: IAmTypeModel
 
-  bind(types: Map<string, IAmTypeModel>): void {
-    this.type = types.get(this._type)
+  bind(projManager: IAmProjectManager): void {
+    this.type = projManager.getTypeChecked(this._type)
   }
 }

@@ -5,9 +5,11 @@
   ட Object
 ```
 
+### Implemented Interfaces:
 
+- ISerializable
 
-## *public* Properties
+## *public* Properties:
 
 ### Assembly <code><span title="Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.">Assembly</span></code>
 
@@ -51,7 +53,7 @@
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### GetBaseException(...) *virtual*
 
@@ -76,7 +78,7 @@
 
 
 
-## *protected* Events
+## *protected* Events:
 
 ### SerializeObjectState
 

@@ -5,9 +5,11 @@
   ட Object
 ```
 
-An exception that is used when the root or a .csproj file referenced by another project cannot be found.
+### Implemented Interfaces:
 
-## *public* Properties
+- ISerializableAn exception that is used when the root or a .csproj file referenced by another project cannot be found.
+
+## *public* Properties:
 
 ### Data <code><span title="Represents a nongeneric collection of key/value pairs.">IDictionary</span></code> *static* *virtual* *readonly*
 
@@ -47,7 +49,7 @@ The project file that cannot be found.
 
 
 
-## *public* Methods
+## *public* Methods:
 
 ### GetBaseException(...) *virtual*
 
@@ -72,7 +74,7 @@ The project file that cannot be found.
 
 
 
-## *protected* Events
+## *protected* Events:
 
 ### SerializeObjectState
 

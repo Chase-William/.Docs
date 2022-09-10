@@ -241,7 +241,18 @@ export default class RenderManager {
    * @returns true for to be rendered, false to skip rendering
    */
   shouldRender(model: AccessibilityModel, config: ConfigModel): boolean {
-    return true
+    return true 
+
+    /*
+    
+      IMPORTANT -- the current system is not designed to handle types not being rendered.
+
+      This is evident when trying to establish a hyper-link as the current system does
+      not check to see if the destination has been rendered or not. It only checks if
+      it is eligible for rendering period.
+    
+    */
+
     // Must process "internal protected" before other states because of it's composition of other states 
     // Otherwise it generates false truths in below conditionals
     if (model.isInternal && model.isProtected)
@@ -251,12 +262,15 @@ export default class RenderManager {
       return false
     }
 
+
     // Only render when this entity's accessibility mod matches the config's value
     if (model.isPublic && config.showIfPublic ||      
         model.isProtected && config.showIfProtected ||
         model.isInternal && config.showIfInternal ||      
         model.isPrivate && config.showIfPrivate) 
       return true
+    console.log(config)
+    console.log(model.name)
     return false
   }
 
