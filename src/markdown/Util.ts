@@ -131,7 +131,7 @@ function renderTypeWithElementType(link: TypeLink): string {
  */
 function renderGenerics(generics: TypeLink[]): string {
   return generics.map(v => {
-    return v.to.isRenderable() ? `<a href="${v.filePath}">${v.name}</a>` : `<span title="${v.to.comments?.summary}">${v.name}</span>`
+    return v.to.isRenderable() ? `<a href="${v.filePath}">${v.name}</a>` : `<span title="${v.to.comments?.getHTMLAttributeSafeSummary()}">${v.name}</span>`
   }).join(', ')
 }
 

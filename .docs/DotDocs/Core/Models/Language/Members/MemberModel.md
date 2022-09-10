@@ -1,4 +1,4 @@
-# <code><span title="">MemberModel</span><<span title="undefined">T1</span>, <span title="undefined">T2</span>></code> *class*
+# <code><span title="">MemberModel</span><<span title="">T1</span>, <span title="">T2</span>></code> *class*
 
 ```
 ட Model
