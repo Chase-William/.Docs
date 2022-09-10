@@ -19,6 +19,7 @@ export default class TypeLink {
     // Prevent linking to types that do not have their own referenceable location
     if (to.isRenderable())
       this.filePath = from.getFilePathToOther(to, fileEx)
+    // Create a link to an arrays element type if possible
     else if (to.isRenderableArrayType())
       this.filePath = from.getFilePathToOther(to.elementType, fileEx)              
   }

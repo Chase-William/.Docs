@@ -116,7 +116,7 @@ function renderTypeSpanWithComment(link: TypeLink): string {
 }
 
 function renderTypeWithElementType(link: TypeLink): string {
-  return `<a href="${link.filePath}">${link.name}</a>`
+  return `<a href="${link.filePath}">${link.to.elementType.getName()}</a>[]`
 }
 
 /**

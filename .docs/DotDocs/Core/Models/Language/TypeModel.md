@@ -30,11 +30,11 @@ Works for structs too because they are <see cref="T:System.ValueType" /> which i
 
 Denotes the element type that supports the current type
 
-### Events <code><a href="Members\EventModel.md">EventModel[]</a></code> *static* *readonly*
+### Events <code><a href="Members\EventModel.md">EventModel</a>[]</code> *static* *readonly*
 
 
 
-### Fields <code><a href="Members\FieldModel.md">FieldModel[]</a></code> *static* *readonly*
+### Fields <code><a href="Members\FieldModel.md">FieldModel</a>[]</code> *static* *readonly*
 
 
 
@@ -42,11 +42,11 @@ Denotes the element type that supports the current type
 
 
 
-### GenericTypeArguments <code><a href="..\..\..\..\System\String.md">String[]</a></code> *static* *readonly*
+### GenericTypeArguments <code><a href="..\..\..\..\System\String.md">String</a>[]</code> *static* *readonly*
 
 Contains the primary keys to each type's definition.
 
-### GenericTypeParameters <code><a href="..\..\..\..\System\String.md">String[]</a></code> *static* *readonly*
+### GenericTypeParameters <code><a href="..\..\..\..\System\String.md">String</a>[]</code> *static* *readonly*
 
 Contains the primary keys to each type's definition.
 
@@ -110,7 +110,7 @@ Denotes that this type defines a generic type and can be used to create construc
 
 
 
-### Methods <code><a href="Members\MethodModel.md">MethodModel[]</a></code> *static* *readonly*
+### Methods <code><a href="Members\MethodModel.md">MethodModel</a>[]</code> *static* *readonly*
 
 
 
@@ -122,7 +122,7 @@ Denotes that this type defines a generic type and can be used to create construc
 
 
 
-### Properties <code><a href="Members\PropertyModel.md">PropertyModel[]</a></code> *static* *readonly*
+### Properties <code><a href="Members\PropertyModel.md">PropertyModel</a>[]</code> *static* *readonly*
 
 
 

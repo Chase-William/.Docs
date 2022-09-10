@@ -58,7 +58,7 @@ be that parent class as that parent is where it "resides".
 
 
 
-### Parameters <code><a href="..\Parameters\ParameterModel.md">ParameterModel[]</a></code> *static* *virtual* *readonly*
+### Parameters <code><a href="..\Parameters\ParameterModel.md">ParameterModel</a>[]</code> *static* *virtual* *readonly*
 
 
 
