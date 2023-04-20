@@ -1,3 +1,6 @@
+
+**This was an experimental library that is no longer maintained and has been replaced by [DotDocs](https://github.com/Chase-William/DotDocs).**
+
 <p align="center">
   <img src="./resources/media/.docs-yellow-1024x.png" style="width: 450px;margin-left: auto;margin-right: auto;">
 </p>
